@@ -1,0 +1,44 @@
+import Image from "next/image";
+import React from "react";
+import Course from "@/app/components/cards/Course";
+import Event from "@/app/components/cards/Event";
+import Carousel from "@/app/components/Carousel";
+import MediaFeature from "@/app/components/cards/MediaFeature";
+import Editorials from "@/app/components/cards/Editorials";
+
+const slides = [
+  <Course key="course1" />,
+  <Event key="event1" />,
+  <MediaFeature key="mediaFeature1" />,
+  <Editorials key="editorials1" />,
+];
+
+export default function HeroSection() {
+  return (
+    <div className="p-20 flex flex-col">
+      <p className="text-black text-sm font-extrabold mb-5">RESOURCES</p>
+
+      <div className="flex flex-row gap-2 mb-5">
+        <p className="text-black text-lg font-normal">
+          LEVERAGE THESE TOOLS TO{" "}
+          <span className="text-purple-500">BOOST YOUR BUSINESS</span>
+        </p>
+        <Image src="/icons/flash.svg" alt="" width={30} height={60} />
+      </div>
+
+      <div className="w-full h-2/3">
+        <Carousel autoSlide={true}>
+          {/* {slides.map((slide, index) => (
+            <div key={index}>{slide}</div>
+          ))} */}
+          {/* {slides.map((slide, index) => (
+            <div key={index} className="carousel-slide">
+              {slide}
+            </div>
+          ))} */}
+          {slides}
+        </Carousel>
+      </div>
+    </div>
+  );
+}

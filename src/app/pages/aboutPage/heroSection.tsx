@@ -5,7 +5,7 @@ export default function HeroSection() {
   return (
     <div className="flex flex-col-reverse md:flex-row px-4 md:px-20 py-10 md:py-20 items-center justify-between">
       <div className="flex flex-col items-center md:items-center justify-center text-center md:text-left mb-10 md:mb-0">
-        <h1 className="font-extrabold text-black text-center text-3xl md:text-4xl mb-16">
+        <h1 className="font-extrabold text-black text-center text-2xl md:text-4xl md:mb-16 mb-10">
           A COMMUNITY OF SUCCESSFUL BUSINESS <br /> LEADERS{" "}
           <span className="text-red-500 font-light">
             TO HELP YOU START AND GROW YOUR BUSINESS WITH LITTLE TO ZERO

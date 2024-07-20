@@ -3,8 +3,8 @@ import React from "react";
 
 export default function PlatinumName() {
   return (
-    <div className="px-20 pt-20 pb-10 bg-white flex flex-row justify-center items-center gap-20">
-      <div className="flex flex-col justify-center">
+    <div className="px-20 pt-20 pb-10 bg-white flex md:flex-row flex-col justify-center items-center gap-10">
+      <div className="flex flex-col justify-center items-center md:w-1/3">
         <Image
           src="/images/omobolaBlue.svg"
           alt=""
@@ -23,7 +23,7 @@ export default function PlatinumName() {
         <p className="text-black text-sm">DESIGNATION</p>
       </div>
 
-      <div className="flex flex-col">
+      <div className="flex flex-col justify-center items-center md:w-1/3">
         <Image
           src="/images/omobolaBlue.svg"
           alt=""
@@ -42,7 +42,7 @@ export default function PlatinumName() {
         <p className="text-black text-sm">DESIGNATION</p>
       </div>
 
-      <div className="flex flex-col">
+      <div className="flex flex-col justify-center items-center md:w-1/3">
         <Image
           src="/images/omobolaBlue.svg"
           alt=""

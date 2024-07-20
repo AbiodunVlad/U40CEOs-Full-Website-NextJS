@@ -4,25 +4,30 @@ import { faCircleQuestion } from "@fortawesome/free-solid-svg-icons";
 
 export default function FAQ() {
   return (
-    <div className="flex flex-row py-20 px-20 gap-10">
-      <div className="flex flex-col w-1/3">
-        <h2 className="text-black text-lg font-extrabold mb-5">
+    <div className="flex flex-col md:flex-row py-10 sm:py-16 md:py-20 px-4 sm:px-8 md:px-20 gap-10">
+      <div className="flex flex-col md:w-1/3 w-full">
+        <h2 className="text-black text-center md:text-start text-lg font-extrabold mb-5 md:whitespace-normal whitespace-nowrap">
           Frequently
-          <br /> Asked
+          <br className="hidden md:block" /> Asked
           <br /> Questions
         </h2>
 
-        <ul className="mb-10">
-          <li className="text-xs text-purple-500 mb-3">GENERAL</li>
-          <li className="text-xs text-purple-500 mb-3">MEMBERSHIP</li>
-          <li className="text-xs text-purple-500 mb-3">MEDIA FEATURE</li>
-          <li className="text-xs text-purple-500 mb-3">TESTIMONIALS</li>
-          <li className="text-xs text-purple-500">PRICING</li>
+        <ul className="mb-10 flex flex-row md:flex-col md:justify-center justify-around">
+          <div>
+            <li className="text-xs text-purple-500 mb-3">GENERAL</li>
+            <li className="text-xs text-purple-500 mb-3">MEMBERSHIP</li>
+            <li className="text-xs text-purple-500 mb-3">MEDIA FEATURE</li>
+          </div>
+
+          <div>
+            <li className="text-xs text-purple-500 mb-3">TESTIMONIALS</li>
+            <li className="text-xs text-purple-500">PRICING</li>
+          </div>
         </ul>
 
-        <p className="text-black text-xs font-medium">
+        <p className="text-black text-xs text-center md:text-start font-medium">
           Have questions about
-          <br /> sometime else?{" "}
+          <br /> something else?{" "}
           <span className="text-purple-500">
             Call us on
             <br /> 0800 1234 5678.
@@ -30,17 +35,17 @@ export default function FAQ() {
         </p>
       </div>
 
-      <div className="w-2/3">
-        <p className="text-purple-600 text-sm mb-10">GENERAL</p>
+      <div className="md:w-2/3 w-full">
+        <p className="text-purple-600 text-sm mb-10 md:flex hidden">GENERAL</p>
 
-        <div className="flex flex-row gap-3 items-center mb-10">
+        <div className="flex flex-row gap-3 items-center md:mb-10 mb-2">
           <FontAwesomeIcon icon={faCircleQuestion} className="text-sm" />
           <p className="text-sm text-black">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit?
           </p>
         </div>
 
-        <div className="flex flex-col mb-10">
+        <div className="flex flex-col md:mb-10 mb-2">
           <div className="flex flex-row gap-3 items-center mb-2">
             <FontAwesomeIcon icon={faCircleQuestion} className="text-sm" />
             <p className="text-sm text-black">
@@ -57,14 +62,21 @@ export default function FAQ() {
           </p>
         </div>
 
-        <div className="flex flex-row gap-3 items-center mb-10">
+        <div className="flex flex-row gap-3 items-center md:mb-10 mb-2">
           <FontAwesomeIcon icon={faCircleQuestion} className="text-sm" />
           <p className="text-sm text-black">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit?
           </p>
         </div>
 
-        <div className="flex flex-row gap-3 items-center mb-10">
+        <div className="flex flex-row gap-3 items-center md:mb-10 mb-2">
+          <FontAwesomeIcon icon={faCircleQuestion} className="text-sm" />
+          <p className="text-sm text-black">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit?
+          </p>
+        </div>
+
+        <div className="flex flex-row gap-3 items-center md:mb-10 mb-2">
           <FontAwesomeIcon icon={faCircleQuestion} className="text-sm" />
           <p className="text-sm text-black">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit?

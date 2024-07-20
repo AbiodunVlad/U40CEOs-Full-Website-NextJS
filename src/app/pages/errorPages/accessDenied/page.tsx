@@ -17,7 +17,7 @@ export default function AccessDenied() {
           className="mb-10"
         />
 
-        <h1 className="text-black text-5xl font-extrabold mb-7">
+        <h1 className="text-black text-center text-5xl font-extrabold mb-7">
           Access Denied{" "}
         </h1>
 

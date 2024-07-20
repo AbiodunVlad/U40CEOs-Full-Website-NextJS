@@ -13,7 +13,7 @@ import FAQ from "./FAQ";
 
 export default function About() {
   return (
-    <div className="flex flex-col text-black">
+    <div className="flex flex-col text-black overflow-hidden">
       <Navbar />
       <HeroSection />
       <CompanyStandard />

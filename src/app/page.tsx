@@ -8,19 +8,21 @@ import SomethingWentWrong from "./pages/errorPages/somethingWentWrong/page";
 import AccessDenied from "./pages/errorPages/accessDenied/page";
 import UnauthorizedAccess from "./pages/errorPages/unauthorizedAccess/page";
 import UnderMaintenance from "./pages/errorPages/underMaintenance/page";
+import Resources from "./pages/resources/page";
 
 export default function Home() {
   return (
     <main className="bg-gray-200">
       {/* <HomePage /> */}
       {/* <About /> */}
+      <Resources />
       {/* <Signup /> */}
       {/* <Login /> */}
       {/* <PageNotFound /> */}
       {/* <SomethingWentWrong /> */}
       {/* <AccessDenied /> */}
       {/* <UnauthorizedAccess /> */}
-      <UnderMaintenance />
+      {/* <UnderMaintenance /> */}
     </main>
   );
 }

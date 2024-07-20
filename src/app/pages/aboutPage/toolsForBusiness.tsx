@@ -2,8 +2,8 @@ import React from "react";
 
 export default function ToolsForBusiness() {
   return (
-    <div className="bg-black flex flex-col items-center justify-center text-center p-10">
-      <h2 className="text-white text-xl text-center font-extrabold mb-5 uppercase">
+    <div className="bg-black flex flex-col items-center justify-center text-center md:p-10 py-10">
+      <h2 className="text-white md:text-xl text-center font-extrabold mb-5 uppercase">
         We Provide All The Necessary Tools <br />{" "}
         <span className="text-red-500 font-light">
           {" "}
