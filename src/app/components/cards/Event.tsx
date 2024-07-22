@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Event() {
   return (
-    <div className="bg-gradient-to-r from-blue-500 to-blue-200 pt-10 pb-5 px-5 flex flex-row gap-3">
+    <div className="bg-gradient-to-r from-blue-500 to-blue-200 pt-10 pb-5 px-5 flex flex-row gap-3 w-5/6">
       <div>
         <Image src="/images/eventImg.svg" alt="" width={200} height={200} />
       </div>

@@ -61,13 +61,14 @@ export default function Carousel({
         </button>
       </div> */}
 
-      <div className="absolute bottom-4 right-0 left-0">
+      <div className="absolute bottom-4 right-0 left-auto px-20">
         <div className="flex items-center justify-center gap-2">
           {slides.map((_, i) => (
             <div
               key={i}
+              onClick={() => setCurr(i)}
               className={`
-              transition-all w-3 h-3 bg-white rounded-full
+              transition-all w-2 h-2 bg-white rounded-full
               ${curr === i ? "p-2" : "bg-opacity-50"}
               `}
             />
