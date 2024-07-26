@@ -9,6 +9,8 @@ import AccessDenied from "./pages/errorPages/accessDenied/page";
 import UnauthorizedAccess from "./pages/errorPages/unauthorizedAccess/page";
 import UnderMaintenance from "./pages/errorPages/underMaintenance/page";
 import Resources from "./pages/resources/page";
+import SuccessStories from "./pages/successStories/page";
+import IndividualStories from "./pages/successStories/IndividualStories";
 
 export default function Home() {
   return (
@@ -23,6 +25,9 @@ export default function Home() {
       {/* <AccessDenied /> */}
       {/* <UnauthorizedAccess /> */}
       {/* <UnderMaintenance /> */}
+
+      {/* <SuccessStories /> */}
+      {/* <IndividualStories /> */}
     </main>
   );
 }
