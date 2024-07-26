@@ -78,7 +78,7 @@ export default function Events() {
       <div className="bg-pink-200 px-5 py-10 md:px-20 flex flex-col-reverse md:flex-row justify-between">
         <div className="flex flex-col justify-between h-auto w-full md:w-1/2 mb-10 md:mb-0">
           <div className="mb-10">
-            <h5 className="text-black leading-10 text-2xl md:text-3xl font-bold">
+            <h5 className="text-black md:leading-10 text-2xl md:text-3xl md:text-start text-center font-extrabold">
               STARTING A <br /> BUSINESS WITH A <br /> FOCUS ON SALES.
             </h5>
           </div>
@@ -86,11 +86,11 @@ export default function Events() {
           <div className="flex-grow"></div>
 
           <div className="w-full flex flex-col items-center justify-end">
-            <button className="self-start bg-pink-600 text-white text-center py-2 w-3/4 rounded-full mb-5">
+            <button className="md:self-start bg-pink-600 text-white text-center py-2 w-3/4 rounded-full mb-5">
               BOOK YOUR SEAT
             </button>
 
-            <button className="self-start bg-transparent text-purple-600 text-center border border-purple-600 border-solid py-2 w-3/4 rounded-full">
+            <button className="md:self-start bg-transparent text-purple-600 text-center border border-purple-600 border-solid py-2 w-3/4 rounded-full">
               SEE UPCOMING EVENTS
             </button>
           </div>
