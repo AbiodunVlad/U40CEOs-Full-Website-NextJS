@@ -1,15 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
+import Courses from "./Courses";
+import Events from "./Events";
+import MediaFeatures from "./MediaFeatures";
+import Editorials from "./Editorials/Editorials";
 
 export default function ResourceHeaders() {
+  const [activeHeader, setActiveHeader] = useState("COURSES");
+
+  const headers = ["COURSES", "EVENTS", "MEDIA FEATURES", "EDITORIALS"];
+
+  const renderContent = () => {
+    switch (activeHeader) {
+      case "COURSES":
+        return <Courses />;
+      case "EVENTS":
+        return <Events />;
+      case "MEDIA FEATURES":
+        return <MediaFeatures />;
+      case "EDITORIALS":
+        return <Editorials />;
+      default:
+        return null;
+    }
+  };
+
   return (
     <>
       <div className="flex flex-row items-center justify-around">
-        <p className="text-gray-500 text-sm mb-1">COURSES</p>
-        <p className="text-gray-500 text-sm mb-1">EVENTS</p>
-        <p className="text-gray-500 text-sm mb-1">MEDIA FEATURES</p>
-        <p className="text-gray-500 text-sm mb-1">EDITORIALS</p>
+        {headers.map((header) => (
+          <div key={header} className="flex flex-col items-center">
+            <p
+              className={`text-sm mb-1 cursor-pointer ${
+                activeHeader === header ? "text-purple-500" : "text-gray-500"
+              }`}
+              onClick={() => setActiveHeader(header)}
+            >
+              {header}
+            </p>
+            <div
+              className={`border-t-4 w-full ${
+                activeHeader === header
+                  ? "border-purple-500"
+                  : "border-transparent"
+              }`}
+            ></div>
+          </div>
+        ))}
       </div>
-      <div className="border border-gray-400 mx-20"></div>
+      <div className="border border-gray-400 mx-10"></div>
+      <div>{renderContent()}</div>
     </>
   );
 }

@@ -19,10 +19,7 @@ export default function Resources() {
       <Navbar />
       <HeroSection />
       <ResourceHeaders />
-      <Courses />
-      {/* <Events /> */}
-      {/* <MediaFeatures /> */}
-      {/* <Editorials /> */}
+
       {/* <DetailsOverlay /> */}
       {/* <MoreMagazines /> */}
       {/* <MoreBooks /> */}

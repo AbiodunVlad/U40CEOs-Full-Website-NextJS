@@ -32,7 +32,7 @@ export default function ImgCarousel({
   }, [autoSlide, autoSlideInterval, next]);
 
   return (
-    <div className="overflow-hidden  w-1/2 flex flex-col">
+    <div className="overflow-hidden w-full md:w-2/3 flex flex-col mb-5">
       <div
         className="flex transition-transform ease-out duration-800 mb-5"
         style={{

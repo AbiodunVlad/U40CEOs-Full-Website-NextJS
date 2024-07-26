@@ -10,28 +10,28 @@ const slideImg = [
     key="img1"
     src="/images/resourceEvents.svg"
     alt=""
-    width={300}
+    width={350}
     height={300}
   />,
   <Image
     key="img2"
     src="/images/resourceEvents.svg"
     alt=""
-    width={300}
+    width={350}
     height={300}
   />,
   <Image
     key="img3"
     src="/images/resourceEvents.svg"
     alt=""
-    width={300}
+    width={350}
     height={300}
   />,
   <Image
     key="img4"
     src="/images/resourceEvents.svg"
     alt=""
-    width={300}
+    width={350}
     height={300}
   />,
 ];
@@ -74,16 +74,18 @@ export default function Events() {
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
   return (
-    <div className="flex flex-col pt-20">
-      <div className="bg-pink-200 px-20 py-10 flex flex-row justify-between">
-        <div className="flex flex-col justify-between h-auto w-1/2">
+    <div className="flex flex-col pt-10 md:pt-20">
+      <div className="bg-pink-200 px-5 py-10 md:px-20 flex flex-col-reverse md:flex-row justify-between">
+        <div className="flex flex-col justify-between h-auto w-full md:w-1/2 mb-10 md:mb-0">
           <div className="mb-10">
-            <h5 className="text-black leading-10 text-3xl font-bold">
+            <h5 className="text-black leading-10 text-2xl md:text-3xl font-bold">
               STARTING A <br /> BUSINESS WITH A <br /> FOCUS ON SALES.
             </h5>
           </div>
 
-          <div className=" w-full flex flex-col items-center justify-center">
+          <div className="flex-grow"></div>
+
+          <div className="w-full flex flex-col items-center justify-end">
             <button className="self-start bg-pink-600 text-white text-center py-2 w-3/4 rounded-full mb-5">
               BOOK YOUR SEAT
             </button>
@@ -94,7 +96,7 @@ export default function Events() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center w-1/2">
+        <div className="flex flex-col items-center w-full md:w-1/2">
           <ImgCarousel autoSlide={true}>{slideImg}</ImgCarousel>
           {/* <Carousel autoSlide={true}>{slideImg}</Carousel> */}
         </div>
@@ -102,16 +104,19 @@ export default function Events() {
 
       <Search />
 
-      <div className="flex flex-col justify-center items-center px-20 pt-10 pb-20 w-full">
+      <div className="flex flex-col justify-center items-center px-5 pt-10 pb-20 md:px-20 w-full">
         <h5 className="text-black text-lg font-bold mb-10">EVENT RECORDINGS</h5>
 
         <div className="flex flex-col w-full">
-          <div className="flex flex-row justify-between gap-5 w-full mb-7">
+          <div className="flex flex-col md:flex-row justify-between gap-5 w-full mb-7">
             {currentItems.map((course, index) => (
-              <div key={index} className="flex flex-col items-center w-1/4">
+              <div
+                key={index}
+                className="flex flex-col items-center w-full md:w-1/4"
+              >
                 <iframe src={course.videoUrl} className="w-full h-48 mb-5" />
 
-                <p className="text-black text-sm font-bold mb-5">
+                <p className="text-black text-sm font-bold mb-5 text-center md:text-left">
                   {course.title}
                 </p>
 
@@ -143,12 +148,12 @@ export default function Events() {
         </div>
       </div>
 
-      <div className="flex flex-col items-center bg-gradient-to-br from-purple-600 to-blue-400 px-20 py-10">
+      <div className="flex flex-col items-center bg-gradient-to-br from-purple-600 to-blue-400 px-5 py-10 md:px-20">
         <h5 className="text-black text-lg text-center font-bold mb-5 uppercase">
           Looking To Join The League Of Successful <br /> Businesses In Africa?
         </h5>
 
-        <p className="text-black text-xs uppercase mb-5">
+        <p className="text-black text-xs uppercase mb-5 text-center">
           Book a free consultation with us today
         </p>
 
