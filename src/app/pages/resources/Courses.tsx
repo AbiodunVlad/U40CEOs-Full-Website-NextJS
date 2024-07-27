@@ -68,8 +68,9 @@ export default function Courses() {
 
       <div className="flex flex-col justify-center items-center px-5 lg:px-20 pt-10 pb-20 w-full">
         <h5 className="text-black text-lg font-bold mb-10">EXPLORE COURSES</h5>
+
         <div className="flex flex-col w-full">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 w-full mb-7">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-5 w-full mb-7">
             {currentItems.map((course, index) => (
               <div key={index} className="flex flex-col items-center">
                 <iframe src={course.videoUrl} className="w-full h-48 mb-5" />
@@ -82,6 +83,7 @@ export default function Courses() {
               </div>
             ))}
           </div>
+
           <div className="flex justify-center mt-10">
             {Array.from(
               { length: Math.ceil(courses.length / ITEMS_PER_PAGE) },

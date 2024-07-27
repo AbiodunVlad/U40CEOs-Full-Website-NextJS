@@ -108,18 +108,13 @@ export default function Events() {
         <h5 className="text-black text-lg font-bold mb-10">EVENT RECORDINGS</h5>
 
         <div className="flex flex-col w-full">
-          <div className="flex flex-col md:flex-row justify-between gap-5 w-full mb-7">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-5 w-full mb-7">
             {currentItems.map((course, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center w-full md:w-1/4"
-              >
+              <div key={index} className="flex flex-col items-center">
                 <iframe src={course.videoUrl} className="w-full h-48 mb-5" />
-
-                <p className="text-black text-sm font-bold mb-5 text-center md:text-left">
+                <p className="text-black text-sm font-bold mb-5">
                   {course.title}
                 </p>
-
                 <button className="bg-purple-600 text-white text-xs py-2 px-5 w-full">
                   ENROL NOW
                 </button>

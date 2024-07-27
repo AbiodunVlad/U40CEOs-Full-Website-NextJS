@@ -16,7 +16,7 @@ export default async function handler(
 
       const data = await response.json();
 
-      // Map JSONPlaceholder data to course structure
+      //JSONPlaceholder data mapped to course structure
       const courses = data.map((item: any) => ({
         title: item.title,
         videoUrl:
