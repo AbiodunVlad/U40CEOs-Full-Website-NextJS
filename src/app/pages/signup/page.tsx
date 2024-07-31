@@ -4,34 +4,87 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import SideImage from "@/app/components/SideImage";
+import { signupUser } from "../../../../pages/api/auth";
 
 export default function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [fullName, setFullName] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const router = useRouter();
+
+  const validatePassword = (password: any) => {
+    const passwordRegex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    return passwordRegex.test(password);
+  };
+
+  const signup = async () => {
+    setLoading(true);
+    setError("");
+
+    if (!validatePassword(password)) {
+      setError(
+        "Password must be at least 8 characters long, include an uppercase letter, a lowercase letter, a number, and a special character."
+      );
+      setLoading(false);
+      return;
+    }
+
+    if (password != confirmPassword) {
+      setError("Passwords do not match.");
+      setLoading(false);
+      return;
+    }
+
+    try {
+      await signupUser({
+        fullName,
+        email,
+        password,
+        confirmPassword,
+      });
+      router.push("/login");
+    } catch (error) {
+      if (error instanceof Error) {
+        setError(error.message);
+      } else {
+        setError("Something went wrong!!!");
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const [user, setUser] = useState({
-    // username: "",
-    // email: "",
-    // password: "",
     keepSignedIn: false,
   });
 
-  // const [isClient, setIsClient] = useState(false);
+  // const [user, setUser] = useState({
+  // username: "",
+  // email: "",
+  // password: "",
+  // keepSignedIn: false,
+  // });
 
-  const router = useRouter();
+  // const [isClient, setIsClient] = useState(false);
 
   // useEffect(() => {
   //   setIsClient(true);
   // }, []);
 
-  const signup = async () => {
-    // if (isClient) {
-    // }
-  };
+  // const signup = async () => {
+  // if (isClient) {
+  // }
+  // };
 
-  const signupWithGoogle = async () => {
-    // if (isClient) {
-    // }
-  };
+  // const signupWithGoogle = async () => {
+  // if (isClient) {
+  // }
+  // };
 
   // if (!isClient) {
   //   return null;
@@ -59,12 +112,23 @@ export default function Signup() {
           onChange={(e) => setUser({ ...user, username: e.target.value })}
         /> */}
 
+        {error && <p className="text-red-500 mb-5">{error}</p>}
+
+        <input
+          className="text-black w-full md:w-3/4 p-2 border border-red-300 rounded-lg mb-5 focus:outline-none focus:border-red-800"
+          placeholder="Full Name"
+          id="fullName"
+          type="text"
+          value={fullName}
+          onChange={(e) => setFullName(e.target.value)}
+        />
+
         <input
           className="text-black w-full md:w-3/4 p-2 border border-red-300 rounded-lg mb-5 focus:outline-none focus:border-red-800"
           placeholder="Email"
           id="email"
           type="email"
-          // value={user.email}
+          value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
 
@@ -72,15 +136,24 @@ export default function Signup() {
           className="text-black w-full md:w-3/4 p-2 border border-red-300 rounded-lg mb-5 focus:outline-none focus:border-red-800"
           placeholder="Password"
           type="password"
-          // value={user.password}
+          value={password}
           onChange={(e) => setPassword(e.target.value)}
+        />
+
+        <input
+          className="text-black w-full md:w-3/4 p-2 border border-red-300 rounded-lg mb-5 focus:outline-none focus:border-red-800"
+          placeholder="Confirm Password"
+          type="password"
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
         />
 
         <button
           onClick={signup}
           className="w-full md:w-3/4 p-2 border bg-purple-700 rounded-full mb-5 text-white font-bold"
+          disabled={loading}
         >
-          Signup
+          {loading ? "Signing you up..." : "Signup"}
         </button>
 
         <div className="flex items-center mb-5">
@@ -100,13 +173,13 @@ export default function Signup() {
 
         <p className="mb-5 text-black">Or</p>
 
-        <button
+        {/* <button
           onClick={signupWithGoogle}
           className="text-black w-full md:w-3/4 p-2 border bg-white rounded-xl mb-10"
         >
           {" "}
           Signup with Google
-        </button>
+        </button> */}
 
         <p className="text-black">
           Do you have an account already? {""}

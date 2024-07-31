@@ -4,10 +4,16 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import SideImage from "@/app/components/SideImage";
+import { loginUser } from "../../../../pages/api/auth";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [fullName, setFullName] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+  const router = useRouter();
+
   const [user, setUser] = useState({
     // email: "",
     // password: "",
@@ -16,25 +22,43 @@ export default function Login() {
 
   // const [isClient, setIsClient] = useState(false);
 
-  const router = useRouter();
-
   // useEffect(() => {
   //   setIsClient(true);
   // }, []);
 
-  const login = async () => {
-    // if (isClient) {
-    // }
-  };
+  // const login = async () => {
+  // if (isClient) {
+  // }
+  // };
 
-  const loginWithGoogle = async () => {
-    // if (isClient) {
-    // }
-  };
+  // const loginWithGoogle = async () => {
+  // if (isClient) {
+  // }
+  // };
 
   // if (!isClient) {
   //   return null;
   // }
+
+  const login = async () => {
+    setLoading(true);
+    setError("");
+
+    try {
+      await loginUser({
+        fullName,
+        email,
+        password,
+      });
+      router.push("/homePage");
+    } catch (error) {
+      if (error instanceof Error) {
+        setError(error.message);
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="flex flex-col-reverse md:flex-row items-center justify-around min-h-screen">
@@ -90,12 +114,12 @@ export default function Login() {
 
         <p className="mb-5 text-black">Or</p>
 
-        <button
+        {/* <button
           onClick={loginWithGoogle}
           className="text-black w-full md:w-3/4 p-2 border bg-white rounded-xl mb-10"
         >
           Login with Google
-        </button>
+        </button> */}
 
         <p className="text-black">
           Need an account? {""}

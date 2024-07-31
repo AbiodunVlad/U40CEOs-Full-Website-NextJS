@@ -3,6 +3,8 @@ const config = {
   plugins: {
     tailwindcss: {},
   },
+
+  productionBrowserSourceMaps: true,
 };
 
 export default config;

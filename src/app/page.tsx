@@ -11,14 +11,18 @@ import UnderMaintenance from "./pages/errorPages/underMaintenance/page";
 import Resources from "./pages/resources/page";
 import SuccessStories from "./pages/successStories/page";
 import IndividualStories from "./pages/successStories/IndividualStories";
+import Blog from "./pages/blog/page";
+import ReadBlog from "./pages/blog/ReadBlog";
 
 export default function Home() {
   return (
     <main className="bg-gray-200">
       {/* <HomePage /> */}
       {/* <About /> */}
-      <Resources />
-      {/* <Signup /> */}
+      {/* <Resources /> */}
+      {/* <Blog /> */}
+      {/* <ReadBlog /> */}
+      <Signup />
       {/* <Login /> */}
       {/* <PageNotFound /> */}
       {/* <SomethingWentWrong /> */}

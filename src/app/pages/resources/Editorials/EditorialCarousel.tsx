@@ -1,10 +1,5 @@
 "use client";
-import React, { ReactNode, useCallback, useEffect, useState } from "react";
-import {
-  faChevronLeft,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { ReactNode, useEffect, useState } from "react";
 
 interface CarouselProps {
   children: ReactNode[];
@@ -19,9 +14,6 @@ export default function EditorialCarousel({
 }: CarouselProps) {
   const [curr, setCurr] = useState(0);
 
-  const prev = () =>
-    setCurr((curr) => (curr === 0 ? slides.length - 1 : curr - 1));
-
   const next = () =>
     setCurr((curr) => (curr === slides.length - 1 ? 0 : curr + 1));
 
@@ -29,7 +21,7 @@ export default function EditorialCarousel({
     if (!autoSlide) return;
     const slideInterval = setInterval(next, autoSlideInterval);
     return () => clearInterval(slideInterval);
-  }, [autoSlide, autoSlideInterval, next]);
+  }, [autoSlide, autoSlideInterval]);
 
   return (
     <div className="overflow-hidden justify-center w-full relative">
@@ -55,12 +47,25 @@ export default function EditorialCarousel({
               onClick={() => setCurr(i)}
               className={`
               transition-all w-2 h-2 bg-white rounded-full
-              ${curr === i ? "p-2" : "bg-opacity-50"}
-              `}
+              ${curr === i ? "p-2" : "bg-opacity-50"}`}
             />
           ))}
         </div>
       </div>
+
+      {/* <div className="absolute inset-x-0 bottom-4 px-4 md:px-20 flex justify-center bg-red-700">
+        <div className="flex items-center justify-center gap-2">
+          {slides.map((_, i) => (
+            <div
+              key={i}
+              onClick={() => setCurr(i)}
+              className={`cursor-pointer transition-all w-2 h-2 md:w-3 md:h-3 bg-white rounded-full ${
+                curr === i ? "p-2 bg-opacity-100" : "bg-opacity-50"
+              }`}
+            />
+          ))}
+        </div>
+      </div> */}
     </div>
   );
 }
