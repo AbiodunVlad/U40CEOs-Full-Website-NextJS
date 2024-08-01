@@ -3,8 +3,14 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import SideImage from "@/app/components/SideImage";
-import { loginUser } from "../../../../pages/api/auth";
+import SideImage from "@/components/SideImage";
+import { loginUser } from "@/api/auth";
+import dynamic from "next/dynamic";
+import Loading from "@/components/Loading";
+
+const LazyHomePage = dynamic(() => import("../homePage/page"), {
+  loading: () => <Loading />,
+});
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -12,6 +18,8 @@ export default function Login() {
   const [fullName, setFullName] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [redirecting, setRedirecting] = useState(false);
+
   const router = useRouter();
 
   const [user, setUser] = useState({
@@ -50,7 +58,12 @@ export default function Login() {
         email,
         password,
       });
-      router.push("/homePage");
+
+      setRedirecting(true);
+
+      setTimeout(() => {
+        router.push("/homePage");
+      }, 1000);
     } catch (error) {
       if (error instanceof Error) {
         setError(error.message);
@@ -61,7 +74,9 @@ export default function Login() {
   };
 
   return (
-    <div className="flex flex-col-reverse md:flex-row items-center justify-around min-h-screen">
+    <div className="relative flex flex-col-reverse md:flex-row items-center justify-around min-h-screen">
+      {redirecting && <Loading />}
+
       <div className="bg-slate-100 w-full md:w-1/2 flex flex-col items-center justify-center min-h-screen py-2 px-4">
         <Image
           className="mb-5"
@@ -94,7 +109,7 @@ export default function Login() {
           onClick={login}
           className="w-full md:w-3/4 p-2 border bg-purple-700 rounded-full mb-5 text-white font-bold"
         >
-          Login
+          {loading ? "Logging you in..." : "Login"}
         </button>
 
         <div className="flex items-center mb-5">
@@ -130,7 +145,7 @@ export default function Login() {
       </div>
 
       <div
-        className="w-full md:w-1/2 flex flex-col items-center justify-center min-h-screen py-1"
+        className="w-full md:w-1/2 hidden md:flex flex-col items-center justify-center min-h-screen py-1"
         style={{
           background:
             "linear-gradient(to left, #7F7FFF 0%, #E6E6FA 50%, #CDB1DB 50%, #E6E6FA 100%)",

@@ -1,16 +1,16 @@
-import Footer from "@/app/components/Footer";
-import Navbar from "@/app/components/Navbar";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-export default function PageNotFound() {
+export default function SomethingWentWrong() {
   return (
     <div>
       <Navbar />
       <div className="flex flex-col justify-center items-center py-10 px-20">
         <Image
-          src="/icons/404.svg"
+          src="/icons/500.svg"
           alt=""
           width={500}
           height={500}
@@ -18,11 +18,11 @@ export default function PageNotFound() {
         />
 
         <h1 className="text-black text-center text-5xl font-extrabold mb-7">
-          Oops!... Page Not Found
+          Something Went Wrong{" "}
         </h1>
 
         <p className="text-sm font-light text-black mb-20">
-          Looks like the page you’re looking for doesn’t exist.
+          We’re experiencing some technical issues. Please try again later.{" "}
         </p>
 
         <Link

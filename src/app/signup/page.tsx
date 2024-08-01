@@ -3,8 +3,8 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import SideImage from "@/app/components/SideImage";
-import { signupUser } from "../../../../pages/api/auth";
+import SideImage from "@/components/SideImage";
+import { signupUser } from "@/api/auth";
 
 export default function Signup() {
   const [email, setEmail] = useState("");
@@ -16,20 +16,37 @@ export default function Signup() {
 
   const router = useRouter();
 
-  const validatePassword = (password: any) => {
-    const passwordRegex =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-    return passwordRegex.test(password);
+  // const validatePassword = (password: any) => {
+  //   const passwordRegex =
+  //     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  //   return passwordRegex.test(password);
+  // };
+
+  const validatePassword = (password: string) => {
+    return password.length >= 6;
   };
 
   const signup = async () => {
     setLoading(true);
     setError("");
 
+    // if (password.length === 0) {
+    //   setError("Password is required");
+    //   setLoading(false);
+
+    //   return;
+    // }
+
+    // if (!validatePassword(password)) {
+    //   setError(
+    //     "Password must be at least 8 characters long, include an uppercase letter, a lowercase letter, a number, and a special character."
+    //   );
+    //   setLoading(false);
+    //   return;
+    // }
+
     if (!validatePassword(password)) {
-      setError(
-        "Password must be at least 8 characters long, include an uppercase letter, a lowercase letter, a number, and a special character."
-      );
+      setError("Password should be at least 6 characters long.");
       setLoading(false);
       return;
     }
@@ -190,7 +207,7 @@ export default function Signup() {
       </div>
 
       <div
-        className="w-full md:w-1/2 flex flex-col items-center justify-center min-h-screen py-1"
+        className="w-full md:w-1/2 hidden md:flex flex-col items-center justify-center min-h-screen py-1"
         style={{
           background:
             "linear-gradient(to left, #7F7FFF 0%, #E6E6FA 50%, #CDB1DB 50%, #E6E6FA 100%)",

@@ -1,10 +1,10 @@
 "use client";
-import Footer from "@/app/components/Footer";
-import Navbar from "@/app/components/Navbar";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 import React, { useState, useEffect } from "react";
 import BlogSearch from "./BlogSearch";
 import WhatIs from "./WhatIs";
-import Event from "@/app/components/cards/Event";
+import Event from "@/components/cards/Event";
 import TVseries from "../homePage/tvSeries";
 import Link from "next/link";
 import Image from "next/image";

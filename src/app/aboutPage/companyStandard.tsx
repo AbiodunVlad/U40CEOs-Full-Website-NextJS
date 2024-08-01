@@ -1,4 +1,4 @@
-import Stats from "@/app/components/stats";
+import Stats from "@/components/stats";
 import React from "react";
 
 export default function CompanyStandard() {

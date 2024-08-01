@@ -1,18 +1,20 @@
+"use client";
 import Image from "next/image";
-import HomePage from "./pages/homePage/page";
-import About from "./pages/aboutPage/page";
-import Signup from "./pages/signup/page";
-import Login from "./pages/login/page";
-import PageNotFound from "./pages/errorPages/pageNotFound/page";
-import SomethingWentWrong from "./pages/errorPages/somethingWentWrong/page";
-import AccessDenied from "./pages/errorPages/accessDenied/page";
-import UnauthorizedAccess from "./pages/errorPages/unauthorizedAccess/page";
-import UnderMaintenance from "./pages/errorPages/underMaintenance/page";
-import Resources from "./pages/resources/page";
-import SuccessStories from "./pages/successStories/page";
-import IndividualStories from "./pages/successStories/IndividualStories";
-import Blog from "./pages/blog/page";
-import ReadBlog from "./pages/blog/ReadBlog";
+import HomePage from "./homePage/page";
+import About from "./aboutPage/page";
+import Signup from "./signup/page";
+import Login from "./login/page";
+import PageNotFound from "./errorPages/pageNotFound/page";
+import SomethingWentWrong from "./errorPages/somethingWentWrong/page";
+import AccessDenied from "./errorPages/accessDenied/page";
+import UnauthorizedAccess from "./errorPages/unauthorizedAccess/page";
+import UnderMaintenance from "./errorPages/underMaintenance/page";
+import Resources from "./resources/page";
+import SuccessStories from "./successStories/page";
+import IndividualStories from "./successStories/IndividualStories";
+import Blog from "./blog/page";
+import ReadBlog from "./blog/ReadBlog";
+import BlogPage from "./blog/BlogPage";
 
 export default function Home() {
   return (
@@ -22,8 +24,9 @@ export default function Home() {
       {/* <Resources /> */}
       {/* <Blog /> */}
       {/* <ReadBlog /> */}
-      <Signup />
-      {/* <Login /> */}
+      {/* <BlogPage /> */}
+      {/* <Signup /> */}
+      <Login />
       {/* <PageNotFound /> */}
       {/* <SomethingWentWrong /> */}
       {/* <AccessDenied /> */}

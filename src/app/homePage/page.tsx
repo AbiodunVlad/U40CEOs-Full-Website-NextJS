@@ -1,10 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import BookSeat from "./BookASeat";
-import Navbar from "@/app/components/Navbar";
+import Navbar from "@/components/Navbar";
 import HeroSection from "./heroSection";
 import Partners from "./partners";
-import Footer from "@/app/components/Footer";
+import Footer from "@/components/Footer";
 import CEOtips from "./ceotips";
 import Stats from "../../components/stats";
 import BookSeatAgain from "./bookseatagain";

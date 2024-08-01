@@ -1,16 +1,16 @@
-import Footer from "@/app/components/Footer";
-import Navbar from "@/app/components/Navbar";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-export default function UnderMaintenance() {
+export default function UnauthorizedAccess() {
   return (
     <div>
       <Navbar />
       <div className="flex flex-col justify-center items-center py-10 px-20">
         <Image
-          src="/icons/maintenance.svg"
+          src="/icons/401.svg"
           alt=""
           width={500}
           height={500}
@@ -18,7 +18,7 @@ export default function UnderMaintenance() {
         />
 
         <h1 className="text-black text-center text-5xl font-extrabold mb-7">
-          We’re Under Maintenance{" "}
+          Access Denied{" "}
         </h1>
 
         <p className="text-sm font-light text-black mb-20">
@@ -26,10 +26,10 @@ export default function UnderMaintenance() {
         </p>
 
         <Link
-          href="/pages/login"
+          href="/pages/homePage"
           className="bg-purple-600 text-white rounded-lg p-5"
         >
-          Click Here to Login{" "}
+          Back to Homepage
         </Link>
       </div>
       <Footer />

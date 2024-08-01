@@ -1,11 +1,13 @@
 "use client";
-import Footer from "@/app/components/Footer";
-import Navbar from "@/app/components/Navbar";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 import React, { useEffect, useState } from "react";
 import BlogSearch from "./BlogSearch";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 type Article = {
+  id: number;
   category: string;
   title: string;
   body: string;
@@ -15,11 +17,15 @@ type Article = {
 
 export default function ReadBlog() {
   const [article, setArticle] = useState<Article | null>(null);
+  const router = useRouter();
+  const { id } = router.query;
 
   useEffect(() => {
     async function fetchArticle() {
+      if (!id) return;
+
       try {
-        const res = await fetch("/api/articles");
+        const res = await fetch(`/api/articles?id=${id}`);
 
         if (!res.ok) {
           throw new Error("Network response was bad!");
@@ -34,7 +40,7 @@ export default function ReadBlog() {
     }
 
     fetchArticle();
-  }, []);
+  }, [id]);
 
   return (
     <div>
