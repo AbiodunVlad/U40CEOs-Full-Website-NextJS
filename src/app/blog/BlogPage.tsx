@@ -1,7 +1,7 @@
 "use client";
 // import ReadBlog from "@/app/pages/blog/ReadBlog";
 import { useRouter } from "next/router";
-import ReadBlog from "./ReadBlog";
+import ReadBlog from "./[id]/page";
 
 export default function BlogPage() {
   const router = useRouter();

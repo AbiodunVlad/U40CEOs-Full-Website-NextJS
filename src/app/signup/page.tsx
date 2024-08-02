@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import SideImage from "@/components/SideImage";
-import { signupUser } from "@/api/auth";
+import { signupUser } from "../../../pages/api/auth";
 
 export default function Signup() {
   const [email, setEmail] = useState("");

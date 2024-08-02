@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import SideImage from "@/components/SideImage";
-import { loginUser } from "@/api/auth";
+import { loginUser } from "../../../pages/api/auth";
 import dynamic from "next/dynamic";
 import Loading from "@/components/Loading";
 

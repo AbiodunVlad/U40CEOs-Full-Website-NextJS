@@ -13,7 +13,7 @@ import Resources from "./resources/page";
 import SuccessStories from "./successStories/page";
 import IndividualStories from "./successStories/IndividualStories";
 import Blog from "./blog/page";
-import ReadBlog from "./blog/ReadBlog";
+import ReadBlog from "./blog/[id]/page";
 import BlogPage from "./blog/BlogPage";
 
 export default function Home() {
@@ -22,11 +22,11 @@ export default function Home() {
       {/* <HomePage /> */}
       {/* <About /> */}
       {/* <Resources /> */}
-      {/* <Blog /> */}
+      <Blog />
       {/* <ReadBlog /> */}
       {/* <BlogPage /> */}
       {/* <Signup /> */}
-      <Login />
+      {/* <Login /> */}
       {/* <PageNotFound /> */}
       {/* <SomethingWentWrong /> */}
       {/* <AccessDenied /> */}

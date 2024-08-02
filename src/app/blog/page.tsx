@@ -12,10 +12,12 @@ import Image from "next/image";
 const ITEMS_PER_PAGE = 28;
 
 type Article = {
+  id: number;
   category: string;
   title: string;
   body: string;
   author: string;
+  date: string;
 };
 
 export default function Blog() {
@@ -60,22 +62,24 @@ export default function Blog() {
 
         <div className="flex flex-col w-full">
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-5 w-full mb-20">
-            {currentItems.map((article, index) => (
+            {currentItems.map((article) => (
               <div
-                key={index}
+                key={article.id}
                 className="flex flex-col items-center h-60 mb-10 shadow-md"
               >
-                <div className="w-full h-1/2 bg-blue-600"></div>
+                <Link href={`/blog/${article.id}`}>
+                  <div className="w-full h1/2 bg-blue-600"></div>
 
-                <div className="w-full  p-5 mb-10">
-                  <p className="self-start text-xxs text-black py-1 px-2 bg-purple-400 mb-3 inline-block rounded-full">
-                    {article.category || "Business"}
-                  </p>
-                  <p className="text-black text-sm font-bold mb-5">
-                    {article.title}
-                  </p>
-                  <p className="text-gray-500 text-sm">{article.body}</p>
-                </div>
+                  <div className="w-full  p-5 mb-10">
+                    <p className="self-start text-xxs text-black py-1 px-2 bg-purple-400 mb-3 inline-block rounded-full">
+                      {article.category || "Business"}
+                    </p>
+                    <p className="text-black text-sm font-bold mb-5">
+                      {article.title}
+                    </p>
+                    <p className="text-gray-500 text-sm">{article.body}</p>
+                  </div>
+                </Link>
               </div>
             ))}
           </div>
@@ -124,22 +128,24 @@ export default function Blog() {
           )}
 
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-5 w-full mb-7">
-            {currentItems.map((article, index) => (
+            {currentItems.map((article) => (
               <div
-                key={index}
+                key={article.id}
                 className="flex flex-col items-center h-60 mb-10 shadow-md"
               >
-                <div className="w-full h-1/2 bg-blue-600"></div>
+                <Link href={`/blog/${article.id}`}>
+                  <div className="w-full h-1/2 bg-blue-600"></div>
 
-                <div className="w-full p-5 mb-10">
-                  <p className="self-start text-xxs text-black py-1 px-2 bg-purple-400 mb-3 inline-block rounded-full">
-                    {article.category || "Business"}
-                  </p>
-                  <p className="text-black text-sm font-bold mb-5">
-                    {article.title}
-                  </p>
-                  <p className="text-gray-500 text-sm">{article.body}</p>
-                </div>
+                  <div className="w-full p-5 mb-10">
+                    <p className="self-start text-xxs text-black py-1 px-2 bg-purple-400 mb-3 inline-block rounded-full">
+                      {article.category || "Business"}
+                    </p>
+                    <p className="text-black text-sm font-bold mb-5">
+                      {article.title}
+                    </p>
+                    <p className="text-gray-500 text-sm">{article.body}</p>
+                  </div>
+                </Link>
               </div>
             ))}
           </div>
