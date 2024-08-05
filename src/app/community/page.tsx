@@ -1,4 +1,6 @@
 import Navbar from "@/components/Navbar";
+import { width } from "@fortawesome/free-solid-svg-icons/fa0";
+import Image from "next/image";
 import React from "react";
 
 export default function Community() {
@@ -16,6 +18,267 @@ export default function Community() {
           discussions,
           <br /> and build meaningful connections.
         </p>
+      </div>
+
+      <div className="px-20 flex flex-row justify-between gap-10 w-full">
+        <div className="flex flex-col w-2/3">
+          <div className="bg-white border-solid border-gray-500 border rounded-md flex flex-col px-16 py-7 mb-10">
+            <div className="flex flex-row justify-between mb-5">
+              <div className="flex flex-row w-1/6">
+                <Image
+                  src="/images/vlad.svg"
+                  alt=""
+                  width={30}
+                  height={30}
+                  className="rounded-full"
+                />
+              </div>
+
+              <input
+                placeholder="Write something here..."
+                type="text"
+                className="w-5/6 rounded-full bg-gray-200 flex items-center px-3 text-sm"
+              />
+            </div>
+
+            <div className="w-full flex flex-row gap-1">
+              <div className="w-1/2 bg-purple-300 flex flex-row items-center justify-center gap-2 py-1">
+                <Image
+                  src="/icons/questionIcon.svg"
+                  alt=""
+                  width={20}
+                  height={20}
+                />
+                <p className="text-black text-sm">Ask a question</p>
+              </div>
+
+              <div className="w-1/2 bg-transparent border border-purple-400 flex flex-row items-center justify-center gap-2 py-1">
+                <Image
+                  src="/icons/postIcon.svg"
+                  alt=""
+                  width={20}
+                  height={20}
+                />
+                <p className="text-black text-sm">Make a post</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col mb-5">
+            <div className="bg-white border-solid border-gray-500 border rounded-t-md flex flex-col px-16 py-7">
+              <div className="flex flex-row justify-between mb-5">
+                <div className="flex flex-row gap-3">
+                  <Image
+                    src="/images/vlad.svg"
+                    alt=""
+                    width={30}
+                    height={30}
+                    className="rounded-full"
+                  />
+
+                  <div className="flex flex-col">
+                    <p className="text-black text-sm font-bold">John Doe</p>
+                    <p className="text-gray-500 text-xs font-bold">May 20</p>
+                  </div>
+                </div>
+
+                <div>
+                  <Image
+                    src="/icons/elipses.svg"
+                    alt=""
+                    width={30}
+                    height={30}
+                  />
+                </div>
+              </div>
+
+              <div className="mb-5">
+                <p className="text-black text-xs">
+                  Our community forum is designed to be a dynamic and
+                  interactive space where members can chat, post questions,
+                  share happenings, and join conversations. The forum is
+                  structured to provide a seamless and engaging user experience,
+                  encouraging participation and fostering a sense of community.
+                </p>
+              </div>
+
+              <div className="flex flex-row self-center gap-3">
+                <Image
+                  src="/images/omobola.svg"
+                  alt=""
+                  width={200}
+                  height={200}
+                  className="bg-gray-100"
+                />
+                <Image
+                  src="/images/omobola.svg"
+                  alt=""
+                  width={200}
+                  height={200}
+                  className="bg-gray-100"
+                />
+              </div>
+            </div>
+            <div className="flex flex-row bg-black justify-between items-center px-20">
+              <div className="flex flex-row justify-between gap-2 py-1">
+                <Image src="/icons/like.svg" alt="" width={20} height={20} />
+                <p className="text-white text-sm">Like</p>
+              </div>
+
+              <div className="flex flex-row justify-between gap-2 py-1">
+                <Image src="/icons/engage.svg" alt="" width={20} height={20} />
+                <p className="text-white text-sm">Engage</p>
+              </div>
+
+              <div className="flex flex-row justify-between gap-2 py-1">
+                <Image src="/icons/share.svg" alt="" width={20} height={20} />
+                <p className="text-white text-sm">Share</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col mb-5">
+            <div className="bg-white border-solid border-gray-500 border rounded-t-md flex flex-col px-16 py-7">
+              <div className="flex flex-row justify-between mb-5">
+                <div className="flex flex-row gap-3">
+                  <Image
+                    src="/images/vlad.svg"
+                    alt=""
+                    width={30}
+                    height={30}
+                    className="rounded-full"
+                  />
+
+                  <div className="flex flex-col">
+                    <p className="text-black text-sm font-bold">John Doe</p>
+                    <p className="text-gray-500 text-xs font-bold">May 20</p>
+                  </div>
+                </div>
+
+                <div>
+                  <Image
+                    src="/icons/elipses.svg"
+                    alt=""
+                    width={30}
+                    height={30}
+                  />
+                </div>
+              </div>
+
+              <div className="mb-5">
+                <p className="text-black text-xs">
+                  Our community forum is designed to be a dynamic and
+                  interactive space where members can chat, post questions,
+                  share happenings, and join conversations. The forum is
+                  structured to provide a seamless and engaging user experience,
+                  encouraging participation and fostering a sense of community.
+                </p>
+              </div>
+
+              <div className="flex flex-row self-center gap-3">
+                <Image
+                  src="/images/omobola.svg"
+                  alt=""
+                  width={200}
+                  height={200}
+                  className="bg-gray-100"
+                />
+                <Image
+                  src="/images/omobola.svg"
+                  alt=""
+                  width={200}
+                  height={200}
+                  className="bg-gray-100"
+                />
+              </div>
+            </div>
+
+            <div className="flex flex-row bg-black justify-between items-center px-20">
+              <div className="flex flex-row justify-between gap-2 py-1">
+                <Image src="/icons/like.svg" alt="" width={20} height={20} />
+                <p className="text-white text-sm">Like</p>
+              </div>
+
+              <div className="flex flex-row justify-between gap-2 py-1">
+                <Image src="/icons/engage.svg" alt="" width={20} height={20} />
+                <p className="text-white text-sm">Engage</p>
+              </div>
+
+              <div className="flex flex-row justify-between gap-2 py-1">
+                <Image src="/icons/share.svg" alt="" width={20} height={20} />
+                <p className="text-white text-sm">Share</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col bg-white border-solid border-gray-500 border rounded-md w-1/3 px-5 py-10">
+          <p className="text-black text-2xl mb-5">
+            Choose A <br /> Membership Tier
+          </p>
+
+          <div className=" w-full border border-gray-400 mb-5"></div>
+
+          <p className="text-gray-500 text-xs leading-3 mb-5">
+            We offer different membership tiers tailored to your business’
+            growth phase. Whether you’re a student, just starting out, or a
+            seasoned entrepreneur, we’ve got you covered.
+          </p>
+
+          <div className=" w-full border border-gray-400 mb-5"></div>
+
+          <div className="flex flex-row items-start justify-between">
+            <Image src="/icons/platnum.svg" alt="" width={50} height={20} />
+
+            <div className="flex flex-col">
+              <p className="text-gray-400 text-sm mb-1">Platinum</p>
+              <p className="text-gray-400 text-xs mb-1">Bronze</p>
+            </div>
+
+            <p className="text-gray-400 text-sm mb-1">N1,650,000/annum</p>
+          </div>
+
+          <div className=" w-full border border-gray-400 mb-5"></div>
+
+          <div className="flex flex-row justify-between">
+            <Image src="/icons/platnum.svg" alt="" width={50} height={20} />
+
+            <div className="flex flex-col">
+              <p className="text-gray-400 text-sm mb-1">Gold</p>
+              <p className="text-gray-400 text-xs mb-1">Bronze</p>
+            </div>
+
+            <p className="text-gray-400 text-sm mb-1">N412,500/annum</p>
+          </div>
+
+          <div className=" w-full border border-gray-400 mb-5"></div>
+
+          <div className="flex flex-row justify-between">
+            <Image src="/icons/silver.svg" alt="" width={50} height={20} />
+
+            <div className="flex flex-col">
+              <p className="text-gray-400 text-sm mb-1">Silver</p>
+              <p className="text-gray-400 text-xs mb-1">Silver</p>
+            </div>
+
+            <p className="text-gray-400 text-sm mb-1">N15,000/annum</p>
+          </div>
+
+          <div className=" w-full border border-gray-400 mb-5"></div>
+
+          <div className="flex flex-row justify-between">
+            <Image src="/icons/bronze.svg" alt="" width={50} height={20} />
+
+            <div className="flex flex-col">
+              <p className="text-gray-400 text-sm mb-1">Bronze</p>
+              <p className="text-gray-400 text-xs mb-1">Gold</p>
+            </div>
+
+            <p className="text-gray-400 text-sm mb-1">N75,000/annum</p>
+          </div>
+
+          <button className="bg-pink-500 text-white">See more</button>
+        </div>
       </div>
     </div>
   );

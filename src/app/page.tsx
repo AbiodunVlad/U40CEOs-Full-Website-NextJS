@@ -23,12 +23,12 @@ export default function Home() {
       {/* <HomePage /> */}
       {/* <About /> */}
       {/* <Resources /> */}
-      {/* <Blog /> */}
+      <Blog />
       {/* <ReadBlog /> */}
       {/* <BlogPage /> */}
-      {/* <Community/> */}
+      {/* <Community /> */}
       {/* <Signup /> */}
-      <Login />
+      {/* <Login /> */}
       {/* <PageNotFound /> */}
       {/* <SomethingWentWrong /> */}
       {/* <AccessDenied /> */}

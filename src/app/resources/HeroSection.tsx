@@ -1,10 +1,10 @@
 import Image from "next/image";
 import React from "react";
-import Course from "@/app/components/cards/Course";
-import Event from "@/app/components/cards/Event";
-import Carousel from "@/app/components/Carousel";
-import MediaFeature from "@/app/components/cards/MediaFeature";
-import Editorials from "@/app/components/cards/Editorials";
+import Course from "@/components/cards/Course";
+import Event from "@/components/cards/Event";
+import Carousel from "@/components/Carousel";
+import MediaFeature from "@/components/cards/MediaFeature";
+import Editorials from "@/components/cards/Editorials";
 
 const slides = [
   <Course key="course1" />,

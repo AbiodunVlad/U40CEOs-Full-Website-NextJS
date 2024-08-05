@@ -69,7 +69,7 @@ export default function Blog() {
                 className="flex flex-col items-center h-60 mb-10 shadow-md"
               >
                 <Link href={`/blog/${article.id}`}>
-                  <div className="w-full h1/2 bg-blue-600"></div>
+                  <div className="w-full h1/2 bg-blue-600">jhijlkm</div>
 
                   <div className="w-full  p-5 mb-10">
                     <p className="self-start text-xxs text-black py-1 px-2 bg-purple-400 mb-3 inline-block rounded-full">
@@ -174,7 +174,6 @@ export default function Blog() {
 
       <BecomeAMember />
 
-     
       <TVseries />
       <Footer />
     </div>
