@@ -15,6 +15,7 @@ import IndividualStories from "./successStories/IndividualStories";
 import Blog from "./blog/page";
 import ReadBlog from "./blog/[id]/page";
 import BlogPage from "./blog/BlogPage";
+import Community from "./community/page";
 
 export default function Home() {
   return (
@@ -22,11 +23,12 @@ export default function Home() {
       {/* <HomePage /> */}
       {/* <About /> */}
       {/* <Resources /> */}
-      <Blog />
+      {/* <Blog /> */}
       {/* <ReadBlog /> */}
       {/* <BlogPage /> */}
+      {/* <Community/> */}
       {/* <Signup /> */}
-      {/* <Login /> */}
+      <Login />
       {/* <PageNotFound /> */}
       {/* <SomethingWentWrong /> */}
       {/* <AccessDenied /> */}

@@ -1,6 +1,6 @@
 "use client";
-import Footer from "@/app/components/Footer";
-import Navbar from "@/app/components/Navbar";
+import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import React, { useState } from "react";
 import TVseries from "../homePage/tvSeries";
