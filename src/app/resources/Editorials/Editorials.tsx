@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import EditorialCarousel from "./EditorialCarousel";
-import Search from "@/app/components/Search";
+import Search from "@/components/Search";
 import Magazine from "./Magazine";
 import Books from "./Books";
 

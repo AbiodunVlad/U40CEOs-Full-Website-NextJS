@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faFilter } from "@fortawesome/free-solid-svg-icons";
-import Search from "@/app/components/Search";
+import Search from "@/components/Search";
 
 const ITEMS_PER_PAGE = 28;
 
