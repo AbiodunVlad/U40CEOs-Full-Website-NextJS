@@ -54,7 +54,7 @@
 const BaseURL = "https://u4cbackendservices.onrender.com/api/auth";
 
 interface UserData {
-  fullName?: String;
+  fullName?: string;
   email: string;
   password: string;
   confirmPassword?: string;
@@ -62,16 +62,13 @@ interface UserData {
 
 export const signupUser = async (userData: UserData): Promise<any> => {
   try {
-    const response = await fetch(
-      `https://u4cbackendservices.onrender.com/api/auth/sign-up`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userData),
-      }
-    );
+    const response = await fetch(`${BaseURL}/sign-up`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userData),
+    });
 
     if (!response.ok) {
       const errorData = await response.json();
