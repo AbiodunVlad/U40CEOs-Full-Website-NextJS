@@ -6,6 +6,7 @@ import BlogSearch from "../BlogSearch";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 import Link from "next/link";
+import BecomeAMember from "@/components/BecomeAMember";
 // import { useRouter } from "next/router";
 
 type Article = {
@@ -136,6 +137,9 @@ export default function ReadBlog() {
           ))}
         </div>
       </div>
+
+      <BecomeAMember />
+
       <Footer />
     </div>
   );

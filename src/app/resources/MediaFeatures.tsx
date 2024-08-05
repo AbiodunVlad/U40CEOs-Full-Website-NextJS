@@ -1,8 +1,9 @@
 "use client";
-import Search from "@/app/components/Search";
+import Search from "@/components/Search";
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import BecomeAMember from "@/components/BecomeAMember";
 
 const ITEMS_PER_PAGE = 28;
 
@@ -132,19 +133,7 @@ export default function MediaFeatures() {
         </div>
       </div>
 
-      <div className="flex flex-col items-center bg-gradient-to-br from-purple-600 to-blue-400 px-10 md:px-20 py-10">
-        <h5 className="text-white text-lg text-center font-bold mb-2 md:mb-5 uppercase">
-          Looking To Join The League Of Successful <br /> Businesses In Africa?
-        </h5>
-
-        <p className="text-white text-xs uppercase mb-5">
-          Book a free consultation with us today
-        </p>
-
-        <button className="text-white text-sm font-bold bg-purple-600 rounded-full py-3 px-5">
-          BECOME A MEMBER
-        </button>
-      </div>
+      <BecomeAMember />
     </div>
   );
 }
