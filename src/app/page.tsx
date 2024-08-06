@@ -26,9 +26,9 @@ export default function Home() {
       {/* <Blog /> */}
       {/* <ReadBlog /> */}
       {/* <BlogPage /> */}
-      {/* <Community /> */}
+      <Community />
       {/* <Signup /> */}
-      <Login />
+      {/* <Login /> */}
       {/* <PageNotFound /> */}
       {/* <SomethingWentWrong /> */}
       {/* <AccessDenied /> */}
