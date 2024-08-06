@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import SideImage from "@/components/SideImage";
 import { signupUser } from "../../../pages/api/auth";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEyeLowVision, faEye } from "@fortawesome/free-solid-svg-icons";
 
 export default function Signup() {
   const [email, setEmail] = useState("");
@@ -13,6 +15,7 @@ export default function Signup() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const router = useRouter();
 
@@ -24,6 +27,10 @@ export default function Signup() {
 
   const validatePassword = (password: string) => {
     return password.length >= 6;
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
   };
 
   const signup = async () => {
@@ -118,7 +125,11 @@ export default function Signup() {
           height={100}
         />
 
-        <h2 className="font-bold text-black text-3xl mb-5">Signup</h2>
+        <h2 className="font-bold text-black text-3xl mb-3">Sign up</h2>
+
+        <p className="text-gray-500 text-xs mb-7">
+          Sign up to enjoy full access to Under 40 CEOs resources
+        </p>
 
         {/* <input
           className="text-black w-full md:w-3/4 p-2 border border-red-300 rounded-lg mb-5 focus:outline-none focus:border-red-800"
@@ -149,28 +160,44 @@ export default function Signup() {
           onChange={(e) => setEmail(e.target.value)}
         />
 
-        <input
-          className="text-black w-full md:w-3/4 p-2 border border-red-300 rounded-lg mb-5 focus:outline-none focus:border-red-800"
-          placeholder="Password"
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+        <div className="w-full md:w-3/4 relative">
+          <input
+            className="text-black w-full p-2 border border-red-300 rounded-lg mb-5 focus:outline-none focus:border-red-800"
+            placeholder="Password"
+            type={showPassword ? "text" : "password"}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <FontAwesomeIcon
+            icon={showPassword ? faEye : faEyeLowVision}
+            size="sm"
+            className="text-gray-400 absolute top-3 right-5"
+            onClick={togglePasswordVisibility}
+          />
+        </div>
 
-        <input
-          className="text-black w-full md:w-3/4 p-2 border border-red-300 rounded-lg mb-5 focus:outline-none focus:border-red-800"
-          placeholder="Confirm Password"
-          type="password"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-        />
+        <div className="w-full md:w-3/4 relative">
+          <input
+            className="text-black w-full p-2 border border-red-300 rounded-lg mb-5 focus:outline-none focus:border-red-800"
+            placeholder="Confirm Password"
+            type={showPassword ? "text" : "password"}
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          />
+          <FontAwesomeIcon
+            icon={showPassword ? faEye : faEyeLowVision}
+            size="sm"
+            className="text-gray-400 absolute top-3 right-5"
+            onClick={togglePasswordVisibility}
+          />
+        </div>
 
         <button
           onClick={signup}
-          className="w-full md:w-3/4 p-2 border bg-purple-700 rounded-full mb-5 text-white font-bold"
+          className="w-full md:w-3/4 p-2 border bg-purple-700 rounded-full mb-5 text-white font-bold uppercase"
           disabled={loading}
         >
-          {loading ? "Signing you up..." : "Signup"}
+          {loading ? "Signing you up..." : "Sign up"}
         </button>
 
         <div className="flex items-center mb-5">

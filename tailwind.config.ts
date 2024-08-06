@@ -17,6 +17,9 @@ const config: Config = {
         xxs: "0.625rem",
         xxxs: "0.3125rem",
       },
+      // fontFamily: {
+      //   sans: ["Figtree", "ui-sans-serif", "system-ui"],
+      // },
     },
   },
   plugins: [],

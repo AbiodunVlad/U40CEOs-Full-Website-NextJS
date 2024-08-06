@@ -7,6 +7,8 @@ import SideImage from "@/components/SideImage";
 import { loginUser } from "../../../pages/api/auth";
 import dynamic from "next/dynamic";
 import Loading from "@/components/Loading";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEyeLowVision, faEye } from "@fortawesome/free-solid-svg-icons";
 
 const LazyHomePage = dynamic(() => import("../homePage/page"), {
   loading: () => <Loading />,
@@ -19,14 +21,17 @@ export default function Login() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [redirecting, setRedirecting] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const router = useRouter();
 
   const [user, setUser] = useState({
-    // email: "",
-    // password: "",
     keepSignedIn: false,
   });
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   // const [isClient, setIsClient] = useState(false);
 
@@ -86,7 +91,13 @@ export default function Login() {
           height={100}
         />
 
-        <h2 className="font-bold text-black text-3xl mb-5">Login</h2>
+        <h2 className="font-bold text-black text-3xl mb-3">Sign in</h2>
+
+        <p className="text-gray-500 text-xs mb-7">
+          Please login to continue to your account.
+        </p>
+
+        {error && <p className="text-red-500 mb-5">{error}</p>}
 
         <input
           className="text-black w-full md:w-3/4 p-2 border border-red-300 rounded-lg mb-5 focus:outline-none focus:border-red-800"
@@ -97,19 +108,27 @@ export default function Login() {
           onChange={(e) => setEmail(e.target.value)}
         />
 
-        <input
-          className="text-black w-full md:w-3/4 p-2 border border-red-300 rounded-lg mb-5 focus:outline-none focus:border-red-800"
-          placeholder="Password"
-          type="password"
-          // value={user.password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+        <div className="w-full md:w-3/4 relative">
+          <input
+            className="text-black w-full p-2 border border-red-300 rounded-lg mb-5 focus:outline-none focus:border-red-800"
+            placeholder="Password"
+            type={showPassword ? "text" : "password"}
+            // value={user.password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <FontAwesomeIcon
+            icon={showPassword ? faEye : faEyeLowVision}
+            size="sm"
+            className="text-gray-400 absolute top-3 right-5"
+            onClick={togglePasswordVisibility}
+          />
+        </div>
 
         <button
           onClick={login}
-          className="w-full md:w-3/4 p-2 border bg-purple-700 rounded-full mb-5 text-white font-bold"
+          className="w-full md:w-3/4 p-2 border bg-purple-700 rounded-full mb-5 text-white font-bold uppercase"
         >
-          {loading ? "Logging you in..." : "Login"}
+          {loading ? "Signing you in..." : "Sign in"}
         </button>
 
         <div className="flex items-center mb-5">
