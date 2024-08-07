@@ -26,21 +26,23 @@ export default function SuccessStories() {
     <div className="flex flex-col text-black overflow-hidden">
       <Navbar />
 
-      <div className="flex flex-col py-20 px-20">
-        <h1 className="text-black text-center text-3xl font-extrabold mb-2 leading-10">
+      <div className="flex flex-col py-10 md:py-20 px-5 md:px-20">
+        <h1 className="text-black text-center text-2xl md:text-3xl font-extrabold mb-2 leading-7 md:leading-10">
           TANGIBLE RESULTS,
           <br />
           TRANSFORMED BUSINESS
         </h1>
-        <p className="text-gray-500 text-center text-xs">
+        <p className="text-gray-500 text-center text-xs leading-3">
           Draw inspiration from our community, from proven Founders to budding
-          <br />
+          <span className="hidden md:flex">
+            <br />
+          </span>
           entreprenuers making waves.
         </p>
       </div>
 
-      <div className="px-20 w-full h-dvh flex flex-row justify-between gap-28 mb-10">
-        <div className="flex flex-col w-1/3">
+      <div className="px-4 md:px-20 w-full  flex flex-col md:flex-row justify-between gap-4 md:gap-28 mb-5">
+        <div className="flex flex-col w-full md:w-1/3">
           <p className="text-sm text-purple-600 font-bold mb-5">Filter</p>
 
           <select className="bg-purple-300 py-4 px-5 w-full rounded-2xl mb-4 text-sm cursor-pointer">
@@ -87,192 +89,159 @@ export default function SuccessStories() {
             <option value="">Location5</option>
           </select>
         </div>
+      </div>
 
-        <div className="flex flex-col w-1/3 border border-black">
-          <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
-          <div className="w-full px-10 py-5">
-            <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
-            <p className="text-pink-600 text-xxs mb-3">
-              Marketing Consultant @ Landingfolio
-            </p>
-            <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
-            <p className="text-blue-500 text-xxs mb-5">
-              Topic: Sales & Marketing for Business Growth
-            </p>
+      <div className="w-full flex md:flex-col flex-row overflow-x-auto gap-3 mb-3">
+        <div className="pl-5 md:px-20 md:w-full flex-row flex  md:flex-row justify-between gap-3 md:gap-28 md:mb-20">
+          <div className="flex flex-col w-screen md:h-dvh md:w-1/3 border border-black">
+            <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
+            <div className="w-full px-4 md:px-10 py-5">
+              <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
+              <p className="text-pink-600 text-xxs mb-3">
+                Marketing Consultant @ Landingfolio
+              </p>
+              <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
+              <p className="text-blue-500 text-xxs mb-5">
+                Topic: Sales & Marketing for Business Growth
+              </p>
 
-            <p className="text-black text-xxs mb-6">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
-              ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua.
-            </p>
+              <p className="text-black text-xxs md:mb-6">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
+                ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col w-screen md:h-dvh md:w-1/3 border border-black">
+            <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
+            <div className="w-full px-4 md:px-10 py-5">
+              <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
+              <p className="text-pink-600 text-xxs mb-3">
+                Marketing Consultant @ Landingfolio
+              </p>
+              <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
+              <p className="text-blue-500 text-xxs mb-5">
+                Topic: Sales & Marketing for Business Growth
+              </p>
+
+              <p className="text-black text-xxs mb-6">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
+                ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col w-screen md:h-dvh md:w-1/3 border border-black">
+            <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
+            <div className="w-full px-4 md:px-10 py-5">
+              <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
+              <p className="text-pink-600 text-xxs mb-3">
+                Marketing Consultant @ Landingfolio
+              </p>
+              <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
+              <p className="text-blue-500 text-xxs mb-5">
+                Topic: Sales & Marketing for Business Growth
+              </p>
+
+              <p className="text-black text-xxs mb-6">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
+                ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+            </div>
           </div>
         </div>
 
-        <div className="flex flex-col w-1/3 border border-black">
-          <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
-          <div className="w-full px-10 py-5">
-            <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
-            <p className="text-pink-600 text-xxs mb-3">
-              Marketing Consultant @ Landingfolio
-            </p>
-            <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
-            <p className="text-blue-500 text-xxs mb-5">
-              Topic: Sales & Marketing for Business Growth
-            </p>
+        <div className=" md:px-20 md:w-full flex-row flex  md:flex-row justify-between gap-3 md:gap-28">
+          <div className="flex flex-col w-screen md:h-dvh md:w-1/3 border border-black">
+            <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
+            <div className="w-full px-4 md:px-10 py-5">
+              <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
+              <p className="text-pink-600 text-xxs mb-3">
+                Marketing Consultant @ Landingfolio
+              </p>
+              <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
+              <p className="text-blue-500 text-xxs mb-5">
+                Topic: Sales & Marketing for Business Growth
+              </p>
 
-            <p className="text-black text-xxs mb-6">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
-              ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua.
-            </p>
+              <p className="text-black text-xxs md:mb-6">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
+                ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col w-screen md:h-dvh md:w-1/3 border border-black">
+            <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
+            <div className="w-full px-4 md:px-10 py-5">
+              <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
+              <p className="text-pink-600 text-xxs mb-3">
+                Marketing Consultant @ Landingfolio
+              </p>
+              <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
+              <p className="text-blue-500 text-xxs mb-5">
+                Topic: Sales & Marketing for Business Growth
+              </p>
+
+              <p className="text-black text-xxs mb-6">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
+                ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col w-screen md:h-dvh md:w-1/3 border border-black">
+            <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
+            <div className="w-full px-4 md:px-10 py-5">
+              <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
+              <p className="text-pink-600 text-xxs mb-3">
+                Marketing Consultant @ Landingfolio
+              </p>
+              <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
+              <p className="text-blue-500 text-xxs mb-5">
+                Topic: Sales & Marketing for Business Growth
+              </p>
+
+              <p className="text-black text-xxs mb-6">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
+                ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="px-20 w-full h-dvh flex flex-row justify-between gap-28 mb-10">
-        <div className="flex flex-col w-1/3 border border-black">
-          <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
-          <div className="w-full px-10 py-5">
-            <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
-            <p className="text-pink-600 text-xxs mb-3">
-              Marketing Consultant @ Landingfolio
-            </p>
-            <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
-            <p className="text-blue-500 text-xxs mb-5">
-              Topic: Sales & Marketing for Business Growth
-            </p>
-
-            <p className="text-black text-xxs mb-6">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
-              ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-          </div>
-        </div>
-
-        <div className="flex flex-col w-1/3 border border-black">
-          <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
-          <div className="w-full px-10 py-5">
-            <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
-            <p className="text-pink-600 text-xxs mb-3">
-              Marketing Consultant @ Landingfolio
-            </p>
-            <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
-            <p className="text-blue-500 text-xxs mb-5">
-              Topic: Sales & Marketing for Business Growth
-            </p>
-
-            <p className="text-black text-xxs mb-6">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
-              ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-          </div>
-        </div>
-
-        <div className="flex flex-col w-1/3 border border-black">
-          <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
-          <div className="w-full px-10 py-5">
-            <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
-            <p className="text-pink-600 text-xxs mb-3">
-              Marketing Consultant @ Landingfolio
-            </p>
-            <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
-            <p className="text-blue-500 text-xxs mb-5">
-              Topic: Sales & Marketing for Business Growth
-            </p>
-
-            <p className="text-black text-xxs mb-6">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
-              ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-          </div>
-        </div>
+      <div className="md:hidden flex justify-center mb-10">
+        {" "}
+        <p className="text-gray-500 text-xxs text-center font-bold">
+          Swipe to see more
+        </p>
       </div>
 
-      <div className="px-20 w-full h-dvh flex flex-row justify-between gap-28 mb-20">
-        <div className="flex flex-col w-1/3 border border-black">
-          <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
-          <div className="w-full px-10 py-5">
-            <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
-            <p className="text-pink-600 text-xxs mb-3">
-              Marketing Consultant @ Landingfolio
-            </p>
-            <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
-            <p className="text-blue-500 text-xxs mb-5">
-              Topic: Sales & Marketing for Business Growth
-            </p>
-
-            <p className="text-black text-xxs mb-6">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
-              ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-          </div>
+      <div className="bg-gray-400 flex flex-col md:flex-row justify-between mb-20 px-5 md:px-40 py-10">
+        <div className="w-full md:w-1/2 flex relative mb-10">
+          <div className="bg-black w-full md:w-2/3 h-44 md:h-52"></div>
+          <div className="absolute top-2 -left-2 bg-gradient-to-br from-purple-700 to-blue-700 w-full md:w-2/3 h-44 md:h-52"></div>
         </div>
 
-        <div className="flex flex-col w-1/3 border border-black">
-          <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
-          <div className="w-full px-10 py-5">
-            <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
-            <p className="text-pink-600 text-xxs mb-3">
-              Marketing Consultant @ Landingfolio
-            </p>
-            <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
-            <p className="text-blue-500 text-xxs mb-5">
-              Topic: Sales & Marketing for Business Growth
-            </p>
-
-            <p className="text-black text-xxs mb-6">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
-              ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-          </div>
-        </div>
-
-        <div className="flex flex-col w-1/3 border border-black">
-          <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
-          <div className="w-full px-10 py-5">
-            <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
-            <p className="text-pink-600 text-xxs mb-3">
-              Marketing Consultant @ Landingfolio
-            </p>
-            <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
-            <p className="text-blue-500 text-xxs mb-5">
-              Topic: Sales & Marketing for Business Growth
-            </p>
-
-            <p className="text-black text-xxs mb-6">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
-              ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-gray-400 flex flex-row justify-between mb-20 px-40 py-10">
-        <div className="w-1/2 flex relative">
-          <div className="bg-black w-2/3 h-52"></div>
-          <div className="absolute top-2 -left-2 bg-gradient-to-br from-purple-700 to-blue-700 w-2/3 h-52"></div>
-        </div>
-
-        <div className="w-1/2">
-          <h1 className="text-pink-600 text-5xl font-extrabold mb-5">
+        <div className="w-full md:w-1/2">
+          <h1 className="text-pink-600 text-lg md:text-5xl font-extrabold mb-2 md:mb-5">
             LANRE JOHN
           </h1>
 
-          <p className="text-black text-lg uppercase">
+          <p className="text-black text-xs md:text-lg uppercase">
             We Provide All The Necessary Tools
             <br /> For Young Business Leaders To Do
             <br />
@@ -281,134 +250,143 @@ export default function SuccessStories() {
         </div>
       </div>
 
-      <div className="px-20 w-full h-dvh flex flex-row justify-between gap-28 mb-20">
-        <div className="flex flex-col w-1/3 border border-black">
-          <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
-          <div className="w-full px-10 py-5">
-            <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
-            <p className="text-pink-600 text-xxs mb-3">
-              Marketing Consultant @ Landingfolio
-            </p>
-            <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
-            <p className="text-blue-500 text-xxs mb-5">
-              Topic: Sales & Marketing for Business Growth
-            </p>
+      <div className="w-full flex md:flex-col flex-row overflow-x-auto gap-3 mb-3">
+        <div className="pl-5 md:px-20 md:w-full flex-row flex  md:flex-row justify-between gap-3 md:gap-28 md:mb-20">
+          <div className="flex flex-col w-screen md:h-dvh md:w-1/3 border border-black">
+            <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
+            <div className="w-full px-4 md:px-10 py-5">
+              <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
+              <p className="text-pink-600 text-xxs mb-3">
+                Marketing Consultant @ Landingfolio
+              </p>
+              <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
+              <p className="text-blue-500 text-xxs mb-5">
+                Topic: Sales & Marketing for Business Growth
+              </p>
 
-            <p className="text-black text-xxs mb-6">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
-              ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua.
-            </p>
+              <p className="text-black text-xxs md:mb-6">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
+                ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col w-screen md:h-dvh md:w-1/3 border border-black">
+            <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
+            <div className="w-full px-4 md:px-10 py-5">
+              <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
+              <p className="text-pink-600 text-xxs mb-3">
+                Marketing Consultant @ Landingfolio
+              </p>
+              <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
+              <p className="text-blue-500 text-xxs mb-5">
+                Topic: Sales & Marketing for Business Growth
+              </p>
+
+              <p className="text-black text-xxs mb-6">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
+                ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col w-screen md:h-dvh md:w-1/3 border border-black">
+            <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
+            <div className="w-full px-4 md:px-10 py-5">
+              <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
+              <p className="text-pink-600 text-xxs mb-3">
+                Marketing Consultant @ Landingfolio
+              </p>
+              <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
+              <p className="text-blue-500 text-xxs mb-5">
+                Topic: Sales & Marketing for Business Growth
+              </p>
+
+              <p className="text-black text-xxs mb-6">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
+                ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+            </div>
           </div>
         </div>
 
-        <div className="flex flex-col w-1/3 border border-black">
-          <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
-          <div className="w-full px-10 py-5">
-            <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
-            <p className="text-pink-600 text-xxs mb-3">
-              Marketing Consultant @ Landingfolio
-            </p>
-            <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
-            <p className="text-blue-500 text-xxs mb-5">
-              Topic: Sales & Marketing for Business Growth
-            </p>
+        <div className=" md:px-20 md:w-full flex-row flex  md:flex-row justify-between gap-3 md:gap-28">
+          <div className="flex flex-col w-screen md:h-dvh md:w-1/3 border border-black">
+            <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
+            <div className="w-full px-4 md:px-10 py-5">
+              <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
+              <p className="text-pink-600 text-xxs mb-3">
+                Marketing Consultant @ Landingfolio
+              </p>
+              <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
+              <p className="text-blue-500 text-xxs mb-5">
+                Topic: Sales & Marketing for Business Growth
+              </p>
 
-            <p className="text-black text-xxs mb-6">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
-              ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua.
-            </p>
+              <p className="text-black text-xxs md:mb-6">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
+                ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+            </div>
           </div>
-        </div>
 
-        <div className="flex flex-col w-1/3 border border-black">
-          <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
-          <div className="w-full px-10 py-5">
-            <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
-            <p className="text-pink-600 text-xxs mb-3">
-              Marketing Consultant @ Landingfolio
-            </p>
-            <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
-            <p className="text-blue-500 text-xxs mb-5">
-              Topic: Sales & Marketing for Business Growth
-            </p>
+          <div className="flex flex-col w-screen md:h-dvh md:w-1/3 border border-black">
+            <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
+            <div className="w-full px-4 md:px-10 py-5">
+              <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
+              <p className="text-pink-600 text-xxs mb-3">
+                Marketing Consultant @ Landingfolio
+              </p>
+              <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
+              <p className="text-blue-500 text-xxs mb-5">
+                Topic: Sales & Marketing for Business Growth
+              </p>
 
-            <p className="text-black text-xxs mb-6">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
-              ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua.
-            </p>
+              <p className="text-black text-xxs mb-6">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
+                ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col w-screen md:h-dvh md:w-1/3 border border-black">
+            <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
+            <div className="w-full px-4 md:px-10 py-5">
+              <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
+              <p className="text-pink-600 text-xxs mb-3">
+                Marketing Consultant @ Landingfolio
+              </p>
+              <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
+              <p className="text-blue-500 text-xxs mb-5">
+                Topic: Sales & Marketing for Business Growth
+              </p>
+
+              <p className="text-black text-xxs mb-6">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
+                ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="px-20 w-full h-dvh flex flex-row justify-between gap-28 mb-20">
-        <div className="flex flex-col w-1/3 border border-black">
-          <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
-          <div className="w-full px-10 py-5">
-            <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
-            <p className="text-pink-600 text-xxs mb-3">
-              Marketing Consultant @ Landingfolio
-            </p>
-            <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
-            <p className="text-blue-500 text-xxs mb-5">
-              Topic: Sales & Marketing for Business Growth
-            </p>
-
-            <p className="text-black text-xxs mb-6">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
-              ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-          </div>
-        </div>
-
-        <div className="flex flex-col w-1/3 border border-black">
-          <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
-          <div className="w-full px-10 py-5">
-            <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
-            <p className="text-pink-600 text-xxs mb-3">
-              Marketing Consultant @ Landingfolio
-            </p>
-            <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
-            <p className="text-blue-500 text-xxs mb-5">
-              Topic: Sales & Marketing for Business Growth
-            </p>
-
-            <p className="text-black text-xxs mb-6">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
-              ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-          </div>
-        </div>
-
-        <div className="flex flex-col w-1/3 border border-black">
-          <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
-          <div className="w-full px-10 py-5">
-            <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
-            <p className="text-pink-600 text-xxs mb-3">
-              Marketing Consultant @ Landingfolio
-            </p>
-            <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
-            <p className="text-blue-500 text-xxs mb-5">
-              Topic: Sales & Marketing for Business Growth
-            </p>
-
-            <p className="text-black text-xxs mb-6">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
-              ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-          </div>
-        </div>
+      <div className="md:hidden flex justify-center mb-10">
+        {" "}
+        <p className="text-gray-500 text-xxs text-center font-bold">
+          Swipe to see more
+        </p>
       </div>
 
       <div className="flex justify-center mt-10">
@@ -430,7 +408,7 @@ export default function SuccessStories() {
         )}
       </div>
 
-      <div className="flex flex-col items-center justify-center gap-10 md:flex-row mb-20">
+      <div className="flex flex-col items-center justify-center gap-10 px-5 md:flex-row mb-20">
         <div className="w-full md:w-1/5 flex flex-col text-start  mb-8 md:mb-0">
           <Image
             src="/images/omobola.svg"
@@ -504,14 +482,17 @@ export default function SuccessStories() {
         </div>
       </div>
 
-      <div className="flex flex-col items-center bg-gradient-to-r from-pink-600 to-purple-700 px-20 py-10">
-        <h5 className="text-white text-lg text-center font-bold mb-5 uppercase">
+      <div className="flex flex-col items-center bg-gradient-to-r from-pink-600 to-purple-700 px-5 md:px-20 py-10">
+        <h5 className="text-white text-lg text-center font-bold mb-2 md:mb-5 uppercase">
           WANT TO SHARE YOUR SUCCESS STORY?
         </h5>
 
         <p className="text-white text-xs text-center uppercase mb-5">
           are you a memebr? want to tell us how founder has helped you?
-          <br /> impact others with your story? we’d love to hear from you
+          <span className="md:flex hidden">
+            <br />
+          </span>{" "}
+          impact others with your story? we’d love to hear from you
         </p>
 
         <button className="text-white text-sm font-bold bg-blue-600 rounded-full py-3 px-5">
