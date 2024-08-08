@@ -28,7 +28,7 @@ export default function Home() {
       {/* <BlogPage /> */}
       {/* <Community /> */}
       {/* <Signup /> */}
-      {/* <Login /> */}
+      <Login />
       {/* <PageNotFound /> */}
       {/* <SomethingWentWrong /> */}
       {/* <AccessDenied /> */}
@@ -36,7 +36,7 @@ export default function Home() {
       {/* <UnderMaintenance /> */}
 
       {/* <SuccessStories /> */}
-      <IndividualStories />
+      {/* <IndividualStories /> */}
     </main>
   );
 }

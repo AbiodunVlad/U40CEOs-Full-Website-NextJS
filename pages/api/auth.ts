@@ -85,16 +85,13 @@ export const signupUser = async (userData: UserData): Promise<any> => {
 
 export const loginUser = async (userData: UserData): Promise<any> => {
   try {
-    const response = await fetch(
-      `https://u4cbackendservices.onrender.com/api/auth/sign-in`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userData),
-      }
-    );
+    const response = await fetch(`${BaseURL}/sign-in`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userData),
+    });
 
     if (!response.ok) {
       const errorData = await response.json();
