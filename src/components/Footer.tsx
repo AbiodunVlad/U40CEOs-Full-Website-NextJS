@@ -27,7 +27,7 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="Email"
-                className="p-4 mb-5 rounded-lg"
+                className="py-2 px-3 mb-5 rounded-lg text-black"
               />
               <button
                 className="py-3 px-5 rounded-full text-white text-xs font-bold"

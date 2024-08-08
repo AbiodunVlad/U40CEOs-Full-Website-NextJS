@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -12,12 +12,15 @@ import {
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
   const router = useRouter();
+
+  const isActive = (path: any) => (pathname === path ? "text-purple-500" : "");
 
   const logout = async () => {};
 
@@ -45,49 +48,77 @@ export default function Navbar() {
       >
         <Link href="/homePage">
           {" "}
-          <li className="text-xs font-bold mb-4 md:mb-0 md:mr-10">Home</li>
+          <li
+            className={`text-xs font-bold mb-4 md:mb-0 md:mr-10 ${isActive(
+              "/homePage"
+            )}`}
+          >
+            Home
+          </li>
         </Link>
 
         <Link href="/aboutPage">
           {" "}
-          <li className="font-bold text-xs text-center mb-4 md:mb-0 md:mr-10">
+          <li
+            className={`font-bold text-xs text-center mb-4 md:mb-0 md:mr-10 ${isActive(
+              "/aboutPage"
+            )}`}
+          >
             About Us
           </li>
         </Link>
 
         <Link href="/resources">
-          <li className="font-bold text-xs mb-4 md:mb-0 md:mr-10">Resources</li>
+          <li
+            className={`font-bold text-xs mb-4 md:mb-0 md:mr-10 ${isActive(
+              "/resources"
+            )}`}
+          >
+            Resources
+          </li>
         </Link>
 
         <Link href="/successStories">
           {" "}
-          <li className="font-bold text-xs text-center mb-4 md:mb-0 md:mr-10">
+          <li
+            className={`font-bold text-xs text-center mb-4 md:mb-0 md:mr-10 ${isActive(
+              "/successStories"
+            )}`}
+          >
             Success Stories
           </li>
         </Link>
 
         <Link href="/blog">
-          <li className="font-bold text-xs mb-4 md:mb-0 md:mr-10">Blog</li>
+          <li
+            className={`font-bold text-xs mb-4 md:mb-0 md:mr-10 ${isActive(
+              "/blog"
+            )}`}
+          >
+            Blog
+          </li>
         </Link>
 
         <Link href="/community">
-          <button className="font-medium text-xs text-center px-5 py-1 mb-4 md:mb-0 md:mr-5 bg-black rounded-full text-white">
+          <button className="font-medium text-xxs text-center px-5 py-1 mb-4 md:mb-0 md:mr-5 bg-black rounded-full text-white">
             JOIN OUR <br /> COMMUNITY
           </button>
         </Link>
 
         <button
-          className="font-medium text-xs text-center px-6 py-3 mb-4 md:mb-0 md:mr-5 rounded-full text-white"
+          className="font-medium text-xxs text-center px-6 py-3 mb-4 md:mb-0 md:mr-5 rounded-full text-white"
           style={{ backgroundColor: "#C54ED8" }}
         >
           COURSES
         </button>
-        <button className="flex gap-1 font-medium text-xs text-center px-6 py-3 border border-pink-400 mb-4 md:mb-0 md:mr-5 rounded-full text-pink-400">
+
+        <button className="flex gap-1 font-medium text-xxs text-center px-6 py-3 border border-pink-400 mb-4 md:mb-0 md:mr-5 rounded-full text-pink-400">
           <FontAwesomeIcon icon={faBagShopping} size="lg" /> Shop
         </button>
+
         <button
           onClick={logout}
-          className="font-medium text-xs text-center px-6 py-3 border border-pink-400 rounded-full text-pink-400"
+          className="font-medium text-xxs text-center px-6 py-3 border border-pink-400 rounded-full text-pink-400"
         >
           Signout
         </button>

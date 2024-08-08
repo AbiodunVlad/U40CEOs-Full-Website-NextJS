@@ -30,7 +30,7 @@ export default function ResourceHeaders() {
         {headers.map((header) => (
           <div key={header} className="flex flex-col items-center">
             <p
-              className={`text-sm mb-1 cursor-pointer ${
+              className={`md:text-sm text-xxs mb-1 cursor-pointer ${
                 activeHeader === header ? "text-purple-500" : "text-gray-500"
               }`}
               onClick={() => setActiveHeader(header)}
@@ -47,7 +47,7 @@ export default function ResourceHeaders() {
           </div>
         ))}
       </div>
-      <div className="border border-gray-400 mx-10"></div>
+      <div className="border border-gray-400 md:mx-10 mx-3"></div>
       <div>{renderContent()}</div>
     </>
   );

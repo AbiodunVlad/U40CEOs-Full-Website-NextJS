@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import EditorialCarousel from "./EditorialCarousel";
 import Search from "@/components/Search";
 import Magazine from "./Magazine";
@@ -45,6 +45,26 @@ const slideImages = [
 ];
 
 export default function Editorials() {
+  const [activeEditorial, setActiveEditorial] = useState("All");
+
+  const types = ["All", "Magazine", "Books"];
+
+  const renderEditorials = () => {
+    switch (activeEditorial) {
+      case "All":
+        return (
+          <>
+            <Magazine /> <Books />
+          </>
+        );
+      case "Magazine":
+        return <Magazine />;
+      case "Books":
+        return <Books />;
+      default:
+        return null;
+    }
+  };
   return (
     <div className="flex flex-col pt-0">
       <div className="w-full -mb-14">
@@ -53,23 +73,26 @@ export default function Editorials() {
 
       <Search />
 
-      <div className="flex flex-row justify-between items-start px-5 md:px-20 pt-10 pb-20 w-full">
-        <div className="flex flex-col w-1/5">
+      <div className="flex flex-col md:flex-row justify-between items-start px-5 md:px-20 pt-5 md:pt-10 pb-20 w-full">
+        <div className="flex flex-col w-full md:w-1/5 mb-5">
           <h6 className="text-black text-sm font-bold mb-3">Editorial Type</h6>
           <ul className="flex flex-col">
-            <li className="text-black text-xs mb-2">All</li>
-            <li className="text-black text-xs mb-2">Books</li>
-            <li className="text-black text-xs">Magazines</li>
+            {types.map((type) => (
+              <li
+                key={type}
+                onClick={() => setActiveEditorial(type)}
+                className={`text-black text-xs mb-2 cursor-pointer ${
+                  activeEditorial === type ? "font-bold text-purple-500" : ""
+                }`}
+              >
+                {type}
+              </li>
+            ))}
           </ul>
         </div>
 
-        <div className="flex flex-col w-4/5">
-          <div className="flex flex-col mb-10">
-            <Magazine />
-          </div>
-          <div className="flex flex-col">
-            <Books />
-          </div>
+        <div className="flex flex-col w-full md:w-4/5">
+          {renderEditorials()}
         </div>
       </div>
     </div>
