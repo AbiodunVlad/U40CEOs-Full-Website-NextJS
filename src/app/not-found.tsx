@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-export default function PageNotFound() {
+export default function NotFound() {
   return (
     <div>
       <Navbar />
@@ -26,7 +26,7 @@ export default function PageNotFound() {
         </p>
 
         <Link
-          href="/pages/homePage"
+          href="/homePage"
           className="bg-purple-600 text-white rounded-lg p-5"
         >
           Back to Homepage

@@ -53,6 +53,8 @@
 
 const BaseURL = "https://u4cbackendservices.onrender.com/api/auth";
 
+// https://u4cbackendservices.onrender.com/api
+
 interface UserData {
   fullName?: string;
   email: string;

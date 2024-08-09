@@ -2,25 +2,71 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TVseries from "../homePage/tvSeries";
+import Link from "next/link";
 
-const ITEMS_PER_PAGE = 28;
+const ITEMS_PER_PAGE = 12;
 
-type Course = {
-  title: string;
-  videoUrl: string;
+type Stories = {
+  id: number;
+  firstName: string;
+  lastName: string;
+  company: string;
+  touchPoint: string;
+  topic: string;
+  content: string;
 };
 
 export default function SuccessStories() {
-  const [courses, setCourses] = useState<Course[]>([]);
+  const [stories, setStories] = useState<Stories[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
+
+  useEffect(() => {
+    async function fetchStories() {
+      try {
+        const res = await fetch("/api/successStories");
+
+        if (!res.ok) {
+          throw new Error("Network response was bad!");
+        }
+
+        const data: Stories[] = await res.json();
+        // const data = await res.json();
+        console.log("Fetched stories:", data);
+
+        if (Array.isArray(data)) {
+          console.log("Data is an array, setting stories state.");
+          setStories(data);
+          console.log("Setting stories state:", data);
+        } else {
+          console.log("Data is not an array, setting empty stories.");
+          setStories([]);
+        }
+      } catch (error) {
+        if (error instanceof Error) {
+          console.error("Failed to fetch stories:", error.message);
+        } else {
+          console.error("An unknown error occurred");
+        }
+      }
+    }
+    fetchStories();
+  }, []);
+
+  useEffect(() => {
+    console.log("Stories state after update:", stories);
+  }, [stories]);
 
   const indexOfLastItem = currentPage * ITEMS_PER_PAGE;
   const indexOfFirstItem = indexOfLastItem - ITEMS_PER_PAGE;
-  const currentItems = courses.slice(indexOfFirstItem, indexOfLastItem);
+  const currentItems = stories.slice(indexOfFirstItem, indexOfLastItem);
 
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+
+  const midIndex = Math.ceil(currentItems.length / 2);
+  const firstHalfItems = currentItems.slice(0, midIndex);
+  const secondHalfItems = currentItems.slice(midIndex);
 
   return (
     <div className="flex flex-col text-black overflow-hidden">
@@ -91,295 +137,84 @@ export default function SuccessStories() {
         </div>
       </div>
 
-      <div className="w-full flex md:flex-col flex-row overflow-x-auto gap-3 mb-3">
-        <div className="pl-5 md:px-20 md:w-full flex-row flex  md:flex-row justify-between gap-3 md:gap-28 md:mb-20">
-          <div className="flex flex-col w-screen md:h-dvh md:w-1/3 border border-black">
-            <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
-            <div className="w-full px-4 md:px-10 py-5">
-              <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
-              <p className="text-pink-600 text-xxs mb-3">
-                Marketing Consultant @ Landingfolio
-              </p>
-              <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
-              <p className="text-blue-500 text-xxs mb-5">
-                Topic: Sales & Marketing for Business Growth
-              </p>
+      <div className="grid md:grid-cols-3 pl-5 md:px-20 md:w-full justify-between gap-3 md:gap-28 md:mb-20 overflow-x-auto">
+        {firstHalfItems.map((story, index) => (
+          <div
+            key={index}
+            className="flex flex-col w-screen md:h-dvh md:w-full border border-black"
+          >
+            <Link href={`/successStories/${story.id}`}>
+              <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
+              <div className="w-full px-4 md:px-10 py-5">
+                <p className="text-black text-sm font-bold mb-2">
+                  {story.firstName} {story.lastName}
+                </p>
+                <p className="text-pink-600 text-xxs mb-3">
+                  Marketing Consultant @ {story.company}
+                </p>
+                <p className="text-blue-500 text-xxs mb-1">
+                  Touchpoint: {story.touchPoint}
+                </p>
 
-              <p className="text-black text-xxs md:mb-6">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
-                ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>
+                <p className="text-blue-500 text-xxs mb-5">
+                  Topic: {story.topic}
+                </p>
+
+                <p className="text-black text-xxs md:mb-6">{story.content}</p>
+              </div>
+            </Link>
           </div>
-
-          <div className="flex flex-col w-screen md:h-dvh md:w-1/3 border border-black">
-            <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
-            <div className="w-full px-4 md:px-10 py-5">
-              <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
-              <p className="text-pink-600 text-xxs mb-3">
-                Marketing Consultant @ Landingfolio
-              </p>
-              <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
-              <p className="text-blue-500 text-xxs mb-5">
-                Topic: Sales & Marketing for Business Growth
-              </p>
-
-              <p className="text-black text-xxs mb-6">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
-                ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex flex-col w-screen md:h-dvh md:w-1/3 border border-black">
-            <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
-            <div className="w-full px-4 md:px-10 py-5">
-              <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
-              <p className="text-pink-600 text-xxs mb-3">
-                Marketing Consultant @ Landingfolio
-              </p>
-              <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
-              <p className="text-blue-500 text-xxs mb-5">
-                Topic: Sales & Marketing for Business Growth
-              </p>
-
-              <p className="text-black text-xxs mb-6">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
-                ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className=" md:px-20 md:w-full flex-row flex  md:flex-row justify-between gap-3 md:gap-28">
-          <div className="flex flex-col w-screen md:h-dvh md:w-1/3 border border-black">
-            <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
-            <div className="w-full px-4 md:px-10 py-5">
-              <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
-              <p className="text-pink-600 text-xxs mb-3">
-                Marketing Consultant @ Landingfolio
-              </p>
-              <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
-              <p className="text-blue-500 text-xxs mb-5">
-                Topic: Sales & Marketing for Business Growth
-              </p>
-
-              <p className="text-black text-xxs md:mb-6">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
-                ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex flex-col w-screen md:h-dvh md:w-1/3 border border-black">
-            <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
-            <div className="w-full px-4 md:px-10 py-5">
-              <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
-              <p className="text-pink-600 text-xxs mb-3">
-                Marketing Consultant @ Landingfolio
-              </p>
-              <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
-              <p className="text-blue-500 text-xxs mb-5">
-                Topic: Sales & Marketing for Business Growth
-              </p>
-
-              <p className="text-black text-xxs mb-6">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
-                ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex flex-col w-screen md:h-dvh md:w-1/3 border border-black">
-            <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
-            <div className="w-full px-4 md:px-10 py-5">
-              <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
-              <p className="text-pink-600 text-xxs mb-3">
-                Marketing Consultant @ Landingfolio
-              </p>
-              <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
-              <p className="text-blue-500 text-xxs mb-5">
-                Topic: Sales & Marketing for Business Growth
-              </p>
-
-              <p className="text-black text-xxs mb-6">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
-                ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
 
-      <div className="md:hidden flex justify-center mb-10">
-        {" "}
-        <p className="text-gray-500 text-xxs text-center font-bold">
-          Swipe to see more
-        </p>
-      </div>
-
-      <div className="bg-gray-400 flex flex-col md:flex-row justify-between mb-20 px-5 md:px-40 py-10">
-        <div className="w-full md:w-1/2 flex relative mb-10">
-          <div className="bg-black w-full md:w-2/3 h-44 md:h-52"></div>
-          <div className="absolute top-2 -left-2 bg-gradient-to-br from-purple-700 to-blue-700 w-full md:w-2/3 h-44 md:h-52"></div>
-        </div>
-
-        <div className="w-full md:w-1/2">
-          <h1 className="text-pink-600 text-lg md:text-5xl font-extrabold mb-2 md:mb-5">
-            LANRE JOHN
-          </h1>
-
-          <p className="text-black text-xs md:text-lg uppercase">
-            We Provide All The Necessary Tools
-            <br /> For Young Business Leaders To Do
-            <br />
-            Business And Thrive In Africa.
-          </p>
-        </div>
-      </div>
-
-      <div className="w-full flex md:flex-col flex-row overflow-x-auto gap-3 mb-3">
-        <div className="pl-5 md:px-20 md:w-full flex-row flex  md:flex-row justify-between gap-3 md:gap-28 md:mb-20">
-          <div className="flex flex-col w-screen md:h-dvh md:w-1/3 border border-black">
-            <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
-            <div className="w-full px-4 md:px-10 py-5">
-              <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
-              <p className="text-pink-600 text-xxs mb-3">
-                Marketing Consultant @ Landingfolio
-              </p>
-              <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
-              <p className="text-blue-500 text-xxs mb-5">
-                Topic: Sales & Marketing for Business Growth
-              </p>
-
-              <p className="text-black text-xxs md:mb-6">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
-                ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>
+      {currentPage === 1 && (
+        <div className="bg-gray-400 flex flex-col md:flex-row justify-between mb-20 px-5 md:px-40 py-10">
+          <div className="w-full md:w-1/2 flex relative mb-10">
+            <div className="bg-black w-full md:w-2/3 h-44 md:h-52"></div>
+            <div className="absolute top-2 -left-2 bg-gradient-to-br from-purple-700 to-blue-700 w-full md:w-2/3 h-44 md:h-52"></div>
           </div>
 
-          <div className="flex flex-col w-screen md:h-dvh md:w-1/3 border border-black">
-            <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
-            <div className="w-full px-4 md:px-10 py-5">
-              <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
-              <p className="text-pink-600 text-xxs mb-3">
-                Marketing Consultant @ Landingfolio
-              </p>
-              <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
-              <p className="text-blue-500 text-xxs mb-5">
-                Topic: Sales & Marketing for Business Growth
-              </p>
+          <div className="w-full md:w-1/2">
+            <h1 className="text-pink-600 text-lg md:text-5xl font-extrabold mb-2 md:mb-5">
+              LANRE JOHN
+            </h1>
 
-              <p className="text-black text-xxs mb-6">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
-                ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex flex-col w-screen md:h-dvh md:w-1/3 border border-black">
-            <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
-            <div className="w-full px-4 md:px-10 py-5">
-              <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
-              <p className="text-pink-600 text-xxs mb-3">
-                Marketing Consultant @ Landingfolio
-              </p>
-              <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
-              <p className="text-blue-500 text-xxs mb-5">
-                Topic: Sales & Marketing for Business Growth
-              </p>
-
-              <p className="text-black text-xxs mb-6">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
-                ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>
+            <p className="text-black text-xs md:text-lg uppercase">
+              We Provide All The Necessary Tools
+              <br /> For Young Business Leaders To Do
+              <br />
+              Business And Thrive In Africa.
+            </p>
           </div>
         </div>
+      )}
 
-        <div className=" md:px-20 md:w-full flex-row flex  md:flex-row justify-between gap-3 md:gap-28">
-          <div className="flex flex-col w-screen md:h-dvh md:w-1/3 border border-black">
+      <div className="grid md:grid-cols-3 pl-5 md:px-20 md:w-full justify-between gap-3 md:gap-28 md:mb-20 overflow-x-auto">
+        {secondHalfItems.map((story, index) => (
+          <div
+            key={index}
+            className="flex flex-col w-screen md:h-dvh md:w-full border border-black"
+          >
             <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
             <div className="w-full px-4 md:px-10 py-5">
-              <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
-              <p className="text-pink-600 text-xxs mb-3">
-                Marketing Consultant @ Landingfolio
+              <p className="text-black text-sm font-bold mb-2">
+                {story.firstName} {story.lastName}
               </p>
-              <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
-              <p className="text-blue-500 text-xxs mb-5">
-                Topic: Sales & Marketing for Business Growth
+              <p className="text-pink-600 text-xxs mb-3">
+                Marketing Consultant @ {story.company}
+              </p>
+              <p className="text-blue-500 text-xxs mb-1">
+                Touchpoint: {story.touchPoint}
               </p>
 
-              <p className="text-black text-xxs md:mb-6">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
-                ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              <p className="text-blue-500 text-xxs mb-5">
+                Topic: {story.topic}
               </p>
+
+              <p className="text-black text-xxs md:mb-6">{story.content}</p>
             </div>
           </div>
-
-          <div className="flex flex-col w-screen md:h-dvh md:w-1/3 border border-black">
-            <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
-            <div className="w-full px-4 md:px-10 py-5">
-              <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
-              <p className="text-pink-600 text-xxs mb-3">
-                Marketing Consultant @ Landingfolio
-              </p>
-              <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
-              <p className="text-blue-500 text-xxs mb-5">
-                Topic: Sales & Marketing for Business Growth
-              </p>
-
-              <p className="text-black text-xxs mb-6">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
-                ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex flex-col w-screen md:h-dvh md:w-1/3 border border-black">
-            <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
-            <div className="w-full px-4 md:px-10 py-5">
-              <p className="text-black text-sm font-bold mb-2">Danny Postma</p>
-              <p className="text-pink-600 text-xxs mb-3">
-                Marketing Consultant @ Landingfolio
-              </p>
-              <p className="text-blue-500 text-xxs mb-1">Touchpoint: Webinar</p>
-              <p className="text-blue-500 text-xxs mb-5">
-                Topic: Sales & Marketing for Business Growth
-              </p>
-
-              <p className="text-black text-xxs mb-6">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
-                ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
 
       <div className="md:hidden flex justify-center mb-10">
@@ -391,7 +226,7 @@ export default function SuccessStories() {
 
       <div className="flex justify-center mt-10">
         {Array.from(
-          { length: Math.ceil(courses.length / ITEMS_PER_PAGE) },
+          { length: Math.ceil(stories.length / ITEMS_PER_PAGE) },
           (_, i) => (
             <button
               key={i}
