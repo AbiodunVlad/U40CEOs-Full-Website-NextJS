@@ -13,7 +13,8 @@ type Stories = {
   company: string;
   touchPoint: string;
   topic: string;
-  content: string;
+  role: string;
+  body: string;
 };
 
 export default function IndividualStories() {
@@ -239,7 +240,7 @@ export default function IndividualStories() {
                         {story.firstName} {story.lastName}
                       </p>
                       <p className="text-pink-600 text-xxs mb-3">
-                        Marketing Consultant @ {story.company}
+                        {story.role} @ {story.company}
                       </p>
                       <p className="text-blue-500 text-xxs mb-1">
                         Touchpoint: {story.touchPoint}
@@ -250,7 +251,7 @@ export default function IndividualStories() {
                       </p>
 
                       <p className="text-black text-xxs md:mb-6">
-                        {story.content}
+                        {story.body}
                       </p>
                     </div>
                   </Link>

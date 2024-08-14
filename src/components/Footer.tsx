@@ -10,7 +10,9 @@ export default function Footer() {
       <div className="flex flex-col md:flex-row items-center justify-center md:justify-between md:items-start pb-28 gap-20">
         <div className="flex md:flex-col flex-col-reverse w-auto items-center">
           <div className="flex md:flex-col flex-row items-center md:gap-0 gap-5">
-            <Image src="/images/logo1.svg" alt="" width={200} height={150} />
+            <Link href="/homePage">
+              <Image src="/images/logo1.svg" alt="" width={200} height={150} />
+            </Link>
 
             <p className="md:text-xs text-white md:text-center text-start md:mb-20">
               We are building the future <br /> of African Business
@@ -47,22 +49,25 @@ export default function Footer() {
                   <p className="text-xs font-bold text-purple-700 mb-5">
                     Quicklinks
                   </p>
-                  <Link href="/home" className="text-xs text-white mb-2">
+                  <Link href="/homePage" className="text-xs text-white mb-2">
                     Home
                   </Link>
-                  <Link href="/about" className="text-xs text-white mb-2">
+                  <Link href="/aboutPage" className="text-xs text-white mb-2">
                     About Us
                   </Link>
                   <Link href="/resources" className="text-xs text-white mb-2">
                     Resources
                   </Link>
-                  <Link href="/success" className="text-xs text-white mb-2">
+                  <Link
+                    href="/successStories"
+                    className="text-xs text-white mb-2"
+                  >
                     Success Stories
                   </Link>
                   <Link href="/join" className="text-xs text-white mb-2">
                     Join Us
                   </Link>
-                  <Link href="/events" className="text-xs text-white mb-2">
+                  <Link href="/resources" className="text-xs text-white mb-2">
                     Events
                   </Link>
                   <Link href="/blog" className="text-xs text-white mb-2">
@@ -77,7 +82,7 @@ export default function Footer() {
                   <p className="text-xs font-bold text-purple-700 mb-5">
                     Resources
                   </p>
-                  <Link href="/home" className="text-xs text-white mb-2">
+                  <Link href="/resources" className="text-xs text-white mb-2">
                     Courses
                   </Link>
                   <Link href="/about" className="text-xs text-white mb-2">
@@ -115,13 +120,13 @@ export default function Footer() {
                   <Link href="/resources" className="text-xs text-white mb-2">
                     Collaborations
                   </Link>
-                  <Link href="/success" className="text-xs text-white mb-2">
+                  <Link href="/resources" className="text-xs text-white mb-2">
                     Events
                   </Link>
                   <Link href="/join" className="text-xs text-white mb-2">
                     Calendar
                   </Link>
-                  <Link href="/events" className="text-xs text-white mb-2">
+                  <Link href="/community" className="text-xs text-white mb-2">
                     Join Our Community
                   </Link>
                 </div>

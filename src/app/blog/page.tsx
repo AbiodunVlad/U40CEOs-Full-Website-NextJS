@@ -9,6 +9,7 @@ import TVseries from "../homePage/tvSeries";
 import Link from "next/link";
 import Image from "next/image";
 import BecomeAMember from "@/components/BecomeAMember";
+import BlogEvent from "./BlogEvent";
 
 const ITEMS_PER_PAGE = 28;
 
@@ -91,7 +92,9 @@ export default function Blog() {
               <div className="w-full border border-gray-400 mx-10 mb-5"></div>
               {/* <Event /> */}
 
-              <div className="bg-blue-500 pt-5 md:pt-10 pb-5 px-3 md:px-5 flex flex-col md:flex-row gap-3 w-full md:w-5/6">
+              <BlogEvent />
+
+              {/* <div className="bg-blue-500 pt-5 md:pt-10 pb-5 px-3 md:px-5 flex flex-col md:flex-row gap-3 w-full md:w-5/6">
                 <div className="flex justify-start">
                   <Image
                     src="/images/courseImg.svg"
@@ -122,7 +125,7 @@ export default function Blog() {
                     BOOK YOUR SEAT
                   </Link>
                 </div>
-              </div>
+              </div> */}
 
               <div className=" w-full border border-gray-400 mx-10 mt-5 mb-20"></div>
             </div>

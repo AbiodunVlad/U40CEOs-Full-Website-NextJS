@@ -116,7 +116,7 @@ export default function Signup() {
 
   return (
     <div className="flex flex-col-reverse md:flex-row items-center justify-around min-h-screen">
-      <div className="bg-slate-100 w-full md:w-1/2 flex flex-col items-center justify-center min-h-screen py-2 px-4">
+      <div className="bg-slate-100 w-full md:w-1/2 flex flex-col items-center justify-center min-h-screen py-2 px-5 md:px-20">
         <Image
           className="mb-5"
           src="/images/logo.svg"
@@ -143,7 +143,7 @@ export default function Signup() {
         {error && <p className="text-red-500 mb-5">{error}</p>}
 
         <input
-          className="text-black w-full md:w-3/4 p-2 border border-red-300 rounded-lg mb-5 focus:outline-none focus:border-red-800"
+          className="text-black w-full   p-2 border border-red-300 rounded-lg mb-5 focus:outline-none focus:border-red-800"
           placeholder="Full Name"
           id="fullName"
           type="text"
@@ -152,7 +152,7 @@ export default function Signup() {
         />
 
         <input
-          className="text-black w-full md:w-3/4 p-2 border border-red-300 rounded-lg mb-5 focus:outline-none focus:border-red-800"
+          className="text-black w-full  p-2 border border-red-300 rounded-lg mb-5 focus:outline-none focus:border-red-800"
           placeholder="Email"
           id="email"
           type="email"
@@ -160,7 +160,7 @@ export default function Signup() {
           onChange={(e) => setEmail(e.target.value)}
         />
 
-        <div className="w-full md:w-3/4 relative">
+        <div className="w-full  relative">
           <input
             className="text-black w-full p-2 border border-red-300 rounded-lg mb-5 focus:outline-none focus:border-red-800"
             placeholder="Password"
@@ -176,7 +176,7 @@ export default function Signup() {
           />
         </div>
 
-        <div className="w-full md:w-3/4 relative">
+        <div className="w-full relative">
           <input
             className="text-black w-full p-2 border border-red-300 rounded-lg mb-5 focus:outline-none focus:border-red-800"
             placeholder="Confirm Password"
@@ -194,13 +194,13 @@ export default function Signup() {
 
         <button
           onClick={signup}
-          className="w-full md:w-3/4 p-2 border bg-purple-700 rounded-full mb-5 text-white font-bold uppercase"
+          className="w-full p-2 border bg-purple-700 rounded-full mb-5 text-white font-bold uppercase shadow-lg"
           disabled={loading}
         >
           {loading ? "Signing you up..." : "Sign up"}
         </button>
 
-        <div className="flex items-center mb-5">
+        {/* <div className="self-start flex items-center mb-5">
           <input
             id="keep-signed-in"
             type="checkbox"
@@ -213,9 +213,13 @@ export default function Signup() {
           <label htmlFor="keep-signed-in" className="text-xs text-black">
             Keep me signed in
           </label>
-        </div>
+        </div> */}
 
-        <p className="mb-5 text-black">Or</p>
+        <div className="flex flex-row items-start">
+          <div className="border border-gray-400 md:mx-10 mx-3 w-28 h-0.5 bg-gray-300"></div>
+          <p className="mb-5 text-gray-500 text-xs">Or</p>
+          <div className="border border-gray-400 md:mx-10 mx-3 w-28 h-0.5 bg-gray-300"></div>
+        </div>
 
         {/* <button
           onClick={signupWithGoogle}
@@ -225,7 +229,7 @@ export default function Signup() {
           Signup with Google
         </button> */}
 
-        <p className="text-black">
+        <p className="text-gray-500 text-xs">
           Do you have an account already? {""}
           <Link href="/login" className="text-blue-600 font-bold">
             Log in

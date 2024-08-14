@@ -17,12 +17,14 @@ export default function FreeCourses() {
         <br /> elevating your business game.
       </p>
 
-      <button
-        className="py-2 px-5 rounded-full text-white text-xs font-bold"
-        style={{ backgroundColor: "#9B05E2" }}
-      >
-        ENROLL NOW
-      </button>
+      <Link href="/resources">
+        <button
+          className="py-2 px-5 rounded-full text-white text-xs font-bold"
+          style={{ backgroundColor: "#9B05E2" }}
+        >
+          ENROLL NOW
+        </button>
+      </Link>
     </div>
   );
 }

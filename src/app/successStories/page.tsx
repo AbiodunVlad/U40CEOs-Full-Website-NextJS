@@ -5,6 +5,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import TVseries from "../homePage/tvSeries";
 import Link from "next/link";
+import { getSuccessStories } from "../../../pages/api/auth";
 
 const ITEMS_PER_PAGE = 12;
 
@@ -15,23 +16,48 @@ type Stories = {
   company: string;
   touchPoint: string;
   topic: string;
-  content: string;
+  role: string;
+  body: string;
+
+  // intro: string;
+  // about: string;
+  // engageHow: string;
+  // results: string;
+  // file: string;
 };
 
 export default function SuccessStories() {
   const [stories, setStories] = useState<Stories[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
 
+  // const newStory: Stories = {
+  //   id: 1,
+  //   firstName: "Jane",
+  //   lastName: "Doe",
+  //   company: "Innovate Corp.",
+  //   touchPoint: "Conference",
+  //   topic: "Innovation",
+  //   role: "CEO",
+  //   body: "Jane's success story...",
+
+  //   intro: "Intro here",
+  //   about: "About here",
+  //   engageHow: "Engage here",
+  //   results: "Results here",
+  //   file: "Files here",
+  // };
+
   useEffect(() => {
     async function fetchStories() {
       try {
-        const res = await fetch("/api/successStories");
+        // const res = await fetch("/api/successStories");
+        const data = await getSuccessStories();
 
-        if (!res.ok) {
-          throw new Error("Network response was bad!");
-        }
+        // if (!res.ok) {
+        //   throw new Error("Network response was bad!");
+        // }
 
-        const data: Stories[] = await res.json();
+        // const data: Stories[] = await res.json();
         // const data = await res.json();
         console.log("Fetched stories:", data);
 
@@ -67,6 +93,12 @@ export default function SuccessStories() {
   const midIndex = Math.ceil(currentItems.length / 2);
   const firstHalfItems = currentItems.slice(0, midIndex);
   const secondHalfItems = currentItems.slice(midIndex);
+
+  useEffect(() => {
+    console.log("Current Items:", currentItems);
+    // console.log("First Half Items:", firstHalfItems);
+    // console.log("Second Half Items:", secondHalfItems);
+  }, [currentItems]);
 
   return (
     <div className="flex flex-col text-black overflow-hidden">
@@ -150,17 +182,17 @@ export default function SuccessStories() {
                   {story.firstName} {story.lastName}
                 </p>
                 <p className="text-pink-600 text-xxs mb-3">
-                  Marketing Consultant @ {story.company}
+                  {story.role} @ LandingFolio {/*{story.company*/}
                 </p>
                 <p className="text-blue-500 text-xxs mb-1">
-                  Touchpoint: {story.touchPoint}
+                  Touchpoint: Some touchpoint {/*  {story.touchPoint} */}
                 </p>
 
                 <p className="text-blue-500 text-xxs mb-5">
-                  Topic: {story.topic}
+                  Topic: Some topic {/*{story.topic}*/}
                 </p>
 
-                <p className="text-black text-xxs md:mb-6">{story.content}</p>
+                <p className="text-black text-xxs md:mb-6">{story.body}</p>
               </div>
             </Link>
           </div>
@@ -201,17 +233,17 @@ export default function SuccessStories() {
                 {story.firstName} {story.lastName}
               </p>
               <p className="text-pink-600 text-xxs mb-3">
-                Marketing Consultant @ {story.company}
+                {story.role} @ LandingFolio {/*{story.company*/}
               </p>
               <p className="text-blue-500 text-xxs mb-1">
-                Touchpoint: {story.touchPoint}
+                Touchpoint: Some touchpoint {/*  {story.touchPoint} */}
               </p>
 
               <p className="text-blue-500 text-xxs mb-5">
-                Topic: {story.topic}
+                Topic: Some topic {/*{story.topic}*/}
               </p>
 
-              <p className="text-black text-xxs md:mb-6">{story.content}</p>
+              <p className="text-black text-xxs md:mb-6">{story.body}</p>
             </div>
           </div>
         ))}
