@@ -16,6 +16,8 @@ import Blog from "./blog/page";
 import ReadBlog from "./blog/[id]/page";
 import BlogPage from "./blog/BlogPage";
 import Community from "./community/page";
+import MembershipOptions from "./community/MembershipOptions";
+import CourseObjective from "./Courses/page";
 
 export default function Home() {
   return (
@@ -37,6 +39,9 @@ export default function Home() {
 
       {/* <SuccessStories /> */}
       {/* <IndividualStories /> */}
+      {/* <MembershipOptions /> */}
+
+      {/* <CourseObjective /> */}
     </main>
   );
 }

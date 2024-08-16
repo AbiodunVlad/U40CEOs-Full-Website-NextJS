@@ -9,15 +9,21 @@ export default function Community() {
     <div className="flex flex-col text-black overflow-hidden">
       <Navbar />
 
-      <div className="flex flex-col py-5 md:py-20 px-5 md:px-20">
+      <div className="flex flex-col py-5 md:py-10 px-5 md:px-20">
         <h1 className="text-black text-center text-lg md:text-3xl font-extrabold mb-2 md:leading-10">
           WELCOME TO OUR VIBRANT AND <br /> ENGAGING COMMUNITY FORUM!
         </h1>
         <p className="text-gray-500 text-center text-xs">
           Create a dynamic space where people from all walks of life can come{" "}
-          <br /> together to share knowledge, seek advice, engage in lively
+          <span className="md:flex hidden">
+            <br />
+          </span>{" "}
+          together to share knowledge, seek advice, engage in lively
           discussions,
-          <br /> and build meaningful connections.
+          <span className="md:flex hidden">
+            <br />
+          </span>{" "}
+          and build meaningful connections.
         </p>
       </div>
 
