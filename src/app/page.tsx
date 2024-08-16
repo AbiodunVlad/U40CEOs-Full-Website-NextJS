@@ -18,6 +18,7 @@ import BlogPage from "./blog/BlogPage";
 import Community from "./community/page";
 import MembershipOptions from "./community/MembershipOptions";
 import CourseObjective from "./Courses/page";
+import LearningHub from "./LearningHub/page";
 
 export default function Home() {
   return (
@@ -30,7 +31,7 @@ export default function Home() {
       {/* <BlogPage /> */}
       {/* <Community /> */}
       {/* <Signup /> */}
-      <Login />
+      {/* <Login /> */}
       {/* <PageNotFound /> */}
       {/* <SomethingWentWrong /> */}
       {/* <AccessDenied /> */}
@@ -42,6 +43,7 @@ export default function Home() {
       {/* <MembershipOptions /> */}
 
       {/* <CourseObjective /> */}
+      <LearningHub />
     </main>
   );
 }

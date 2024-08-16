@@ -4,43 +4,44 @@ import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faFilter } from "@fortawesome/free-solid-svg-icons";
 import Search from "@/components/Search";
+import CourseVideos from "@/components/CourseVideos";
 
-const ITEMS_PER_PAGE = 28;
+// const ITEMS_PER_PAGE = 28;
 
-type Course = {
-  title: string;
-  videoUrl: string;
-};
+// type Course = {
+//   title: string;
+//   videoUrl: string;
+// };
 
 export default function Courses() {
-  const [courses, setCourses] = useState<Course[]>([]);
-  const [currentPage, setCurrentPage] = useState(1);
+  // const [courses, setCourses] = useState<Course[]>([]);
+  // const [currentPage, setCurrentPage] = useState(1);
 
-  useEffect(() => {
-    async function fetchCourses() {
-      try {
-        const res = await fetch("/api/courses");
+  // useEffect(() => {
+  //   async function fetchCourses() {
+  //     try {
+  //       const res = await fetch("/api/courses");
 
-        if (!res.ok) {
-          throw new Error("Network response was bad!");
-        }
+  //       if (!res.ok) {
+  //         throw new Error("Network response was bad!");
+  //       }
 
-        const data = await res.json();
-        console.log("Fetched courses:", data);
-        setCourses(data);
-      } catch (error) {
-        console.error("Failed to fetch courses:", error);
-      }
-    }
+  //       const data = await res.json();
+  //       console.log("Fetched courses:", data);
+  //       setCourses(data);
+  //     } catch (error) {
+  //       console.error("Failed to fetch courses:", error);
+  //     }
+  //   }
 
-    fetchCourses();
-  }, []);
+  //   fetchCourses();
+  // }, []);
 
-  const indexOfLastItem = currentPage * ITEMS_PER_PAGE;
-  const indexOfFirstItem = indexOfLastItem - ITEMS_PER_PAGE;
-  const currentItems = courses.slice(indexOfFirstItem, indexOfLastItem);
+  // const indexOfLastItem = currentPage * ITEMS_PER_PAGE;
+  // const indexOfFirstItem = indexOfLastItem - ITEMS_PER_PAGE;
+  // const currentItems = courses.slice(indexOfFirstItem, indexOfLastItem);
 
-  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+  // const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
   return (
     <div className="flex flex-col pt-10 md:pt-20">
@@ -69,7 +70,9 @@ export default function Courses() {
       <div className="flex flex-col justify-center items-center px-5 lg:px-20 pt-10 pb-20 w-full">
         <h5 className="text-black text-lg font-bold mb-10">EXPLORE COURSES</h5>
 
-        <div className="flex flex-col w-full">
+        <CourseVideos />
+
+        {/* <div className="flex flex-col w-full">
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-5 w-full mb-7">
             {currentItems.map((course, index) => (
               <div key={index} className="flex flex-col items-center">
@@ -102,7 +105,7 @@ export default function Courses() {
               )
             )}
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
