@@ -2,6 +2,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { width } from "@fortawesome/free-solid-svg-icons/fa0";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 export default function Community() {
@@ -326,9 +327,11 @@ export default function Community() {
               <p className="text-gray-400 text-sm mb-1">N75,000/annum</p>
             </div>
 
-            <button className="bg-pink-600 text-white self-end py-1 px-3 rounded-full">
-              See more
-            </button>
+            <Link href="/MembershipOptions">
+              <button className="bg-pink-600 text-white self-end py-1 px-3 rounded-full">
+                See more
+              </button>
+            </Link>
           </div>
 
           <div className="flex flex-col bg-white border-solid border-gray-500 border rounded-md px-10 lg:px-5 py-10">

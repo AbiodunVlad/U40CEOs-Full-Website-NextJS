@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -28,7 +29,7 @@ export default function StoreNavbar() {
       <div className="flex flex-col md:flex-row items-center justify-between mb-5">
         <div className="flex justify-between w-full md:w-auto">
           <div className="flex flex-row items-center justify-center">
-            <Link href="/homePage">
+            <Link href="/home">
               {" "}
               <Image src="/images/logo.svg" alt="logo" width={50} height={50} />
             </Link>
@@ -58,7 +59,7 @@ export default function StoreNavbar() {
               {" "}
               <li
                 className={`text-xs font-bold mb-4 md:mb-0 md:mr-10 ${isActive(
-                  "/homePage"
+                  "/home"
                 )}`}
               >
                 My Account
@@ -69,7 +70,7 @@ export default function StoreNavbar() {
               {" "}
               <li
                 className={`text-xs font-bold mb-4 md:mb-0 md:mr-10 uppercase ${isActive(
-                  "/homePage"
+                  "/home"
                 )}`}
               >
                 Help
@@ -80,7 +81,7 @@ export default function StoreNavbar() {
               {" "}
               <li
                 className={`text-xs font-bold mb-4 md:mb-0 md:mr-10 ${isActive(
-                  "/homePage"
+                  "/home"
                 )}`}
               >
                 Cart

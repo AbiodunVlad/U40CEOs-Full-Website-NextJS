@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="flex flex-col md:flex-row items-center justify-center md:justify-between md:items-start pb-28 gap-20">
         <div className="flex md:flex-col flex-col-reverse w-auto items-center">
           <div className="flex md:flex-col flex-row items-center md:gap-0 gap-5">
-            <Link href="/homePage">
+            <Link href="/home">
               <Image src="/images/logo1.svg" alt="" width={200} height={150} />
             </Link>
 
@@ -49,10 +49,10 @@ export default function Footer() {
                   <p className="text-xs font-bold text-purple-700 mb-5">
                     Quicklinks
                   </p>
-                  <Link href="/homePage" className="text-xs text-white mb-2">
+                  <Link href="/home" className="text-xs text-white mb-2">
                     Home
                   </Link>
-                  <Link href="/aboutPage" className="text-xs text-white mb-2">
+                  <Link href="/about" className="text-xs text-white mb-2">
                     About Us
                   </Link>
                   <Link href="/resources" className="text-xs text-white mb-2">

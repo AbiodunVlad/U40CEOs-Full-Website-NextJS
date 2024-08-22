@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
-import HomePage from "./homePage/page";
-import About from "./aboutPage/page";
+import HomePage from "./home/page";
+import About from "./about/page";
 import Signup from "./signup/page";
 import Login from "./login/page";
 import PageNotFound from "./not-found";
@@ -16,7 +16,7 @@ import Blog from "./blog/page";
 import ReadBlog from "./blog/[id]/page";
 import BlogPage from "./blog/BlogPage";
 import Community from "./community/page";
-import MembershipOptions from "./community/MembershipOptions";
+import MembershipOptions from "./MembershipOptions/page";
 import CourseObjective from "./Courses/page";
 import LearningHub from "./LearningHub/page";
 import NoFreebieCourses from "./NoFreebieCourses/page";
@@ -35,7 +35,7 @@ export default function Home() {
       {/* <BlogPage /> */}
       {/* <Community /> */}
       {/* <Signup /> */}
-      {/* <Login /> */}
+      <Login />
       {/* <PageNotFound /> */}
       {/* <SomethingWentWrong /> */}
       {/* <AccessDenied /> */}
@@ -51,7 +51,7 @@ export default function Home() {
       {/* <NoFreebieCourses /> */}
       {/* <FreebieCourses /> */}
       {/* <WatchFreebie /> */}
-      <Store />
+      {/* <Store /> */}
     </main>
   );
 }

@@ -22,12 +22,20 @@ export default function Navbar() {
 
   const isActive = (path: any) => (pathname === path ? "text-purple-500" : "");
 
-  const logout = async () => {};
+  const logout = async () => {
+    try {
+      localStorage.removeItem("isAuthenticated");
+      // sessionStorage.removeItem("authToken");
+      router.push("/login");
+    } catch (error) {
+      console.error("Failed to log out:", error);
+    }
+  };
 
   return (
     <div className="bg-white flex flex-col md:flex-row items-center justify-between px-4 py-2 md:px-20 md:py-4 shadow-lg">
       <div className="flex justify-between w-full md:w-auto">
-        <Link href="/homePage">
+        <Link href="/home">
           {" "}
           <Image src="/images/logo.svg" alt="logo" width={50} height={50} />
         </Link>
@@ -46,7 +54,7 @@ export default function Navbar() {
           menuOpen ? "block" : "hidden md:flex"
         }`}
       >
-        <Link href="/homePage">
+        <Link href="/home">
           {" "}
           <li
             className={`text-xs font-bold mb-4 md:mb-0 md:mr-10 ${isActive(
@@ -57,7 +65,7 @@ export default function Navbar() {
           </li>
         </Link>
 
-        <Link href="/aboutPage">
+        <Link href="/about">
           {" "}
           <li
             className={`font-bold text-xs text-center mb-4 md:mb-0 md:mr-10 ${isActive(
@@ -105,16 +113,20 @@ export default function Navbar() {
           </button>
         </Link>
 
-        <button
-          className="font-medium text-xxs text-center px-6 py-3 mb-4 md:mb-0 md:mr-5 rounded-full text-white"
-          style={{ backgroundColor: "#C54ED8" }}
-        >
-          COURSES
-        </button>
+        <Link href="/Courses">
+          <button
+            className="font-medium text-xxs text-center px-6 py-3 mb-4 md:mb-0 md:mr-5 rounded-full text-white"
+            style={{ backgroundColor: "#C54ED8" }}
+          >
+            COURSES
+          </button>
+        </Link>
 
-        <button className="flex gap-1 font-medium text-xxs text-center px-6 py-3 border border-pink-400 mb-4 md:mb-0 md:mr-5 rounded-full text-pink-400">
-          <FontAwesomeIcon icon={faBagShopping} size="lg" /> Shop
-        </button>
+        <Link href="/Store">
+          <button className="flex gap-1 font-medium text-xxs text-center px-6 py-3 border border-pink-400 mb-4 md:mb-0 md:mr-5 rounded-full text-pink-400">
+            <FontAwesomeIcon icon={faBagShopping} size="lg" /> Shop
+          </button>
+        </Link>
 
         <button
           onClick={logout}

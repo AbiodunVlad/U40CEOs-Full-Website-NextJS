@@ -1,3 +1,4 @@
+"use client";
 import CoursesNavbar from "@/components/CoursesNavbar";
 import Footer from "@/components/Footer";
 import React from "react";

@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import TVseries from "../homePage/tvSeries";
+import TVseries from "../home/tvSeries";
 import Link from "next/link";
 import { getSuccessStories } from "../../../pages/api/auth";
 

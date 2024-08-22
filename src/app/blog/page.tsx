@@ -5,7 +5,7 @@ import React, { useState, useEffect } from "react";
 import BlogSearch from "./BlogSearch";
 import WhatIs from "./WhatIs";
 import Event from "@/components/cards/Event";
-import TVseries from "../homePage/tvSeries";
+import TVseries from "../home/tvSeries";
 import Link from "next/link";
 import Image from "next/image";
 import BecomeAMember from "@/components/BecomeAMember";

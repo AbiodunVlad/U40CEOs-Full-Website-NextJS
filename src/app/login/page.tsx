@@ -10,7 +10,7 @@ import Loading from "@/components/Loading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEyeLowVision, faEye } from "@fortawesome/free-solid-svg-icons";
 
-const LazyHomePage = dynamic(() => import("../homePage/page"), {
+const LazyHomePage = dynamic(() => import("../home/page"), {
   loading: () => <Loading />,
 });
 
@@ -64,10 +64,12 @@ export default function Login() {
         password,
       });
 
+      localStorage.setItem("isAuthenticated", "true");
+
       setRedirecting(true);
 
       setTimeout(() => {
-        router.push("/homePage");
+        router.push("/home");
       }, 1000);
     } catch (error) {
       if (error instanceof Error) {
@@ -99,21 +101,60 @@ export default function Login() {
 
         {error && <p className="text-red-500 mb-5">{error}</p>}
 
-        <input
+        <div className="relative mb-5 w-full">
+          <input
+            className="text-black w-full p-2 border border-red-300 rounded-lg focus:outline-none focus:border-red-800"
+            placeholder=" "
+            id="email"
+            type="email"
+            onChange={(e) => setEmail(e.target.value)}
+          />
+
+          <label
+            htmlFor="email"
+            className={`absolute left-2 top-2 text-gray-500 pointer-events-none transition-all transform origin-left ${
+              email ? "-translate-y-7 scale-75" : ""
+            }`}
+          >
+            Email
+          </label>
+        </div>
+
+        {/* <input
           className="text-black w-full  p-2 border border-red-300 rounded-lg mb-5 focus:outline-none focus:border-red-800"
           placeholder="Email"
           id="email"
           type="email"
-          // value={user.email}
           onChange={(e) => setEmail(e.target.value)}
-        />
+        /> */}
 
-        <div className="w-full  relative">
+        <div className="relative mb-5 w-full">
+          <input
+            className="text-black w-full p-2 border border-red-300 rounded-lg focus:outline-none focus:border-red-800"
+            placeholder=" "
+            type={showPassword ? "text" : "password"}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <label
+            htmlFor="password"
+            className={`absolute left-2 top-2 text-gray-500 pointer-events-none transition-all transform origin-left
+      ${password ? "-translate-y-7 scale-75" : ""}`}
+          >
+            Password
+          </label>
+          <FontAwesomeIcon
+            icon={showPassword ? faEye : faEyeLowVision}
+            size="sm"
+            className="text-gray-400 absolute top-3 right-5"
+            onClick={togglePasswordVisibility}
+          />
+        </div>
+
+        {/* <div className="w-full  relative">
           <input
             className="text-black w-full p-2 border border-red-300 rounded-lg mb-5 focus:outline-none focus:border-red-800"
             placeholder="Password"
             type={showPassword ? "text" : "password"}
-            // value={user.password}
             onChange={(e) => setPassword(e.target.value)}
           />
           <FontAwesomeIcon
@@ -122,7 +163,7 @@ export default function Login() {
             className="text-gray-400 absolute top-3 right-5"
             onClick={togglePasswordVisibility}
           />
-        </div>
+        </div> */}
 
         <button
           onClick={login}
