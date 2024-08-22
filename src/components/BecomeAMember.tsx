@@ -11,7 +11,7 @@ export default function BecomeAMember() {
         Book a free consultation with us today
       </p>
 
-      <button className="text-white text-sm font-bold bg-purple-600 rounded-full py-3 px-5 uppercase">
+      <button className="text-white text-sm font-bold bg-pink-600 rounded-full py-3 px-5 uppercase">
         become a member
       </button>
     </div>

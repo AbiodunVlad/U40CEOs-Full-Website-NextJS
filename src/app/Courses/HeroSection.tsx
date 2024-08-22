@@ -4,12 +4,12 @@ import React from "react";
 export default function HeroSection() {
   return (
     <div className="bg-pink-100 flex flex-col pt-10 pb-7 md:px-20 px-5">
-      <h1 className="text-orange-500 text-3xl font-extrabold text-center mb-3">
+      <h1 className="text-orange-500 text-4xl font-extrabold text-center mb-2">
         STARTING A BUSINESS IN
         <br /> AFRICA{" "}
       </h1>
 
-      <p className="text-black text-xs text-center mb-10">
+      <p className="text-black text-sm text-center mb-20">
         Your practical guide to launching an African success story
       </p>
 

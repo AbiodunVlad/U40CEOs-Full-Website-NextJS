@@ -10,7 +10,7 @@ import { getSuccessStories } from "../../../pages/api/auth";
 const ITEMS_PER_PAGE = 12;
 
 type Stories = {
-  id: number;
+  id: string;
   firstName: string;
   lastName: string;
   company: string;

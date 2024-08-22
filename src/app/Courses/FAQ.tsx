@@ -9,31 +9,31 @@ export default function FAQ() {
 
       <div className="flex sm:flex-row flex-col justify-center gap-20">
         <div className="flex flex-col">
-          <p className="text-black text-xs mb-2 border border-solid border-black">
+          <p className="text-black text-sm mb-2 border border-solid border-black p-1">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit?
           </p>
-          <p className="text-black text-xs mb-2 border border-solid border-black">
+          <p className="text-black text-sm mb-2 border border-solid border-black p-1">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit?
           </p>
-          <p className="text-black text-xs mb-2 border border-solid border-black">
+          <p className="text-black text-sm mb-2 border border-solid border-black p-1">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit?
           </p>
-          <p className="text-black text-xs border border-solid border-black">
+          <p className="text-black text-sm border border-solid border-black p-1">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit?
           </p>
         </div>
 
         <div className="flex flex-col">
-          <p className="text-black text-xs mb-2 border border-solid border-black">
+          <p className="text-black text-sm mb-2 border border-solid border-black p-1">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit?
           </p>
-          <p className="text-black text-xs mb-2 border border-solid border-black">
+          <p className="text-black text-sm mb-2 border border-solid border-black p-1">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit?
           </p>
-          <p className="text-black text-xs mb-2 border border-solid border-black">
+          <p className="text-black text-sm mb-2 border border-solid border-black p-1">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit?
           </p>
-          <p className="text-black text-xs border border-solid border-black">
+          <p className="text-black text-sm border border-solid border-black p-1">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit?
           </p>
         </div>

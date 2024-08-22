@@ -40,7 +40,7 @@ export default function CourseVideos() {
     <div className="flex flex-col w-full">
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-5 w-full mb-7">
         {currentItems.map((course, index) => (
-          <div key={index} className="flex flex-col items-center">
+          <div key={index} className="flex flex-col items-center mb-10">
             <iframe src={course.videoUrl} className="w-full h-48 mb-5" />
             <p className="text-black text-sm font-bold mb-5">{course.title}</p>
             <button className="bg-purple-600 text-white text-xs py-2 px-5 w-full">

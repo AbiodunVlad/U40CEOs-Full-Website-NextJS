@@ -7,7 +7,7 @@ import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 type Stories = {
-  id: number;
+  id: string;
   firstName: string;
   lastName: string;
   company: string;

@@ -9,7 +9,7 @@ export default function CourseFormat() {
         <span className="text-purple-500">Features</span>
       </p>
 
-      <div className="flex sm:flex-row flex-col justify-around mb-20">
+      <div className="flex sm:flex-row flex-col justify-center gap-20 mb-20">
         <div className="bg-purple-300 text-black py-3 sm:px-7 px-3 rounded-md sm:w-1/3 w-full sm:mb-0 mb-5">
           <p className="text-sm font-bold mb-3">COURSE FORMAT</p>
 

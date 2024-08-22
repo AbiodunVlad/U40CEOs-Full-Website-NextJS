@@ -8,7 +8,7 @@ interface UserData {
 }
 
 interface SuccessStories {
-  id: number;
+  id: string;
   firstName: string;
   lastName: string;
   company: string;
@@ -96,11 +96,15 @@ export const createSuccessStories = async (
 };
 
 export const getSuccessStories = async (): Promise<any> => {
+  const accessToken =
+    "eyJhbGciOiJIUzM4NCJ9.eyJpZCI6IjcxZTBhOWJhLTgxYzUtNDhiMC1hOTc4LWVjOGQyMDc5ZjZhMiIsImVtYWlsIjoiZGVsZUBnbWFpbC5jb20iLCJyb2xlIjoiVVNFUiIsInN1YiI6ImRlbGVAZ21haWwuY29tIiwiaWF0IjoxNzI0MDkzMjQxLCJleHAiOjE3MjQwOTY4NDF9.7iBVEUnKm82qwA1KcGHLgTWo66y1aCKTeF14cjNgh2rfFb5tJUqdczX76gCVh17X";
+
   try {
     const response = await fetch(`${BaseURL}/success-stories`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${accessToken}`,
       },
     });
 

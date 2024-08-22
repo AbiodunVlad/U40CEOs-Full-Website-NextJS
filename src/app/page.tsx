@@ -19,6 +19,10 @@ import Community from "./community/page";
 import MembershipOptions from "./community/MembershipOptions";
 import CourseObjective from "./Courses/page";
 import LearningHub from "./LearningHub/page";
+import NoFreebieCourses from "./NoFreebieCourses/page";
+import FreebieCourses from "./FreebieCourses/page";
+import WatchFreebie from "./WatchFreebie/page";
+import Store from "./Store/page";
 
 export default function Home() {
   return (
@@ -43,7 +47,11 @@ export default function Home() {
       {/* <MembershipOptions /> */}
 
       {/* <CourseObjective /> */}
-      <LearningHub />
+      {/* <LearningHub /> */}
+      {/* <NoFreebieCourses /> */}
+      {/* <FreebieCourses /> */}
+      {/* <WatchFreebie /> */}
+      <Store />
     </main>
   );
 }

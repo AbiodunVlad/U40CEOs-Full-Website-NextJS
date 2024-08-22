@@ -16,14 +16,13 @@ export default async function handler(
 
       const data = await response.json();
 
-      //JSONPlaceholder data mapped to course structure
       const courses = data.map((item: any) => ({
         title:
           item.title.length > 15
             ? `${item.title.substring(0, 15)}...`
             : item.title,
         videoUrl:
-          "https://www.youtube.com/embed/6VSyCoBCzXY?si=Atwhzufq9IBnufba", // Placeholder video URL
+          "https://www.youtube.com/embed/6VSyCoBCzXY?si=Atwhzufq9IBnufba",
       }));
 
       res.status(200).json(courses);
