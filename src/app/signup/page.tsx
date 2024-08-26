@@ -6,6 +6,7 @@ import Image from "next/image";
 import SideImage from "@/components/SideImage";
 import { signupUser } from "../../../pages/api/auth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { faEyeLowVision, faEye } from "@fortawesome/free-solid-svg-icons";
 
 export default function Signup() {
@@ -19,12 +20,6 @@ export default function Signup() {
 
   const router = useRouter();
 
-  // const validatePassword = (password: any) => {
-  //   const passwordRegex =
-  //     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-  //   return passwordRegex.test(password);
-  // };
-
   const validatePassword = (password: string) => {
     return password.length >= 6;
   };
@@ -36,21 +31,6 @@ export default function Signup() {
   const signup = async () => {
     setLoading(true);
     setError("");
-
-    // if (password.length === 0) {
-    //   setError("Password is required");
-    //   setLoading(false);
-
-    //   return;
-    // }
-
-    // if (!validatePassword(password)) {
-    //   setError(
-    //     "Password must be at least 8 characters long, include an uppercase letter, a lowercase letter, a number, and a special character."
-    //   );
-    //   setLoading(false);
-    //   return;
-    // }
 
     if (!validatePassword(password)) {
       setError("Password should be at least 6 characters long.");
@@ -83,42 +63,15 @@ export default function Signup() {
     }
   };
 
-  const [user, setUser] = useState({
-    keepSignedIn: false,
-  });
-
-  // const [user, setUser] = useState({
-  // username: "",
-  // email: "",
-  // password: "",
-  // keepSignedIn: false,
-  // });
-
-  // const [isClient, setIsClient] = useState(false);
-
-  // useEffect(() => {
-  //   setIsClient(true);
-  // }, []);
-
-  // const signup = async () => {
-  // if (isClient) {
-  // }
-  // };
-
-  // const signupWithGoogle = async () => {
-  // if (isClient) {
-  // }
-  // };
-
-  // if (!isClient) {
-  //   return null;
-  // }
+  const signupWithGoogle = async () => {
+    // window.location.href = "http://localhost:3000/api/auth/google";
+  };
 
   return (
     <div className="flex flex-col-reverse md:flex-row items-center justify-around min-h-screen">
       <div className="bg-slate-100 w-full md:w-1/2 flex flex-col items-center justify-center min-h-screen py-2 px-5 md:px-20">
         <Image
-          className="mb-5"
+          className="mb-3"
           src="/images/logo.svg"
           alt="logo"
           width={100}
@@ -127,23 +80,14 @@ export default function Signup() {
 
         <h2 className="font-bold text-black text-3xl mb-3">Sign up</h2>
 
-        <p className="text-gray-500 text-xs mb-7">
+        <p className="text-gray-500 text-xs mb-5">
           Sign up to enjoy full access to Under 40 CEOs resources
         </p>
 
-        {/* <input
-          className="text-black w-full md:w-3/4 p-2 border border-red-300 rounded-lg mb-5 focus:outline-none focus:border-red-800"
-          placeholder="Username"
-          id="username"
-          type="text"
-          value={user.username}
-          onChange={(e) => setUser({ ...user, username: e.target.value })}
-        /> */}
-
-        {error && <p className="text-red-500 mb-5">{error}</p>}
+        {error && <p className="text-red-500 mb-4">{error}</p>}
 
         <input
-          className="text-black w-full   p-2 border border-red-300 rounded-lg mb-5 focus:outline-none focus:border-red-800"
+          className="text-black w-full p-2 border border-red-300 rounded-lg mb-4 focus:outline-none focus:border-red-800"
           placeholder="Full Name"
           id="fullName"
           type="text"
@@ -152,7 +96,7 @@ export default function Signup() {
         />
 
         <input
-          className="text-black w-full  p-2 border border-red-300 rounded-lg mb-5 focus:outline-none focus:border-red-800"
+          className="text-black w-full  p-2 border border-red-300 rounded-lg mb-4 focus:outline-none focus:border-red-800"
           placeholder="Email"
           id="email"
           type="email"
@@ -162,7 +106,7 @@ export default function Signup() {
 
         <div className="w-full  relative">
           <input
-            className="text-black w-full p-2 border border-red-300 rounded-lg mb-5 focus:outline-none focus:border-red-800"
+            className="text-black w-full p-2 border border-red-300 rounded-lg mb-4 focus:outline-none focus:border-red-800"
             placeholder="Password"
             type={showPassword ? "text" : "password"}
             value={password}
@@ -178,7 +122,7 @@ export default function Signup() {
 
         <div className="w-full relative">
           <input
-            className="text-black w-full p-2 border border-red-300 rounded-lg mb-5 focus:outline-none focus:border-red-800"
+            className="text-black w-full p-2 border border-red-300 rounded-lg mb-4 focus:outline-none focus:border-red-800"
             placeholder="Confirm Password"
             type={showPassword ? "text" : "password"}
             value={confirmPassword}
@@ -200,34 +144,27 @@ export default function Signup() {
           {loading ? "Signing you up..." : "Sign up"}
         </button>
 
-        {/* <div className="self-start flex items-center mb-5">
-          <input
-            id="keep-signed-in"
-            type="checkbox"
-            className="mr-2 "
-            checked={user.keepSignedIn}
-            onChange={(e) =>
-              setUser({ ...user, keepSignedIn: e.target.checked })
-            }
-          />
-          <label htmlFor="keep-signed-in" className="text-xs text-black">
-            Keep me signed in
-          </label>
-        </div> */}
-
-        <div className="flex flex-row items-start">
+        <div className="flex flex-row items-start mb-5">
           <div className="border border-gray-400 md:mx-10 mx-3 w-28 h-0.5 bg-gray-300"></div>
-          <p className="mb-5 text-gray-500 text-xs">Or</p>
+          <p className="text-gray-500 text-xs">Or</p>
           <div className="border border-gray-400 md:mx-10 mx-3 w-28 h-0.5 bg-gray-300"></div>
         </div>
 
-        {/* <button
-          onClick={signupWithGoogle}
-          className="text-black w-full md:w-3/4 p-2 border bg-white rounded-xl mb-10"
-        >
-          {" "}
-          Signup with Google
-        </button> */}
+        <div className="w-full relative flex justify-center">
+          <button
+            onClick={signupWithGoogle}
+            className="text-black w-full md:w-3/4 p-2 border bg-white rounded-xl mb-5"
+          >
+            {" "}
+            Signup with Google
+          </button>
+
+          <FontAwesomeIcon
+            icon={faGoogle}
+            className="text-red-400 absolute top-3.5 right-36"
+            size="sm"
+          />
+        </div>
 
         <p className="text-gray-500 text-xs">
           Do you have an account already? {""}

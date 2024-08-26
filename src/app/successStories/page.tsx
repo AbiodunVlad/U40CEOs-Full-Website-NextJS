@@ -50,6 +50,16 @@ export default function SuccessStories() {
   useEffect(() => {
     async function fetchStories() {
       try {
+        // const successStories = {
+        //   id: "1",
+        //   firstName: "John",
+        //   lastName: "Doe",
+        //   company: "Example Corp",
+        //   touchPoint: "Webinar",
+        //   topic: "Leadership",
+        //   role: "CEO",
+        //   body: "A story of success...",
+        // };
         // const res = await fetch("/api/successStories");
         const data = await getSuccessStories();
 
@@ -59,7 +69,7 @@ export default function SuccessStories() {
 
         // const data: Stories[] = await res.json();
         // const data = await res.json();
-        console.log("Fetched stories:", data);
+        console.log("Here are your stories:", data);
 
         if (Array.isArray(data)) {
           console.log("Data is an array, setting stories state.");

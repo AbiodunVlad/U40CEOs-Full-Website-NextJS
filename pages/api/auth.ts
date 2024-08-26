@@ -24,6 +24,13 @@ interface SuccessStories {
   // file: string;
 }
 
+interface BlogPosts {
+  id: number;
+  category: string;
+  title: string;
+  body: string;
+}
+
 export const signupUser = async (userData: UserData): Promise<any> => {
   try {
     const response = await fetch(`${BaseURL}/auth/sign-up`, {
@@ -110,13 +117,85 @@ export const getSuccessStories = async (): Promise<any> => {
 
     if (!response.ok) {
       const errorData = await response.json();
-      console.error("Success Stories Error:", errorData);
+      // console.error("Success Stories Error:", errorData);
       throw new Error(errorData.message || "Can't load Success Stories.");
     }
 
     return await response.json();
   } catch (error) {
-    console.error("No Success Stories.", error);
+    // console.error("No Success Stories.", error);
+    throw error;
+  }
+};
+
+export const getBlogPosts = async () => {
+  const accessToken = "";
+
+  try {
+    const response = await fetch(`${BaseURL}/blogpost`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      // console.error("Blog Post Error:", errorData);
+      throw new Error(errorData.message || "Can't load Blog Posts.");
+    }
+
+    return await response.json();
+  } catch (error) {
+    // console.error("No Blog Posts.", error);
+    throw error;
+  }
+};
+
+export const postTestimonials = async (): Promise<any> => {
+  try {
+    const response = await fetch(`${BaseURL}/testimonials`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      // console.error("Creating Testimonials Error:", errorData);
+      throw new Error(errorData.message || "Can't post Testimonials.");
+    }
+
+    return await response.json();
+  } catch (error) {
+    // console.error("Could Not Create Testimonials.", error);
+    throw error;
+  }
+};
+
+export const getTestimonials = async (): Promise<any> => {
+  const accessToken = "";
+
+  try {
+    const response = await fetch(`${BaseURL}/testimonials?page=1&size=10`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      // console.error("Testimonials Error:", errorData);
+      throw new Error(errorData.message || "Can't load Testimonials.");
+    }
+
+    return await response.json();
+  } catch (error) {
+    // console.error("No Testimonias.", error);
     throw error;
   }
 };

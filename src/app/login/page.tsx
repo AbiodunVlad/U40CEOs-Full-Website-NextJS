@@ -9,6 +9,7 @@ import dynamic from "next/dynamic";
 import Loading from "@/components/Loading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEyeLowVision, faEye } from "@fortawesome/free-solid-svg-icons";
+import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 
 const LazyHomePage = dynamic(() => import("../home/page"), {
   loading: () => <Loading />,
@@ -32,26 +33,6 @@ export default function Login() {
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
-
-  // const [isClient, setIsClient] = useState(false);
-
-  // useEffect(() => {
-  //   setIsClient(true);
-  // }, []);
-
-  // const login = async () => {
-  // if (isClient) {
-  // }
-  // };
-
-  // const loginWithGoogle = async () => {
-  // if (isClient) {
-  // }
-  // };
-
-  // if (!isClient) {
-  //   return null;
-  // }
 
   const login = async () => {
     setLoading(true);
@@ -78,6 +59,10 @@ export default function Login() {
     } finally {
       setLoading(false);
     }
+  };
+
+  const loginWithGoogle = async () => {
+    // window.location.href = "http://localhost:3000/api/auth/google";
   };
 
   return (
@@ -120,14 +105,6 @@ export default function Login() {
           </label>
         </div>
 
-        {/* <input
-          className="text-black w-full  p-2 border border-red-300 rounded-lg mb-5 focus:outline-none focus:border-red-800"
-          placeholder="Email"
-          id="email"
-          type="email"
-          onChange={(e) => setEmail(e.target.value)}
-        /> */}
-
         <div className="relative mb-5 w-full">
           <input
             className="text-black w-full p-2 border border-red-300 rounded-lg focus:outline-none focus:border-red-800"
@@ -149,21 +126,6 @@ export default function Login() {
             onClick={togglePasswordVisibility}
           />
         </div>
-
-        {/* <div className="w-full  relative">
-          <input
-            className="text-black w-full p-2 border border-red-300 rounded-lg mb-5 focus:outline-none focus:border-red-800"
-            placeholder="Password"
-            type={showPassword ? "text" : "password"}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <FontAwesomeIcon
-            icon={showPassword ? faEye : faEyeLowVision}
-            size="sm"
-            className="text-gray-400 absolute top-3 right-5"
-            onClick={togglePasswordVisibility}
-          />
-        </div> */}
 
         <button
           onClick={login}
@@ -193,12 +155,20 @@ export default function Login() {
           <div className="border border-gray-400 md:mx-10 mx-3 w-28 h-0.5 bg-gray-300"></div>
         </div>
 
-        {/* <button
-          onClick={loginWithGoogle}
-          className="text-black w-full md:w-3/4 p-2 border bg-white rounded-xl mb-10"
-        >
-          Login with Google
-        </button> */}
+        <div className="w-full relative flex justify-center">
+          <button
+            onClick={loginWithGoogle}
+            className="text-black w-full md:w-3/4 p-2 border bg-white rounded-xl mb-10"
+          >
+            Login with Google
+          </button>
+
+          <FontAwesomeIcon
+            icon={faGoogle}
+            className="text-red-400 absolute top-3.5 right-36"
+            size="sm"
+          />
+        </div>
 
         <p className="text-gray-500 text-xs">
           Need an account? {""}

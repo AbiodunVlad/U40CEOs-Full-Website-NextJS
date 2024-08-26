@@ -27,7 +27,7 @@ import Store from "./Store/page";
 export default function Home() {
   return (
     <main className="bg-gray-200">
-      {/* <HomePage /> */}
+      <HomePage />
       {/* <About /> */}
       {/* <Resources /> */}
       {/* <Blog /> */}
@@ -35,7 +35,7 @@ export default function Home() {
       {/* <BlogPage /> */}
       {/* <Community /> */}
       {/* <Signup /> */}
-      <Login />
+      {/* <Login /> */}
       {/* <PageNotFound /> */}
       {/* <SomethingWentWrong /> */}
       {/* <AccessDenied /> */}

@@ -10,6 +10,7 @@ import Link from "next/link";
 import Image from "next/image";
 import BecomeAMember from "@/components/BecomeAMember";
 import BlogEvent from "./BlogEvent";
+import { getBlogPosts } from "../../../pages/api/auth";
 
 const ITEMS_PER_PAGE = 28;
 
@@ -26,23 +27,38 @@ export default function Blog() {
   const [articles, setArticles] = useState<Article[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
 
+  // useEffect(() => {
+  //   async function fetchArticles() {
+  //     try {
+  //       const res = await fetch("/api/articles");
+
+  //       if (!res.ok) {
+  //         throw new Error("Network response was bad!");
+  //       }
+
+  //       const data = await res.json();
+  //       console.log("Fetched articles:", data);
+  //       setArticles(data);
+  //     } catch (error) {
+  //       console.error("Failed to fetch articles:", error);
+  //     }
+  //   }
+
+  //   fetchArticles();
+  // }, []);
+
   useEffect(() => {
     async function fetchArticles() {
       try {
-        const res = await fetch("/api/articles");
-
-        if (!res.ok) {
-          throw new Error("Network response was bad!");
-        }
-
-        const data = await res.json();
-        console.log("Fetched articles:", data);
-        setArticles(data);
+        const data = await getBlogPosts();
       } catch (error) {
-        console.error("Failed to fetch articles:", error);
+        if (error instanceof Error) {
+          console.error("Failed to blog posts:", error.message);
+        } else {
+          console.error("An unknown error occurred");
+        }
       }
     }
-
     fetchArticles();
   }, []);
 
