@@ -23,11 +23,13 @@ import NoFreebieCourses from "./NoFreebieCourses/page";
 import FreebieCourses from "./FreebieCourses/page";
 import WatchFreebie from "./WatchFreebie/page";
 import Store from "./Store/page";
+import ScheduleACall from "./ScheduleACall/page";
+import Events from "./Events/page";
 
 export default function Home() {
   return (
     <main className="bg-gray-200">
-      <HomePage />
+      {/* <HomePage /> */}
       {/* <About /> */}
       {/* <Resources /> */}
       {/* <Blog /> */}
@@ -52,6 +54,9 @@ export default function Home() {
       {/* <FreebieCourses /> */}
       {/* <WatchFreebie /> */}
       {/* <Store /> */}
+
+      {/* <ScheduleACall /> */}
+      <Events />
     </main>
   );
 }

@@ -69,7 +69,7 @@ export const loginUser = async (userData: UserData): Promise<any> => {
       console.error("Login Error Response:", errorData);
       throw new Error(errorData.message || "Can't log you in.");
     }
-
+    // console.log("login response:", response.json());
     return await response.json();
   } catch (error) {
     console.error("Error logging in:", error);
@@ -129,10 +129,11 @@ export const getSuccessStories = async (): Promise<any> => {
 };
 
 export const getBlogPosts = async () => {
-  const accessToken = "";
+  const accessToken =
+    "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6ImMxNDgxZGE2LWYyMjktNDM4OS04NjVlLWFkNGY1NWZhMDEwYiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwicm9sZSI6IkFETUlOIiwic3ViIjoiYWRtaW5AZW1haWwuY29tIiwiaWF0IjoxNzIzMjg0MjkzLCJleHAiOjE3MjM1NDM0OTN9.g9P5TNXllJusqfWQxs6BYwijAqZbvOxajiVQBXbRHPw";
 
   try {
-    const response = await fetch(`${BaseURL}/blogpost`, {
+    const response = await fetch(`${BaseURL}/blogposts`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -149,6 +150,30 @@ export const getBlogPosts = async () => {
     return await response.json();
   } catch (error) {
     // console.error("No Blog Posts.", error);
+    throw error;
+  }
+};
+
+export const getBlogPostBySlug = async (slug: string) => {
+  const accessToken =
+    "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6ImMxNDgxZGE2LWYyMjktNDM4OS04NjVlLWFkNGY1NWZhMDEwYiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwicm9sZSI6IkFETUlOIiwic3ViIjoiYWRtaW5AZW1haWwuY29tIiwiaWF0IjoxNzIzMjg0MjkzLCJleHAiOjE3MjM1NDM0OTN9.g9P5TNXllJusqfWQxs6BYwijAqZbvOxajiVQBXbRHPw";
+
+  try {
+    const response = await fetch(`${BaseURL}/blogposts/${slug}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.message || "Can't load Blog Post.");
+    }
+
+    return await response.json();
+  } catch (error) {
     throw error;
   }
 };

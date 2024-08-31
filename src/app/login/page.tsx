@@ -39,11 +39,12 @@ export default function Login() {
     setError("");
 
     try {
-      await loginUser({
+      const loginResponse = await loginUser({
         fullName,
         email,
         password,
       });
+      // console.log("Here is the login response:", loginResponse);
 
       localStorage.setItem("isAuthenticated", "true");
 

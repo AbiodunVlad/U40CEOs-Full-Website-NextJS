@@ -16,7 +16,7 @@ import BecomeAMember from "@/components/BecomeAMember";
 
 export default function CourseObjective() {
   return (
-    <div>
+    <div className="bg-pink-100">
       <CoursesNavbar />
       <HeroSection />
       <CEOsSay />

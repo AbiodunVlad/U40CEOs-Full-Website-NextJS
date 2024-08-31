@@ -4,7 +4,7 @@ import { faMagnifyingGlass, faFilter } from "@fortawesome/free-solid-svg-icons";
 
 export default function Search() {
   return (
-    <div className="bg-black pt-10 pb-10 md:pb-16 px-5 md:px-20 flex flex-row items-center justify-center gap-5 relative">
+    <div className="bg-black py-5  px-5 md:px-20 flex flex-row items-center justify-center gap-5 relative">
       {/* <FontAwesomeIcon
         icon={faMagnifyingGlass}
         className="absolute text-gray-700 right-96 left-90"

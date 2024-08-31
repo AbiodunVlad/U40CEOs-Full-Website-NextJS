@@ -3,7 +3,7 @@ import React from "react";
 
 export default function HeroSection() {
   return (
-    <div className="bg-pink-100 flex flex-col pt-10 pb-7 md:px-20 px-5">
+    <div className=" flex flex-col pt-10 pb-7 md:px-20 px-5">
       <h1 className="text-orange-500 text-4xl font-extrabold text-center mb-2">
         STARTING A BUSINESS IN
         <br /> AFRICA{" "}
