@@ -4,7 +4,7 @@ const config = {
     tailwindcss: {},
   },
 
-  productionBrowserSourceMaps: true,
+  // productionBrowserSourceMaps: true,
 };
 
 export default config;
