@@ -60,14 +60,14 @@ export default function SuccessStories() {
         //   role: "CEO",
         //   body: "A story of success...",
         // };
-        // const res = await fetch("/api/successStories");
-        const data = await getSuccessStories();
+        const res = await fetch("/api/successStories");
+        // const data = await getSuccessStories();
 
-        // if (!res.ok) {
-        //   throw new Error("Network response was bad!");
-        // }
+        if (!res.ok) {
+          throw new Error("Network response was bad!");
+        }
 
-        // const data: Stories[] = await res.json();
+        const data: Stories[] = await res.json();
         // const data = await res.json();
         console.log("Here are your stories:", data);
 
@@ -179,11 +179,11 @@ export default function SuccessStories() {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-3 pl-5 md:px-20 md:w-full justify-between gap-3 md:gap-28 md:mb-20 overflow-x-auto">
+      <div className="grid md:grid-cols-3 pl-5 md:px-20 px-5 md:w-full justify-between gap-3 md:gap-28 md:mb-20 overflow-x-auto">
         {firstHalfItems.map((story, index) => (
           <div
             key={index}
-            className="flex flex-col w-screen md:h-dvh md:w-full border border-black"
+            className="flex flex-col  h-auto md:w-full border  mb-20"
           >
             <Link href={`/successStories/${story.id}`}>
               <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
@@ -231,30 +231,32 @@ export default function SuccessStories() {
         </div>
       )}
 
-      <div className="grid md:grid-cols-3 pl-5 md:px-20 md:w-full justify-between gap-3 md:gap-28 md:mb-20 overflow-x-auto">
+      <div className="grid md:grid-cols-3 pl-5 md:px-20 px-5 md:w-full justify-between gap-3 md:gap-28 md:mb-20 overflow-x-auto">
         {secondHalfItems.map((story, index) => (
           <div
             key={index}
-            className="flex flex-col w-screen md:h-dvh md:w-full border border-black"
+            className="flex flex-col h-auto md:w-full border  mb-20"
           >
-            <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
-            <div className="w-full px-4 md:px-10 py-5">
-              <p className="text-black text-sm font-bold mb-2">
-                {story.firstName} {story.lastName}
-              </p>
-              <p className="text-pink-600 text-xxs mb-3">
-                {story.role} @ LandingFolio {/*{story.company*/}
-              </p>
-              <p className="text-blue-500 text-xxs mb-1">
-                Touchpoint: Some touchpoint {/*  {story.touchPoint} */}
-              </p>
+            <Link href={`/successStories/${story.id}`}>
+              <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
+              <div className="w-full px-4 md:px-10 py-5">
+                <p className="text-black text-sm font-bold mb-2">
+                  {story.firstName} {story.lastName}
+                </p>
+                <p className="text-pink-600 text-xxs mb-3">
+                  {story.role} @ LandingFolio {/*{story.company*/}
+                </p>
+                <p className="text-blue-500 text-xxs mb-1">
+                  Touchpoint: Some touchpoint {/*  {story.touchPoint} */}
+                </p>
 
-              <p className="text-blue-500 text-xxs mb-5">
-                Topic: Some topic {/*{story.topic}*/}
-              </p>
+                <p className="text-blue-500 text-xxs mb-5">
+                  Topic: Some topic {/*{story.topic}*/}
+                </p>
 
-              <p className="text-black text-xxs md:mb-6">{story.body}</p>
-            </div>
+                <p className="text-black text-xxs md:mb-6">{story.body}</p>
+              </div>
+            </Link>
           </div>
         ))}
       </div>

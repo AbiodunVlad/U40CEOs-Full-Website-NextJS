@@ -31,33 +31,33 @@ export default function ReadBlog() {
   // const { id } = useParams();
   const id = params?.id as string;
 
-  useEffect(() => {
-    const slug = "test-3";
-    getBlogPostBySlug(slug)
-      .then((data) => console.log("Blog Post Data:", data))
-      .catch((error) => console.error("Error fetching blog post:", error));
-  });
-
   // useEffect(() => {
-  //   const fetchArticle = async () => {
-  //     if (id) {
-  //       try {
-  //         const res = await fetch(`/api/articles?id=${id}`);
+  //   const slug = "test-3";
+  //   getBlogPostBySlug(slug)
+  //     .then((data) => console.log("Blog Post Data:", data))
+  //     .catch((error) => console.error("Error fetching blog post:", error));
+  // });
 
-  //         if (!res.ok) {
-  //           throw new Error("Network response was bad!");
-  //         }
+  useEffect(() => {
+    const fetchArticle = async () => {
+      if (id) {
+        try {
+          const res = await fetch(`/api/articles?id=${id}`);
 
-  //         const data = await res.json();
-  //         console.log("Fetched articles:", data);
-  //         setArticle(data);
-  //       } catch (error) {
-  //         console.error("Failed to fetch articles:", error);
-  //       }
-  //     }
-  //   };
-  //   fetchArticle();
-  // }, [id]);
+          if (!res.ok) {
+            throw new Error("Network response was bad!");
+          }
+
+          const data = await res.json();
+          console.log("Fetched articles:", data);
+          setArticle(data);
+        } catch (error) {
+          console.error("Failed to fetch articles:", error);
+        }
+      }
+    };
+    fetchArticle();
+  }, [id]);
 
   useEffect(() => {
     const fetchRelatedArticles = async () => {
@@ -81,7 +81,11 @@ export default function ReadBlog() {
   }, [id]);
 
   if (!article) {
-    return <div className="text-black">Loading...</div>;
+    return (
+      <div className="text-black flex justify-center items-center">
+        Loading...
+      </div>
+    );
   }
 
   return (

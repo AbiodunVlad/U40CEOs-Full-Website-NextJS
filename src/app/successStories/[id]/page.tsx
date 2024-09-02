@@ -231,7 +231,7 @@ export default function IndividualStories() {
               moreStories.map((story, index) => (
                 <div
                   key={index}
-                  className="flex flex-col w-screen md:h-dvh md:w-full border border-black"
+                  className="flex flex-col w-screen md:h-dvh h-auto md:w-full border  mb-20"
                 >
                   <Link href={`/successStories/${story.id}`}>
                     <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>

@@ -27,10 +27,10 @@ export default async function handler(
         date: "02/10/2024",
         mode: "Virtual",
         location: "Lagos",
-        body:
-          item.body.length > 30
-            ? `${item.title.substring(0, 30)}...`
-            : item.body,
+        body: item.body,
+        // item.body.length > 30
+        //   ? `${item.title.substring(0, 30)}...`
+        //   : item.body,
       }));
 
       res.status(200).json(upcoming);

@@ -8,7 +8,7 @@ export default function BlogPage() {
   const { id } = router.query;
 
   if (!id) {
-    return <div>Loading...</div>;
+    return <div className="flex justify-center items-center">Loading...</div>;
   }
 
   return <ReadBlog />;

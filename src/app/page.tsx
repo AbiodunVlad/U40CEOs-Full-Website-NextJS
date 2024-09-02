@@ -37,7 +37,7 @@ export default function Home() {
       {/* <BlogPage /> */}
       {/* <Community /> */}
       {/* <Signup /> */}
-      {/* <Login /> */}
+      <Login />
       {/* <PageNotFound /> */}
       {/* <SomethingWentWrong /> */}
       {/* <AccessDenied /> */}
@@ -56,7 +56,7 @@ export default function Home() {
       {/* <Store /> */}
 
       {/* <ScheduleACall /> */}
-      <Events />
+      {/* <Events /> */}
     </main>
   );
 }

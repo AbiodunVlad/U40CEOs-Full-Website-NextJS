@@ -27,42 +27,42 @@ export default function Blog() {
   const [articles, setArticles] = useState<Article[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
 
-  // useEffect(() => {
-  //   async function fetchArticles() {
-  //     try {
-  //       const res = await fetch("/api/articles");
-
-  //       if (!res.ok) {
-  //         throw new Error("Network response was bad!");
-  //       }
-
-  //       const data = await res.json();
-  //       console.log("Fetched articles:", data);
-  //       setArticles(data);
-  //     } catch (error) {
-  //       console.error("Failed to fetch articles:", error);
-  //     }
-  //   }
-
-  //   fetchArticles();
-  // }, []);
-
   useEffect(() => {
     async function fetchArticles() {
       try {
-        const data = await getBlogPosts();
-        console.log("Blogs should show now.");
-      } catch (error) {
-        if (error instanceof Error) {
-          console.error("Failed to show blog posts:", error.message);
-        } else {
-          console.error("An unknown error occurred");
-          console.log("No blogs to show.");
+        const res = await fetch("/api/articles");
+
+        if (!res.ok) {
+          throw new Error("Network response was bad!");
         }
+
+        const data = await res.json();
+        console.log("Fetched articles:", data);
+        setArticles(data);
+      } catch (error) {
+        console.error("Failed to fetch articles:", error);
       }
     }
+
     fetchArticles();
   }, []);
+
+  // useEffect(() => {
+  //   async function fetchArticles() {
+  //     try {
+  //       const data = await getBlogPosts();
+  //       console.log("Blogs should show now.");
+  //     } catch (error) {
+  //       if (error instanceof Error) {
+  //         console.error("Failed to show blog posts:", error.message);
+  //       } else {
+  //         console.error("An unknown error occurred");
+  //         console.log("No blogs to show.");
+  //       }
+  //     }
+  //   }
+  //   fetchArticles();
+  // }, []);
 
   const indexOfLastItem = currentPage * ITEMS_PER_PAGE;
   const indexOfFirstItem = indexOfLastItem - ITEMS_PER_PAGE;

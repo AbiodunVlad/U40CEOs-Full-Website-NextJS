@@ -62,7 +62,7 @@ export default function UpcomingEvents() {
           <Link href={`/Events/${event.id}`} key={index}>
             <div
               key={index}
-              className="flex sm:flex-row flex-col justify-center md:gap-40 gap-5 w-full mb-10"
+              className="flex sm:flex-row flex-col justify-center md:gap-40 gap-5 w-full mb-16"
             >
               <div className="sm:w-1/4 w-full">
                 <Image
@@ -91,8 +91,11 @@ export default function UpcomingEvents() {
                 </div>
 
                 <div>
-                  <p className="text-xs text-gray-600">{event.body}</p>
+                  <p className="text-xs text-gray-600 mb-10">{event.body}</p>
                 </div>
+                <button className="bg-purple-500 text-white font-bold py-2 px-5 rounded-full sm:self-start self-stretch flex justify-center mt-auto">
+                  SAVE YOUR SEAT
+                </button>
               </div>
             </div>
           </Link>
