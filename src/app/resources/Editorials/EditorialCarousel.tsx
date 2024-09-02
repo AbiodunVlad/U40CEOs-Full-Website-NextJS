@@ -1,5 +1,5 @@
 "use client";
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode, useCallback, useEffect, useState } from "react";
 
 interface CarouselProps {
   children: ReactNode[];
@@ -14,14 +14,16 @@ export default function EditorialCarousel({
 }: CarouselProps) {
   const [curr, setCurr] = useState(0);
 
-  const next = () =>
-    setCurr((curr) => (curr === slides.length - 1 ? 0 : curr + 1));
+  const next = useCallback(
+    () => setCurr((curr) => (curr === slides.length - 1 ? 0 : curr + 1)),
+    [slides.length]
+  );
 
   useEffect(() => {
     if (!autoSlide) return;
     const slideInterval = setInterval(next, autoSlideInterval);
     return () => clearInterval(slideInterval);
-  }, [autoSlide, autoSlideInterval]);
+  }, [autoSlide, autoSlideInterval, next]);
 
   return (
     <div className="overflow-hidden justify-center w-full relative">
