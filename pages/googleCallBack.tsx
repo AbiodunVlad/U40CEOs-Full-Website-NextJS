@@ -15,3 +15,9 @@
 
 //   return <p>Loading...</p>;
 // };
+
+const PlaceholderPage = () => {
+  return <div>This page is under construction.</div>;
+};
+
+export default PlaceholderPage;
