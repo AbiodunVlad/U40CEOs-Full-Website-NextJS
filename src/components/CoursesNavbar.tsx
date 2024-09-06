@@ -27,7 +27,7 @@ export default function CoursesNavbar() {
   return (
     <div className="bg-white flex flex-col md:flex-row items-center justify-between px-4 py-2 md:px-20 md:py-4 shadow-lg">
       <div className="flex justify-between w-full md:w-auto">
-        <Link href="/homePage">
+        <Link href="/home">
           {" "}
           <Image src="/images/logo.svg" alt="logo" width={50} height={50} />
         </Link>

@@ -58,7 +58,7 @@ export default function Navbar() {
           {" "}
           <li
             className={`text-xs font-bold mb-4 md:mb-0 md:mr-10 ${isActive(
-              "/homePage"
+              "/home"
             )}`}
           >
             Home
@@ -69,7 +69,7 @@ export default function Navbar() {
           {" "}
           <li
             className={`font-bold text-xs text-center mb-4 md:mb-0 md:mr-10 ${isActive(
-              "/aboutPage"
+              "/about"
             )}`}
           >
             About Us
