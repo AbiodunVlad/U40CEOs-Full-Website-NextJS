@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Registered from "./Registered";
-import UpcomingEvents from "./UpcomingEvents";
+import Registered from "./RegisteredEvents/Registered";
+import UpcomingEvents from "./UpcomingEvents/UpcomingEvents";
 
 export default function EventsHeaders() {
   const [activeHeader, setActiveHeader] = useState("UPCOMING");

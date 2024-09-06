@@ -1,7 +1,5 @@
 "use client";
 import React from "react";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 export default function TVseries() {
@@ -49,8 +47,6 @@ export default function TVseries() {
           }
         `}
       </style>
-
-      {/* <Image src="/images/series1.svg" alt="" width={1480} height={200} /> */}
     </div>
   );
 }

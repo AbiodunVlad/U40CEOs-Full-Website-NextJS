@@ -54,20 +54,6 @@ export default function EditorialCarousel({
           ))}
         </div>
       </div>
-
-      {/* <div className="absolute inset-x-0 bottom-4 px-4 md:px-20 flex justify-center bg-red-700">
-        <div className="flex items-center justify-center gap-2">
-          {slides.map((_, i) => (
-            <div
-              key={i}
-              onClick={() => setCurr(i)}
-              className={`cursor-pointer transition-all w-2 h-2 md:w-3 md:h-3 bg-white rounded-full ${
-                curr === i ? "p-2 bg-opacity-100" : "bg-opacity-50"
-              }`}
-            />
-          ))}
-        </div>
-      </div> */}
     </div>
   );
 }

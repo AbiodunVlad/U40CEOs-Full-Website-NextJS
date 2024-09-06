@@ -5,18 +5,6 @@ import Search from "@/components/Search";
 import React, { useEffect, useState } from "react";
 import EventsHeaders from "./EventsHeaders";
 
-// type UpcomingEvent = {
-//   id: number;
-//   imageUrl: string;
-//   title: string;
-//   price: string;
-//   time: string;
-//   date: string;
-//   mode: string;
-//   location: string;
-//   body: string;
-// };
-
 export default function Events() {
   return (
     <div className="bg-gray-200">

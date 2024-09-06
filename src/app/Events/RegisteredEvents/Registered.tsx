@@ -16,7 +16,7 @@ type UpcomingEvents = {
   body: string;
 };
 
-export default function UpcomingEvents() {
+export default function Registered() {
   const [events, setEvents] = useState<UpcomingEvents[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -59,7 +59,7 @@ export default function UpcomingEvents() {
     <div className="flex flex-col w-full justify-center md:px-40 px-5 overflow-hidden">
       <div className="flex flex-col">
         {currentItems.map((event, index) => (
-          <Link href={`/Events/${event.id}`} key={index}>
+          <Link href={`/Events/RegisteredEvents/${event.id}`} key={index}>
             <div
               key={index}
               className="flex sm:flex-row flex-col justify-center md:gap-40 gap-5 w-full mb-16"
@@ -75,7 +75,11 @@ export default function UpcomingEvents() {
               </div>
 
               <div className="sm:w-3/4 w-full flex flex-col text-black">
-                <div className="flex flex-row justify-between mb-5">
+                <div className="text-white text-sm bg-green-400 py-1 px-5 rounded-sm self-start mb-7">
+                  Registered
+                </div>
+
+                <div className="flex flex-row justify-between mb-3">
                   <p className="text-lg font-bold">{event.title}</p>
                   <p className="text-lg font-bold">${event.price}</p>
                 </div>
@@ -93,8 +97,8 @@ export default function UpcomingEvents() {
                 <div>
                   <p className="text-xs text-gray-600 mb-10">{event.body}</p>
                 </div>
-                <button className="bg-purple-500 text-white font-bold py-2 px-5 rounded-full sm:self-start self-stretch flex justify-center mt-auto">
-                  SAVE YOUR SEAT
+                <button className="bg-purple-500 text-white font-bold uppercase py-2 px-5 rounded-full sm:self-start self-stretch flex justify-center mt-auto">
+                  View Details
                 </button>
               </div>
             </div>

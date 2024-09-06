@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import RegisterOverlay from "../RegisterOverlay";
 
 type UpcomingEvents = {
   id: number;
@@ -24,6 +23,10 @@ export default function SingleEvent() {
   const [relatedEvents, setRelatedEvents] = useState<UpcomingEvents[]>([]);
   const [count, setCount] = useState(0);
   const [isOverlayVisible, setOverlayVisible] = useState(false);
+
+  const [overlayType, setOverlayType] = useState<"register" | "pay" | null>(
+    null
+  );
 
   const items: { value: string; label: string }[] = [
     { value: "physical", label: "Physical" },
@@ -92,15 +95,23 @@ export default function SingleEvent() {
   const handleDecrement = () =>
     setCount((prevCount) => Math.max(prevCount - 1, 0));
 
-  const buyTickets = () => {
-    console.log("Opening overlay");
-    setOverlayVisible(true);
+  // const buyTickets = () => {
+  //   console.log("Opening overlay");
+  //   setOverlayVisible(true);
+  // };
+
+  // const closeOverlay = () => {
+  //   console.log("Closing overlay");
+  //   setOverlayVisible(false);
+  // };
+
+  const handleRegister = () => {
+    openPayOverlay();
   };
 
-  const closeOverlay = () => {
-    console.log("Closing overlay");
-    setOverlayVisible(false);
-  };
+  const openRegisterOverlay = () => setOverlayType("register");
+  const openPayOverlay = () => setOverlayType("pay");
+  const closeOverlay = () => setOverlayType(null);
 
   return (
     <div className="bg-gray-200">
@@ -154,71 +165,19 @@ export default function SingleEvent() {
                 </div>
               </div>
 
-              <div className="mb-5">
-                <div className="flex sm:flex-col flex-row sm:justify-normal justify-between sm:items-start items-center sm:gap-0 gap-12 sm:mb-5 mb-0">
-                  <div className="mb-5 flex flex-col">
-                    <p className="text-black text-sm sm:mb-2 mb-1">
-                      Ticket Information:{" "}
-                      <span className="text-purple-500 font-bold">Free</span>
-                    </p>
-
-                    <div className="flex flex-row justify-between items-center bg-white py-2 px-3 gap-4 mb-3">
-                      <div className="flex items-center gap-2">
-                        <button
-                          onClick={handleDecrement}
-                          className="border border-black rounded-full text-black px-2 text-sm"
-                        >
-                          -
-                        </button>
-
-                        <span className="text-black text-sm">{count}</span>
-
-                        <button
-                          onClick={handleIncrement}
-                          className="border border-black rounded-full text-black text-sm px-2"
-                        >
-                          +
-                        </button>
-                      </div>
-                      <p className="text-black text-sm font-bold">
-                        Total: {count}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col">
-                    <p className="text-black sm:text-sm text-xs font-bold">
-                      How would you like to attend?
-                    </p>
-
-                    <div className="flex sm:gap-3 gap-1">
-                      {items.map((item) => (
-                        <div key={item.value}>
-                          <input
-                            name="gender"
-                            type="radio"
-                            value={item.value}
-                            id={item.value}
-                            checked={value === item.value}
-                            onChange={(e) => setValue(e.target.value)}
-                          />{" "}
-                          <label
-                            htmlFor={item.value}
-                            className="text-black sm:text-sm text-xs"
-                          >
-                            {item.label}
-                          </label>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+              <div className="flex flex-col">
+                <div className="mb-5">
+                  <p className="text-black text-sm">
+                    Ticket Information:{" "}
+                    <span className="text-purple-500 font-bold">Free</span>
+                  </p>
                 </div>
 
                 <button
-                  onClick={buyTickets}
+                  onClick={openRegisterOverlay}
                   className="bg-purple-600 text-white text-base font-bold py-1 px-3 rounded-full  w-full"
                 >
-                  Buy Tickets
+                  Download Tickets (4)
                 </button>
               </div>
             </div>
@@ -329,7 +288,6 @@ export default function SingleEvent() {
         </div>
       </div>
 
-      {isOverlayVisible && <RegisterOverlay onClose={closeOverlay} />}
       <Footer />
     </div>
   );

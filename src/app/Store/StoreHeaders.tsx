@@ -37,17 +37,9 @@ export default function StoreHeaders() {
             >
               {header}
             </p>
-            {/* <div
-              className={`border-t-4 w-full ${
-                activeHeader === header
-                  ? "border-purple-500"
-                  : "border-transparent"
-              }`}
-            ></div> */}
           </div>
         ))}
       </div>
-      {/* <div className="border border-gray-400 md:mx-10 mx-3"></div> */}
       <div>{renderContent()}</div>
     </>
   );

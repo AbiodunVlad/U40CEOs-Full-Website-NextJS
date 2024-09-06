@@ -1,10 +1,5 @@
 "use client";
 import React, { ReactNode, useCallback, useEffect, useState } from "react";
-import {
-  faChevronLeft,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface CarouselProps {
   children: ReactNode[];

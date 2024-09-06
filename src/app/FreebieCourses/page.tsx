@@ -134,23 +134,6 @@ export default function FreebieCourses() {
 
       <BecomeAMember />
 
-      {/* <div className="bg-blue-100 sm:px-20 px-5 py-10">
-        <p className="text-black text-2xl font-bold uppercase text-center mb-10">
-          Course <span className="text-purple-500">Overview</span>
-        </p>
-
-        <p className="text-black text-sm mb-10">
-          <span className="font-bold">Intoduction:</span> Are you ready to turn
-          your business idea into a reality? Our &apos;Starting a Business in
-          Africa&apos; course is designed to equip you with the knowledge and
-          tools you need to succeed in the dynamic African market.Are you ready
-          to turn your business idea into a reality? Our &apos;Starting a
-          Business in Africa&apos; course is designed to equip you with the
-          knowledge and tools you need to succeed in the dynamic African market.
-        </p>
-
-        <div></div>
-      </div> */}
       <Footer />
     </div>
   );

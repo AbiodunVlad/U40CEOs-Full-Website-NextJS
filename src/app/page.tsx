@@ -25,6 +25,9 @@ import WatchFreebie from "./WatchFreebie/page";
 import Store from "./Store/page";
 import ScheduleACall from "./ScheduleACall/page";
 import Events from "./Events/page";
+import PayOverlay from "./Events/UpcomingEvents/PayOverlay";
+import RegisterOverlay from "./Events/UpcomingEvents/RegisterOverlay";
+import ShareWithFriends from "./Events/UpcomingEvents/ShareWithFriends";
 
 export default function Home() {
   return (
@@ -57,6 +60,9 @@ export default function Home() {
 
       {/* <ScheduleACall /> */}
       {/* <Events /> */}
+      {/* <PayOverlay />
+      <RegisterOverlay /> */}
+      {/* <ShareWithFriends /> */}
     </main>
   );
 }

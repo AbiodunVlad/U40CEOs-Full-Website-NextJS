@@ -26,8 +26,6 @@ export default function BuyKits() {
     const fetchKit = async () => {
       if (id) {
         try {
-          // const res = await fetch(`/api/kits/${id}`);
-          // const res = await fetch(`/api/kits?id=1`);
           const res = await fetch(`/api/kits?id=${id}`);
 
           if (!res.ok) {
@@ -69,7 +67,7 @@ export default function BuyKits() {
   };
 
   const handleDecrement = () => {
-    if (quantity > 1) {
+    if (quantity > 0) {
       setQuantity((prevQuantity) => prevQuantity - 1);
     }
   };

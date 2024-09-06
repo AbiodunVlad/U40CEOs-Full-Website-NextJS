@@ -16,20 +16,8 @@ export default function OurWorks() {
           </h6>
           <div className="flex flex-row gap-3 mb-3">
             <p className="text-xs text-black">with</p>
-            <Image
-              // className="bg-black"
-              src="/icons/tinyMitsu.svg"
-              alt=""
-              width={20}
-              height={20}
-            />
-            <Image
-              // className="bg-black"
-              src="/icons/tinySam.svg"
-              alt=""
-              width={40}
-              height={20}
-            />
+            <Image src="/icons/tinyMitsu.svg" alt="" width={20} height={20} />
+            <Image src="/icons/tinySam.svg" alt="" width={40} height={20} />
           </div>
           <p className="text-xs text-black leading-5">
             Duis aute irure dolor in reprehenderit in voluptate velit esse

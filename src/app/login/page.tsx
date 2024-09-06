@@ -44,7 +44,6 @@ export default function Login() {
         email,
         password,
       });
-      // console.log("Here is the login response:", loginResponse);
 
       localStorage.setItem("isAuthenticated", "true");
 
@@ -89,7 +88,7 @@ export default function Login() {
 
         <div className="relative mb-5 w-full">
           <input
-            className="text-black w-full p-2 border border-red-300 rounded-lg focus:outline-none focus:border-red-800"
+            className="text-black w-full p-2 border border-red-300 rounded-lg focus:outline-none"
             placeholder=" "
             id="email"
             type="email"
@@ -108,7 +107,7 @@ export default function Login() {
 
         <div className="relative mb-5 w-full">
           <input
-            className="text-black w-full p-2 border border-red-300 rounded-lg focus:outline-none focus:border-red-800"
+            className="text-black w-full p-2 border border-red-300 rounded-lg focus:outline-none"
             placeholder=" "
             type={showPassword ? "text" : "password"}
             onChange={(e) => setPassword(e.target.value)}

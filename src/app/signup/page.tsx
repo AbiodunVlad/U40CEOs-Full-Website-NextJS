@@ -86,28 +86,50 @@ export default function Signup() {
 
         {error && <p className="text-red-500 mb-4">{error}</p>}
 
-        <input
-          className="text-black w-full p-2 border border-red-300 rounded-lg mb-4 focus:outline-none focus:border-red-800"
-          placeholder="Full Name"
-          id="fullName"
-          type="text"
-          value={fullName}
-          onChange={(e) => setFullName(e.target.value)}
-        />
-
-        <input
-          className="text-black w-full  p-2 border border-red-300 rounded-lg mb-4 focus:outline-none focus:border-red-800"
-          placeholder="Email"
-          id="email"
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-
-        <div className="w-full  relative">
+        <div className="relative mb-5 w-full">
           <input
-            className="text-black w-full p-2 border border-red-300 rounded-lg mb-4 focus:outline-none focus:border-red-800"
-            placeholder="Password"
+            className="text-black w-full p-2 border border-red-300 rounded-lg focus:outline-none"
+            placeholder=""
+            id="fullName"
+            type="text"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
+          />
+
+          <label
+            htmlFor="fullName"
+            className={`absolute left-2 top-2 text-gray-500 pointer-events-none transition-all transform origin-left ${
+              fullName ? "-translate-y-7 scale-75" : ""
+            }`}
+          >
+            Full Name
+          </label>
+        </div>
+
+        <div className="relative mb-5 w-full">
+          <input
+            className="text-black w-full  p-2 border border-red-300 rounded-lg focus:outline-none"
+            placeholder=""
+            id="email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+
+          <label
+            htmlFor="email"
+            className={`absolute left-2 top-2 text-gray-500 pointer-events-none transition-all transform origin-left ${
+              email ? "-translate-y-7 scale-75" : ""
+            }`}
+          >
+            Email
+          </label>
+        </div>
+
+        <div className="w-full mb-5 relative">
+          <input
+            className="text-black w-full p-2 border border-red-300 rounded-lg  focus:outline-none"
+            placeholder=""
             type={showPassword ? "text" : "password"}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -118,12 +140,21 @@ export default function Signup() {
             className="text-gray-400 absolute top-3 right-5"
             onClick={togglePasswordVisibility}
           />
+
+          <label
+            htmlFor="password"
+            className={`absolute left-2 top-2 text-gray-500 pointer-events-none transition-all transform origin-left ${
+              password ? "-translate-y-7 scale-75" : ""
+            }`}
+          >
+            Password
+          </label>
         </div>
 
-        <div className="w-full relative">
+        <div className="w-full mb-5 relative">
           <input
-            className="text-black w-full p-2 border border-red-300 rounded-lg mb-4 focus:outline-none focus:border-red-800"
-            placeholder="Confirm Password"
+            className="text-black w-full p-2 border border-red-300 rounded-lg focus:outline-none"
+            placeholder=""
             type={showPassword ? "text" : "password"}
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
@@ -134,6 +165,15 @@ export default function Signup() {
             className="text-gray-400 absolute top-3 right-5"
             onClick={togglePasswordVisibility}
           />
+
+          <label
+            htmlFor="confirmPassword"
+            className={`absolute left-2 top-2 text-gray-500 pointer-events-none transition-all transform origin-left ${
+              confirmPassword ? "-translate-y-7 scale-75" : ""
+            }`}
+          >
+            Confirm Password
+          </label>
         </div>
 
         <button

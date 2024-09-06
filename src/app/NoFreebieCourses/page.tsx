@@ -1,3 +1,4 @@
+"use client";
 import CoursesNavbar from "@/components/CoursesNavbar";
 import React from "react";
 import HeroSection from "../Courses/HeroSection";

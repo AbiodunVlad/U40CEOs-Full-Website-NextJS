@@ -29,17 +29,7 @@ export default function HeroSection() {
       </div>
 
       <div className="w-full h-full">
-        <Carousel autoSlide={true}>
-          {/* {slides.map((slide, index) => (
-            <div key={index}>{slide}</div>
-          ))} */}
-          {/* {slides.map((slide, index) => (
-            <div key={index} className="carousel-slide">
-              {slide}
-            </div>
-          ))} */}
-          {slides}
-        </Carousel>
+        <Carousel autoSlide={true}>{slides}</Carousel>
       </div>
     </div>
   );

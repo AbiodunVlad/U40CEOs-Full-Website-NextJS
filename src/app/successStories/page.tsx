@@ -30,36 +30,9 @@ export default function SuccessStories() {
   const [stories, setStories] = useState<Stories[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
 
-  // const newStory: Stories = {
-  //   id: 1,
-  //   firstName: "Jane",
-  //   lastName: "Doe",
-  //   company: "Innovate Corp.",
-  //   touchPoint: "Conference",
-  //   topic: "Innovation",
-  //   role: "CEO",
-  //   body: "Jane's success story...",
-
-  //   intro: "Intro here",
-  //   about: "About here",
-  //   engageHow: "Engage here",
-  //   results: "Results here",
-  //   file: "Files here",
-  // };
-
   useEffect(() => {
     async function fetchStories() {
       try {
-        // const successStories = {
-        //   id: "1",
-        //   firstName: "John",
-        //   lastName: "Doe",
-        //   company: "Example Corp",
-        //   touchPoint: "Webinar",
-        //   topic: "Leadership",
-        //   role: "CEO",
-        //   body: "A story of success...",
-        // };
         const res = await fetch("/api/successStories");
         // const data = await getSuccessStories();
 

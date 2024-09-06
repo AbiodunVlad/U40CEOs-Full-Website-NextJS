@@ -43,62 +43,6 @@ export default function CompanyStandard() {
         </p>
 
         <Stats />
-
-        {/* <div className="flex flex-row px-1  md:px-20 items-center justify-around overflow-hidden z-30">
-          <div className="flex flex-col justify-center">
-            <h1 className="text-black text-lg md:text-4xl font-extrabold text-center">
-              1,246+
-            </h1>
-            <p className="text-pink-500 text-xs md:text-xs text-center">
-              Members
-            </p>
-          </div>
-
-          <div className="flex flex-col justify-center">
-            <h1 className="text-black text-lg md:text-4xl font-extrabold text-center">
-              414+
-            </h1>
-            <p className="text-pink-500 text-xs md:text-xs text-center">
-              Success Stories
-            </p>
-          </div>
-
-          <div className="flex flex-col justify-center">
-            <h1 className="text-black text-lg md:text-4xl font-extrabold text-center">
-              514+
-            </h1>
-            <p className="text-pink-500 text-xs md:text-xs text-center">
-              Membership Programs
-            </p>
-          </div>
-
-          <div className="flex flex-col justify-center">
-            <h1 className="text-black text-lg md:text-4xl font-extrabold text-center">
-              7B+
-            </h1>
-            <p className="text-pink-500 text-xs md:text-xs text-center">
-              Educational Resources
-            </p>
-          </div>
-
-          <div className="flex flex-col justify-center">
-            <h1 className="text-black text-lg md:text-4xl font-extrabold text-center">
-              189
-            </h1>
-            <p className="text-pink-500 text-xs md:text-xs text-center">
-              Partnerships
-            </p>
-          </div>
-
-          <div className="flex flex-col justify-center">
-            <h1 className="text-black text-lg md:text-4xl font-extrabold text-center">
-              189
-            </h1>
-            <p className="text-pink-500 text-xs md:text-xs text-center">
-              Events Hosted
-            </p>
-          </div>
-        </div> */}
       </div>
 
       <h2 className="text-black text-xl text-center font-extrabold mb-10 sm:mb-16 md:mb-20 uppercase">
