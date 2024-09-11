@@ -6,7 +6,7 @@ export default function SuccessfulBusinesses() {
       <h2 className="text-black text-lg font-extrabold uppercase mb-4 text-center">
         Looking To Join The League Of Successful <br /> Businesses In Africa?
       </h2>
-      <p className="text-xs text-black text-center mb-10 uppercase">
+      <p className="text-sm sm:text-lg text-black text-center mb-10 uppercase">
         Book a free consultation with us today
       </p>
 
