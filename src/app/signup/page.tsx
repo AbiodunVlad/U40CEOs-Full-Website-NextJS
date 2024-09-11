@@ -69,18 +69,20 @@ export default function Signup() {
 
   return (
     <div className="flex flex-col-reverse md:flex-row items-center justify-around min-h-screen">
-      <div className="bg-slate-100 w-full md:w-1/2 flex flex-col items-center justify-center min-h-screen py-2 px-5 md:px-20">
+      <div className="bg-slate-100 w-full md:w-1/2 flex flex-col items-center justify-center min-h-screen py-2 px-5 lg:px-20">
         <Image
           className="mb-3"
           src="/images/logo.svg"
           alt="logo"
-          width={100}
+          width={200}
           height={100}
         />
 
-        <h2 className="font-bold text-black text-3xl mb-3">Sign up</h2>
+        <h2 className="font-bold text-black text-3xl sm:text-5xl mb-3">
+          Sign up
+        </h2>
 
-        <p className="text-gray-500 text-xs mb-5">
+        <p className="text-gray-500 text-md sm:text-xl text-center mb-5">
           Sign up to enjoy full access to Under 40 CEOs resources
         </p>
 
@@ -190,10 +192,10 @@ export default function Signup() {
           <div className="border border-gray-400 md:mx-10 mx-3 w-28 h-0.5 bg-gray-300"></div>
         </div>
 
-        <div className="w-full relative flex justify-center">
+        <div className="w-full lg:w-1/2 relative flex flex-row justify-center bg-white border rounded-xl mb-5">
           <button
             onClick={signupWithGoogle}
-            className="text-black w-full md:w-3/4 p-2 border bg-white rounded-xl mb-5"
+            className="text-black w-full md:w-3/4 p-2"
           >
             {" "}
             Signup with Google
@@ -201,12 +203,12 @@ export default function Signup() {
 
           <FontAwesomeIcon
             icon={faGoogle}
-            className="text-red-400 absolute top-3.5 right-36"
+            className="text-red-400 absolute top-3.5 right-5"
             size="sm"
           />
         </div>
 
-        <p className="text-gray-500 text-xs">
+        <p className="text-gray-500 text-md sm:text-xl">
           Do you have an account already? {""}
           <Link href="/login" className="text-blue-600 font-bold">
             Log in

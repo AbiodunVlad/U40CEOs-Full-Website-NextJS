@@ -4,15 +4,15 @@ import Link from "next/link";
 
 export default function FreeCourses() {
   return (
-    <div className="flex flex-col items-center justify-center bg-slate-100 text-center pb-20">
-      <h1 className="text-black font-extrabold text-lg mb-5">
+    <div className="flex flex-col items-center justify-center bg-slate-100 text-center pb-20 px-5">
+      <h1 className="text-black font-extrabold text-2xl mb-5">
         ACCESS <span className="text-pink-500">FREE COURSES</span>.<br /> WITH
         RELATABLE CASE STUDIES
       </h1>
 
-      <p className="text-xs text-blue-500 mb-10">
+      <p className="text-lg text-blue-500 mb-10">
         Start implementing proven frameworks for building and
-        <br /> elevating your business game.
+        <br className="hidden" /> elevating your business game.
       </p>
 
       <Link href="/resources">

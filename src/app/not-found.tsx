@@ -25,10 +25,7 @@ export default function NotFound() {
           Looks like the page you’re looking for doesn’t exist.
         </p>
 
-        <Link
-          href="/homePage"
-          className="bg-purple-600 text-white rounded-lg p-5"
-        >
+        <Link href="/home" className="bg-purple-600 text-white rounded-lg p-5">
           Back to Homepage
         </Link>
       </div>

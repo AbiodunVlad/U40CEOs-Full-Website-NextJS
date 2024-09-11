@@ -25,10 +25,7 @@ export default function UnauthorizedAccess() {
           You need to log in to view this page.{" "}
         </p>
 
-        <Link
-          href="/pages/homePage"
-          className="bg-purple-600 text-white rounded-lg p-5"
-        >
+        <Link href="/home" className="bg-purple-600 text-white rounded-lg p-5">
           Back to Homepage
         </Link>
       </div>

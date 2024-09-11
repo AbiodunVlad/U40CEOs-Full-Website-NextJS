@@ -28,6 +28,7 @@ import Events from "./Events/page";
 import PayOverlay from "./Events/UpcomingEvents/PayOverlay";
 import RegisterOverlay from "./Events/UpcomingEvents/RegisterOverlay";
 import ShareWithFriends from "./Events/UpcomingEvents/ShareWithFriends";
+import UnderDevelopment from "@/app/underDevelopment/page";
 
 export default function Home() {
   return (
@@ -63,6 +64,8 @@ export default function Home() {
       {/* <PayOverlay />
       <RegisterOverlay /> */}
       {/* <ShareWithFriends /> */}
+
+      {/* <UnderDevelopment /> */}
     </main>
   );
 }

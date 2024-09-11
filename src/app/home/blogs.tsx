@@ -33,9 +33,9 @@ export default function Blog() {
 
   return (
     <div className="flex flex-col items-center justify-center py-20 px-3 md:px-20 bg-slate-100">
-      <p className="text-pink-400 text-xs font-semibold mb-5">FROM OUR BLOG</p>
+      <p className="text-pink-400 text-sm font-semibold mb-5">FROM OUR BLOG</p>
 
-      <h1 className="text-black font-extrabold text-lg mb-5">
+      <h1 className="text-black font-extrabold text-2xl mb-5">
         LATEST NEWS & ARTICLES
       </h1>
 

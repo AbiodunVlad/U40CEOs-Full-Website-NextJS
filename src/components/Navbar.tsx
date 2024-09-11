@@ -33,14 +33,14 @@ export default function Navbar() {
   };
 
   return (
-    <div className="bg-white flex flex-col md:flex-row items-center justify-between px-4 py-2 md:px-20 md:py-4 shadow-lg">
-      <div className="flex justify-between w-full md:w-auto">
+    <div className="bg-white flex flex-col lg:flex-row items-center justify-between px-4 py-2 lg:px-20 lg:py-4 shadow-lg overflow-hidden">
+      <div className="flex justify-between w-full lg:w-auto">
         <Link href="/home">
           {" "}
           <Image src="/images/logo.svg" alt="logo" width={50} height={50} />
         </Link>
 
-        <div className="md:hidden" onClick={toggleMenu}>
+        <div className="lg:hidden" onClick={toggleMenu}>
           <FontAwesomeIcon
             className="text-black"
             icon={menuOpen ? faTimes : faBars}
@@ -50,14 +50,14 @@ export default function Navbar() {
       </div>
 
       <ul
-        className={`text-black flex flex-col md:flex-row items-center w-full md:w-auto transition-all duration-300 ${
-          menuOpen ? "block" : "hidden md:flex"
+        className={`text-black flex flex-col lg:flex-row items-center w-full lg:w-auto transition-all duration-300 ${
+          menuOpen ? "block" : "hidden lg:flex"
         }`}
       >
         <Link href="/home">
           {" "}
           <li
-            className={`text-xs font-bold mb-4 md:mb-0 md:mr-10 ${isActive(
+            className={`text-xs font-bold mb-4 lg:mb-0 lg:mr-10 ${isActive(
               "/home"
             )}`}
           >
@@ -68,17 +68,17 @@ export default function Navbar() {
         <Link href="/about">
           {" "}
           <li
-            className={`font-bold text-xs text-center mb-4 md:mb-0 md:mr-10 ${isActive(
+            className={`font-bold text-xs text-center mb-4 lg:mb-0 lg:mr-10 ${isActive(
               "/about"
             )}`}
           >
-            About Us
+            About
           </li>
         </Link>
 
         <Link href="/resources">
           <li
-            className={`font-bold text-xs mb-4 md:mb-0 md:mr-10 ${isActive(
+            className={`font-bold text-xs mb-4 lg:mb-0 lg:mr-10 ${isActive(
               "/resources"
             )}`}
           >
@@ -89,7 +89,7 @@ export default function Navbar() {
         <Link href="/successStories">
           {" "}
           <li
-            className={`font-bold text-xs text-center mb-4 md:mb-0 md:mr-10 ${isActive(
+            className={`font-bold text-xs text-center mb-4 lg:mb-0 lg:mr-10 ${isActive(
               "/successStories"
             )}`}
           >
@@ -99,7 +99,7 @@ export default function Navbar() {
 
         <Link href="/blog">
           <li
-            className={`font-bold text-xs mb-4 md:mb-0 md:mr-10 ${isActive(
+            className={`font-bold text-xs mb-4 lg:mb-0 lg:mr-10 ${isActive(
               "/blog"
             )}`}
           >
@@ -108,14 +108,14 @@ export default function Navbar() {
         </Link>
 
         <Link href="/community">
-          <button className="font-medium text-xxs text-center px-5 py-1 mb-4 md:mb-0 md:mr-5 bg-black rounded-full text-white">
+          <button className="font-medium text-xxs text-center px-5 py-1 mb-4 lg:mb-0 lg:mr-5 bg-black rounded-full text-white">
             JOIN OUR <br /> COMMUNITY
           </button>
         </Link>
 
         <Link href="/Courses">
           <button
-            className="font-medium text-xxs text-center px-6 py-3 mb-4 md:mb-0 md:mr-5 rounded-full text-white"
+            className="font-medium text-xxs text-center px-6 py-3 mb-4 lg:mb-0 lg:mr-5 rounded-full text-white"
             style={{ backgroundColor: "#C54ED8" }}
           >
             COURSES
@@ -123,7 +123,7 @@ export default function Navbar() {
         </Link>
 
         <Link href="/Store">
-          <button className="flex gap-1 font-medium text-xxs text-center px-6 py-3 border border-pink-400 mb-4 md:mb-0 md:mr-5 rounded-full text-pink-400">
+          <button className="flex gap-1 font-medium text-xxs text-center px-6 py-3 border border-pink-400 mb-4 lg:mb-0 lg:mr-5 rounded-full text-pink-400">
             <FontAwesomeIcon icon={faBagShopping} size="lg" /> Shop
           </button>
         </Link>

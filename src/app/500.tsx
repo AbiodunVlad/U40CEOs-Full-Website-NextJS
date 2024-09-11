@@ -25,10 +25,7 @@ export default function SomethingWentWrong() {
           We’re experiencing some technical issues. Please try again later.{" "}
         </p>
 
-        <Link
-          href="/pages/homePage"
-          className="bg-purple-600 text-white rounded-lg p-5"
-        >
+        <Link href="/home" className="bg-purple-600 text-white rounded-lg p-5">
           Back to Homepage
         </Link>
       </div>

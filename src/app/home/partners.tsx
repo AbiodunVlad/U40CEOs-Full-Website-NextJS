@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Partners() {
   return (
     <div className="bg-black flex flex-col px-4 md:px-20 py-5 items-center justify-center overflow-hidden">
-      <p className="text-slate-50 text-xs mb-3 text-center">
+      <p className="text-slate-50 text-base mb-4 text-center">
         In Business with Top Industries like:
       </p>
 

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function ToolsForBusiness() {
@@ -11,9 +12,11 @@ export default function ToolsForBusiness() {
         </span>
       </h2>
 
-      <button className="p-5 text-xs text-white font-bold bg-purple-600 rounded-full">
-        EXPLORE RESOURCES
-      </button>
+      <Link href="/resources">
+        <button className="p-5 text-xs text-white font-bold bg-purple-600 rounded-full">
+          EXPLORE RESOURCES
+        </button>
+      </Link>
     </div>
   );
 }

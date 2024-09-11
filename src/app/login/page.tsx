@@ -69,18 +69,20 @@ export default function Login() {
     <div className="relative flex flex-col-reverse md:flex-row items-center justify-around min-h-screen">
       {redirecting && <Loading />}
 
-      <div className="bg-slate-100 w-full md:w-1/2 flex flex-col items-center justify-center min-h-screen py-2 px-5 md:px-20">
+      <div className="bg-slate-100 w-full md:w-1/2 flex flex-col items-center justify-center min-h-screen py-2 px-5 lg:px-20">
         <Image
           className="mb-5"
           src="/images/logo.svg"
           alt="logo"
-          width={100}
+          width={200}
           height={100}
         />
 
-        <h2 className="font-bold text-black text-3xl mb-3">Sign in</h2>
+        <h2 className="font-bold text-black text-3xl sm:text-5xl mb-3">
+          Sign in
+        </h2>
 
-        <p className="text-gray-500 text-xs mb-7">
+        <p className="text-gray-500 text-md text-center sm:text-xl mb-7">
           Please login to continue to your account.
         </p>
 
@@ -134,19 +136,39 @@ export default function Login() {
           {loading ? "Signing you in..." : "Sign in"}
         </button>
 
-        <div className="flex self-start items-center mb-5">
-          <input
-            id="keep-signed-in"
-            type="checkbox"
-            className="mr-2 "
-            checked={user.keepSignedIn}
-            onChange={(e) =>
-              setUser({ ...user, keepSignedIn: e.target.checked })
-            }
-          />
-          <label htmlFor="keep-signed-in" className="text-black text-xs">
-            Keep me signed in
-          </label>
+        <div className="flex lg:flex-row flex-col md:justify-center justify-between items-center w-full mb-7">
+          <div className="flex lg:justify-start justify-center items-center lg:mb-0 lg:w-1/2 w-full mb-5">
+            <input
+              id="keep-signed-in"
+              type="checkbox"
+              className="mr-2 "
+              checked={user.keepSignedIn}
+              onChange={(e) =>
+                setUser({ ...user, keepSignedIn: e.target.checked })
+              }
+            />
+            <label
+              htmlFor="keep-signed-in"
+              className="text-black text-md sm:text-xl"
+            >
+              Keep me signed in
+            </label>
+          </div>
+
+          <div className="w-full lg:w-1/2 relative flex flex-row justify-center bg-white border rounded-xl">
+            <button
+              onClick={loginWithGoogle}
+              className="text-black text-md sm:text-xl w-full p-2  mb-0"
+            >
+              Login with Google
+            </button>
+
+            <FontAwesomeIcon
+              icon={faGoogle}
+              className="text-red-400 absolute top-3.5 right-5"
+              size="sm"
+            />
+          </div>
         </div>
 
         <div className="flex flex-row items-start">
@@ -155,22 +177,7 @@ export default function Login() {
           <div className="border border-gray-400 md:mx-10 mx-3 w-28 h-0.5 bg-gray-300"></div>
         </div>
 
-        <div className="w-full relative flex justify-center">
-          <button
-            onClick={loginWithGoogle}
-            className="text-black w-full md:w-3/4 p-2 border bg-white rounded-xl mb-10"
-          >
-            Login with Google
-          </button>
-
-          <FontAwesomeIcon
-            icon={faGoogle}
-            className="text-red-400 absolute top-3.5 right-36"
-            size="sm"
-          />
-        </div>
-
-        <p className="text-gray-500 text-xs">
+        <p className="text-gray-500 text-md sm:text-xl">
           Need an account? {""}
           <Link href="/signup" className="text-blue-600 font-bold">
             Create one

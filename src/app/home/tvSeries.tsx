@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function TVseries() {
   return (
     <div className="flex flex-col bg-slate-100 py-20">
-      <h1 className="text-pink-500 font-light text-center mb-20">
+      <h1 className="text-pink-500 font-light text-center text-2xl mb-20">
         <span className="text-black font-extrabold">
           UNDER 40 CEOs TV SERIES
         </span>{" "}
@@ -15,7 +15,7 @@ export default function TVseries() {
       </h1>
 
       <div className="relative overflow-hidden w-full h-[200px]">
-        <div className="flex  items-center justify-between animate-carousel">
+        <div className="flex items-center justify-between animate-carousel">
           <Image src="/images/tvSeries1.svg" alt="" width={300} height={200} />
           <Image src="/images/tvSeries2.svg" alt="" width={300} height={200} />
           <Image src="/images/tvSeries3.svg" alt="" width={300} height={200} />
@@ -31,9 +31,9 @@ export default function TVseries() {
         {`
           .animate-carousel {
             display: flex;
-            gap: 1rem;
+            gap: 0.5rem;
             width: calc(300px * 8);
-            animation: scroll 25s linear infinite;
+            animation: scroll 10s linear infinite;
           }
 
           @keyframes scroll {
@@ -42,7 +42,7 @@ export default function TVseries() {
             }
             100% {
               // transform: translateX(calc(-300px * 4 * 2));
-              transform: translateX(-${300 * 4}px);
+              transform: translateX(-${300 * 2}px);
             }
           }
         `}

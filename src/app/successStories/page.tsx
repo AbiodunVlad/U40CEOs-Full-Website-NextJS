@@ -33,14 +33,14 @@ export default function SuccessStories() {
   useEffect(() => {
     async function fetchStories() {
       try {
-        const res = await fetch("/api/successStories");
-        // const data = await getSuccessStories();
+        // const res = await fetch("/api/successStories");
+        const data = await getSuccessStories();
 
-        if (!res.ok) {
-          throw new Error("Network response was bad!");
-        }
+        // if (!res.ok) {
+        //   throw new Error("Network response was bad!");
+        // }
 
-        const data: Stories[] = await res.json();
+        // const data: Stories[] = await res.json();
         // const data = await res.json();
         console.log("Here are your stories:", data);
 

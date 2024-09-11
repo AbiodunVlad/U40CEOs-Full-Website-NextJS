@@ -25,10 +25,7 @@ export default function UnderMaintenance() {
           You need to log in to view this page.{" "}
         </p>
 
-        <Link
-          href="/pages/login"
-          className="bg-purple-600 text-white rounded-lg p-5"
-        >
+        <Link href="/login" className="bg-purple-600 text-white rounded-lg p-5">
           Click Here to Login{" "}
         </Link>
       </div>

@@ -21,6 +21,7 @@
     "react-datepicker": "^7.3.0",
     "react-datetime": "^3.2.0",
     "react-dom": "^18",
+    "react-pdf": "^9.1.0",
     "react-time-picker": "^7.0.0"
   },
   "devDependencies": {

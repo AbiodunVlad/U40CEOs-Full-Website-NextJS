@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 export default function Stats() {
   return (
-    <div className="bg-black flex md:flex-row flex-col px-1 py-3 md:px-20 items-center justify-around overflow-hidden z-30">
+    <div className="bg-black flex md:flex-row flex-col px-1 py-3 md:px-20 items-center justify-center overflow-hidden z-30">
       <div className="flex md:flex-row items-center justify-between md:w-1/2 gap-10 md:mb-0 mb-5">
         <div className="flex flex-col justify-center">
           <h1 className="text-white text-sm md:text-4xl font-extrabold text-center">
@@ -33,7 +33,7 @@ export default function Stats() {
         </div>
       </div>
 
-      <div className="flex md:flex-row items-center justify-between md:justify-around w-1/2">
+      <div className="flex md:flex-row items-center justify-around w-1/2">
         <div className="flex flex-col justify-center">
           <h1 className="text-white text-sm md:text-4xl font-extrabold text-center">
             414+
