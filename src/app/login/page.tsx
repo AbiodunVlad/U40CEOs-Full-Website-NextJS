@@ -155,17 +155,17 @@ export default function Login() {
             </label>
           </div>
 
-          <div className="w-1/2 lg:w-1/2 relative flex flex-row items-center justify-ceenter bg-white border rounded-xl">
+          <div className="w-1/2 lg:w-1/3 relative flex flex-row items-center justify-ceenter bg-white border rounded-xl">
             <button
               onClick={loginWithGoogle}
-              className="text-black text-xs lg:text-xl w-full sm:w-full p-2  mb-0"
+              className="text-black text-xs lg:text-xs w-full sm:w-full p-2  mb-0"
             >
               Login with Google
             </button>
 
             <FontAwesomeIcon
               icon={faGoogle}
-              className="text-red-400 absolute top-2 lg:top-3.5 right-2 sm:right-5"
+              className="text-red-400 absolute top-2 lg:top-2.5 right-2 sm:right-4"
               size="sm"
             />
           </div>
