@@ -19,11 +19,11 @@ export default function FreebieCourses() {
       <CoursesNavbar />
       <div className="bg-pink-100 flex flex-col sm:pt-10 pt-5 pb-7 md:px-20 px-5">
         <div className="sm:mb-10 mb-5">
-          <h1 className="text-black sm:text-4xl text-2xl font-extrabold text-center mb-2">
+          <h1 className="text-black text-4xl lg:text-5xl font-extrabold text-center mb-2">
             STARTING A BUSINESS IN AFRICA{" "}
           </h1>
 
-          <p className="text-black sm:text-sm text-xs text-center">
+          <p className="text-black text-sm sm:text-lg text-center">
             Your practical guide to launching an African success story
           </p>
         </div>
@@ -51,20 +51,20 @@ export default function FreebieCourses() {
         </div>
 
         <div className="">
-          <p className="text-black text-lg font-bold mb-5">Course Objectives</p>
-          <p className="text-black text-sm font-normal mb-6">
+          <p className="text-black text-xl font-bold mb-5">Course Objectives</p>
+          <p className="text-black text-sm sm:text-lg font-normal mb-6">
             Are you ready to take control of your health and well-being? Our
             comprehensive nutrition program is designed to help you achieve
             optimal{" "}
           </p>
 
-          <p className="text-black text-sm font-bold mb-5">
+          <p className="text-black text-sm sm:text-lg font-bold mb-5">
             Unique Selling Points:
           </p>
 
           <div className="flex sm:flex-row flex-col justify-between">
             <ul className="text-black text-sm mb-10">
-              <li className="flex mb-2">
+              <li className="flex mb-2 text-sm sm:text-lg">
                 <Image
                   src="/icons/pinkCheck.svg"
                   alt=""
@@ -74,7 +74,7 @@ export default function FreebieCourses() {
                 Expert instruction from successful African entrepreneurs.
               </li>
 
-              <li className="flex mb-2">
+              <li className="flex mb-2 text-sm sm:text-lg">
                 <Image
                   src="/icons/pinkCheck.svg"
                   alt=""
@@ -86,7 +86,7 @@ export default function FreebieCourses() {
             </ul>
 
             <ul className="text-black text-sm mb-10">
-              <li className="flex mb-2">
+              <li className="flex mb-2 text-sm sm:text-lg">
                 <Image
                   src="/icons/pinkCheck.svg"
                   alt=""
@@ -96,7 +96,7 @@ export default function FreebieCourses() {
                 Access to a supportive community of fellow entrepreneurs.
               </li>
 
-              <li className="flex mb-2">
+              <li className="flex mb-2 text-sm sm:text-lg">
                 <Image
                   src="/icons/pinkCheck.svg"
                   alt=""
@@ -108,7 +108,7 @@ export default function FreebieCourses() {
             </ul>
           </div>
 
-          <p className="text-black text-sm font-normal">
+          <p className="text-black text-sm sm:text-lg font-normal">
             Whether you&apos;re a busy professional, an athlete, or simply
             looking to improve your overall health, our program offers a
             tailored solution to fit your unique needs and lifestyle.

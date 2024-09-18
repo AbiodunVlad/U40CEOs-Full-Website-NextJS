@@ -29,6 +29,7 @@ import PayOverlay from "./Events/UpcomingEvents/PayOverlay";
 import RegisterOverlay from "./Events/UpcomingEvents/RegisterOverlay";
 import ShareWithFriends from "./Events/UpcomingEvents/ShareWithFriends";
 import UnderDevelopment from "@/app/underDevelopment/page";
+import PDFviewer from "./pdfViewer/PDFviewer";
 
 export default function Home() {
   return (
@@ -41,7 +42,7 @@ export default function Home() {
       {/* <BlogPage /> */}
       {/* <Community /> */}
       {/* <Signup /> */}
-      <Login />
+      {/* <Login /> */}
       {/* <PageNotFound /> */}
       {/* <SomethingWentWrong /> */}
       {/* <AccessDenied /> */}
@@ -66,6 +67,8 @@ export default function Home() {
       {/* <ShareWithFriends /> */}
 
       {/* <UnderDevelopment /> */}
+
+      <PDFviewer pdfUrl="/pdf/AD30tedDekker.pdf" singlePostView={true} />
     </main>
   );
 }

@@ -3,7 +3,7 @@ import React from "react";
 export default function MeetTheInstructors() {
   return (
     <div className="bg-gray-300 py-10 md:px-20 px-5 flex flex-col">
-      <p className="text-black text-2xl text-center font-bold mb-16">
+      <p className="text-black md:text-3xl text-lg text-center font-bold mb-16">
         MEET THE <span className="text-pink-500">INSTRUCTORS</span>
       </p>
 
@@ -23,7 +23,7 @@ export default function MeetTheInstructors() {
 
               <p className="text-white text-xs font-bold mb-5">Topic Taught</p>
 
-              <p className="text-white text-xxs">
+              <p className="text-white text-sm sm:text-lg">
                 “Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
                 do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -48,7 +48,7 @@ export default function MeetTheInstructors() {
 
               <p className="text-white text-xs font-bold mb-5">Topic Taught</p>
 
-              <p className="text-white text-xxs">
+              <p className="text-white text-sm sm:text-lg">
                 “Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
                 do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -73,7 +73,7 @@ export default function MeetTheInstructors() {
 
               <p className="text-white text-xs font-bold mb-5">Topic Taught</p>
 
-              <p className="text-white text-xxs">
+              <p className="text-white text-sm sm:text-lg">
                 “Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
                 do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -100,7 +100,7 @@ export default function MeetTheInstructors() {
 
               <p className="text-white text-xs font-bold mb-5">Topic Taught</p>
 
-              <p className="text-white text-xxs">
+              <p className="text-white text-sm sm:text-lg">
                 “Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
                 do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -125,7 +125,7 @@ export default function MeetTheInstructors() {
 
               <p className="text-white text-xs font-bold mb-5">Topic Taught</p>
 
-              <p className="text-white text-xxs">
+              <p className="text-white text-sm sm:text-lg">
                 “Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
                 do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -150,7 +150,7 @@ export default function MeetTheInstructors() {
 
               <p className="text-white text-xs font-bold mb-5">Topic Taught</p>
 
-              <p className="text-white text-xxs">
+              <p className="text-white text-sm sm:text-lg">
                 “Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
                 do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -163,7 +163,7 @@ export default function MeetTheInstructors() {
         </div>
       </div>
 
-      <button className="rounded-full bg-pink-500 text-white text-sm font-bold py-2 px-7 self-center">
+      <button className="rounded-full bg-pink-500 text-white text-xl font-bold py-2 px-7 lg:self-center self-stretch">
         ENROL NOW
       </button>
     </div>

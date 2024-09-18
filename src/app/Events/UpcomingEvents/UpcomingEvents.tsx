@@ -62,42 +62,54 @@ export default function UpcomingEvents() {
           <Link href={`/Events/UpcomingEvents/${event.id}`} key={index}>
             <div
               key={index}
-              className="flex sm:flex-row flex-col justify-center md:gap-40 gap-5 w-full mb-16"
+              className="flex lg:flex-row flex-col justify-center lg:gap-20 gap-5 w-full mb-16"
             >
-              <div className="sm:w-1/4 w-full">
+              <div className="lg:w-1/2 w-full">
                 <Image
                   src={event.imageUrl}
                   alt=""
                   width={50}
                   height={50}
-                  className="w-full h-"
+                  className="w-full h-full"
                 />
               </div>
 
-              <div className="sm:w-3/4 w-full flex flex-col text-black">
-                <div className="text-white text-sm bg-gradient-to-r from-pink-600 to-purple-600 py-1 px-5 rounded-sm self-start mb-7">
+              <div className="lg:w-1/2 w-full flex flex-col text-black">
+                <div className="text-white md:text-lg text-sm bg-gradient-to-r from-pink-600 to-purple-600 py-1 px-5 rounded-sm self-start mb-7">
                   Upcoming
                 </div>
 
                 <div className="flex flex-row justify-between mb-3">
-                  <p className="text-lg font-bold">{event.title}</p>
-                  <p className="text-lg font-bold">${event.price}</p>
+                  <p className="text-xl sm:text-3xl font-bold">{event.title}</p>
+                  <p className="text-xl sm:text-3xl font-bold">
+                    ${event.price}
+                  </p>
                 </div>
 
                 <div className="flex flex-row justify-start gap-2 mb-3">
-                  <p className="text-xs text-gray-600">{event.time}</p>
-                  <p className="text-xs text-gray-600">{event.date}</p>
-                  <p className="text-xs text-gray-600">{event.mode}</p>
+                  <p className="text-sm sm:text-lg text-gray-600">
+                    {event.time}
+                  </p>
+                  <p className="text-sm sm:text-lg text-gray-600">
+                    {event.date}
+                  </p>
+                  <p className="text-sm sm:text-lg text-gray-600">
+                    {event.mode}
+                  </p>
                 </div>
 
                 <div className="mb-3">
-                  <p className="text-xs text-gray-600">{event.location}</p>
+                  <p className="text-sm sm:text-lg text-gray-600">
+                    {event.location}
+                  </p>
                 </div>
 
                 <div>
-                  <p className="text-xs text-gray-600 mb-10">{event.body}</p>
+                  <p className="text-sm sm:text-lg text-gray-600 mb-10">
+                    {event.body}
+                  </p>
                 </div>
-                <button className="bg-purple-500 text-white font-bold py-2 px-5 rounded-full sm:self-start self-stretch flex justify-center mt-auto">
+                <button className="bg-purple-500 text-white text-lg sm:text-2xl font-bold py-3 px-5 rounded-full lg:self-start self-stretch flex justify-center mt-auto">
                   SAVE YOUR SEAT
                 </button>
               </div>

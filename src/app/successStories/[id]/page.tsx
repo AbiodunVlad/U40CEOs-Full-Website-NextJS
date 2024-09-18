@@ -71,8 +71,8 @@ export default function IndividualStories() {
         <>
           <div className="flex flex-col-reverse md:flex-row justify-between w-full">
             <div className="flex flex-col w-full md:w-1/2 px-5 md:px-20 py-10 md:py-20 bg-gradient-to-br from-purple-300 to-white">
-              <p className="text-xs text-pink-600 mb-2">WEBINAR</p>
-              <p className="text-black text-lg font-bold mb-5 md:mb-10">
+              <p className="md:text-lg text-sm text-pink-600 mb-2">WEBINAR</p>
+              <p className="text-black md:text-xl text-base font-bold mb-5 md:mb-10">
                 SALES & MARKETING FOR
                 <br /> BUSINESS GROWTH
               </p>
@@ -81,11 +81,11 @@ export default function IndividualStories() {
                 VICTOR <span className="text-pink-600 font-normal">IDOLO</span>
               </p>
 
-              <p className="text-xxs text-purple-600 mb-10">
+              <p className="md:text-base text-sm text-purple-600 mb-10">
                 Role: Sales Manager and Growth Specialist
               </p>
 
-              <p className="text-black text-xxs mb-5">
+              <p className="text-black text-xs mb-5">
                 Duis aute irure dolor in reprehenderit in voluptate velit esse
                 cillum dolore eu fugiat nulla pariatur. At vero eos et accusamus
                 et iusto odio dignissimos ducimus qui blanditiis.
@@ -108,7 +108,7 @@ export default function IndividualStories() {
                 <p className="text-pink-600 text-sm mb-2 md:mb-10 text-center">
                   About Victor
                 </p>
-                <p className="text-black text-xs">
+                <p className="text-black text-md sm:text-xl">
                   Duis aute irure dolor in reprehenderit in voluptate velit esse
                   cillum dolore eu fugiat nulla pariatur. At vero eos et
                   accusamus et iusto odio dignissimos ducimus qui blanditiis.
@@ -119,7 +119,7 @@ export default function IndividualStories() {
                 <p className="text-pink-600 text-sm mb-2 md:mb-10 text-center">
                   HOW HE ENGAGED S&M WEBINAR
                 </p>
-                <p className="text-black text-xs">
+                <p className="text-black text-md sm:text-xl">
                   Duis aute irure dolor in reprehenderit in voluptate velit esse
                   cillum dolore eu fugiat nulla pariatur. At vero eos et
                   accusamus et iusto odio dignissimos ducimus qui blanditiis.
@@ -130,7 +130,7 @@ export default function IndividualStories() {
                 <p className="text-pink-600 text-sm mb-2 md:mb-10 text-center">
                   Results
                 </p>
-                <p className="text-black text-xs">
+                <p className="text-black text-md sm:text-xl">
                   Duis aute irure dolor in reprehenderit in voluptate velit esse
                   cillum dolore eu fugiat nulla pariatur. At vero eos et
                   accusamus et iusto odio dignissimos ducimus qui blanditiis.
@@ -183,7 +183,7 @@ export default function IndividualStories() {
 
             <div className="bg-pink-600 w-full md:w-1/2 h-dvh"></div>
             <div className="bg-white w-full md:w-1/2 h-auto md:h-96 p-5 absolute top-60">
-              <p className="text-black text-xxs leading-5">
+              <p className="text-black text-md sm:text-xl leading-5">
                 Duis aute irure dolor in reprehenderit in voluptate velit esse
                 cillum dolore eu fugiat nulla pariatur. At vero eos et accusamus
                 et iusto odio dignissimos ducimus qui blanditiis praesentium
@@ -295,7 +295,7 @@ export default function IndividualStories() {
               Event Title
             </p>
 
-            <p className="text-black text-xs leading-5 md:w-2/3 mb-3">
+            <p className="text-black text-md sm:text-xl leading-5 md:w-2/3 mb-3">
               Duis aute irure dolor in reprehenderit in voluptate velit esse
               cillum dolore eu fugiat nulla pariatur. At vero eos et accusamus
               et iusto odio dignissimos ducimus qui blanditiis.

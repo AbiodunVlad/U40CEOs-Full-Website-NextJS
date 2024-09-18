@@ -18,9 +18,11 @@ export default function Testimonials() {
   useEffect(() => {
     const fetchTestimonials = async () => {
       try {
-        const response = await getTestimonials();
-        console.log("testimonials sent!");
-        setTestimonials(response.data);
+        const res = await getTestimonials();
+        console.log("API response:", res.data.content);
+        setTestimonials(
+          Array.isArray(res.data.content) ? res.data.content : []
+        );
         setLoading(false);
       } catch (error) {
         setError("Failed to load Testimonials.");

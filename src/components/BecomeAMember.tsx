@@ -3,15 +3,15 @@ import React from "react";
 export default function BecomeAMember() {
   return (
     <div className="flex flex-col items-center bg-blue-400 px-20 py-10">
-      <h5 className="text-black text-lg text-center font-bold mb-5 uppercase">
+      <h5 className="text-black text-lg sm:text-xl text-center font-bold mb-5 uppercase">
         Looking To Join The League Of Successful <br /> Businesses In Africa?{" "}
       </h5>
 
-      <p className="text-black text-xs text-center uppercase mb-5">
+      <p className="text-black text-sm sm:text-lg text-center uppercase mb-5">
         Book a free consultation with us today
       </p>
 
-      <button className="text-white text-sm font-bold bg-pink-600 rounded-full py-3 px-5 uppercase">
+      <button className="text-white text-lg font-bold bg-pink-600 rounded-full py-3 px-5 uppercase">
         become a member
       </button>
     </div>

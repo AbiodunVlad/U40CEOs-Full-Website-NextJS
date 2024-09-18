@@ -25,14 +25,14 @@ export default function CoursesNavbar() {
   const logout = async () => {};
 
   return (
-    <div className="bg-white flex flex-col md:flex-row items-center justify-between px-4 py-2 md:px-20 md:py-4 shadow-lg">
-      <div className="flex justify-between w-full md:w-auto">
+    <div className="bg-white flex flex-col lg:flex-row items-center justify-between px-4 py-2 lg:px-20 lg:py-4 shadow-lg">
+      <div className="flex justify-between w-full lg:w-auto">
         <Link href="/home">
           {" "}
           <Image src="/images/logo.svg" alt="logo" width={50} height={50} />
         </Link>
 
-        <div className="md:hidden" onClick={toggleMenu}>
+        <div className="lg:hidden" onClick={toggleMenu}>
           <FontAwesomeIcon
             className="text-black"
             icon={menuOpen ? faTimes : faBars}
@@ -43,7 +43,7 @@ export default function CoursesNavbar() {
 
       <ul
         className={`text-black flex flex-col md:flex-row items-center w-full md:w-auto transition-all duration-300 ${
-          menuOpen ? "block" : "hidden md:flex"
+          menuOpen ? "block" : "hidden lg:flex"
         }`}
       >
         <Link href="/">

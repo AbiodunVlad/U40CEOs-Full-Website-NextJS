@@ -4,7 +4,7 @@ import React from "react";
 export default function WhatOthersSay() {
   return (
     <div className="bg-white sm:px-20 px-5 pt-10 pb-20">
-      <p className="text-2xl text-black text-center font-bold mb-5">
+      <p className="md:text-3xl text-lg text-black text-center font-bold mb-5">
         WHAT OTHERS <span className="text-blue-600">ARE SAYING</span>
       </p>
 
@@ -19,7 +19,7 @@ export default function WhatOthersSay() {
               <Image src="/icons/star.svg" alt="" width={10} height={10} />
             </div>
 
-            <p className="text-xxs text-black mb-2">
+            <p className="text-sm sm:text-lg text-black mb-2">
               “Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -40,7 +40,7 @@ export default function WhatOthersSay() {
               <Image src="/icons/star.svg" alt="" width={10} height={10} />
             </div>
 
-            <p className="text-xxs text-black mb-2">
+            <p className="text-sm sm:text-lg text-black mb-2">
               “Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -61,7 +61,7 @@ export default function WhatOthersSay() {
               <Image src="/icons/star.svg" alt="" width={10} height={10} />
             </div>
 
-            <p className="text-xxs text-black mb-2">
+            <p className="text-sm sm:text-lg text-black mb-2">
               “Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -84,7 +84,7 @@ export default function WhatOthersSay() {
               <Image src="/icons/star.svg" alt="" width={10} height={10} />
             </div>
 
-            <p className="text-xxs text-black mb-2">
+            <p className="text-sm sm:text-lg text-black mb-2">
               “Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -105,7 +105,7 @@ export default function WhatOthersSay() {
               <Image src="/icons/star.svg" alt="" width={10} height={10} />
             </div>
 
-            <p className="text-xxs text-black mb-2">
+            <p className="text-sm sm:text-lg text-black mb-2">
               “Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -128,7 +128,7 @@ export default function WhatOthersSay() {
               <Image src="/icons/star.svg" alt="" width={10} height={10} />
             </div>
 
-            <p className="text-xxs text-black mb-2">
+            <p className="text-sm sm:text-lg text-black mb-2">
               “Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -149,7 +149,7 @@ export default function WhatOthersSay() {
               <Image src="/icons/star.svg" alt="" width={10} height={10} />
             </div>
 
-            <p className="text-xxs text-black mb-2">
+            <p className="text-sm sm:text-lg text-black mb-2">
               “Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -170,7 +170,7 @@ export default function WhatOthersSay() {
               <Image src="/icons/star.svg" alt="" width={10} height={10} />
             </div>
 
-            <p className="text-xxs text-black mb-2">
+            <p className="text-sm sm:text-lg text-black mb-2">
               “Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris

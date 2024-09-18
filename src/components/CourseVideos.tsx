@@ -60,8 +60,8 @@ export default function CourseVideos() {
               onClick={() => paginate(i + 1)}
               className={`px-4 py-2 mx-1 rounded ${
                 currentPage === i + 1
-                  ? "bg-purple-600 text-white"
-                  : "bg-gray-200"
+                  ? "bg-pink-600 text-white"
+                  : "bg-white-200 text-black border border-black"
               }`}
             >
               {i + 1}

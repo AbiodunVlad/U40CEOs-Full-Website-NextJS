@@ -118,7 +118,9 @@ export default function SingleEvent() {
       <Navbar />
       <div className="sm:px-20 px-5 py-10">
         <Link href="/Events">
-          <p className=" text-black text-sm font-bold mb-10">Go back</p>
+          <p className=" text-black text-sm sm:text-lg font-bold mb-5">
+            Go back
+          </p>
         </Link>
 
         {eventData && (
@@ -138,16 +140,16 @@ export default function SingleEvent() {
             <div className="flex sm:flex-row flex-col-reverse justify-between mb-20">
               <div className="flex flex-col">
                 <div className="mb-5">
-                  <p className="text-sm text-black font-bold mb-3">
+                  <p className="text-sm sm:text-lg text-black font-bold mb-3">
                     Date and Time
                   </p>
-                  <p className="text-gray-600 text-xs mb-1">
+                  <p className="text-gray-600 text-xs sm:text-base mb-1">
                     Saturday, 2 December 2023
                   </p>
-                  <p className="text-gray-600 text-xs mb-1">
+                  <p className="text-gray-600 text-xs sm:text-base mb-1">
                     6:30 PM - 9:30 PM
                   </p>
-                  <p className="text-gray-600 text-xs mb-1">
+                  <p className="text-gray-600 text-xs sm:text-base mb-1">
                     Virtual and Phisical
                   </p>
                   <button className="text-blue-500 text-lg">
@@ -156,8 +158,10 @@ export default function SingleEvent() {
                 </div>
 
                 <div>
-                  <p className="text-sm text-black font-bold mb-3">Location</p>
-                  <p className="text-gray-600 text-xs sm:w-1/2 w-full">
+                  <p className="text-sm sm:text-lg text-black font-bold mb-3">
+                    Location
+                  </p>
+                  <p className="text-gray-600 text-xs sm:text-base sm:w-1/2 w-full">
                     Bal Gandharva Rang Mandir, Near Junction Of 24th & 32nd Road
                     & Patwardhan Park,Off Linking Road, Bandra West., Mumbai,
                     India. Find on map
@@ -165,9 +169,9 @@ export default function SingleEvent() {
                 </div>
               </div>
 
-              <div className="flex flex-col">
+              <div className="flex flex-col mb-5">
                 <div className="mb-5">
-                  <p className="text-black text-sm">
+                  <p className="text-black text-sm sm:text-lg">
                     Ticket Information:{" "}
                     <span className="text-purple-500 font-bold">Free</span>
                   </p>
@@ -175,7 +179,7 @@ export default function SingleEvent() {
 
                 <button
                   onClick={openRegisterOverlay}
-                  className="bg-purple-600 text-white text-base font-bold py-1 px-3 rounded-full  w-full"
+                  className="bg-purple-600 text-white text-lg font-bold py-3 px-4 rounded-full  w-full"
                 >
                   Download Tickets (4)
                 </button>

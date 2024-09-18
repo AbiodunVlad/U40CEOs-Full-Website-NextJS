@@ -28,7 +28,7 @@ export default function StoreHeaders() {
         {headers.map((header) => (
           <div key={header} className="flex flex-col items-center">
             <p
-              className={`md:text-sm text-xxs mb-1 cursor-pointer ${
+              className={`md:text-lg text-sm mb-1 cursor-pointer ${
                 activeHeader === header
                   ? "text-purple-500 border border-purple-500 rounded-full px-5 py-1 font-bold shadow-lg"
                   : "text-gray-500"

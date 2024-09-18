@@ -18,7 +18,7 @@ export default function StartBusiness() {
       <div className="w-full md:w-2/3 flex flex-col justify-between">
         <div className="flex flex-col flex-grow">
           <p className="text-white text-lg md:text-3xl font-bold mb-2">EVENT</p>
-          <p className="text-xs md:text-lg text-white leading-1 mb-auto md:w-full w-full">
+          <p className="text-sm sm:text-lg text-white leading-1 mb-auto md:w-full w-full">
             <span className="text-pink-600">
               Ready to start your business journey?
             </span>{" "}
@@ -28,7 +28,7 @@ export default function StartBusiness() {
         </div>
 
         <Link
-          href="/pages/homePage"
+          href="/home"
           className="text-white text-xs py-2 md:py-3 px-5 md:px-8 rounded-full bg-pink-600 mt-3 md:mt-auto inline-flex items-center"
           style={{ width: "fit-content" }}
         >

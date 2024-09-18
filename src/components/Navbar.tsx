@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
@@ -12,21 +12,28 @@ import {
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
+
+  useEffect(() => {
+    // To check if user is signed in when component mounts
+    const authStatus = localStorage.getItem("isAuthenticated");
+    setIsAuthenticated(!!authStatus); //set to true if authStatus exists
+  }, []);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-
-  const router = useRouter();
 
   const isActive = (path: any) => (pathname === path ? "text-purple-500" : "");
 
   const logout = async () => {
     try {
       localStorage.removeItem("isAuthenticated");
+      setIsAuthenticated(false);
       // sessionStorage.removeItem("authToken");
-      router.push("/login");
+      // router.push("/login");
     } catch (error) {
       console.error("Failed to log out:", error);
     }
@@ -128,12 +135,20 @@ export default function Navbar() {
           </button>
         </Link>
 
-        <button
-          onClick={logout}
-          className="font-medium text-xxs text-center px-6 py-3 border border-pink-400 rounded-full text-pink-400"
-        >
-          Signout
-        </button>
+        {isAuthenticated ? (
+          <button
+            onClick={logout}
+            className="font-medium text-xxs text-center px-6 py-3 border border-pink-400 rounded-full text-pink-400"
+          >
+            Signout
+          </button>
+        ) : (
+          <Link href="/login">
+            <button className="font-medium text-xxs text-center px-6 py-3 border border-pink-400 rounded-full text-pink-400">
+              Login
+            </button>
+          </Link>
+        )}
       </ul>
     </div>
   );

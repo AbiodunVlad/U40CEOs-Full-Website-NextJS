@@ -5,6 +5,7 @@ import React, { useState, useEffect } from "react";
 import ImgCarousel from "./ImgCarousel";
 import Search from "@/components/Search";
 import BecomeAMember from "@/components/BecomeAMember";
+import Link from "next/link";
 
 const slideImg = [
   <Image
@@ -78,22 +79,29 @@ export default function Events() {
     <div className="flex flex-col pt-10 md:pt-20">
       <div className="bg-pink-200 px-5 py-10 md:px-20 flex flex-col-reverse md:flex-row justify-between">
         <div className="flex flex-col justify-between h-auto w-full md:w-1/2 mb-10 md:mb-0">
-          <div className="mb-10">
-            <h5 className="text-black md:leading-10 text-2xl md:text-3xl md:text-start text-center font-extrabold">
-              STARTING A <br /> BUSINESS WITH A <br /> FOCUS ON SALES.
+          <div className="mb-10 w-2/3">
+            <h5 className="text-black leading-0 md:text-5xl text-3xl text-start font-extrabold">
+              STARTING A <br className="hidden" /> BUSINESS WITH A{" "}
+              <br className="hidden" /> FOCUS ON SALES.
             </h5>
           </div>
 
           <div className="flex-grow"></div>
 
           <div className="w-full flex flex-col items-center justify-end">
-            <button className="md:self-start bg-pink-600 text-white text-center py-2 w-3/4 rounded-full mb-5">
-              BOOK YOUR SEAT
-            </button>
+            <Link
+              href="/Events"
+              className="md:self-start bg-pink-600 text-lg text-white text-center py-2 w-3/4 rounded-full mb-5"
+            >
+              <button>BOOK YOUR SEAT</button>
+            </Link>
 
-            <button className="md:self-start bg-transparent text-purple-600 text-center border border-purple-600 border-solid py-2 w-3/4 rounded-full">
-              SEE UPCOMING EVENTS
-            </button>
+            <Link
+              href="/Events"
+              className="md:self-start bg-transparent text-purple-600 text-lg text-center border border-purple-600 border-solid py-2 w-3/4 rounded-full"
+            >
+              <button>SEE UPCOMING EVENTS</button>
+            </Link>
           </div>
         </div>
 
@@ -106,7 +114,9 @@ export default function Events() {
       <Search />
 
       <div className="flex flex-col justify-center items-center px-5 pt-10 pb-20 md:px-20 w-full">
-        <h5 className="text-black text-lg font-bold mb-10">EVENT RECORDINGS</h5>
+        <h5 className="text-black md:text-3xl text-lg font-bold mb-10">
+          EVENT RECORDINGS
+        </h5>
 
         <div className="flex flex-col w-full">
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-5 w-full mb-7">
@@ -132,8 +142,8 @@ export default function Events() {
                   onClick={() => paginate(i + 1)}
                   className={`px-4 py-2 mx-1 rounded ${
                     currentPage === i + 1
-                      ? "bg-purple-600 text-white"
-                      : "bg-gray-200"
+                      ? "bg-pink-600 text-white"
+                      : "bg-white-200 text-black border border-black"
                   }`}
                 >
                   {i + 1}

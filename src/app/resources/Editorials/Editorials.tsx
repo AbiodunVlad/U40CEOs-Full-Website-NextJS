@@ -6,40 +6,40 @@ import Magazine from "./Magazine";
 import Books from "./Books";
 
 const slideImages = [
-  <div key="img1" className="w-full flex  ">
+  <div key="img1" className="w-full flex justify-center items-center">
     <Image
       src="/images/omobolaMag.svg"
       alt="Editorial Image 1"
       width={1400}
       height={200}
-      className="w-full  max-w-screen-md h-auto"
+      className="w-full  h-full"
     />
   </div>,
-  <div key="img2" className="w-full flex  ">
+  <div key="img2" className="w-full flex justify-center items-center">
     <Image
       src="/images/omobolaMag.svg"
       alt="Editorial Image 2"
       width={1400}
       height={200}
-      className="w-full max-w-screen-md h-auto"
+      className="w-full  h-full"
     />
   </div>,
-  <div key="img3" className="w-full flex ">
+  <div key="img3" className="w-full flex justify-center items-center">
     <Image
       src="/images/omobolaMag.svg"
       alt="Editorial Image 3"
       width={1400}
       height={200}
-      className="w-full max-w-screen-md h-auto"
+      className="w-full  h-full"
     />
   </div>,
-  <div key="img4" className="w-full flex  ">
+  <div key="img4" className="w-full flex justify-center items-center">
     <Image
       src="/images/omobolaMag.svg"
       alt="Editorial Image 4"
       width={1400}
       height={200}
-      className="w-full max-w-screen-md h-auto"
+      className="w-full  h-full"
     />
   </div>,
 ];
@@ -75,13 +75,16 @@ export default function Editorials() {
 
       <div className="flex flex-col md:flex-row justify-between items-start px-5 md:px-20 pt-5 md:pt-10 pb-20 w-full">
         <div className="flex flex-col w-full md:w-1/5 mb-5">
-          <h6 className="text-black text-sm font-bold mb-3">Editorial Type</h6>
+          <h6 className="text-black md:text-xl text-sm font-bold mb-3">
+            Editorial Type
+          </h6>
+
           <ul className="flex flex-col">
             {types.map((type) => (
               <li
                 key={type}
                 onClick={() => setActiveEditorial(type)}
-                className={`text-black text-xs mb-2 cursor-pointer ${
+                className={`text-black md:text-lg text-xs mb-2 cursor-pointer ${
                   activeEditorial === type ? "font-bold text-purple-500" : ""
                 }`}
               >

@@ -58,7 +58,7 @@ export default function StoreNavbar() {
             <Link href="/">
               {" "}
               <li
-                className={`text-xs font-bold mb-4 md:mb-0 md:mr-10 ${isActive(
+                className={`text-sm font-bold mb-4 md:mb-0 md:mr-10 ${isActive(
                   "/home"
                 )}`}
               >
@@ -69,7 +69,7 @@ export default function StoreNavbar() {
             <Link href="/">
               {" "}
               <li
-                className={`text-xs font-bold mb-4 md:mb-0 md:mr-10 uppercase ${isActive(
+                className={`text-sm font-bold mb-4 md:mb-0 md:mr-10 uppercase ${isActive(
                   "/home"
                 )}`}
               >
@@ -80,7 +80,7 @@ export default function StoreNavbar() {
             <Link href="/">
               {" "}
               <li
-                className={`text-xs font-bold mb-4 md:mb-0 md:mr-10 ${isActive(
+                className={`text-sm font-bold mb-4 md:mb-0 md:mr-10 ${isActive(
                   "/home"
                 )}`}
               >
@@ -89,12 +89,12 @@ export default function StoreNavbar() {
             </Link>
           </ul>
 
-          <button className="font-medium text-xxs text-center px-5 py-1 mb-4 md:mb-0 md:mr-5 bg-black rounded-full text-white">
+          <button className="font-medium text-xs text-center px-5 py-1 mb-4 md:mb-0 md:mr-5 bg-black rounded-full text-white">
             SIGN IN
           </button>
         </div>
       </div>
-      <p className="test-white text-xs text-center">
+      <p className="test-white text-base text-center">
         <span className="font-bold">SUPPORT YOUNG AFRICAN ENTREPRENEURS</span> -
         BUY BRANDED KITS AND MORE!
       </p>

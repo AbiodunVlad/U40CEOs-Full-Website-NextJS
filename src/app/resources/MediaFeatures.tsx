@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import BecomeAMember from "@/components/BecomeAMember";
+import Link from "next/link";
 
 const ITEMS_PER_PAGE = 28;
 
@@ -44,22 +45,23 @@ export default function MediaFeatures() {
 
   return (
     <div className="flex flex-col pt-10 md:pt-20 overflow-hidden">
-      <div className="bg-blue-200 px-5 py-10 md:px-40 md:py-20 flex flex-col md:flex-row justify-between">
-        <div className="w-full md:w-1/2 flex relative mb-16 md:mb-0">
-          <div className="bg-pink-600 w-full md:w-2/3 h-52 md:h-auto"></div>
+      <div className="w-full bg-blue-200 px-5 py-10 md:px-40 md:py-20 flex flex-col md:flex-row justify-between">
+        <div className="w-full h-full md:w-1/2 flex items-center justify-center relative mb-16 md:mb-0">
+          <div className="bg-pink-600 border border-pink-600 w-full md:w-2/3 h-full md:h-full absolute"></div>
           <iframe
             src="https://www.youtube.com/embed/6VSyCoBCzXY?si=Atwhzufq9IBnufba"
-            className=" w-5/6 md:w-2/3 h-52 absolute top-10 md:top-36 left-16 md:left-10"
+            className=" w-5/6 md:w-2/3 h-52 absolute transform translate-y-40 translate-x-5"
           />
         </div>
 
         <div className="flex flex-col justify-between w-full md:w-1/2">
           <div className="flex flex-col">
-            <h5 className="text-black text-3xl font-extrabold md:font-bold mb-3">
+            <h5 className="text-black md:text-5xl text-3xl font-extrabold md:font-bold mb-3">
               Want to Feature in
               <br /> our TV Series
             </h5>
-            <p className="text-black text-xs mb-5 w-full md:w-2/3">
+
+            <p className="text-black text-sm sm:text-lg mb-5 w-full md:w-2/3">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mollis
               quam malesuada scelerisque ultrices gravida lobortis ac. Et vitae,
               et aliquam sed.{" "}
@@ -84,10 +86,15 @@ export default function MediaFeatures() {
               </div>
             </div>
 
-            <button className="md:self-start bg-transparent font-bold text-black py-2 px-5 rounded-full border-blue-600 border-solid border-2">
-              <FontAwesomeIcon icon={faPhone} className="text-blue-600 mr-5" />
-              SCHEDULE A CALL
-            </button>
+            <Link href="/ScheduleACall">
+              <button className="md:self-start bg-transparent font-bold text-black py-2 px-5 rounded-full border-blue-600 border-solid border-2">
+                <FontAwesomeIcon
+                  icon={faPhone}
+                  className="text-blue-600 text-lg mr-5"
+                />
+                SCHEDULE A CALL
+              </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -95,7 +102,9 @@ export default function MediaFeatures() {
       <Search />
 
       <div className="flex flex-col justify-center items-center px-10 md:px-20 pt-10 pb-20 w-full">
-        <h5 className="text-black text-lg font-bold mb-10">WATCH EPISODES</h5>
+        <h5 className="text-black md:text-3xl text-lg font-bold mb-10">
+          WATCH EPISODES
+        </h5>
 
         <div className="flex flex-col w-full">
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-5 w-full mb-7">
@@ -121,8 +130,8 @@ export default function MediaFeatures() {
                   onClick={() => paginate(i + 1)}
                   className={`px-4 py-2 mx-1 rounded ${
                     currentPage === i + 1
-                      ? "bg-purple-600 text-white"
-                      : "bg-gray-200"
+                      ? "bg-pink-600 text-white"
+                      : "bg-white-200 text-black border border-black"
                   }`}
                 >
                   {i + 1}

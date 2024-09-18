@@ -12,7 +12,7 @@ export default function Search() {
       <input
         type="search"
         placeholder="Search"
-        className="w-2/3 rounded-full text-gray-700 text-xs py-2 px-3 border-pink-500 border-solid border"
+        className="w-2/3 rounded-full text-gray-700 text-xs py-3 px-4 border-pink-500 border-solid border"
       />
 
       <div className="bg-pink-500 py-2 px-5 rounded-md text-white text-sm flex flex-row justify-between items-center gap-2">

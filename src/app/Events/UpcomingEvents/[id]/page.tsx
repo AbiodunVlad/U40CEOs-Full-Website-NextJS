@@ -34,6 +34,7 @@ export default function SingleEvent() {
     { value: "physical", label: "Physical" },
     { value: "virtual", label: "Virtual" },
   ];
+
   const [value, setValue] = useState<string | null>(null);
 
   const params = useParams();
@@ -120,7 +121,9 @@ export default function SingleEvent() {
       <Navbar />
       <div className="sm:px-20 px-5 py-10">
         <Link href="/Events">
-          <p className=" text-black text-sm font-bold mb-10">Go back</p>
+          <p className=" text-black text-sm sm:text-lg font-bold mb-5">
+            Go back
+          </p>
         </Link>
 
         {eventData && (
@@ -140,16 +143,16 @@ export default function SingleEvent() {
             <div className="flex sm:flex-row flex-col-reverse justify-between mb-20">
               <div className="flex flex-col">
                 <div className="mb-5">
-                  <p className="text-sm text-black font-bold mb-3">
+                  <p className="text-sm sm:text-lg text-black font-bold mb-3">
                     Date and Time
                   </p>
-                  <p className="text-gray-600 text-xs mb-1">
+                  <p className="text-gray-600 text-xs sm:text-base mb-1">
                     Saturday, 2 December 2023
                   </p>
-                  <p className="text-gray-600 text-xs mb-1">
+                  <p className="text-gray-600 text-xs sm:text-base mb-1">
                     6:30 PM - 9:30 PM
                   </p>
-                  <p className="text-gray-600 text-xs mb-1">
+                  <p className="text-gray-600 text-xs sm:text-base mb-1">
                     Virtual and Phisical
                   </p>
                   <button className="text-blue-500 text-lg">
@@ -158,8 +161,10 @@ export default function SingleEvent() {
                 </div>
 
                 <div>
-                  <p className="text-sm text-black font-bold mb-3">Location</p>
-                  <p className="text-gray-600 text-xs sm:w-1/2 w-full">
+                  <p className="text-sm sm:text-lg text-black font-bold mb-3">
+                    Location
+                  </p>
+                  <p className="text-gray-600 text-xs sm:text-base sm:w-1/2 w-full">
                     Bal Gandharva Rang Mandir, Near Junction Of 24th & 32nd Road
                     & Patwardhan Park,Off Linking Road, Bandra West., Mumbai,
                     India. Find on map
@@ -170,7 +175,7 @@ export default function SingleEvent() {
               <div className="mb-5">
                 <div className="flex sm:flex-col flex-row sm:justify-normal justify-between sm:items-start items-center sm:gap-0 gap-12 sm:mb-5 mb-0">
                   <div className="mb-5 flex flex-col">
-                    <p className="text-black text-sm sm:mb-2 mb-1">
+                    <p className="text-black text-sm sm:text-lg sm:mb-2 mb-1">
                       Ticket Information:{" "}
                       <span className="text-purple-500 font-bold">Free</span>
                     </p>
@@ -200,7 +205,7 @@ export default function SingleEvent() {
                   </div>
 
                   <div className="flex flex-col">
-                    <p className="text-black sm:text-sm text-xs font-bold">
+                    <p className="text-black text-xs sm:text-base font-bold">
                       How would you like to attend?
                     </p>
 
@@ -217,7 +222,7 @@ export default function SingleEvent() {
                           />{" "}
                           <label
                             htmlFor={item.value}
-                            className="text-black sm:text-sm text-xs"
+                            className="text-black text-xs sm:text-base"
                           >
                             {item.label}
                           </label>
@@ -229,7 +234,7 @@ export default function SingleEvent() {
 
                 <button
                   onClick={openRegisterOverlay}
-                  className="bg-purple-600 text-white text-base font-bold py-1 px-3 rounded-full  w-full"
+                  className="bg-purple-600 text-white text-lg font-bold py-3 px-4 rounded-full  w-full"
                 >
                   Buy Tickets
                 </button>
@@ -237,7 +242,9 @@ export default function SingleEvent() {
             </div>
 
             <div className="flex flex-col mb-20">
-              <p className="text-lg text-black font-bold mb-2">Partners</p>
+              <p className="text-sm sm:text-lg text-black font-bold mb-2">
+                Partners
+              </p>
               <div className="flex flex-row gap-3">
                 <Image
                   src="/icons/tinyMitsu.svg"
@@ -251,37 +258,37 @@ export default function SingleEvent() {
             </div>
 
             <div className="mb-16">
-              <p className="text-lg text-black font-bold mb-2">
+              <p className="text-sm sm:text-lg text-black font-bold mb-2">
                 Event Description
               </p>
 
-              <p className="text-black text-sm mb-5">
+              <p className="text-black text-xs sm:text-base mb-5">
                 Get ready to kick off the Christmas season in Mumbai with{" "}
                 <span className="font-bold">
                   SOUND OF CHRISTMAS - your favourite LIVE Christmas concert!
                 </span>{" "}
               </p>
 
-              <p className="text-black text-sm mb-5">
+              <p className="text-black text-xs sm:text-base mb-5">
                 City Youth Movement invites you to the 4th edition of our annual
                 Christmas festivities - by the youth and for the youth! Feat.
                 your favourite worship leaders, carols, quizzes and some
                 exciting surprises!
               </p>
 
-              <p className="text-black text-sm mb-5">
+              <p className="text-black text-xs sm:text-base mb-5">
                 Bring your family and friends and sing along your favourite
                 Christmas carols on the 2nd of December, 6:30 PM onwards at the
                 Balgandharva Rang Mandir, Bandra West. Book your tickets now!
               </p>
 
-              <p className="text-black text-sm font-bold mb-5">
+              <p className="text-black text-xs sm:text-base font-bold mb-5">
                 3 Reasons to attend the event:
               </p>
 
               <ol
                 type="1"
-                className="text-black text-sm list-decimal list-inside"
+                className="text-black text-xs sm:text-base list-decimal list-inside"
               >
                 <li className="mb-1">The FIRST Christmas concert of Mumbai!</li>
                 <li className="mb-1"> A special Christmas</li>
@@ -292,10 +299,11 @@ export default function SingleEvent() {
         )}
         <div className="bg-gray-300 w-full h-0.5"></div>
 
-        <div className="w-full mb-20 px-5 md:px-20">
+        <div className="w-full mb-20">
           <h2 className="text-xl text-black font-bold mb-5">
             Other events you may like
           </h2>
+
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-5 w-full mb-20">
             {relatedEvents.map((eventData, index) => (
               <Link href={`/Events/${eventData.id}`} key={index}>

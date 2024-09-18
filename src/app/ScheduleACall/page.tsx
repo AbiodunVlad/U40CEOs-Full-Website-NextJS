@@ -38,11 +38,11 @@ export default function ScheduleACall() {
       <Navbar />
       <div className="sm:px-20 px-5 py-10 ">
         <div className="mb-10">
-          <h1 className="text-black sm:text-4xl text-2xl font-extrabold text-center mb-2">
+          <h1 className="text-black text-4xl lg:text-5xl font-extrabold text-center mb-2">
             SHEDULE A CALL
           </h1>
 
-          <p className="text-black sm:text-sm text-xs text-center">
+          <p className="text-black text-sm sm:text-lg text-center">
             Create a dynamic space where people from all walks of life can come
             together to share{" "}
             <span className="sm:flex hidden">
@@ -64,7 +64,7 @@ export default function ScheduleACall() {
             // input={true}
             inputProps={{
               className:
-                "flex text-center  justify-between appearance-none shadow border rounded py-3 px-2 text-gray-600 cursor-pointer",
+                "flex text-center text-sm sm:text-lg  justify-between appearance-none shadow border rounded py-3 px-2 text-gray-600 cursor-pointer",
             }}
           />
           {/* <svg
@@ -118,7 +118,7 @@ export default function ScheduleACall() {
         <div className="flex md:flex-row flex-col items-center justify-center gap-3">
           <div className="relative">
             <input
-              className="text-black w-full p-2 border border-red-300 rounded-lg focus:outline-none focus:border-red-800"
+              className="text-black text-sm sm:text-lg w-full p-2 border border-red-300 rounded-lg focus:outline-none focus:border-red-800"
               placeholder=" "
               id="fullName"
               type="text"
@@ -137,7 +137,7 @@ export default function ScheduleACall() {
 
           <div className="relative">
             <input
-              className="text-black w-full p-2 border border-red-300 rounded-lg focus:outline-none focus:border-red-800"
+              className="text-black text-sm sm:text-lg w-full p-2 border border-red-300 rounded-lg focus:outline-none focus:border-red-800"
               placeholder=" "
               id="email"
               type="email"
@@ -154,7 +154,7 @@ export default function ScheduleACall() {
             </label>
           </div>
 
-          <button className="bg-purple-600 text-white text-sm py-3 px-8 rounded-full">
+          <button className="bg-purple-600 text-white text-sm sm:text-lg py-3 px-8 rounded-full">
             SCHEDULE A CALL
           </button>
         </div>

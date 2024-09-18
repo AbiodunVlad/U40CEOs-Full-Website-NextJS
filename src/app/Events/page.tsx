@@ -10,11 +10,11 @@ export default function Events() {
     <div className="bg-gray-200">
       <Navbar />
       <div className="sm:py-20 py-10">
-        <p className="text-black text-3xl font-bold text-center mb-3">
+        <p className="text-black text-4xl lg:text-5xl font-bold text-center mb-3">
           <span className="text-purple-600 font-light">Upcoming</span> Events
         </p>
 
-        <p className="text-black sm:text-sm text-xs text-center mb-5">
+        <p className="text-black text-sm sm:text-lg text-center mb-5">
           Create a dynamic space where people from all walks of life can come
           together to share
           <span className="sm:flex hidden">

@@ -130,7 +130,7 @@ export default function CompellingProducts() {
               dolores et quas molestias excepturi sint occaecati.
             </p>
 
-            <Link href="">
+            <Link href="/LearningHub">
               <button
                 className="py-2 px-4 md:py-3 md:px-5 rounded-full text-white text-xs md:text-sm font-bold"
                 style={{ backgroundColor: "#9B05E2" }}

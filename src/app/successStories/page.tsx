@@ -34,7 +34,7 @@ export default function SuccessStories() {
     async function fetchStories() {
       try {
         // const res = await fetch("/api/successStories");
-        const data = await getSuccessStories();
+        const res = await getSuccessStories();
 
         // if (!res.ok) {
         //   throw new Error("Network response was bad!");
@@ -42,12 +42,14 @@ export default function SuccessStories() {
 
         // const data: Stories[] = await res.json();
         // const data = await res.json();
-        console.log("Here are your stories:", data);
+        // console.log("1. Here are your stories:", res);
+        // console.log("2. Here are your stories:", res.data);
+        console.log("3. Here are your stories:", res.data.content);
 
-        if (Array.isArray(data)) {
+        if (Array.isArray(res.data.content)) {
           console.log("Data is an array, setting stories state.");
-          setStories(data);
-          console.log("Setting stories state:", data);
+          setStories(res.data.content);
+          console.log("Setting stories state:", res);
         } else {
           console.log("Data is not an array, setting empty stories.");
           setStories([]);
@@ -88,12 +90,13 @@ export default function SuccessStories() {
       <Navbar />
 
       <div className="flex flex-col py-10 md:py-20 px-5 md:px-20">
-        <h1 className="text-black text-center text-2xl md:text-3xl font-extrabold mb-2 leading-7 md:leading-10">
+        <h1 className="text-black text-center text-4xl lg:text-5xl font-extrabold mb-2 leading-7 md:leading-10">
           TANGIBLE RESULTS,
           <br />
           TRANSFORMED BUSINESS
         </h1>
-        <p className="text-gray-500 text-center text-xs leading-3">
+
+        <p className="text-gray-500 text-center text-sm sm:text-lg leading-2">
           Draw inspiration from our community, from proven Founders to budding
           <span className="hidden md:flex">
             <br />
@@ -106,49 +109,89 @@ export default function SuccessStories() {
         <div className="flex flex-col w-full md:w-1/3">
           <p className="text-sm text-purple-600 font-bold mb-5">Filter</p>
 
-          <select className="bg-purple-300 py-4 px-5 w-full rounded-2xl mb-4 text-sm cursor-pointer">
-            <option value="" selected disabled>
-              Product
-            </option>
-            <option value="p1">Product1</option>
-            <option value="p2">Product2</option>
-            <option value="p3">Product3</option>
-            <option value="p4">Product4</option>
-            <option value="p5">Product5</option>
-          </select>
+          <div className="relative mb-4">
+            <select className="bg-purple-300 py-4 px-5  w-full rounded-2xl mb-4 md:text-lg text-sm cursor-pointer appearance-none">
+              <option value="" selected disabled hidden>
+                Product
+              </option>
+              <option value="p1">Product1</option>
+              <option value="p2">Product2</option>
+              <option value="p3">Product3</option>
+              <option value="p4">Product4</option>
+              <option value="p5">Product5</option>
+            </select>
+            <div className="absolute inset-y-0 right-0 flex items-center px-2 pr-5 mb-3 pointer-events-none">
+              <svg
+                className="w-6 h-6 fill-current text-gray-500"
+                viewBox="0 0 20 20"
+              >
+                <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+              </svg>
+            </div>
+          </div>
 
-          <select className="bg-purple-300 py-4 px-5 w-full rounded-2xl mb-4 text-sm">
-            <option value="" selected disabled>
-              Topic
-            </option>
-            <option value="t1">Topic1</option>
-            <option value="t2">Topic2</option>
-            <option value="t3">Topic3</option>
-            <option value="t4">Topic4</option>
-            <option value="t5">Topic5</option>
-          </select>
+          <div className="relative mb-4">
+            <select className="bg-purple-300 py-4 px-5 w-full rounded-2xl mb-4 md:text-lg text-sm cursor-pointer appearance-none">
+              <option value="" selected disabled hidden>
+                Topic
+              </option>
+              <option value="t1">Topic1</option>
+              <option value="t2">Topic2</option>
+              <option value="t3">Topic3</option>
+              <option value="t4">Topic4</option>
+              <option value="t5">Topic5</option>
+            </select>
+            <div className="absolute inset-y-0 right-0 flex items-center px-2 pr-5 mb-3 pointer-events-none">
+              <svg
+                className="w-6 h-6 fill-current text-gray-500"
+                viewBox="0 0 20 20"
+              >
+                <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+              </svg>
+            </div>
+          </div>
 
-          <select className="bg-purple-300 py-4 px-5 w-full rounded-2xl mb-4 text-sm">
-            <option value="" selected disabled>
-              Industry
-            </option>
-            <option value="">Industry1</option>
-            <option value="">Industry2</option>
-            <option value="">Industry3</option>
-            <option value="">Industry4</option>
-            <option value="">Industry5</option>
-          </select>
+          <div className="relative mb-4">
+            <select className="bg-purple-300 py-4 px-5 w-full rounded-2xl mb-4 md:text-lg text-sm cursor-pointer appearance-none">
+              <option value="" selected disabled hidden>
+                Industry
+              </option>
+              <option value="">Industry1</option>
+              <option value="">Industry2</option>
+              <option value="">Industry3</option>
+              <option value="">Industry4</option>
+              <option value="">Industry5</option>
+            </select>
+            <div className="absolute inset-y-0 right-0 flex items-center px-2 pr-5 mb-3 pointer-events-none">
+              <svg
+                className="w-6 h-6 fill-current text-gray-500"
+                viewBox="0 0 20 20"
+              >
+                <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+              </svg>
+            </div>
+          </div>
 
-          <select className="bg-purple-300 py-4 px-5 w-full rounded-2xl mb-4 text-sm">
-            <option value="" selected disabled>
-              Location
-            </option>
-            <option value="">Location1</option>
-            <option value="">Location2</option>
-            <option value="">Location3</option>
-            <option value="">Location4</option>
-            <option value="">Location5</option>
-          </select>
+          <div className="relative mb-4">
+            <select className="bg-purple-300 py-4 px-5 w-full rounded-2xl mb-4 md:text-lg text-sm cursor-pointer appearance-none">
+              <option value="" selected disabled hidden>
+                Location
+              </option>
+              <option value="">Location1</option>
+              <option value="">Location2</option>
+              <option value="">Location3</option>
+              <option value="">Location4</option>
+              <option value="">Location5</option>
+            </select>
+            <div className="absolute inset-y-0 right-0 flex items-center px-2 pr-5 mb-3 pointer-events-none">
+              <svg
+                className="w-6 h-6 fill-current text-gray-500"
+                viewBox="0 0 20 20"
+              >
+                <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -186,7 +229,7 @@ export default function SuccessStories() {
         <div className="bg-gray-400 flex flex-col md:flex-row justify-between mb-20 px-5 md:px-40 py-10">
           <div className="w-full md:w-1/2 flex relative mb-10">
             <div className="bg-black w-full md:w-2/3 h-44 md:h-52"></div>
-            <div className="absolute top-2 -left-2 bg-gradient-to-br from-purple-700 to-blue-700 w-full md:w-2/3 h-44 md:h-52"></div>
+            <div className="absolute  bg-gradient-to-br from-purple-700 to-blue-700 w-full md:w-2/3 h-44 md:h-52 transform translate-y-5 -translate-x-5"></div>
           </div>
 
           <div className="w-full md:w-1/2">
@@ -194,7 +237,7 @@ export default function SuccessStories() {
               LANRE JOHN
             </h1>
 
-            <p className="text-black text-xs md:text-lg uppercase">
+            <p className="text-black text-sm md:text-lg uppercase">
               We Provide All The Necessary Tools
               <br /> For Young Business Leaders To Do
               <br />
@@ -261,7 +304,7 @@ export default function SuccessStories() {
       </div>
 
       <div className="flex flex-col items-center justify-center gap-10 px-5 md:flex-row mb-20">
-        <div className="w-full md:w-1/5 flex flex-col text-start  mb-8 md:mb-0">
+        <div className="w-full md:w-1/4 flex flex-col text-start items-center mb-8 md:mb-0">
           <Image
             src="/images/omobola.svg"
             alt=""
@@ -285,7 +328,7 @@ export default function SuccessStories() {
           </p>
         </div>
 
-        <div className="w-full md:w-1/5 flex flex-col mb-8 md:mb-0">
+        <div className="w-full md:w-1/4 flex flex-col text-start items-center mb-8 md:mb-0">
           <Image
             src="/images/omobola.svg"
             alt=""
@@ -309,7 +352,7 @@ export default function SuccessStories() {
           </p>
         </div>
 
-        <div className="w-full md:w-1/5 flex flex-col mb-8 md:mb-0">
+        <div className="w-full md:w-1/4 flex flex-col text-start items-center mb-8 md:mb-0">
           <Image
             src="/images/omobola.svg"
             alt=""
@@ -335,11 +378,11 @@ export default function SuccessStories() {
       </div>
 
       <div className="flex flex-col items-center bg-gradient-to-r from-pink-600 to-purple-700 px-5 md:px-20 py-10">
-        <h5 className="text-white text-lg text-center font-bold mb-2 md:mb-5 uppercase">
+        <h5 className="text-white md:text-xl text-base text-center font-bold mb-2 md:mb-5 uppercase">
           WANT TO SHARE YOUR SUCCESS STORY?
         </h5>
 
-        <p className="text-white text-xs text-center uppercase mb-5">
+        <p className="text-white md:text-base text-sm text-center uppercase mb-5">
           are you a memebr? want to tell us how founder has helped you?
           <span className="md:flex hidden">
             <br />

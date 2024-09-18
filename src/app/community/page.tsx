@@ -11,10 +11,11 @@ export default function Community() {
       <Navbar />
 
       <div className="flex flex-col py-5 md:py-10 px-5 md:px-20">
-        <h1 className="text-black text-center text-lg md:text-3xl font-extrabold mb-2 md:leading-10">
+        <h1 className="text-black text-center text-4xl lg:text-5xl font-extrabold mb-2 md:leading-10">
           WELCOME TO OUR VIBRANT AND <br /> ENGAGING COMMUNITY FORUM!
         </h1>
-        <p className="text-gray-500 text-center text-xs">
+
+        <p className="text-gray-500 text-center text-sm sm:text-lg">
           Create a dynamic space where people from all walks of life can come{" "}
           <span className="md:flex hidden">
             <br />
@@ -44,7 +45,7 @@ export default function Community() {
                     <p className="text-black text-lg md:text-3xl font-bold">
                       Platinum
                     </p>
-                    <p className="text-gray-500 text-xxxs md:text-xs font-bold">
+                    <p className="text-gray-500 text-sm sm:text-lg font-bold">
                       1,000 MEMBERS
                     </p>
                   </div>
@@ -63,8 +64,8 @@ export default function Community() {
           </div>
 
           <div className="bg-white border-solid border-gray-500 border rounded-md flex flex-col px-5 md:px-10 lg:px-16 py-5 md:py-7 mb-5 md:mb-10">
-            <div className="flex flex-row justify-between mb-5">
-              <div className="flex flex-row w-1/6">
+            <div className="flex flex-row  items-center mb-5">
+              <div className="flex flex-row w-1/12">
                 <Image
                   src="/images/vlad.svg"
                   alt=""
@@ -77,7 +78,7 @@ export default function Community() {
               <input
                 placeholder="Write something here..."
                 type="text"
-                className="w-5/6 rounded-full bg-gray-200 flex items-center px-3 text-sm"
+                className="w-11/12 rounded-full bg-gray-100 flex items-center px-4 py-3 text-sm sm:text-lg"
               />
             </div>
 
@@ -86,20 +87,20 @@ export default function Community() {
                 <Image
                   src="/icons/questionIcon.svg"
                   alt=""
-                  width={20}
-                  height={20}
+                  width={30}
+                  height={30}
                 />
-                <p className="text-black text-sm">Ask a question</p>
+                <p className="text-black text-base">Ask a question</p>
               </div>
 
               <div className="w-1/2 bg-transparent border border-purple-400 flex flex-row items-center justify-center gap-2 py-1">
                 <Image
                   src="/icons/postIcon.svg"
                   alt=""
-                  width={20}
-                  height={20}
+                  width={30}
+                  height={30}
                 />
-                <p className="text-black text-sm">Make a post</p>
+                <p className="text-black text-base">Make a post</p>
               </div>
             </div>
           </div>
@@ -117,7 +118,7 @@ export default function Community() {
                   />
 
                   <div className="flex flex-col">
-                    <p className="text-black text-xs md:text-sm font-bold">
+                    <p className="text-black text-sm sm:text-lg font-bold">
                       John Doe
                     </p>
                     <p className="text-gray-500 text-xxs md:text-xs font-bold">
@@ -137,7 +138,7 @@ export default function Community() {
               </div>
 
               <div className="mb-5">
-                <p className="text-black text-xxs md:text-xs">
+                <p className="text-black text-sm sm:text-lg">
                   Our community forum is designed to be a dynamic and
                   interactive space where members can chat, post questions,
                   share happenings, and join conversations. The forum is
@@ -195,7 +196,7 @@ export default function Community() {
                   />
 
                   <div className="flex flex-col">
-                    <p className="text-black text-xs md:text-sm font-bold">
+                    <p className="text-black text-sm sm:text-lg font-bold">
                       John Doe
                     </p>
                     <p className="text-gray-500 text-xxs md:text-xs font-bold">
@@ -215,7 +216,7 @@ export default function Community() {
               </div>
 
               <div className="mb-5">
-                <p className="text-black text-xxs md:text-xs">
+                <p className="text-black text-sm sm:text-lg">
                   Our community forum is designed to be a dynamic and
                   interactive space where members can chat, post questions,
                   share happenings, and join conversations. The forum is
@@ -269,7 +270,7 @@ export default function Community() {
 
             <div className=" w-full border border-gray-400 mb-5"></div>
 
-            <p className="text-gray-500 text-xs leading-3 mb-5">
+            <p className="text-gray-500 text-sm sm:text-lg leading-3 mb-5">
               We offer different membership tiers tailored to your business’
               growth phase. Whether you’re a student, just starting out, or a
               seasoned entrepreneur, we’ve got you covered.

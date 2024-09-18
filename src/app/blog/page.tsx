@@ -76,7 +76,7 @@ export default function Blog() {
       <BlogSearch />
 
       <div className="flex flex-col px-5 md:px-20 items-center justify-center pt-10 md:pt-20 pb-20">
-        <h1 className="w-full font-extrabold text-black text-center text-3xl md:text-4xl mb-20 uppercase">
+        <h1 className="w-full font-extrabold text-black text-center text-4xl lg:text-5xl mb-20 uppercase">
           insights articles
         </h1>
 
@@ -147,8 +147,8 @@ export default function Blog() {
                   onClick={() => paginate(i + 1)}
                   className={`px-4 py-2 mx-1 rounded ${
                     currentPage === i + 1
-                      ? "bg-purple-600 text-white"
-                      : "bg-gray-200"
+                      ? "bg-pink-600 text-white"
+                      : "bg-white-200 text-black border border-black"
                   }`}
                 >
                   {i + 1}

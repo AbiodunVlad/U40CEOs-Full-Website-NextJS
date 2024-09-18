@@ -16,12 +16,12 @@ const slides = [
 export default function HeroSection() {
   return (
     <div className="p-5 md:p-10 lg:p-20 flex flex-col">
-      <p className="text-black text-xs md:text-sm lg:text-base font-extrabold mb-3 md:mb-5">
+      <p className="text-black text-sm md:text-base lg:text-lg font-extrabold mb-3 md:mb-5">
         RESOURCES
       </p>
 
       <div className="flex flex-col md:flex-row gap-2 mb-3 md:mb-5">
-        <p className="text-black text-sm md:text-lg font-normal">
+        <p className="text-black text-lg md:text-2xl font-normal">
           LEVERAGE THESE TOOLS TO{" "}
           <span className="text-purple-500">BOOST YOUR BUSINESS</span>
         </p>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Figtree } from "next/font/google";
 import "./globals.css";
+import { ChakraProvider } from "@chakra-ui/react";
 
 // const inter = Inter({ subsets: ["latin"] });
 
@@ -16,12 +17,24 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={figtree.className}>{children}</body>
+      <body className={figtree.className}>
+        <ChakraProvider>{children}</ChakraProvider>
+      </body>
     </html>
   );
 }
+
+// export default function RootLayout({
+//   children,
+// }: Readonly<{
+//   children: React.ReactNode;
+// }>) {
+//   return (
+//     <html lang="en">
+//       <body className={figtree.className}>{children}</body>
+//     </html>
+//   );
+// }

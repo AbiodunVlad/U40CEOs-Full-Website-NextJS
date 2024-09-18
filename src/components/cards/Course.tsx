@@ -11,10 +11,10 @@ export default function Course() {
 
       <div className="w-full md:w-2/3 flex flex-col justify-between">
         <div className="flex flex-col flex-grow">
-          <p className="text-white text-lg md:text-2xl font-bold mb-2">
+          <p className="text-white text-xl md:text-3xl font-bold mb-2">
             COURSE
           </p>
-          <p className="text-xs md:text-sm text-white leading-1 mb-auto md:w-1/3 w-1/5">
+          <p className="text-lg md:text-xl text-white leading-1 mb-auto md:w-1/3 w-1/5">
             Duis aute irure dolor in reprehenderit in voluptate velit esse
             cillum dolore eu fugiat nulla pariatur. At vero eos et accusamus et
             iusto odio dignissimos ducimus qui blanditiis.
@@ -22,8 +22,8 @@ export default function Course() {
         </div>
 
         <Link
-          href="/pages/homePage"
-          className="text-white text-xs py-2 md:py-3 px-5 md:px-8 rounded-full bg-black mt-3 md:mt-auto inline-flex items-center"
+          href="/resources"
+          className="text-white text-base py-2 md:py-3 px-5 md:px-8 rounded-full bg-black mt-3 md:mt-auto inline-flex items-center"
           style={{ width: "fit-content" }}
         >
           REGISTER

@@ -30,7 +30,7 @@ export default function ResourceHeaders() {
         {headers.map((header) => (
           <div key={header} className="flex flex-col items-center">
             <p
-              className={`md:text-sm text-xxs mb-1 cursor-pointer ${
+              className={`md:text-xl text-xxs mb-1 cursor-pointer ${
                 activeHeader === header ? "text-purple-500" : "text-gray-500"
               }`}
               onClick={() => setActiveHeader(header)}

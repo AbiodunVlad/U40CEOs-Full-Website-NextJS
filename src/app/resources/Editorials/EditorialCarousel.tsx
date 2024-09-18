@@ -26,7 +26,7 @@ export default function EditorialCarousel({
   }, [autoSlide, autoSlideInterval, next]);
 
   return (
-    <div className="overflow-hidden justify-center w-full relative">
+    <div className="overflow-hidden flex  justify-center  w-full relative">
       <div
         className="flex transition-transform ease-out duration-800 mb-2"
         style={{
@@ -41,14 +41,14 @@ export default function EditorialCarousel({
         ))}
       </div>
 
-      <div className="top-3/4 right-0 left-0 px-20 absolute">
-        <div className="flex items-center justify-center gap-2">
+      <div className="flex flex-col top-3/4 right-0 left-0 px-20 absolute">
+        <div className="flex  items-center justify-center gap-2">
           {slides.map((_, i) => (
             <div
               key={i}
               onClick={() => setCurr(i)}
               className={`
-              transition-all w-2 h-2 bg-white rounded-full
+              transition-all w-3 h-3 bg-white rounded-full
               ${curr === i ? "p-2" : "bg-opacity-50"}`}
             />
           ))}

@@ -7,33 +7,33 @@ export default function FAQ() {
         Frequently asked <span className="text-pink-500">questions</span>
       </p>
 
-      <div className="flex sm:flex-row flex-col justify-center gap-20">
-        <div className="flex flex-col">
-          <p className="text-black text-sm mb-2 border border-solid border-black p-1">
+      <div className="flex sm:flex-row flex-col justify-center sm:gap-20 gap-0">
+        <div className="flex flex-col sm:mb-0 mb-2">
+          <p className="text-black text-sm sm:text-lg mb-2 border border-solid border-black p-1">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit?
           </p>
-          <p className="text-black text-sm mb-2 border border-solid border-black p-1">
+          <p className="text-black text-sm sm:text-lg mb-2 border border-solid border-black p-1">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit?
           </p>
-          <p className="text-black text-sm mb-2 border border-solid border-black p-1">
+          <p className="text-black text-sm sm:text-lg mb-2 border border-solid border-black p-1">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit?
           </p>
-          <p className="text-black text-sm border border-solid border-black p-1">
+          <p className="text-black text-sm sm:text-lg border border-solid border-black p-1">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit?
           </p>
         </div>
 
         <div className="flex flex-col">
-          <p className="text-black text-sm mb-2 border border-solid border-black p-1">
+          <p className="text-black text-sm sm:text-lg mb-2 border border-solid border-black p-1">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit?
           </p>
-          <p className="text-black text-sm mb-2 border border-solid border-black p-1">
+          <p className="text-black text-sm sm:text-lg mb-2 border border-solid border-black p-1">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit?
           </p>
-          <p className="text-black text-sm mb-2 border border-solid border-black p-1">
+          <p className="text-black text-sm sm:text-lg mb-2 border border-solid border-black p-1">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit?
           </p>
-          <p className="text-black text-sm border border-solid border-black p-1">
+          <p className="text-black text-sm sm:text-lg border border-solid border-black p-1">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit?
           </p>
         </div>
