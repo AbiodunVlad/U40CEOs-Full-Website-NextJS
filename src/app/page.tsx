@@ -34,7 +34,7 @@ import PDFviewer from "./pdfViewer/PDFviewer";
 export default function Home() {
   return (
     <main className="bg-gray-200">
-      {/* <HomePage /> */}
+      <HomePage />
       {/* <About /> */}
       {/* <Resources /> */}
       {/* <Blog /> */}
@@ -68,7 +68,7 @@ export default function Home() {
 
       {/* <UnderDevelopment /> */}
 
-      <PDFviewer pdfUrl="/pdf/AD30tedDekker.pdf" singlePostView={true} />
+      {/* <PDFviewer pdfUrl="/pdf/AD30tedDekker.pdf" singlePostView={true} /> */}
     </main>
   );
 }

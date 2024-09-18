@@ -49,7 +49,7 @@ export default function ScheduleACall() {
               <br />
             </span>{" "}
             knowledge, seek advice, engage in lively discussions, and build
-            meaningful connections.
+            meaningful connections with people.
           </p>
         </div>
 
@@ -64,7 +64,7 @@ export default function ScheduleACall() {
             // input={true}
             inputProps={{
               className:
-                "flex text-center text-sm sm:text-lg  justify-between appearance-none shadow border rounded py-3 px-2 text-gray-600 cursor-pointer",
+                "flex text-center text-sm sm:text-lg justify-between appearance-none shadow border rounded py-3 px-2 text-gray-600 cursor-pointer",
             }}
           />
           {/* <svg
