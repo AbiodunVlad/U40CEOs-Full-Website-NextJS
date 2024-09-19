@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
@@ -23,12 +24,14 @@ export default function HeroSection() {
           most successful business founders
         </p>
 
-        <button
-          className="p-2 rounded-lg mb-10 w-60 text-white font-bold"
-          style={{ backgroundColor: "#C54ED8" }}
-        >
-          LEARN MORE
-        </button>
+        <Link href="/underDevelopment">
+          <button
+            className="text-sm sm:text-xl py-5 px-10  rounded-lg mb-10 w-60 text-white font-bold"
+            style={{ backgroundColor: "#C54ED8" }}
+          >
+            LEARN MORE
+          </button>
+        </Link>
 
         <div>
           <p className="text-sm sm:text-lg text-black">

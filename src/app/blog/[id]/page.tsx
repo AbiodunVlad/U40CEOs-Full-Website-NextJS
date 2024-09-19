@@ -9,11 +9,11 @@ import Link from "next/link";
 import BecomeAMember from "@/components/BecomeAMember";
 import Event from "@/components/cards/Event";
 import BlogEvent from "../BlogEvent";
-import { getBlogPostBySlug } from "../../../../pages/api/auth";
+import { getBlogPostBySlug, getBlogPosts } from "../../../../pages/api/auth";
 // import { useRouter } from "next/router";
 
 type Article = {
-  id: number;
+  id: string;
   category: string;
   title: string;
   body: string;
@@ -31,28 +31,25 @@ export default function ReadBlog() {
   // const { id } = useParams();
   const id = params?.id as string;
 
-  // useEffect(() => {
-  //   const slug = "test-3";
-  //   getBlogPostBySlug(slug)
-  //     .then((data) => console.log("Blog Post Data:", data))
-  //     .catch((error) => console.error("Error fetching blog post:", error));
-  // });
-
   useEffect(() => {
     const fetchArticle = async () => {
       if (id) {
         try {
-          const res = await fetch(`/api/articles?id=${id}`);
+          const res = await getBlogPosts();
+          console.log("Fetched blog posts:", res.data.content);
 
-          if (!res.ok) {
-            throw new Error("Network response was bad!");
+          const blogData = res.data.content.find(
+            (article: Article) => article.id === id
+          );
+
+          if (blogData) {
+            setArticle(blogData);
+            console.log("Blog posts loaded successfuly:", blogData);
+          } else {
+            setArticle(null);
           }
-
-          const data = await res.json();
-          console.log("Fetched articles:", data);
-          setArticle(data);
         } catch (error) {
-          console.error("Failed to fetch articles:", error);
+          console.error("Failed to load Blog post:", error);
         }
       }
     };
@@ -61,48 +58,101 @@ export default function ReadBlog() {
 
   useEffect(() => {
     const fetchRelatedArticles = async () => {
-      try {
-        const res = await fetch(`/api/articles`);
-        if (!res.ok) {
-          throw new Error("network response was bad!");
+      if (id) {
+        try {
+          const res = await getBlogPosts();
+          console.log("More blog posts here.", res.data.content);
+
+          if (Array.isArray(res.data.content)) {
+            setRelatedArticles(res.data.content.slice(0, 4));
+          }
+        } catch (error) {
+          console.error("Failed to fetch related articles:", error);
         }
-        const data = await res.json();
-        console.log("Fetched related articles:", data);
-        setRelatedArticles(
-          data
-            .filter((article: Article) => article.id.toString() !== id)
-            .slice(0, 8)
-        );
-      } catch (error) {
-        console.error("Failed to fetch related articles:", error);
       }
     };
     fetchRelatedArticles();
   }, [id]);
 
-  if (!article) {
-    return (
-      <div className="text-black flex justify-center items-center">
-        Loading...
-      </div>
-    );
-  }
+  // useEffect(() => {
+  //   const slug = "test-3";
+  //   getBlogPostBySlug(slug)
+  //     .then((data) => console.log("Blog Post Data:", data))
+  //     .catch((error) => console.error("Error fetching blog post:", error));
+  // });
+
+  // useEffect(() => {
+  //   const fetchArticle = async () => {
+  //     if (id) {
+  //       try {
+  //         const res = await fetch(`/api/articles?id=${id}`);
+
+  //         if (!res.ok) {
+  //           throw new Error("Network response was bad!");
+  //         }
+
+  //         const data = await res.json();
+  //         console.log("Fetched articles:", data);
+  //         setArticle(data);
+  //       } catch (error) {
+  //         console.error("Failed to fetch articles:", error);
+  //       }
+  //     }
+  //   };
+  //   fetchArticle();
+  // }, [id]);
+
+  // useEffect(() => {
+  //   const fetchRelatedArticles = async () => {
+  //     try {
+  //       const res = await fetch(`/api/articles`);
+  //       const textResponse = await res.text();
+
+  // if (!textResponse) {
+  //   throw new Error("Empty response body");
+  // }
+
+  // const data = JSON.parse(textResponse);
+
+  // if (!res.ok) {
+  //   throw new Error("network response was bad!");
+  // }
+  // const data = await res.json();
+  //       console.log("Fetched related articles:", data);
+  //       setRelatedArticles(
+  //         data
+  //           .filter((article: Article) => article.id.toString() !== id)
+  //           .slice(0, 8)
+  //       );
+  //     } catch (error) {
+  //       console.error("Failed to fetch related articles:", error);
+  //     }
+  //   };
+  //   fetchRelatedArticles();
+  // }, [id]);
+
+  // if (!article) {
+  //   return (
+  //     <div className="text-black flex justify-center items-center">
+  //       Loading...
+  //     </div>
+  //   );
+  // }
 
   return (
     <div>
       <Navbar />
-      <BlogSearch />
 
       <div className="flex flex-col px-5 md:px-20 items-center justify-center pt-10 md:pt-0 pb-20">
-        {/* <h1>{article.title}</h1>
-        <p>
-          Written by {article.author} or {article.date}
-        </p>
-
-        <p>{article.body}</p> */}
-
-        {article && (
+        {article ? (
           <>
+            <h1>{article.title}</h1>
+            <p>
+              Written by {article.author} on {article.date}
+            </p>
+
+            <p>{article.body}</p>
+
             <div className="w-full">
               <Image
                 src="/images/omobolaMag.svg"
@@ -123,6 +173,8 @@ export default function ReadBlog() {
               <p className="text-black text-sm">{article.body}</p>
             </div>
           </>
+        ) : (
+          <p>No article found</p>
         )}
       </div>
 

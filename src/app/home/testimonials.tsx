@@ -4,10 +4,12 @@ import Image from "next/image";
 import { getTestimonials } from "../../../pages/api/auth";
 
 interface Testimonials {
-  id: number;
-  rating: number;
-  feedback: string;
+  id: string;
   name: string;
+  rating: number;
+  content: string;
+  createdAt: string;
+  updatedAt: string;
 }
 
 export default function Testimonials() {
@@ -44,9 +46,11 @@ export default function Testimonials() {
 
   return (
     <div className="bg-black px-5 md:px-20 py-10 flex flex-col items-center">
-      <h1 className="text-white font-bold text-lg mb-10">TESTIMONIALS</h1>
+      <h1 className="text-white font-bold text-xl md:text-2xl mb-10">
+        TESTIMONIALS
+      </h1>
 
-      <div className="flex flex-col md:flex-row justify-center items-center">
+      <div className="grid md:grid-cols-3 justify-center items-center">
         {testimonials.map((testimonial) => (
           <div
             key={testimonial.id}
@@ -63,11 +67,16 @@ export default function Testimonials() {
                 />
               ))}
             </div>
-
-            <p className="text-white text-xs mb-4">
-              &quot;{testimonial.feedback}&quot;
+            <p className="text-white text-lg md:text-xl">
+              {testimonial.rating}
             </p>
-            <p className="text-xs text-purple-600">{testimonial.name}</p>
+
+            <p className="text-white text-base md:text-lg mb-4">
+              &quot;{testimonial.content}&quot;
+            </p>
+            <p className="text-sm md:text-base text-purple-600">
+              {testimonial.name}
+            </p>
           </div>
         ))}
       </div>

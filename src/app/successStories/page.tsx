@@ -44,7 +44,7 @@ export default function SuccessStories() {
         // const data = await res.json();
         // console.log("1. Here are your stories:", res);
         // console.log("2. Here are your stories:", res.data);
-        console.log("3. Here are your stories:", res.data.content);
+        console.log("Here are your stories:", res.data.content);
 
         if (Array.isArray(res.data.content)) {
           console.log("Data is an array, setting stories state.");
