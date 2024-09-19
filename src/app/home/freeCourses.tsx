@@ -17,7 +17,7 @@ export default function FreeCourses() {
 
       <Link href="/resources">
         <button
-          className="py-2 px-5 rounded-full text-white text-xs font-bold"
+          className="py-4 px-7 rounded-full text-white text-xs font-bold"
           style={{ backgroundColor: "#9B05E2" }}
         >
           ENROLL NOW

@@ -65,14 +65,14 @@ export default function Blog() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center py-20 px-3 md:px-20 bg-slate-100">
+    <div className="flex flex-col items-center justify-center py-20 px-5 md:px-20 bg-slate-100">
       <p className="text-pink-400 text-sm font-semibold mb-5">FROM OUR BLOG</p>
 
-      <h1 className="text-black font-extrabold text-xl md:text-2xl mb-5">
+      <h1 className="text-black font-extrabold text-2xl md:text-3xl mb-5">
         LATEST NEWS & ARTICLES
       </h1>
 
-      <div className="grid md:grid-cols-2 items-center justify-center gap-5 mb-5">
+      <div className="grid md:grid-cols-2 items-center justify-center gap-10 mb-5">
         {/* {blogs.length > 0 ? (
           blogs.map((blog, index) => (
             <div key={index} className="flex flex-col gap-5 md:w-2/5">
@@ -91,28 +91,29 @@ export default function Blog() {
         {relatedArticles.map((blogs) => (
           <div
             key={blogs.id}
-            className="flex flex-col items-center h-60 mb-10 shadow-md"
+            className="flex flex-row items-center w-full h-48 mb-10 shadow-2xl"
           >
-            <Link href={`/blog/${blogs.id}`}>
-              <div className="w-full h1/2 bg-blue-600"></div>
-
-              <div className="w-full  p-5 mb-10">
-                <p className="self-start text-xxs text-black py-1 px-2 bg-purple-400 mb-3 inline-block rounded-full">
+            <Link href={`/blog/${blogs.id}`} className="w-1/2 ">
+              <div className="w-full px-4">
+                {/* <p className="self-start text-xs text-black py-1 px-2 bg-purple-400 mb-3 inline-block rounded-full">
                   {blogs.category || "Business"}
-                </p>
-                <p className="text-black text-sm font-bold mb-5">
+                </p> */}
+                <p className="text-black text-sm sm:text-lg font-bold mb-5">
                   {blogs.title}
                 </p>
-                <p className="text-gray-500 text-sm">{blogs.body}</p>
+                <p className="text-gray-500 text-base sm:text-xl">
+                  {blogs.body}
+                </p>
               </div>
             </Link>
+            <div className="w-1/2 h-full bg-blue-600"></div>
           </div>
         ))}
       </div>
 
       <Link href="/blog">
         <button
-          className="py-3 px-5 rounded-full text-white text-xs font-bold"
+          className="py-4 px-7 rounded-full text-white text-xs font-bold"
           style={{ backgroundColor: "#9B05E2" }}
         >
           READ MORE

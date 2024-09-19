@@ -94,19 +94,20 @@ export default function Blog() {
             {currentItems.map((article) => (
               <div
                 key={article.id}
-                className="flex flex-col items-center h-60 mb-10 shadow-md"
+                className="flex flex-col items-center h-full mb-10 shadow-2xl"
               >
-                <Link href={`/blog/${article.id}`}>
-                  <div className="w-full h1/2 bg-blue-600">jhijlkm</div>
-
-                  <div className="w-full  p-5 mb-10">
+                <div className="w-full h-1/2 bg-blue-600"></div>
+                <Link href={`/blog/${article.id}`} className="w-full h-auto">
+                  <div className="w-full h-full py-5 px-3">
                     <p className="self-start text-xxs text-black py-1 px-2 bg-purple-400 mb-3 inline-block rounded-full">
                       {article.category || "Business"}
                     </p>
-                    <p className="text-black text-sm font-bold mb-5">
+                    <p className="text-black text-sm sm:text-lg font-bold mb-5">
                       {article.title}
                     </p>
-                    <p className="text-gray-500 text-sm">{article.body}</p>
+                    <p className="text-gray-500 text-base sm:text-xl">
+                      {article.body}
+                    </p>
                   </div>
                 </Link>
               </div>
