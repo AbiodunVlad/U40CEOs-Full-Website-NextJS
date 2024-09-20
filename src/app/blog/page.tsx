@@ -79,6 +79,10 @@ export default function Blog() {
 
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
+  const midIndex = Math.ceil(currentItems.length / 2);
+  const firstHalfItems = currentItems.slice(0, midIndex);
+  const secondHalfItems = currentItems.slice(midIndex);
+
   return (
     <div>
       <Navbar />
@@ -90,8 +94,8 @@ export default function Blog() {
         </h1>
 
         <div className="flex flex-col w-full">
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-5 w-full mb-20">
-            {currentItems.map((article) => (
+          <div className="grid lg:grid-cols-3 pl-5 md:px-20 px-5 lg:w-full justify-between gap-3 md:gap-28 md:mb-20">
+            {firstHalfItems.map((article) => (
               <div
                 key={article.id}
                 className="flex flex-col items-center h-full mb-10 shadow-2xl"
@@ -125,23 +129,24 @@ export default function Blog() {
             </div>
           )}
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-5 w-full mb-7">
-            {currentItems.map((article) => (
+          <div className="grid md:grid-cols-3 pl-5 md:px-20 px-5 md:w-full justify-between gap-3 md:gap-28 md:mb-20">
+            {secondHalfItems.map((article) => (
               <div
                 key={article.id}
-                className="flex flex-col items-center h-60 mb-10 shadow-md"
+                className="flex flex-col items-center h-full mb-10 shadow-2xl"
               >
-                <Link href={`/blog/${article.id}`}>
-                  <div className="w-full h-1/2 bg-blue-600"></div>
-
-                  <div className="w-full p-5 mb-10">
+                <div className="w-full h-1/2 bg-blue-600"></div>
+                <Link href={`/blog/${article.id}`} className="w-full h-auto">
+                  <div className="w-full h-full py-5 px-3">
                     <p className="self-start text-xxs text-black py-1 px-2 bg-purple-400 mb-3 inline-block rounded-full">
                       {article.category || "Business"}
                     </p>
-                    <p className="text-black text-sm font-bold mb-5">
+                    <p className="text-black text-sm sm:text-lg font-bold mb-5">
                       {article.title}
                     </p>
-                    <p className="text-gray-500 text-sm">{article.body}</p>
+                    <p className="text-gray-500 text-base sm:text-xl">
+                      {article.body}
+                    </p>
                   </div>
                 </Link>
               </div>

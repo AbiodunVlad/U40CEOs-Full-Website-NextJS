@@ -73,21 +73,6 @@ export default function Blog() {
       </h1>
 
       <div className="grid md:grid-cols-2 items-center justify-center gap-10 mb-5">
-        {/* {blogs.length > 0 ? (
-          blogs.map((blog, index) => (
-            <div key={index} className="flex flex-col gap-5 md:w-2/5">
-              <div className="flex flex-row shadow-lg">
-                <div className="flex flex-col py-10 pl-5 pr-10 w-2/3 bg-white">
-                  <p className="text-xs text-black font-bold mb-5">
-                    {blog.title}
-                  </p>
-                  <p className="text-xs text-black font-thin">{blog.body}</p>
-                </div>
-                <div className="bg-blue-400 w-1/3"></div>
-              </div>
-            </div>
-          ))
-        ) */}
         {relatedArticles.map((blogs) => (
           <div
             key={blogs.id}

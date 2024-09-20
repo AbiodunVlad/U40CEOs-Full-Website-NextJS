@@ -81,8 +81,6 @@ export default function SuccessStories() {
 
   useEffect(() => {
     console.log("Current Items:", currentItems);
-    // console.log("First Half Items:", firstHalfItems);
-    // console.log("Second Half Items:", secondHalfItems);
   }, [currentItems]);
 
   return (
@@ -106,7 +104,7 @@ export default function SuccessStories() {
       </div>
 
       <div className="px-4 md:px-20 w-full  flex flex-col md:flex-row justify-between gap-4 md:gap-28 mb-5">
-        <div className="flex flex-col w-full md:w-1/3">
+        <div className="flex flex-col w-full lg:w-1/3">
           <p className="text-sm text-purple-600 font-bold mb-5">Filter</p>
 
           <div className="relative mb-4">
@@ -195,27 +193,30 @@ export default function SuccessStories() {
         </div>
       </div>
 
-      <div className="grid md:grid-cols-3 pl-5 md:px-20 px-5 md:w-full justify-between gap-3 md:gap-28 md:mb-20 overflow-x-auto">
+      <div className="grid lg:grid-cols-3 sm:px-20 px-5 w-full justify-center items-center gap-10 lg:gap-28 md:mb-20">
         {firstHalfItems.map((story, index) => (
           <div
             key={index}
-            className="flex flex-col  h-auto md:w-full border  mb-20"
+            className="flex flex-col w-full border items-center h-full mb-10 shadow-2xl"
           >
-            <Link href={`/successStories/${story.id}`}>
-              <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
-              <div className="w-full px-4 md:px-10 py-5">
+            <div className="w-full h-1/2 bg-gradient-to-r from-pink-600 to-purple-600"></div>
+            <Link
+              href={`/successStories/${story.id}`}
+              className="w-full h-auto"
+            >
+              <div className="w-full h-full py-5 px-3">
                 <p className="text-black text-sm font-bold mb-2">
                   {story.firstName} {story.lastName}
                 </p>
                 <p className="text-pink-600 text-xxs mb-3">
-                  {story.role} @ LandingFolio {/*{story.company*/}
+                  {story.role} @ {story.company}
                 </p>
                 <p className="text-blue-500 text-xxs mb-1">
-                  Touchpoint: Some touchpoint {/*  {story.touchPoint} */}
+                  Touchpoint: {story.touchPoint}
                 </p>
 
                 <p className="text-blue-500 text-xxs mb-5">
-                  Topic: Some topic {/*{story.topic}*/}
+                  Topic: {story.topic}
                 </p>
 
                 <p className="text-black text-xxs md:mb-6">{story.body}</p>
@@ -247,27 +248,30 @@ export default function SuccessStories() {
         </div>
       )}
 
-      <div className="grid md:grid-cols-3 pl-5 md:px-20 px-5 md:w-full justify-between gap-3 md:gap-28 md:mb-20 overflow-x-auto">
+      <div className="grid lg:grid-cols-3 sm:px-20 px-5 w-full justify-center items-center gap-10 lg:gap-28 md:mb-20">
         {secondHalfItems.map((story, index) => (
           <div
             key={index}
-            className="flex flex-col h-auto md:w-full border  mb-20"
+            className="flex flex-col w-full border items-center h-full mb-10 shadow-2xl"
           >
-            <Link href={`/successStories/${story.id}`}>
-              <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
-              <div className="w-full px-4 md:px-10 py-5">
+            <div className="w-full h-1/2 bg-gradient-to-r from-pink-600 to-purple-600"></div>
+            <Link
+              href={`/successStories/${story.id}`}
+              className="w-full h-auto"
+            >
+              <div className="w-full h-full px-3 py-5">
                 <p className="text-black text-sm font-bold mb-2">
                   {story.firstName} {story.lastName}
                 </p>
                 <p className="text-pink-600 text-xxs mb-3">
-                  {story.role} @ LandingFolio {/*{story.company*/}
+                  {story.role} @ {story.company}
                 </p>
                 <p className="text-blue-500 text-xxs mb-1">
-                  Touchpoint: Some touchpoint {/*  {story.touchPoint} */}
+                  Touchpoint: {story.touchPoint}
                 </p>
 
                 <p className="text-blue-500 text-xxs mb-5">
-                  Topic: Some topic {/*{story.topic}*/}
+                  Topic: {story.topic}
                 </p>
 
                 <p className="text-black text-xxs md:mb-6">{story.body}</p>

@@ -60,16 +60,13 @@ export default function Testimonials() {
               {[...Array(testimonial.rating)].map((_, i) => (
                 <Image
                   key={i}
-                  src="/icons/start.svg"
+                  src="/icons/star.svg"
                   alt=""
                   width={10}
                   height={10}
                 />
               ))}
             </div>
-            <p className="text-white text-lg md:text-xl">
-              {testimonial.rating}
-            </p>
 
             <p className="text-white text-base md:text-lg mb-4">
               &quot;{testimonial.content}&quot;
