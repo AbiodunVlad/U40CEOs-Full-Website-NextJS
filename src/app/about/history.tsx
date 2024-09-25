@@ -4,12 +4,10 @@ import React from "react";
 export default function History() {
   return (
     <div className="py-10 sm:py-16 md:py-20 px-4 sm:px-8 md:px-20 flex flex-col justify-center items-center">
-      <p className="text-sm text-purple-600 mb-3 sm:mb-4 md:mb-5">
-        OUR HISTORY
-      </p>
+      <p className="text-sm text-purple-600 mb-3 sm:mb-4 md:mb-5">OUR STORY</p>
 
-      <h2 className="text-black text-lg sm:text-xl md:text-2xl text-center font-extrabold mb-3 sm:mb-4 md:mb-5 uppercase">
-        The Journey To Bigger And Better
+      <h2 className="text-black text-3xl lg:text-4xl text-center font-extrabold mb-3 sm:mb-4 md:mb-5 uppercase">
+        FROM DREAMS TO DOERS IN AFRICA{" "}
       </h2>
 
       <Image
@@ -20,49 +18,53 @@ export default function History() {
         className="mb-5"
       />
 
-      <p className="text-sm sm:text-lg text-black leading-5 mb-40 lg:mb-40 md:mb-20 text-center sm:text-left">
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-        dolore eu fugiat nulla pariatur. At vero eos et accusamus et iusto odio
-        dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque
-        corrupti quos dolores et quas molestias excepturi sint occaecati. Duis
-        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-        eu fugiat nulla pariatur. At vero eos et accusamus et iusto odio
-        dignissimos ducimus quos dolores et quas{" "}
+      <p className="text-sm sm:text-lg text-black leading-5 mb-40 lg:mb-40 md:mb-20 text-start sm:text-left">
+        Our journey began with a heartfelt conversation between two young CEOs
+        in Lagos, sharing their successes and struggles. Their experiences and
+        valuable insights inspired them to create a platform for young African
+        entrepreneurs. From a TV series to a thriving community, Under 40 CEOs
+        now offers mentorship, resources, and support to help the next
+        generation of business leaders achieve their dreams.
       </p>
 
-      <div className="flex flex-col md:flex-row gap-10 sm:gap-20 md:gap-60 items-center justify-between mb-20 md:mb-20 lg:mb-40 w-full">
+      <div className="flex flex-col md:flex-row gap-10 sm:gap-20 md:gap-20 items-center justify-between mb-20 md:mb-20 lg:mb-48 w-full">
         <div className="w-full lg:w-1/2 relative flex items-center justify-center mb-40 md:mb-10 lg:mb-0">
-          <div className="bg-purple-600 w-60 h-60 sm:w-60 sm:h-60 md:w-80 md:h-80 rounded-full absolute"></div>
-          <div className="bg-blue-500 flex items-center justify-center w-60 h-60 sm:w-60 sm:h-60 md:w-80 md:h-80 rounded-full absolute translate-y-5">
-            <Image src="/images/logo.svg" alt="" width={200} height={200} />
+          <div className="bg-purple-600 w-60 h-60 sm:w-80 sm:h-80 md:w-80 md:h-80 rounded-full absolute"></div>
+          <div className="bg-blue-500 flex items-center justify-center w-60 h-60 sm:w-80 sm:h-80 md:w-80 md:h-80 rounded-full absolute translate-y-5">
+            <Image src="/images/storyImg.svg" alt="" width={600} height={600} />
           </div>
         </div>
 
         <div className="w-full lg:w-1/2 flex flex-col text-center md:text-left">
-          <p className="w-full text-black text-lg sm:text-xl md:text-2xl font-extrabold uppercase">
-            &quot;We Provide All The <br className="hidden" /> Necessary Tools
-            For Young <br className="hidden" /> Business Leaders To Do
-            <br className="hidden" />
-            Business And Thrive In <br className="hidden" /> Africa.&quot;
+          <p className="w-full text-black text-3xl lg:text-4xl font-extrabold uppercase">
+            We Provide All the Tools Young Business Leaders Need to Succeed and
+            Thrive in Africa.
           </p>
         </div>
       </div>
 
-      <p className="text-sm sm:text-lg text-black leading-5 text-center sm:text-left">
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-        dolore eu fugiat nulla pariatur. At vero eos et accusamus et iusto odio
-        dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque
-        corrupti quos dolores et quas molestias excepturi sint occaecati. Duis
-        aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-        eu fugiat nulla pariatur. At vero eos et accusamus et iusto odio
-        dignissimos ducimus quos dolores et quas Duis aute irure dolor in
-        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. At vero eos et accusamus et iusto odio dignissimos ducimus qui
-        blanditiis praesentium voluptatum deleniti atque corrupti quos dolores
-        et quas molestias excepturi sint occaecati. Duis aute irure dolor in
-        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-        pariatur. At vero eos et accusamus et iusto odio dignissimos ducimus
-        quos dolores et quas{" "}
+      <p className="text-sm sm:text-lg text-black leading-5 text-start sm:text-left mb-5">
+        At Under 40 CEOs, we believe that a business is like a building: it must
+        be constructed on a solid foundation to stand the test of time. Just as
+        poor foundations lead to collapse, businesses built without the right
+        support face risks of failure. That’s why we are dedicated to
+        eliminating these risks through our comprehensive suite of resources and
+        mentorship programs.
+      </p>
+
+      <p className="text-sm sm:text-lg text-black leading-5 text-start sm:text-left mb-5">
+        We provide young entrepreneurs with the tools, guidance, and community
+        necessary to transform their ventures into successful, long-lasting
+        enterprises. Our dynamic approach includes networking opportunities,
+        live events, a compelling television series, insightful summits, and our
+        specialized institute.
+      </p>
+
+      <p className="text-sm sm:text-lg text-black leading-5 text-start sm:text-left">
+        Through these initiatives, we have supported hundreds of businesses at
+        various growth stages, helping them navigate challenges and seize
+        opportunities. Join us and build a strong foundation for your business’s
+        future success.
       </p>
     </div>
   );

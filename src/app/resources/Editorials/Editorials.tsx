@@ -75,7 +75,7 @@ export default function Editorials() {
 
       <div className="flex flex-col md:flex-row justify-between items-start px-5 md:px-20 pt-5 md:pt-10 pb-20 w-full">
         <div className="flex flex-col w-full md:w-1/5 mb-5">
-          <h6 className="text-black md:text-xl text-sm font-bold mb-3">
+          <h6 className="text-black text-3xl lg:text-4xl font-bold mb-3">
             Editorial Type
           </h6>
 
@@ -84,7 +84,7 @@ export default function Editorials() {
               <li
                 key={type}
                 onClick={() => setActiveEditorial(type)}
-                className={`text-black md:text-lg text-xs mb-2 cursor-pointer ${
+                className={`text-black md:text-2xl text-lg mb-2 cursor-pointer ${
                   activeEditorial === type ? "font-bold text-purple-500" : ""
                 }`}
               >

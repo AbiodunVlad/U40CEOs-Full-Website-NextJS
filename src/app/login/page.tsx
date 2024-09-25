@@ -69,18 +69,22 @@ export default function Login() {
     <div className="relative flex flex-col-reverse md:flex-row items-center justify-around min-h-screen">
       {redirecting && <Loading />}
 
-      <div className="bg-slate-100 w-full md:w-1/2 flex flex-col items-center justify-center min-h-screen py-2 px-5 lg:px-20">
-        <Image
-          className="mb-5"
-          src="/images/logo.svg"
-          alt="logo"
-          width={200}
-          height={100}
-        />
+      <div className="bg-slate-100 w-full md:w-1/2 flex flex-col items-center justify-center min-h-screen py-2 px-10 lg:px-28">
+        <Link href="/home">
+          <Image
+            className="mb-5"
+            src="/images/logo.svg"
+            alt="logo"
+            width={200}
+            height={100}
+          />
+        </Link>
 
-        <h2 className="font-bold text-black text-3xl sm:text-5xl mb-3">
-          Sign in
-        </h2>
+        <Link href="/home">
+          <h2 className="font-bold text-black text-3xl sm:text-5xl mb-3">
+            Sign in
+          </h2>
+        </Link>
 
         <p className="text-gray-500 text-md text-center sm:text-xl mb-7">
           Please login to continue to your account.
@@ -90,7 +94,7 @@ export default function Login() {
 
         <div className="relative mb-5 w-full">
           <input
-            className="text-black w-full p-2 border border-red-300 rounded-lg focus:outline-none"
+            className="text-black w-full py-4 px-2 border border-red-300 rounded-lg focus:outline-none"
             placeholder=" "
             id="email"
             type="email"
@@ -99,7 +103,7 @@ export default function Login() {
 
           <label
             htmlFor="email"
-            className={`absolute left-2 top-2 text-gray-500 pointer-events-none transition-all transform origin-left ${
+            className={`absolute left-2 top-4 text-gray-500 pointer-events-none transition-all transform origin-left ${
               email ? "-translate-y-7 scale-75" : ""
             }`}
           >
@@ -109,14 +113,14 @@ export default function Login() {
 
         <div className="relative mb-5 w-full">
           <input
-            className="text-black w-full p-2 border border-red-300 rounded-lg focus:outline-none"
+            className="text-black w-full py-4 px-2 border border-red-300 rounded-lg focus:outline-none"
             placeholder=" "
             type={showPassword ? "text" : "password"}
             onChange={(e) => setPassword(e.target.value)}
           />
           <label
             htmlFor="password"
-            className={`absolute left-2 top-2 text-gray-500 pointer-events-none transition-all transform origin-left
+            className={`absolute left-2 top-4 text-gray-500 pointer-events-none transition-all transform origin-left
       ${password ? "-translate-y-7 scale-75" : ""}`}
           >
             Password
@@ -124,19 +128,19 @@ export default function Login() {
           <FontAwesomeIcon
             icon={showPassword ? faEye : faEyeLowVision}
             size="sm"
-            className="text-gray-400 absolute top-3 right-5"
+            className="text-gray-400 absolute top-6 right-5"
             onClick={togglePasswordVisibility}
           />
         </div>
 
         <button
           onClick={login}
-          className="w-full  p-2 border bg-purple-700 rounded-full mb-5 text-white font-bold uppercase"
+          className="w-full py-4 px-2 border bg-purple-700 rounded-full mb-5 text-white font-bold uppercase"
         >
           {loading ? "Signing you in..." : "Sign in"}
         </button>
 
-        <div className="flex lg:flex-row flex-col md:justify-center justify-between items-center w-full mb-7">
+        <div className="flex lg:flex-row flex-col justify-between items-center w-full mb-7">
           <div className="flex lg:justify-start justify-center items-center lg:mb-0 lg:w-1/2 w-full mb-5">
             <input
               id="keep-signed-in"
@@ -155,25 +159,25 @@ export default function Login() {
             </label>
           </div>
 
-          <div className="w-1/2 lg:w-1/3 relative flex flex-row items-center justify-ceenter bg-white border rounded-xl">
+          <div className="w-1/2 lg:w-1/3 relative flex flex-row items-center justify-center bg-white border rounded-xl p-1">
             <button
               onClick={loginWithGoogle}
-              className="text-black text-xs lg:text-xs w-full sm:w-full p-2  mb-0"
+              className="text-black text-start text-xs lg:text-xs w-full sm:w-full p-2  mb-0"
             >
               Login with Google
             </button>
 
             <FontAwesomeIcon
               icon={faGoogle}
-              className="text-red-400 absolute top-2 lg:top-2.5 right-2 sm:right-4"
+              className="text-red-400 absolute top-3 lg:top-3 right-2 sm:right-3"
               size="sm"
             />
           </div>
         </div>
 
-        <div className="flex flex-row items-start">
+        <div className="flex flex-row items-center mb-10">
           <div className="border border-gray-400 md:mx-10 mx-3 w-28 h-0.5 bg-gray-300"></div>
-          <p className="mb-5 text-gray-500 text-xs">Or</p>
+          <p className="text-gray-500 text-xs">or</p>
           <div className="border border-gray-400 md:mx-10 mx-3 w-28 h-0.5 bg-gray-300"></div>
         </div>
 
@@ -187,12 +191,12 @@ export default function Login() {
 
       <div
         className="w-full md:w-1/2 hidden md:flex flex-col items-center justify-center min-h-screen py-1"
-        style={{
-          background:
-            "linear-gradient(to left, #7F7FFF 0%, #E6E6FA 50%, #CDB1DB 50%, #E6E6FA 100%)",
-          backgroundSize: "100% 100%",
-          backgroundRepeat: "no-repeat",
-        }}
+        // style={{
+        //   background:
+        //     "linear-gradient(to left, #7F7FFF 0%, #E6E6FA 50%, #CDB1DB 50%, #E6E6FA 100%)",
+        //   backgroundSize: "100% 100%",
+        //   backgroundRepeat: "no-repeat",
+        // }}
       >
         <SideImage />
       </div>

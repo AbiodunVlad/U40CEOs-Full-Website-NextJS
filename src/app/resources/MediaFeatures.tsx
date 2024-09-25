@@ -46,25 +46,26 @@ export default function MediaFeatures() {
   return (
     <div className="flex flex-col pt-10 md:pt-20 overflow-hidden">
       <div className="w-full bg-blue-200 px-5 py-10 md:px-40 md:py-20 flex flex-col md:flex-row justify-between">
-        <div className="w-full h-full md:w-1/2 flex items-center justify-center relative mb-16 md:mb-0">
-          <div className="bg-pink-600 border border-pink-600 w-full md:w-2/3 h-full md:h-full absolute"></div>
+        <div className="w-full h-full md:w-1/2 flex items-center justify-center  mb-16 md:mb-0 relative">
+          <div className="bg-pink-600 border border-pink-600 w-96 md:w-96 h-80 md:h-80 "></div>
           <iframe
             src="https://www.youtube.com/embed/6VSyCoBCzXY?si=Atwhzufq9IBnufba"
-            className=" w-5/6 md:w-2/3 h-52 absolute transform translate-y-40 translate-x-5"
+            className=" w-96 md:w-96 h-52 translate-y-32 translate-x-10 absolute"
           />
         </div>
 
         <div className="flex flex-col justify-between w-full md:w-1/2">
           <div className="flex flex-col">
-            <h5 className="text-black md:text-5xl text-3xl font-extrabold md:font-bold mb-3">
-              Want to Feature in
-              <br /> our TV Series
+            <h5 className="text-black text-4xl lg:text-5xl leading-7 font-extrabold mb-3">
+              Step Into The
+              <br /> Spotlight With Our
+              <br /> TV Series
             </h5>
 
             <p className="text-black text-sm sm:text-lg mb-5 w-full md:w-2/3">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mollis
-              quam malesuada scelerisque ultrices gravida lobortis ac. Et vitae,
-              et aliquam sed.{" "}
+              Get featured; showcase your journey and achievements as an
+              <span className="font-bold">“Entrepreneur to Watch”</span> with
+              Under 40 CEOs, reaching a vast weekly audience.
             </p>
 
             <div className="flex flex-row justify-between mb-5 md:mb-10 gap-3">
@@ -87,12 +88,12 @@ export default function MediaFeatures() {
             </div>
 
             <Link href="/ScheduleACall">
-              <button className="md:self-start bg-transparent font-bold text-black py-2 px-5 rounded-full border-blue-600 border-solid border-2">
+              <button className="md:self-start bg-transparent font-bold text-black py-2 px-5 rounded-full border-blue-600 border-solid border-2 uppercase">
                 <FontAwesomeIcon
                   icon={faPhone}
                   className="text-blue-600 text-lg mr-5"
                 />
-                SCHEDULE A CALL
+                Share your story{" "}
               </button>
             </Link>
           </div>
@@ -102,7 +103,7 @@ export default function MediaFeatures() {
       <Search />
 
       <div className="flex flex-col justify-center items-center px-10 md:px-20 pt-10 pb-20 w-full">
-        <h5 className="text-black md:text-3xl text-lg font-bold mb-10">
+        <h5 className="text-black text-3xl lg:text-4xl font-bold mb-10">
           WATCH EPISODES
         </h5>
 
@@ -115,7 +116,7 @@ export default function MediaFeatures() {
                   {course.title}
                 </p>
                 <button className="bg-purple-600 text-white text-xs py-2 px-5 w-full">
-                  ENROL NOW
+                  WATCH FOR FREE
                 </button>
               </div>
             ))}

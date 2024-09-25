@@ -9,14 +9,17 @@ export default function Courses() {
       <div className="bg-purple-500 px-10 lg:px-40 py-10 flex flex-col lg:flex-row justify-between">
         <div className="flex flex-col justify-between lg:h-80 mb-5 lg:mb-0">
           <div className="flex-grow">
-            <h5 className="text-white md:text-5xl text-3xl font-bold mb-3">
-              Learning Hub
+            <h5 className="text-white text-4xl lg:text-5xl font-extrabold mb-3">
+              Welcome to our
+              <br /> Learning Hub
             </h5>
-            <p className="text-white md:text-3xl text-lg">About Learning Hub</p>
+            <p className="text-white md:text-lg text-base">
+              Learn, Grow and Succeed with us
+            </p>
           </div>
           <div className="flex-grow mb-10"></div>
-          <button className="mt-auto inline-flex self-start bg-black text-white py-2 px-4 rounded-full">
-            LEARN MORE
+          <button className="mt-auto inline-flex self-start bg-pink-500 text-white text-base font-bold py-4 px-10 rounded-full uppercase tracking-widest">
+            Start your journey
           </button>
         </div>
 
@@ -31,7 +34,7 @@ export default function Courses() {
       <Search />
 
       <div className="flex flex-col justify-center items-center px-5 lg:px-20 pt-10 pb-20 w-full">
-        <h5 className="text-black md:text-3xl text-lg font-bold mb-10">
+        <h5 className="text-black text-3xl lg:text-4xl font-bold mb-10">
           EXPLORE COURSES
         </h5>
 

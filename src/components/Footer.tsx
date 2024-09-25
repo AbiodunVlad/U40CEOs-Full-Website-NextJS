@@ -20,19 +20,19 @@ export default function Footer() {
           </div>
 
           <div className="md:mb-0 mb-20">
-            <p className="text-pink-600 text-md sm:text-xl text-center mb-5">
+            <p className="text-pink-600 text-md sm:text-xl text-start mb-5">
               Stay updated with the latest news, resources, and events from
               under40ceos.com.
             </p>
 
-            <form className="flex flex-col">
+            <form className="flex flex-col pr-20">
               <input
                 type="email"
                 placeholder="Email"
-                className="py-2 px-3 mb-5 rounded-lg text-black focus:outline-none"
+                className="py-4 px-7 mb-5 rounded-lg text-black focus:outline-none"
               />
               <button
-                className="py-3 px-5 rounded-full text-white text-sm font-bold"
+                className="py-4 px-7 rounded-full text-white text-sm font-bold"
                 style={{ backgroundColor: "#9B05E2" }}
               >
                 SUBSCRIBE NOW
@@ -267,45 +267,52 @@ export default function Footer() {
 
               <div className="flex flex-col">
                 <p className="text-sm sm:text-lg font-bold text-purple-700 mb-5">
-                  West Africa Office
+                  South Africa Office{" "}
                 </p>
+
                 <Link
                   href="/home"
                   className="text-xs sm:text-md text-white mb-2"
                 >
-                  +234 1 453 1963
+                  +27 11 053 7674{" "}
                 </Link>
+
                 <Link
                   href="/home"
                   className="text-xs sm:text-md text-white mb-2"
                 >
-                  wumi@under40ceos.com
+                  phyllis@under40ceos.com
                 </Link>
+
                 <p className="text-xs sm:text-md text-white mb-2">
-                  25 Oduduwa Way, Ikeja
-                  <br /> G.R.A, Lagos, Nigeria.
+                  33 Ballyclare drive, Bryanston,
+                  <br /> Johannesburg, South Africa.
                 </p>
               </div>
 
               <div className="flex flex-col">
                 <p className="text-sm sm:text-lg font-bold text-purple-700 mb-5">
-                  West Africa Office
+                  East Africa Office{" "}
                 </p>
+
                 <Link
                   href="/home"
                   className="text-xs sm:text-md text-white mb-2"
                 >
-                  +234 1 453 1963
+                  +250 788 305 352{" "}
                 </Link>
+
                 <Link
                   href="/home"
                   className="text-xs sm:text-md text-white mb-2"
                 >
-                  wumi@under40ceos.com
+                  grace@under40ceos.com
                 </Link>
+
                 <p className="text-xs sm:text-md text-white mb-2">
-                  25 Oduduwa Way, Ikeja
-                  <br /> G.R.A, Lagos, Nigeria.
+                  14th floor, Kigali City Tower,
+                  <br /> Plot No. 6418, Avenue Du Commerce,
+                  <br /> Kigali, Rwanda
                 </p>
               </div>
             </div>

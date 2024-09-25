@@ -88,18 +88,15 @@ export default function SuccessStories() {
       <Navbar />
 
       <div className="flex flex-col py-10 md:py-20 px-5 md:px-20">
-        <h1 className="text-black text-center text-4xl lg:text-5xl font-extrabold mb-2 leading-7 md:leading-10">
-          TANGIBLE RESULTS,
-          <br />
-          TRANSFORMED BUSINESS
+        <h1 className="text-black text-center text-4xl lg:text-5xl font-extrabold mb-2 leading-7 md:leading-10 uppercase">
+          Real Successes, Real
+          <br /> Entrepreneurial Journeys
         </h1>
 
         <p className="text-gray-500 text-center text-sm sm:text-lg leading-2">
-          Draw inspiration from our community, from proven Founders to budding
-          <span className="hidden md:flex">
-            <br />
-          </span>
-          entreprenuers making waves.
+          See how our community members have achieved remarkable success. From
+          seasoned <br className="hidden md:flex" />
+          founders to emerging entrepreneurs, their stories will inspire you.
         </p>
       </div>
 
@@ -108,9 +105,9 @@ export default function SuccessStories() {
           <p className="text-sm text-purple-600 font-bold mb-5">Filter</p>
 
           <div className="relative mb-4">
-            <select className="bg-purple-300 py-4 px-5  w-full rounded-2xl mb-4 md:text-lg text-sm cursor-pointer appearance-none">
+            <select className="bg-purple-300 py-4 px-5  w-full rounded-2xl mb-4 md:text-lg text-sm cursor-pointer appearance-none uppercase">
               <option value="" selected disabled hidden>
-                Product
+                TOUCHPOINT
               </option>
               <option value="p1">Product1</option>
               <option value="p2">Product2</option>
@@ -129,9 +126,9 @@ export default function SuccessStories() {
           </div>
 
           <div className="relative mb-4">
-            <select className="bg-purple-300 py-4 px-5 w-full rounded-2xl mb-4 md:text-lg text-sm cursor-pointer appearance-none">
+            <select className="bg-purple-300 py-4 px-5 w-full rounded-2xl mb-4 md:text-lg text-sm cursor-pointer appearance-none uppercase">
               <option value="" selected disabled hidden>
-                Topic
+                TOPIC
               </option>
               <option value="t1">Topic1</option>
               <option value="t2">Topic2</option>
@@ -150,9 +147,9 @@ export default function SuccessStories() {
           </div>
 
           <div className="relative mb-4">
-            <select className="bg-purple-300 py-4 px-5 w-full rounded-2xl mb-4 md:text-lg text-sm cursor-pointer appearance-none">
+            <select className="bg-purple-300 py-4 px-5 w-full rounded-2xl mb-4 md:text-lg text-sm cursor-pointer appearance-none uppercase">
               <option value="" selected disabled hidden>
-                Industry
+                INDUSTRY
               </option>
               <option value="">Industry1</option>
               <option value="">Industry2</option>
@@ -171,9 +168,9 @@ export default function SuccessStories() {
           </div>
 
           <div className="relative mb-4">
-            <select className="bg-purple-300 py-4 px-5 w-full rounded-2xl mb-4 md:text-lg text-sm cursor-pointer appearance-none">
+            <select className="bg-purple-300 py-4 px-5 w-full rounded-2xl mb-4 md:text-lg text-sm cursor-pointer appearance-none uppercase">
               <option value="" selected disabled hidden>
-                Location
+                LOCATION
               </option>
               <option value="">Location1</option>
               <option value="">Location2</option>
@@ -199,27 +196,31 @@ export default function SuccessStories() {
             key={index}
             className="flex flex-col w-full border items-center h-full mb-10 shadow-2xl"
           >
-            <div className="w-full h-1/2 bg-gradient-to-r from-pink-600 to-purple-600"></div>
+            <div className="w-full h-40 bg-gradient-to-r from-pink-600 to-purple-600"></div>
             <Link
               href={`/successStories/${story.id}`}
               className="w-full h-auto"
             >
               <div className="w-full h-full py-5 px-3">
-                <p className="text-black text-sm font-bold mb-2">
+                <p className="text-black text-lg md:text-2xl font-bold mb-0">
                   {story.firstName} {story.lastName}
                 </p>
-                <p className="text-pink-600 text-xxs mb-3">
+
+                <p className="text-pink-600 text-xs md:text-sm mb-3">
                   {story.role} @ {story.company}
                 </p>
-                <p className="text-blue-500 text-xxs mb-1">
+
+                <p className="text-blue-500 text-xs md:text-sm mb-1">
                   Touchpoint: {story.touchPoint}
                 </p>
 
-                <p className="text-blue-500 text-xxs mb-5">
+                <p className="text-blue-500 text-xs md:text-sm mb-5">
                   Topic: {story.topic}
                 </p>
 
-                <p className="text-black text-xxs md:mb-6">{story.body}</p>
+                <p className="text-black text-xs md:text-sm md:mb-6">
+                  {story.body}
+                </p>
               </div>
             </Link>
           </div>
@@ -227,22 +228,22 @@ export default function SuccessStories() {
       </div>
 
       {currentPage === 1 && (
-        <div className="bg-gray-400 flex flex-col md:flex-row justify-between mb-20 px-5 md:px-40 py-10">
+        <div className="bg-gray-200 flex flex-col md:flex-row justify-between items-center mb-20 px-5 md:px-40 py-10">
           <div className="w-full md:w-1/2 flex relative mb-10">
             <div className="bg-black w-full md:w-2/3 h-44 md:h-52"></div>
             <div className="absolute  bg-gradient-to-br from-purple-700 to-blue-700 w-full md:w-2/3 h-44 md:h-52 transform translate-y-5 -translate-x-5"></div>
           </div>
 
           <div className="w-full md:w-1/2">
-            <h1 className="text-pink-600 text-lg md:text-5xl font-extrabold mb-2 md:mb-5">
-              LANRE JOHN
+            <h1 className="text-pink-500 text-lg md:text-4xl font-extrabold mb-2 md:mb-5 uppercase">
+              Familusi Akin Babajide
             </h1>
 
-            <p className="text-black text-sm md:text-lg uppercase">
-              We Provide All The Necessary Tools
-              <br /> For Young Business Leaders To Do
-              <br />
-              Business And Thrive In Africa.
+            <p className="text-black text-base md:text-2xl uppercase">
+              At Under 40 CEOs, we turn your
+              <br className="hidden md:flex" /> challenges into triumphs and
+              your
+              <br className="hidden md:flex" /> dreams into thriving businesses
             </p>
           </div>
         </div>
@@ -254,27 +255,31 @@ export default function SuccessStories() {
             key={index}
             className="flex flex-col w-full border items-center h-full mb-10 shadow-2xl"
           >
-            <div className="w-full h-1/2 bg-gradient-to-r from-pink-600 to-purple-600"></div>
+            <div className="w-full h-40 bg-gradient-to-r from-pink-600 to-purple-600"></div>
             <Link
               href={`/successStories/${story.id}`}
               className="w-full h-auto"
             >
               <div className="w-full h-full px-3 py-5">
-                <p className="text-black text-sm font-bold mb-2">
+                <p className="text-black text-lg md:text-2xl font-bold mb-">
                   {story.firstName} {story.lastName}
                 </p>
-                <p className="text-pink-600 text-xxs mb-3">
+
+                <p className="text-pink-600 text-xs md:text-sm mb-3">
                   {story.role} @ {story.company}
                 </p>
-                <p className="text-blue-500 text-xxs mb-1">
+
+                <p className="text-blue-500 text-xs md:text-sm mb-1">
                   Touchpoint: {story.touchPoint}
                 </p>
 
-                <p className="text-blue-500 text-xxs mb-5">
+                <p className="text-blue-500 text-xs md:text-sm mb-5">
                   Topic: {story.topic}
                 </p>
 
-                <p className="text-black text-xxs md:mb-6">{story.body}</p>
+                <p className="text-black text-xs md:text-sm md:mb-6">
+                  {story.body}
+                </p>
               </div>
             </Link>
           </div>
@@ -288,7 +293,7 @@ export default function SuccessStories() {
         </p>
       </div>
 
-      <div className="flex justify-center mt-10">
+      <div className="flex justify-center mt-10 mb-40">
         {Array.from(
           { length: Math.ceil(stories.length / ITEMS_PER_PAGE) },
           (_, i) => (
@@ -307,83 +312,83 @@ export default function SuccessStories() {
         )}
       </div>
 
-      <div className="flex flex-col items-center justify-center gap-10 px-5 md:flex-row mb-20">
-        <div className="w-full md:w-1/4 flex flex-col text-start items-center mb-8 md:mb-0">
+      <div className="px-10 sm:px-20 pt-20 pb-10 bg-white flex lg:flex-row flex-col justify-center items-center gap-10">
+        <div className="flex flex-col justify-center items-start md:w-1/3">
           <Image
-            src="/images/omobola.svg"
+            src="/images/adaora.svg"
             alt=""
-            width={120}
-            height={150}
-            className="self-center"
+            width={200}
+            height={200}
+            className="mb-0 self-center"
           />
 
-          <p className="text-xs text-black md:text-sm text-start mb-4 md:mb-8">
-            At vero eos et accusamus et iusto odio dignissimos ducimus qui
-            blanditiis praesentium voluptatum deleniti atque corrupti quos
-            dolores et quas molestias excepturi sint occaecati.
+          <p className="text-sm sm:text-lg text-black leading-4 mb-16 w-full">
+            Being a platinum member of Under 40 CEOs has opened doors to
+            unparalleled opportunities for me. The high-level insights and
+            connections have been key to my professional growth.
           </p>
 
-          <h6 className="font-extrabold text-black text-base md:text-lg mb-1">
-            PLATINUM NAME
+          <h6 className="font-extrabold text-black text-base md:text-lg mb-1 uppercase">
+            ADAORA MBELU{" "}
           </h6>
 
-          <p className="text-black text-xs md:text-sm font-semibold mb-2">
-            DESIGNATION
+          <p className="text-pink-500 text-xs md:text-sm font-semibold mb-2">
+            Founder of Lumination Global Network
           </p>
         </div>
 
-        <div className="w-full md:w-1/4 flex flex-col text-start items-center mb-8 md:mb-0">
+        <div className="flex flex-col justify-center items-start md:w-1/3">
           <Image
             src="/images/omobola.svg"
             alt=""
-            width={120}
-            height={150}
-            className="self-center"
+            width={200}
+            height={200}
+            className="mb-0 self-center"
           />
 
-          <p className="text-xs text-black md:text-sm text-start mb-4 md:mb-8">
-            At vero eos et accusamus et iusto odio dignissimos ducimus qui
-            blanditiis praesentium voluptatum deleniti atque corrupti quos
-            dolores et quas molestias excepturi sint occaecati.
+          <p className="text-sm sm:text-lg text-black leading-4 mb-16 w-full">
+            As a CEO, Under 40 CEOs has been a game-changer. Its platinum
+            membership's remarkable resources have greatly enhanced my
+            leadership and business strategies.
           </p>
 
-          <h6 className="font-extrabold text-black text-base md:text-lg mb-1">
-            PLATINUM NAME
+          <h6 className="font-extrabold text-black text-base md:text-lg mb-1 uppercase">
+            Debola Wiiliams
           </h6>
 
-          <p className="text-black text-xs md:text-sm font-semibold mb-2">
-            DESIGNATION
+          <p className="text-pink-500 text-xs md:text-sm font-semibold mb-2">
+            Group CEO of RED | For Africa
           </p>
         </div>
 
-        <div className="w-full md:w-1/4 flex flex-col text-start items-center mb-8 md:mb-0">
+        <div className="flex flex-col justify-center items-start md:w-1/3">
           <Image
-            src="/images/omobola.svg"
+            src="/images/aisha.svg"
             alt=""
-            width={120}
-            height={150}
-            className="self-center"
+            width={200}
+            height={200}
+            className="mb-0 self-center"
           />
 
-          <p className="text-xs text-black md:text-sm text-start mb-4 md:mb-8">
-            At vero eos et accusamus et iusto odio dignissimos ducimus qui
-            blanditiis praesentium voluptatum deleniti atque corrupti quos
-            dolores et quas molestias excepturi sint occaecati.
+          <p className="text-sm sm:text-lg text-black leading-4 mb-16 w-full">
+            Under 40 CEOs provided me with invaluable connections and insights.
+            As a platinum member, I’ve leveraged these resources to expand my
+            influence and achieve new milestones.
           </p>
 
-          <h6 className="font-extrabold text-black text-base md:text-lg mb-1">
-            PLATINUM NAME
+          <h6 className="font-extrabold text-black text-base md:text-lg mb-1 uppercase">
+            Aisha Pandor
           </h6>
 
-          <p className="text-black text-xs md:text-sm font-semibold mb-2">
-            DESIGNATION
+          <p className="text-pink-500 text-xs md:text-sm font-semibold mb-2">
+            Co-founder of SweepSouth{" "}
           </p>
         </div>
       </div>
 
       <div className="flex flex-col items-center bg-gradient-to-r from-pink-600 to-purple-700 px-5 md:px-20 py-10">
         <h5 className="text-white md:text-xl text-base text-center font-bold mb-2 md:mb-5 uppercase">
-          WANT TO SHARE YOUR SUCCESS STORY?
+          Your Success Story Matters{" "}
         </h5>
 
         <p className="text-white md:text-base text-sm text-center uppercase mb-5">

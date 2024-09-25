@@ -5,13 +5,12 @@ import Image from "next/image";
 export default function TVseries() {
   return (
     <div className="flex flex-col bg-slate-100 py-20">
-      <h1 className="text-pink-500 font-light text-center text-2xl mb-20">
-        <span className="text-black font-extrabold">
-          UNDER 40 CEOs TV SERIES
-        </span>{" "}
-        FEATURING TOP
-        <br /> AFRICAN ENTREPRENUERS ACROSS
-        <br /> DIFFERENT NICHE.
+      <h1 className="text-black font-extrabold text-center text-3xl lg:text-4xl mb-20">
+        MEET AFRICA’S TOP ENTREPRENEURS <br />
+        <span className="text-purple-600 font-light">
+          ACROSS DIFFERENT INDUSTRIES IN THE
+          <br /> UNDER 40 CEOs TV SERIES.
+        </span>
       </h1>
 
       <div className="relative overflow-hidden w-full h-[200px]">

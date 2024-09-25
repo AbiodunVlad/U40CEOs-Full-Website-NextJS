@@ -69,18 +69,22 @@ export default function Signup() {
 
   return (
     <div className="flex flex-col-reverse md:flex-row items-center justify-around min-h-screen">
-      <div className="bg-slate-100 w-full md:w-1/2 flex flex-col items-center justify-center min-h-screen py-2 px-5 lg:px-20">
-        <Image
-          className="mb-3"
-          src="/images/logo.svg"
-          alt="logo"
-          width={200}
-          height={100}
-        />
+      <div className="bg-slate-100 w-full md:w-1/2 flex flex-col items-center justify-center min-h-screen py-2 px-10 lg:px-28">
+        <Link href="/home">
+          <Image
+            className="mb-3"
+            src="/images/logo.svg"
+            alt="logo"
+            width={200}
+            height={100}
+          />
+        </Link>
 
-        <h2 className="font-bold text-black text-3xl sm:text-5xl mb-3">
-          Sign up
-        </h2>
+        <Link href="/home">
+          <h2 className="font-bold text-black text-3xl sm:text-5xl mb-3">
+            Sign up
+          </h2>
+        </Link>
 
         <p className="text-gray-500 text-md sm:text-xl text-center mb-5">
           Sign up to enjoy full access to Under 40 CEOs resources
@@ -90,7 +94,7 @@ export default function Signup() {
 
         <div className="relative mb-5 w-full">
           <input
-            className="text-black w-full p-2 border border-red-300 rounded-lg focus:outline-none"
+            className="text-black w-full py-4 px-2 border border-red-300 rounded-lg focus:outline-none"
             placeholder=""
             id="fullName"
             type="text"
@@ -100,7 +104,7 @@ export default function Signup() {
 
           <label
             htmlFor="fullName"
-            className={`absolute left-2 top-2 text-gray-500 pointer-events-none transition-all transform origin-left ${
+            className={`absolute left-2 top-4 text-gray-500 pointer-events-none transition-all transform origin-left ${
               fullName ? "-translate-y-7 scale-75" : ""
             }`}
           >
@@ -110,7 +114,7 @@ export default function Signup() {
 
         <div className="relative mb-5 w-full">
           <input
-            className="text-black w-full  p-2 border border-red-300 rounded-lg focus:outline-none"
+            className="text-black w-full py-4 px-2 border border-red-300 rounded-lg focus:outline-none"
             placeholder=""
             id="email"
             type="email"
@@ -120,7 +124,7 @@ export default function Signup() {
 
           <label
             htmlFor="email"
-            className={`absolute left-2 top-2 text-gray-500 pointer-events-none transition-all transform origin-left ${
+            className={`absolute left-2 top-4 text-gray-500 pointer-events-none transition-all transform origin-left ${
               email ? "-translate-y-7 scale-75" : ""
             }`}
           >
@@ -130,7 +134,7 @@ export default function Signup() {
 
         <div className="w-full mb-5 relative">
           <input
-            className="text-black w-full p-2 border border-red-300 rounded-lg  focus:outline-none"
+            className="text-black w-full py-4 px-2 border border-red-300 rounded-lg  focus:outline-none"
             placeholder=""
             type={showPassword ? "text" : "password"}
             value={password}
@@ -139,13 +143,13 @@ export default function Signup() {
           <FontAwesomeIcon
             icon={showPassword ? faEye : faEyeLowVision}
             size="sm"
-            className="text-gray-400 absolute top-3 right-5"
+            className="text-gray-400 absolute top-5 right-5"
             onClick={togglePasswordVisibility}
           />
 
           <label
             htmlFor="password"
-            className={`absolute left-2 top-2 text-gray-500 pointer-events-none transition-all transform origin-left ${
+            className={`absolute left-2 top-4 text-gray-500 pointer-events-none transition-all transform origin-left ${
               password ? "-translate-y-7 scale-75" : ""
             }`}
           >
@@ -155,7 +159,7 @@ export default function Signup() {
 
         <div className="w-full mb-5 relative">
           <input
-            className="text-black w-full p-2 border border-red-300 rounded-lg focus:outline-none"
+            className="text-black w-full py-4 px-2 border border-red-300 rounded-lg focus:outline-none"
             placeholder=""
             type={showPassword ? "text" : "password"}
             value={confirmPassword}
@@ -164,13 +168,13 @@ export default function Signup() {
           <FontAwesomeIcon
             icon={showPassword ? faEye : faEyeLowVision}
             size="sm"
-            className="text-gray-400 absolute top-3 right-5"
+            className="text-gray-400 absolute top-5 right-5"
             onClick={togglePasswordVisibility}
           />
 
           <label
             htmlFor="confirmPassword"
-            className={`absolute left-2 top-2 text-gray-500 pointer-events-none transition-all transform origin-left ${
+            className={`absolute left-2 top-4 text-gray-500 pointer-events-none transition-all transform origin-left ${
               confirmPassword ? "-translate-y-7 scale-75" : ""
             }`}
           >
@@ -180,7 +184,7 @@ export default function Signup() {
 
         <button
           onClick={signup}
-          className="w-full p-2 border bg-purple-700 rounded-full mb-5 text-white font-bold uppercase shadow-lg"
+          className="w-full py-4 px-2 border bg-purple-700 rounded-full mb-7 text-white font-bold uppercase shadow-lg"
           disabled={loading}
         >
           {loading ? "Signing you up..." : "Sign up"}
@@ -188,7 +192,7 @@ export default function Signup() {
 
         <div className="flex flex-row items-start mb-5">
           <div className="border border-gray-400 md:mx-10 mx-3 w-28 h-0.5 bg-gray-300"></div>
-          <p className="text-gray-500 text-xs">Or</p>
+          <p className="text-gray-500 text-xs">or</p>
           <div className="border border-gray-400 md:mx-10 mx-3 w-28 h-0.5 bg-gray-300"></div>
         </div>
 
@@ -218,12 +222,12 @@ export default function Signup() {
 
       <div
         className="w-full md:w-1/2 hidden md:flex flex-col items-center justify-center min-h-screen py-1"
-        style={{
-          background:
-            "linear-gradient(to left, #7F7FFF 0%, #E6E6FA 50%, #CDB1DB 50%, #E6E6FA 100%)",
-          backgroundSize: "100% 100%",
-          backgroundRepeat: "no-repeat",
-        }}
+        // style={{
+        //   background:
+        //     "linear-gradient(to left, #7F7FFF 0%, #E6E6FA 50%, #CDB1DB 50%, #E6E6FA 100%)",
+        //   backgroundSize: "100% 100%",
+        //   backgroundRepeat: "no-repeat",
+        // }}
       >
         <SideImage />
       </div>

@@ -21,11 +21,13 @@ export default function HeroSection() {
       </p>
 
       <div className="flex flex-col md:flex-row gap-2 mb-3 md:mb-5">
-        <p className="text-black text-lg md:text-2xl font-normal">
-          LEVERAGE THESE TOOLS TO{" "}
-          <span className="text-purple-500">BOOST YOUR BUSINESS</span>
+        <p className="text-black text-3xl lg:text-4xl font-normal uppercase">
+          Utilize our Powerful Tools{" "}
+          <span className="text-purple-500 font-thin">
+            Drive your Business Success
+          </span>
         </p>
-        <Image src="/icons/flash.svg" alt="" width={30} height={60} />
+        <Image src="/icons/flash.svg" alt="" width={60} height={80} />
       </div>
 
       <div className="w-full h-full">

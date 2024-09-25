@@ -3,82 +3,105 @@ import Image from "next/image";
 
 export default function Entrepreneurs() {
   return (
-    <div className="flex flex-col md:flex-row w-full md:w-5/6 justify-center items-center px-5 lg:px-20 mb-20 gap-5">
-      <div className="p-5 bg-white shadow-md flex flex-col items-center justify-center w-full lg-w:1/3">
+    <div className="flex flex-col md:flex-row w-full h-svh md:w-5/6 justify-center items-stretch px-5 lg:px-20 mb-20 gap-5">
+      <div className="p-5 bg-white shadow-md flex flex-col flex-grow items-start justify-between w-full lg-w:1/3 h-full">
         <Image
           src="/images/olaBrown.svg"
           alt=""
-          className="mb-5"
-          width={70}
+          className="mb-5 flex self-center"
+          width={150}
           height={70}
         />
 
-        <h6 className="font-bold text-lg text-center mb-2 text-black">
-          Duis aute irure dolor in
-        </h6>
+        <div className="flex flex-col items-start justify-start text-start mb-10">
+          <h6 className="font-bold text-xl lg:text-2xl text-start mb-2 text-black">
+            NAME OF COURSE{" "}
+          </h6>
 
-        <p className="text-sm sm:text-lg text-black mb-10 text-center md:text-left">
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. At vero eos et accusamus et iusto odio dignissimos ducimus
-          qui blanditiis praesentium voluptatum.
+          <p className="text-black text-base font-bold">
+            <span className="font-thin text-sm">taught by</span> Dr. Ola Brown
+          </p>
+          <p className="text-base text-pink-500">Founder of Flying Doctors</p>
+        </div>
+
+        <p className="text-base sm:text-2xl text-black mb-10 text-start md:text-left flex-grow">
+          Discover the roadmap to entrepreneurial success in Africa, with
+          comprehensive insights into market analysis, legal tips, funding
+          strategies, and practical skills for navigating the African business
+          landscape.
         </p>
 
         <button
-          className="py-2 px-5 rounded-full mb-10 text-white text-xs font-bold"
+          className="py-4 px-7 rounded-full mb-10 text-white text-xs font-bold self-center"
           style={{ backgroundColor: "#C54ED8" }}
         >
           WATCH FOR FREE
         </button>
       </div>
 
-      <div className="p-5 bg-white shadow-md flex flex-col items-center justify-center w-full lg-w:1/3">
+      <div className="p-5 bg-white shadow-md flex flex-col flex-grow items-start justify-between w-full lg-w:1/3 h-full">
         <Image
           src="/images/tayo.svg"
           alt=""
-          className="mb-5"
-          width={70}
+          className="mb-5 self-center"
+          width={150}
           height={70}
         />
 
-        <h6 className="font-bold text-black text-lg text-center mb-2">
-          Duis aute irure dolor in
-        </h6>
+        <div className="flex flex-col items-start justify-start text-start mb-10">
+          <h6 className="font-bold text-xl lg:text-2xl text-start mb-2 text-black">
+            NAME OF COURSE{" "}
+          </h6>
 
-        <p className="text-sm sm:text-lg text-black mb-10 text-center md:text-left">
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. At vero eos et accusamus et iusto odio dignissimos ducimus
-          qui blanditiis praesentium voluptatum.
+          <p className="text-black text-base font-bold">
+            <span className="font-thin text-sm">taught by</span> Dr. Tayo
+            Oyedeji
+          </p>
+          <p className="text-base text-pink-500">CEO of Publicis Groupe</p>
+        </div>
+
+        <p className="text-base sm:text-2xl text-black mb-10 text-center md:text-left flex-grow">
+          Equip yourself with the knowledge and skills needed for business
+          success in Africa. Learn  how to overcome challenges, seize
+          opportunities, and drive your entrepreneurial vision forward.
         </p>
 
         <button
-          className="py-2 px-5 rounded-full mb-10 text-white text-xs font-bold"
+          className="py-4 px-7 rounded-full mb-10 text-white text-xs font-bold self-center"
           style={{ backgroundColor: "#C54ED8" }}
         >
           WATCH FOR FREE
         </button>
       </div>
 
-      <div className="p-5 bg-white shadow-md flex flex-col items-center justify-center w-full lg-w:1/3">
+      <div className="p-5 bg-white shadow-md flex flex-col flex-grow items-start justify-between w-full lg-w:1/3 h-full">
         <Image
           src="/images/onye.svg"
           alt=""
-          className="mb-5"
-          width={70}
+          className="mb-5 self-center"
+          width={150}
           height={70}
         />
 
-        <h6 className="font-bold text-black text-lg text-center mb-2">
-          Duis aute irure dolor in
-        </h6>
+        <div className="flex flex-col items-start justify-start text-start mb-10">
+          <h6 className="font-bold text-xl lg:text-2xl text-start mb-2 text-black">
+            NAME OF COURSE{" "}
+          </h6>
 
-        <p className="text-sm sm:text-lg text-black mb-10 text-center md:text-left">
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. At vero eos et accusamus et iusto odio dignissimos ducimus
-          qui blanditiis praesentium voluptatum.
+          <p className="text-black text-base font-bold">
+            <span className="font-thin text-sm">taught by</span> Sam Oyemelukwe
+          </p>
+          <p className="text-base text-pink-500">Senior VP at Trace</p>
+        </div>
+
+        <p className="text-base sm:text-2xl text-black mb-10 text-center md:text-left flex-grow">
+          Sales and marketing are the bedrock of success. Learn how to harness
+          these essential skills to transform challenges into growth
+          opportunities and make a lasting impact in your industry.
         </p>
 
         <button
-          className="py-2 px-5 rounded-full mb-10 text-white text-xs font-bold"
+          className="py-4 px-7 rounded-full mb-10 text-white text-xs font-bold self-center"
           style={{ backgroundColor: "#C54ED8" }}
         >
           WATCH FOR FREE

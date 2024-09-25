@@ -4,24 +4,25 @@ import React from "react";
 
 export default function Event() {
   return (
-    <div className="bg-gradient-to-r from-blue-500 to-blue-200 pt-5 md:pt-10 pb-5 px-3 md:px-5 flex flex-col md:flex-row gap-3 w-full md:w-5/6">
+    <div className="bg-gradient-to-r from-blue-500 to-blue-200 pt-5 md:pt-10 pb-5 px-5 md:px-10 flex flex-col md:flex-row gap-20 w-full md:w-5/6">
       <div className="flex justify-start">
         <Image src="/images/courseImg.svg" alt="" width={200} height={200} />
       </div>
 
       <div className="w-full md:w-2/3 flex flex-col justify-between">
         <div className="flex flex-col flex-grow">
-          <p className="text-white text-xl md:text-3xl font-bold mb-2">EVENT</p>
+          <p className="text-white text-xl md:text-3xl font-bold mb-2">
+            FIRESIDE CHAT
+          </p>
           <p className="text-lg md:text-xl text-white leading-1 mb-auto md:w-1/3 w-1/5">
-            Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. At vero eos et accusamus et
-            iusto odio dignissimos ducimus qui blanditiis.
+            Discover powerful sales techniques to drive your startup forward at
+            the Under 40 CEOs Fireside Chat.
           </p>
         </div>
 
         <Link
           href="/Events"
-          className="text-white text-base py-2 md:py-3 px-5 md:px-8 rounded-full bg-black mt-3 md:mt-auto inline-flex items-center"
+          className="text-white text-lg py-3 px-10 rounded-full bg-pink-500 mt-3 md:mt-auto inline-flex items-center"
           style={{ width: "fit-content" }}
         >
           BOOK YOUR SEAT

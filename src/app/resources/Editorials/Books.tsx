@@ -5,9 +5,9 @@ export default function Books() {
   return (
     <div className="shadow-2xl px-2 md:px-20 py-5 md:py-10">
       <div className="flex flex-row justify-between mb-5">
-        <p className="text-black md:text-xl text-sm font-light">Books</p>
+        <p className="text-black md:text-2xl text-lg font-light">Books</p>
 
-        <button className="bg-transparent border border-solid border-purple-600 text-purple-600 text-xs md:text-sm rounded-full px-3 py-1">
+        <button className="bg-transparent border border-solid border-purple-600 text-purple-600 md:text-2xl text-lg rounded-full px-3 py-1">
           Click to see more
         </button>
       </div>

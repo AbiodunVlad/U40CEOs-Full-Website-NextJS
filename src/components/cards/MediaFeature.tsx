@@ -4,7 +4,7 @@ import React from "react";
 
 export default function MediaFeature() {
   return (
-    <div className="bg-gradient-to-r from-pink-500 to-purple-500 pt-5 md:pt-10 pb-5 px-3 md:px-5 flex flex-col md:flex-row gap-3 w-full md:w-5/6">
+    <div className="bg-gradient-to-r from-pink-500 to-purple-500 pt-5 md:pt-10 pb-5 px-5 md:px-10 flex flex-col md:flex-row gap-20 w-full md:w-5/6">
       <div className="flex justify-start">
         <Image src="/images/courseImg.svg" alt="" width={200} height={200} />
       </div>
@@ -23,7 +23,7 @@ export default function MediaFeature() {
 
         <Link
           href="/ScheduleACall"
-          className="text-white text-base py-2 md:py-3 px-5 md:px-8 rounded-full bg-black mt-3 md:mt-auto inline-flex items-center"
+          className="text-white text-lg py-3 px-10 rounded-full bg-black mt-3 md:mt-auto inline-flex items-center"
           style={{ width: "fit-content" }}
         >
           REGISTER

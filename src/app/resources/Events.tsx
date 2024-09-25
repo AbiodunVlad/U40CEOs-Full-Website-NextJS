@@ -80,7 +80,7 @@ export default function Events() {
       <div className="bg-pink-200 px-5 py-10 md:px-20 flex flex-col-reverse md:flex-row justify-between">
         <div className="flex flex-col justify-between h-auto w-full md:w-1/2 mb-10 md:mb-0">
           <div className="mb-10 w-2/3">
-            <h5 className="text-black leading-0 md:text-5xl text-3xl text-start font-extrabold">
+            <h5 className="text-black leading-0 text-4xl lg:text-5xl text-start font-extrabold">
               STARTING A <br className="hidden" /> BUSINESS WITH A{" "}
               <br className="hidden" /> FOCUS ON SALES.
             </h5>
@@ -98,7 +98,7 @@ export default function Events() {
 
             <Link
               href="/Events"
-              className="md:self-start bg-transparent text-purple-600 text-lg text-center border border-purple-600 border-solid py-2 w-3/4 rounded-full"
+              className="md:self-start bg-transparent text-purple-600 text-base text-center border border-purple-600 border-solid py-2 w-3/4 rounded-full"
             >
               <button>SEE UPCOMING EVENTS</button>
             </Link>
@@ -114,7 +114,7 @@ export default function Events() {
       <Search />
 
       <div className="flex flex-col justify-center items-center px-5 pt-10 pb-20 md:px-20 w-full">
-        <h5 className="text-black md:text-3xl text-lg font-bold mb-10">
+        <h5 className="text-black text-3xl lg:text-4xl font-bold mb-10">
           EVENT RECORDINGS
         </h5>
 
@@ -126,8 +126,8 @@ export default function Events() {
                 <p className="text-black text-sm font-bold mb-5">
                   {course.title}
                 </p>
-                <button className="bg-purple-600 text-white text-xs py-2 px-5 w-full">
-                  ENROL NOW
+                <button className="bg-purple-600 text-white text-xs py-2 px-5 w-full uppercase">
+                  Watch for free
                 </button>
               </div>
             ))}

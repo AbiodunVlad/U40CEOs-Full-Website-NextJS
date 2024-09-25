@@ -3,21 +3,22 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <div className="flex flex-col-reverse md:flex-row px-4 md:px-20 py-10 md:py-20 items-center justify-between">
+    <div className="flex flex-col-reverse md:flex-row px-4 md:px-20 py-10 md:py-20 items-center justify-between mb-20">
       <div className="flex flex-col items-center md:items-center justify-center text-center md:text-left mb-10 md:mb-0">
-        <h1 className="font-extrabold text-black text-center text-4xl lg:text-5xl md:mb-16 mb-10">
-          A COMMUNITY OF SUCCESSFUL BUSINESS <br /> LEADERS{" "}
+        <h1 className="font-extrabold text-black text-center text-4xl lg:text-5xl md:mb-16 mb-10 uppercase leading-10">
+          We are a thriving community of young{" "}
           <span className="text-red-500 font-light">
-            TO HELP YOU START AND GROW YOUR BUSINESS WITH LITTLE TO ZERO
-            <br /> HASSLE.
+            successful African business minds
+            <br /> dedicated to helping you start and
+            <br /> succeed in entrepreneurship.
           </span>{" "}
         </h1>
 
         <p className="text-black text-sm sm:text-lg mb-5">
-          Active in more than 5 African Countries
+          Active in over five African countries{" "}
         </p>
 
-        <div className="flex flex-row justify-center items-center">
+        <div className="flex flex-row justify-center items-center mb-10">
           <Image src="/icons/Nigeria.svg" alt="NG" width={50} height={50} />
           <Image
             className="-ml-3"
@@ -53,6 +54,58 @@ export default function HeroSection() {
             alt="CAM"
             width={50}
             height={50}
+          />
+        </div>
+
+        <div className="flex flex-row gap-5">
+          <Image
+            src="/images/homeImg/bankyHome.svg"
+            alt=""
+            width={70}
+            height={70}
+            className="rounded-full transform sm:flex hidden"
+          />
+          <Image
+            src="/images/homeImg/woman1Home.svg"
+            alt=""
+            width={70}
+            height={70}
+            className="md:rounded-full rounded-none transform"
+          />
+          <Image
+            src="/images/homeImg/man1Home.svg"
+            alt=""
+            width={70}
+            height={70}
+            className="md:rounded-full rounded-none transform"
+          />
+          <Image
+            src="/images/homeImg/presidentHome.svg"
+            alt=""
+            width={70}
+            height={70}
+            className="md:rounded-full rounded-none transform"
+          />
+          <Image
+            src="/images/homeImg/woman2Home.svg"
+            alt=""
+            width={70}
+            height={70}
+            className="md:rounded-full rounded-none transform"
+          />
+          <Image
+            src="/images/homeImg/man3Home.svg"
+            alt=""
+            width={70}
+            height={70}
+            className="md:rounded-full rounded-none transform"
+          />
+          <Image
+            src="/images/homeImg/man4Home.svg"
+            alt=""
+            width={70}
+            height={70}
+            className="rounded-full transform sm:flex hidden"
           />
         </div>
       </div>

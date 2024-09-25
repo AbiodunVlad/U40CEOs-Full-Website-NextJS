@@ -7,9 +7,10 @@ import WhoWeAre from "./whoweare";
 export default function CEOtips() {
   return (
     <div className="flex flex-col justify-center items-center pt-20 pb-0 bg-slate-100 relative">
-      <h1 className="text-center text-black font-bold text-2xl mb-5">
-        <span className="font-extralight text-pink-400">FREE</span> PRACTICAL
-        TIPS FROM CEOs <br className="sm:flex hidden" /> MAKING MARKS
+      <h1 className="text-center text-black font-extrabold text-3xl lg:text-4xl mb-16 uppercase">
+        Insider <span className="font-extralight text-pink-400">secrets</span>{" "}
+        From Trailblazing
+        <br /> Entrepreneurs Shaping Africa
       </h1>
 
       <Entrepreneurs />

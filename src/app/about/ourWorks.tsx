@@ -5,13 +5,13 @@ export default function OurWorks() {
   return (
     <div className="flex flex-col items-center justify-center px-4 sm:px-8 md:px-20 py-10 sm:py-16 md:py-20">
       <p className="text-purple-600 text-sm text-center mb-5">OUR WORKS</p>
-      <h6 className="text-black text-lg text-center font-extrabold mb-10 sm:mb-16 md:mb-20">
+      <h6 className="text-black text-3xl lg:text-4xl text-center font-extrabold mb-10 sm:mb-16 md:mb-20">
         COLLABORATIONS
       </h6>
 
       <div className="flex flex-col-reverse md:flex-row gap-10 items-center justify-center mb-10 sm:mb-16 md:mb-20 h-96">
         <div className="w-full md:w-2/5">
-          <h6 className="text-base text-black font-bold mb-3">
+          <h6 className="text-base sm:text-2xl text-black font-bold mb-3">
             Drive Your Ambition
           </h6>
           <div className="flex flex-row gap-3 mb-3">
@@ -20,12 +20,12 @@ export default function OurWorks() {
             <Image src="/icons/tinySam.svg" alt="" width={40} height={20} />
           </div>
           <p className="text-sm sm:text-lg text-black leading-5">
-            Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. At vero eos et accusamus et
-            iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-            deleniti atque corrupti quos dolores et quas molestias excepturi
-            sint occaecati. Duis aute irure dolor in reprehenderit in voluptate
-            velit esse cillum dolore eu fugiat nulla pariatur.
+            This entertaining series showcases members of Under 40 CEOs having a
+            ride with influential industry leaders, while gaining invaluable
+            insights on entrepreneurship and Africa’s social, economic, and
+            political landscape. Featured guests include Audi Maikori, Noble
+            Igwe, Bola Ray, Shukri Toefy, Ade Adegoke, Abiola Adekoya, and other
+            inspiring minds.
           </p>
         </div>
 
@@ -47,7 +47,7 @@ export default function OurWorks() {
         </div>
 
         <div className="w-full md:w-2/5">
-          <h6 className="text-base text-black font-bold mb-3">
+          <h6 className="text-base sm:text-2xl text-black font-bold mb-3">
             They Said I Couldn’t
           </h6>
           <div className="flex flex-row gap-3 mb-3">
@@ -61,19 +61,18 @@ export default function OurWorks() {
           </div>
 
           <p className="text-sm sm:text-lg text-black leading-5">
-            Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. At vero eos et accusamus et
-            iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-            deleniti atque corrupti quos dolores et quas molestias excepturi
-            sint occaecati. Duis aute irure dolor in reprehenderit in voluptate
-            velit esse cillum dolore eu fugiat nulla pariatur.
+            In the heart of Africa, where dreams meet reality, Under 40 CEOs
+            proudly presents the "They Said I Couldn't" series in collaboration
+            with Sunlight. Here, successful individuals share their stories of
+            courage, resilience, and triumph; achieving entrepreneurial feats
+            against all odds.
           </p>
         </div>
       </div>
 
       <div className="flex flex-col-reverse md:flex-row gap-10 items-center justify-center h-96">
         <div className="w-full md:w-2/5">
-          <h6 className="text-base text-black font-bold mb-3">
+          <h6 className="text-base sm:text-2xl text-black font-bold mb-3">
             UNDER 40 CEOs Care
           </h6>
           <div className="flex flex-row gap-3 mb-3">
@@ -82,12 +81,10 @@ export default function OurWorks() {
           </div>
 
           <p className="text-sm sm:text-lg text-black leading-5">
-            Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. At vero eos et accusamus et
-            iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-            deleniti atque corrupti quos dolores et quas molestias excepturi
-            sint occaecati. Duis aute irure dolor in reprehenderit in voluptate
-            velit esse cillum dolore eu fugiat nulla pariatur.
+            Under 40 CEOs Care highlights impactful initiatives by CEOs across
+            Africa in supporting their communities and employees. Through their
+            thoughtful actions and dedication, the featured CEOs exemplify
+            strong leadership and compassion.
           </p>
         </div>
 
