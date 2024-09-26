@@ -10,6 +10,7 @@ interface UserData {
 
 interface SuccessStories {
   id: string;
+  nameTitle: string;
   firstName: string;
   lastName: string;
   company: string;
@@ -17,6 +18,12 @@ interface SuccessStories {
   topic: string;
   role: string;
   body: string;
+
+  about: string;
+  leverage: string;
+  results: string;
+  videoUrl: string;
+  goldenNuggets: string;
 
   // intro: string;
   // about: string;

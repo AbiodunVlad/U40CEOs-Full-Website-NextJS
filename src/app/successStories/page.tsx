@@ -235,7 +235,7 @@ export default function SuccessStories() {
           </div>
 
           <div className="w-full md:w-1/2">
-            <h1 className="text-pink-500 text-lg md:text-4xl font-extrabold mb-2 md:mb-5 uppercase">
+            <h1 className="text-pink-500 text-xl md:text-4xl font-extrabold mb-2 md:mb-5 uppercase">
               Familusi Akin Babajide
             </h1>
 
@@ -387,20 +387,25 @@ export default function SuccessStories() {
       </div>
 
       <div className="flex flex-col items-center bg-gradient-to-r from-pink-600 to-purple-700 px-5 md:px-20 py-10">
-        <h5 className="text-white md:text-xl text-base text-center font-bold mb-2 md:mb-5 uppercase">
+        <h5 className="text-white text-3xl lg:text-4xl text-center font-bold mb-2 md:mb-5 uppercase">
           Your Success Story Matters{" "}
         </h5>
 
-        <p className="text-white md:text-base text-sm text-center uppercase mb-5">
-          are you a memebr? want to tell us how founder has helped you?
+        <p className="text-white text-sm sm:text-lg text-center uppercase mb-5">
+          We’d love to hear how Under 40 CEOs has been part of your
+          entrepreneurial
+          <br className="md:flex hidden" /> success. Share your story of growth
+          and the role our platform played in your
+          <br className="md:flex hidden" /> achievements. are you a memebr? want
+          to tell us how founder has helped you?
           <span className="md:flex hidden">
             <br />
           </span>{" "}
           impact others with your story? we’d love to hear from you
         </p>
 
-        <button className="text-white text-sm font-bold bg-blue-600 rounded-full py-3 px-5">
-          TELL US NOW
+        <button className="text-white text-sm font-bold bg-blue-600 rounded-full py-4 px-10 uppercase">
+          Tell Your Story
         </button>
       </div>
       <TVseries />

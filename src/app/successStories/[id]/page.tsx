@@ -6,9 +6,11 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { getSuccessStories } from "../../../../pages/api/auth";
+import BecomeAMember from "@/components/BecomeAMember";
 
 type Stories = {
   id: string;
+  nameTitle: string;
   firstName: string;
   lastName: string;
   company: string;
@@ -16,6 +18,12 @@ type Stories = {
   topic: string;
   role: string;
   body: string;
+
+  about: string;
+  leverage: string;
+  results: string;
+  videoUrl: string;
+  goldenNuggets: string;
 };
 
 export default function IndividualStories() {
@@ -109,20 +117,94 @@ export default function IndividualStories() {
       <Navbar />
       <div>
         {story ? (
-          <div className="flex flex-col-reverse md:flex-row justify-between w-full">
-            <h1>
-              {story.firstName} {story.lastName}
-            </h1>
+          <div className="flex flex-col  w-full">
+            <div className="flex lg:flex-row flex-col-reverse w-full mb-10">
+              <div className="flex flex-col py-10 sm:px-20 px-5 bg-gradient-to-br from-purple-200 to-white w-full lg:w-1/2">
+                <p className="text-pink-500 text-base">{story.touchPoint}</p>
+                <p className="text-black font-bold text-xl mb-10">
+                  {story.topic}
+                </p>
+                <h1 className="text-black font-bold text-3xl sm:text-5xl">
+                  {story.nameTitle} {story.firstName}{" "}
+                  <span className="text-pink-500 font-thin">
+                    {story.lastName}
+                  </span>
+                </h1>
 
-            <p>Company: {story.company}</p>
+                <p className="text-purple-500 mb-10">{story.role}</p>
 
-            <p>TouchPoint: {story.touchPoint}</p>
+                <p className="text-base mb-7 pr-20">
+                  Equip yourself with the knowledge and skills needed for
+                  business success in Africa. Learn  how to overcome challenges,
+                  seize opportunities, and drive your entrepreneurial vision
+                  forward.
+                </p>
 
-            <p>Topic: {story.topic}</p>
+                <button className="text-white bg-purple-500 py-4 px-10 rounded-full self-start uppercase">
+                  Enrol for Course
+                </button>
+              </div>
+              <div className="bg-black flex justify-center items-center w-full lg:w-1/2 py-20">
+                <div className="bg-white w-60 h-60 rounded-full"></div>
+              </div>
+            </div>
 
-            <p>Role: {story.role}</p>
+            <div className="flex lg:flex-row flex-col lg:justify-between lg:items-start items-center lg:px-20 px-5 text-start mb-16 ">
+              <div>
+                <p className="text-pink-500 text-lg font-bold mb-7 uppercase">
+                  About {story.nameTitle} {story.firstName} {story.lastName}
+                </p>
+                <p className="text-sm">{story.about}</p>
+              </div>
 
-            <p>{story.body}</p>
+              <div>
+                <p className="text-pink-500 text-lg font-bold mb-7 uppercase">
+                  How They Leveraged Under 40 CEOs
+                </p>
+                <p className="text-sm">{story.leverage}</p>
+              </div>
+
+              <div>
+                <p className="text-pink-500 text-lg font-bold mb-7 uppercase">
+                  Their Results{" "}
+                </p>
+                <p className="text-sm">{story.results}</p>
+              </div>
+            </div>
+
+            <div className="flex flex-col items-center justify-center text-center uppercase text-black text-2xl font-extrabold mb-7">
+              <p className="text-center">
+                {story.nameTitle} {story.firstName}'s{" "}
+                <span className="text-purple-500"> Testimonial</span>
+              </p>
+
+              <iframe src={story.videoUrl} className="w-full h-52 mb-5" />
+            </div>
+
+            <BecomeAMember />
+
+            <div className="bg-blue-200 flex flex-col items-center sm:px-20 px-5 py-10">
+              <p className="font-extrabold text-black md:text-2xl text-xl mb-7 uppercase">
+                GOLDEN NUGGETS{" "}
+                <span className="text-purple-500">
+                  FROM {story.nameTitle} {story.firstName} {story.lastName}
+                </span>
+              </p>
+
+              <div className="bg-white p-3">
+                <p>{story.goldenNuggets}</p>
+              </div>
+            </div>
+
+            {/* <div>
+              <p>Company: {story.company}</p>
+
+              <p>TouchPoint: {story.touchPoint}</p>
+
+              <p>Topic: {story.topic}</p>
+
+              <p>{story.body}</p>
+            </div> */}
           </div>
         ) : (
           <p>No story found!</p>
@@ -136,26 +218,28 @@ export default function IndividualStories() {
           </h2>
         </div>
 
-        <div className="w-full flex md:flex-col flex-row overflow-x-auto gap-3 mb-3">
-          <div className="grid md:grid-cols-3 pl-5 md:px-20 md:w-full justify-between gap-3 md:gap-28 md:mb-20 overflow-x-auto">
+        <div className="w-full flex lg:flex-col flex-row  gap-3 mb-3">
+          <div className="grid lg:grid-cols-3 px-5 xl:px-20 md:w-full justify-between gap-5 xl:gap-28 ">
             {moreStories.length > 0 ? (
-              moreStories.map((story, item) => (
-                <Link key={item} href={`/successStories/${item}`}>
+              moreStories.slice(0, 3).map((story, index) => (
+                <Link
+                  key={index}
+                  href={`/successStories/${index}`}
+                  className="xl:mb-20 mb-10 w-full"
+                >
                   <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
                   <div className="w-full px-4 md:px-10 py-5">
                     <p className="text-black text-sm font-bold mb-2">
                       {story.firstName} {story.lastName}
                     </p>
                     <p className="text-pink-600 text-xxs mb-3">
-                      {story.role} @ LandingFolio {/*{story.company*/}
+                      {story.role} @ {story.company}
                     </p>
                     <p className="text-blue-500 text-xxs mb-1">
-                      Touchpoint: Some touchpoint {/*  {story.touchPoint} */}
+                      {story.touchPoint}
                     </p>
 
-                    <p className="text-blue-500 text-xxs mb-5">
-                      Topic: Some topic {/*{story.topic}*/}
-                    </p>
+                    <p className="text-blue-500 text-xxs mb-5">{story.topic}</p>
 
                     <p className="text-black text-xxs md:mb-6">{story.body}</p>
                   </div>
