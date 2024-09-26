@@ -48,7 +48,7 @@ export default function Stats() {
           <h1
             className="text-white text-sm md:text-4xl font-extrabold text-center"
             // {`text-white text-sm md:text-4xl font-extrabold text-center ${squadaOne.className}`}
-            // style={{ fontFamily: "Squada One" }}
+            style={{ fontFamily: "Squada One" }}
           >
             414+
           </h1>
