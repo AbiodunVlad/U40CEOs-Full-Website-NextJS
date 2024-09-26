@@ -62,10 +62,10 @@ export default function OurWorks() {
 
           <p className="text-sm sm:text-lg text-black leading-5">
             In the heart of Africa, where dreams meet reality, Under 40 CEOs
-            proudly presents the "They Said I Couldn't" series in collaboration
-            with Sunlight. Here, successful individuals share their stories of
-            courage, resilience, and triumph; achieving entrepreneurial feats
-            against all odds.
+            proudly presents the &quot;They Said I Couldn&apos;t&quot; series in
+            collaboration with Sunlight. Here, successful individuals share
+            their stories of courage, resilience, and triumph; achieving
+            entrepreneurial feats against all odds.
           </p>
         </div>
       </div>

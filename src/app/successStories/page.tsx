@@ -348,7 +348,7 @@ export default function SuccessStories() {
 
           <p className="text-sm sm:text-lg text-black leading-4 mb-16 w-full">
             As a CEO, Under 40 CEOs has been a game-changer. Its platinum
-            membership's remarkable resources have greatly enhanced my
+            membership&apos;s remarkable resources have greatly enhanced my
             leadership and business strategies.
           </p>
 
