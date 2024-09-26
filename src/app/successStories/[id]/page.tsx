@@ -63,14 +63,17 @@ export default function IndividualStories() {
       try {
         const res = await getSuccessStories();
         if (Array.isArray(res.data.content)) {
-          setMoreStories(res.data.content.slice(0, 6));
+          const filteredStories = res.data.content.filter(
+            (story: Stories) => story.id !== id
+          );
+          setMoreStories(filteredStories.slice(0, 3));
         }
       } catch (error) {
         console.error("Failed to fetch more stories:", error);
       }
     };
     fetchMoreStories();
-  }, []);
+  }, [id]);
 
   // useEffect(() => {
   //   const fetchStories = async () => {
@@ -174,7 +177,7 @@ export default function IndividualStories() {
 
             <div className="flex flex-col items-center justify-center text-center uppercase text-black text-2xl font-extrabold mb-7">
               <p className="text-center">
-                {story.nameTitle} {story.firstName}'s{" "}
+                {story.nameTitle} {story.firstName}&apos;s{" "}
                 <span className="text-purple-500"> Testimonial</span>
               </p>
 
@@ -219,13 +222,13 @@ export default function IndividualStories() {
         </div>
 
         <div className="w-full flex lg:flex-col flex-row  gap-3 mb-3">
-          <div className="grid lg:grid-cols-3 px-5 xl:px-20 md:w-full justify-between gap-5 xl:gap-28 ">
+          <div className="grid lg:grid-cols-3 px-5 xl:px-20 md:w-full justify-between gap-5 xl:gap-28">
             {moreStories.length > 0 ? (
               moreStories.slice(0, 3).map((story, index) => (
                 <Link
                   key={index}
                   href={`/successStories/${index}`}
-                  className="xl:mb-20 mb-10 w-full"
+                  className="xl:mb-20 mb-10 w-full h-full shadow-lg"
                 >
                   <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
                   <div className="w-full px-4 md:px-10 py-5">
