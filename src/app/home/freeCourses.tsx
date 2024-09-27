@@ -1,10 +1,18 @@
 "use client";
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function FreeCourses() {
   return (
-    <div className="flex flex-col items-center justify-center bg-slate-100 text-center pb-20 px-5">
+    <div className="flex flex-col items-center justify-center bg-slate-100 text-center pb-20 px-5 overflow-hidden">
+      <div className="flex flex-row">
+        <Image src="/icons/growImg1.svg" alt="" width={100} height={100} />
+        <Image src="/icons/growImg12.svg" alt="" width={200} height={200} />
+        <Image src="/icons/growImg3.svg" alt="" width={150} height={150} />
+        <Image src="/icons/growImg4.svg" alt="" width={100} height={100} />
+        <Image src="/icons/growImg5.svg" alt="" width={150} height={150} />
+      </div>
       <h1 className="text-black font-extrabold text-3xl lg:text-4xl mb-3 leading-10">
         <span className="text-pink-500">LEARN AND GROW</span> WITH
         <br /> OUR FREE COURSES DESIGNED
@@ -18,12 +26,20 @@ export default function FreeCourses() {
 
       <Link href="/resources">
         <button
-          className="py-4 px-7 rounded-full text-white text-xs font-bold"
+          className="flex sm:self-center self-stretch py-4 px-7 rounded-full text-white text-xs font-bold"
           style={{ backgroundColor: "#9B05E2" }}
         >
           ENROLL NOW
         </button>
       </Link>
+      <div className="flex flex-row">
+        <Image src="/icons/growImg6.svg" alt="" width={100} height={100} />
+        <Image src="/icons/growImg7.svg" alt="" width={200} height={200} />
+        <Image src="/icons/growImg8.svg" alt="" width={150} height={150} />
+        <Image src="/icons/growImg9.svg" alt="" width={100} height={100} />
+        <Image src="/icons/growImg10.svg" alt="" width={150} height={150} />
+        <Image src="/icons/growImg11.svg" alt="" width={150} height={150} />
+      </div>
     </div>
   );
 }

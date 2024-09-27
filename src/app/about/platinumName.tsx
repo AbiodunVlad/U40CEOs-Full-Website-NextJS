@@ -3,7 +3,7 @@ import React from "react";
 
 export default function PlatinumName() {
   return (
-    <div className="px-10 sm:px-20 pt-20 pb-10 bg-white flex md:flex-row flex-col justify-center items-center gap-5">
+    <div className="px-10 sm:px-20 pt-20 pb-10 bg-white flex md:flex-row flex-col justify-center items-center gap-16">
       <div className="flex flex-col justify-center items-start md:w-1/3">
         <Image
           src="/images/adaoraBlue.svg"
@@ -13,7 +13,7 @@ export default function PlatinumName() {
           className="mb-10 self-center"
         />
 
-        <p className="text-sm sm:text-lg text-black leading-4 mb-5 w-full">
+        <p className="text-base sm:text-2xl text-black leading-4 mb-5 w-full">
           Being a platinum member of Under 40 CEOs has opened doors to
           unparalleled opportunities for me. The high-level insights and
           connections have been key to my professional growth.
@@ -36,7 +36,7 @@ export default function PlatinumName() {
           className="mb-10 self-center"
         />
 
-        <p className="text-sm sm:text-lg text-black leading-4 mb-5 w-full">
+        <p className="text-base sm:text-2xl text-black leading-4 mb-5 w-full">
           As a CEO, Under 40 CEOs has been a game-changer. Its platinum
           membership&apos;s remarkable resources have greatly enhanced my
           leadership and business strategies.
@@ -59,7 +59,7 @@ export default function PlatinumName() {
           className="mb-10 self-center"
         />
 
-        <p className="text-sm sm:text-lg text-black leading-4 mb-5 w-full">
+        <p className="text-base sm:text-2xl text-black leading-4 mb-5 w-full">
           Under 40 CEOs provided me with invaluable connections and insights. As
           a platinum member, I’ve leveraged these resources to expand my
           influence and achieve new milestones.

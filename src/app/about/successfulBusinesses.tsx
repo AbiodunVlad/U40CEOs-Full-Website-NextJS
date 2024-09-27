@@ -7,7 +7,7 @@ export default function SuccessfulBusinesses() {
         Looking To Join The League Of Successful{" "}
         <br className="sm:flex hidden" /> Businesses In Africa?
       </h2>
-      <p className="text-sm sm:text-lg text-black text-center mb-10 uppercase">
+      <p className="text-base sm:text-2xl text-black text-center mb-10 uppercase">
         Speak to one of our experts.{" "}
       </p>
 

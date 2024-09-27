@@ -241,7 +241,7 @@ export default function Footer() {
 
             <div className="bg-gray-300 w-full h-0.5"></div>
 
-            <div className="flex sm:flex-row flex-col sm:justify-between items-center gap-3 pt-10">
+            <div className="flex sm:flex-row flex-col sm:justify-between items-start sm:items-center gap-5 px-10 sm:px-0 pt-10">
               <div className="flex flex-col">
                 <p className="text-sm sm:text-lg font-bold text-purple-700 mb-5">
                   West Africa Office
@@ -249,17 +249,17 @@ export default function Footer() {
 
                 <Link
                   href="/home"
-                  className="text-xs sm:text-md text-white mb-2"
+                  className="text-sm sm:text-lg text-white mb-2"
                 >
                   +234 1 453 1963
                 </Link>
                 <Link
                   href="/home"
-                  className="text-xs sm:text-md text-white mb-2"
+                  className="text-sm sm:text-lg text-white mb-2"
                 >
                   wumi@under40ceos.com
                 </Link>
-                <p className="text-xs sm:text-md text-white mb-2">
+                <p className="text-sm sm:text-lg text-white mb-2">
                   25 Oduduwa Way, Ikeja
                   <br /> G.R.A, Lagos, Nigeria.
                 </p>
@@ -272,19 +272,19 @@ export default function Footer() {
 
                 <Link
                   href="/home"
-                  className="text-xs sm:text-md text-white mb-2"
+                  className="text-sm sm:text-lg text-white mb-2"
                 >
                   +27 11 053 7674{" "}
                 </Link>
 
                 <Link
                   href="/home"
-                  className="text-xs sm:text-md text-white mb-2"
+                  className="text-sm sm:text-lg text-white mb-2"
                 >
                   phyllis@under40ceos.com
                 </Link>
 
-                <p className="text-xs sm:text-md text-white mb-2">
+                <p className="text-sm sm:text-lg text-white mb-2">
                   33 Ballyclare drive, Bryanston,
                   <br /> Johannesburg, South Africa.
                 </p>
@@ -297,19 +297,19 @@ export default function Footer() {
 
                 <Link
                   href="/home"
-                  className="text-xs sm:text-md text-white mb-2"
+                  className="text-sm sm:text-lg text-white mb-2"
                 >
                   +250 788 305 352{" "}
                 </Link>
 
                 <Link
                   href="/home"
-                  className="text-xs sm:text-md text-white mb-2"
+                  className="text-sm sm:text-lg text-white mb-2"
                 >
                   grace@under40ceos.com
                 </Link>
 
-                <p className="text-xs sm:text-md text-white mb-2">
+                <p className="text-sm sm:text-lg text-white mb-2">
                   14th floor, Kigali City Tower,
                   <br /> Plot No. 6418, Avenue Du Commerce,
                   <br /> Kigali, Rwanda
@@ -328,7 +328,9 @@ export default function Footer() {
       </div>
 
       <div className="text-center text-xs">
-        <p className="text-white">Copyright ©️ 2024 Under 40 CEOs</p>
+        <p className="text-white text-sm sm:text-lg">
+          Copyright ©️ 2024 Under 40 CEOs
+        </p>
       </div>
     </div>
   );

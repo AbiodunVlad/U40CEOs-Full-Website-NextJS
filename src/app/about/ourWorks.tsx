@@ -19,7 +19,7 @@ export default function OurWorks() {
             <Image src="/icons/tinyMitsu.svg" alt="" width={20} height={20} />
             <Image src="/icons/tinySam.svg" alt="" width={40} height={20} />
           </div>
-          <p className="text-sm sm:text-lg text-black leading-5">
+          <p className="text-base sm:text-2xl text-black leading-5">
             This entertaining series showcases members of Under 40 CEOs having a
             ride with influential industry leaders, while gaining invaluable
             insights on entrepreneurship and Africa’s social, economic, and
@@ -60,7 +60,7 @@ export default function OurWorks() {
             />
           </div>
 
-          <p className="text-sm sm:text-lg text-black leading-5">
+          <p className="text-base sm:text-2xl text-black leading-5">
             In the heart of Africa, where dreams meet reality, Under 40 CEOs
             proudly presents the &quot;They Said I Couldn&apos;t&quot; series in
             collaboration with Sunlight. Here, successful individuals share
@@ -80,7 +80,7 @@ export default function OurWorks() {
             <Image src="/icons/tinyARM.svg" alt="" width={30} height={20} />
           </div>
 
-          <p className="text-sm sm:text-lg text-black leading-5">
+          <p className="text-base sm:text-2xl text-black leading-5">
             Under 40 CEOs Care highlights impactful initiatives by CEOs across
             Africa in supporting their communities and employees. Through their
             thoughtful actions and dedication, the featured CEOs exemplify

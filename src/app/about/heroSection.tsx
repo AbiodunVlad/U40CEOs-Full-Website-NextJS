@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <div className="flex flex-col-reverse md:flex-row px-4 md:px-20 py-10 md:py-20 items-center justify-between mb-20">
+    <div className="flex flex-col-reverse md:flex-row px-4 md:px-20 py-10 md:py-20 items-center justify-center mb-20">
       <div className="flex flex-col items-center md:items-center justify-center text-center md:text-left mb-10 md:mb-0">
         <h1 className="font-extrabold text-black text-center text-4xl lg:text-5xl md:mb-5 mb-10 uppercase leading-10">
           We are a thriving community of young{" "}
