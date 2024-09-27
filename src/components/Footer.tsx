@@ -320,11 +320,29 @@ export default function Footer() {
         </div>
       </div>
       <div className="flex flex-row items-center justify-center pb-5 gap-10">
-        <Image src="/icons/facebook.svg" alt="" width={20} height={50} />
-        <Image src="/icons/linkedin.svg" alt="" width={30} height={50} />
-        <Image src="/icons/redit.svg" alt="" width={40} height={50} />
-        <Image src="/icons/twitter.svg" alt="" width={30} height={40} />
-        <Image src="/icons/pinterest.svg" alt="" width={30} height={50} />
+        <Link href="http://linkedin.com/company/under40ceos">
+          <Image src="/icons/linkedin.svg" alt="" width={60} height={50} />
+        </Link>
+
+        <Link href="https://web.facebook.com/under40ceosafrica/">
+          {" "}
+          <Image src="/icons/facebook.svg" alt="" width={40} height={50} />
+        </Link>
+
+        <Link href="https://x.com/under40ceosng">
+          <Image src="/icons/x.svg" alt="" width={40} height={50} />
+        </Link>
+
+        {/* <Link href="">
+          <Image src="/icons/pinterest.svg" alt="" width={30} height={50} />
+        </Link> */}
+        <Link href="https://www.instagram.com/under40ceos/">
+          <Image src="/icons/instagram.svg" alt="" width={40} height={50} />
+        </Link>
+
+        <Link href="https://www.youtube.com/@Under40CEOs">
+          <Image src="/icons/youtube.svg" alt="" width={60} height={50} />
+        </Link>
       </div>
 
       <div className="text-center text-xs">
