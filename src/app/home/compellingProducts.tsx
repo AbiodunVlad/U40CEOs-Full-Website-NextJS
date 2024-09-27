@@ -28,10 +28,11 @@ export default function CompellingProducts() {
               Media Feature
             </p>
 
-            <p className="text-sm sm:text-lg text-black mb-4 md:mb-8">
-              At vero eos et accusamus et iusto odio dignissimos ducimus qui
-              blanditiis praesentium voluptatum deleniti atque corrupti quos
-              dolores et quas molestias excepturi sint occaecati.
+            <p className="text-base sm:text-2xl text-black mb-4 md:mb-8">
+              Get featured in our TV series, the annual book publication
+              &quot;Under 40 CEOs - How We Made It In Africa&quot;, the
+              “Entrepreneur-To-Watch” and our bespoke social media series. Share
+              your success story and boost your brand visibility.
             </p>
 
             <Link href="/ScheduleACall">
@@ -61,10 +62,10 @@ export default function CompellingProducts() {
               Magazine
             </p>
 
-            <p className="text-sm sm:text-lg text-black  mb-4 md:mb-8">
-              At vero eos et accusamus et iusto odio dignissimos ducimus qui
-              blanditiis praesentium voluptatum deleniti atque corrupti quos
-              dolores et quas molestias excepturi sint occaecati.
+            <p className="text-base sm:text-2xl text-black  mb-4 md:mb-8">
+              Get all the scoop from our magazines. Catch up on the latest news,
+              exclusive interviews, and in-depth insights from Africa’s most
+              successful CEOs and Under 40 CEOs initiatives.
             </p>
 
             <Link href="/resources">
@@ -92,10 +93,10 @@ export default function CompellingProducts() {
           <div className="w-2/3 py-3">
             <p className="font-bold text-black text-xl mb-2 md:mb-3">Events</p>
 
-            <p className="text-sm sm:text-lg text-black  mb-4 md:mb-8">
-              At vero eos et accusamus et iusto odio dignissimos ducimus qui
-              blanditiis praesentium voluptatum deleniti atque corrupti quos
-              dolores et quas molestias excepturi sint occaecati.
+            <p className="text-base sm:text-2xl text-black  mb-4 md:mb-8">
+              Experience our exclusive events, from the Under 40 CEOs Networking
+              event and Under 40 CEOs Live, to the Under 40 CEOs Forum, Under 40
+              CEOs Summit, U4C Fireside Chat, and more.
             </p>
 
             <Link href="/Events">
@@ -125,10 +126,11 @@ export default function CompellingProducts() {
               Learning Hub
             </p>
 
-            <p className="text-sm sm:text-lg text-black mb-4 md:mb-8">
-              At vero eos et accusamus et iusto odio dignissimos ducimus qui
-              blanditiis praesentium voluptatum deleniti atque corrupti quos
-              dolores et quas molestias excepturi sint occaecati.
+            <p className="text-base sm:text-2xl text-black mb-4 md:mb-8">
+              Bolster your entrepreneurial skills with the Under 40 CEOs
+              Learning Hub. Explore our plethora of courses, training, and
+              webinars designed to foster your growth and professional
+              excellence.
             </p>
 
             <Link href="/LearningHub">
@@ -158,10 +160,10 @@ export default function CompellingProducts() {
               Membership
             </p>
 
-            <p className="text-sm sm:text-lg text-black mb-4 md:mb-8">
-              At vero eos et accusamus et iusto odio dignissimos ducimus qui
-              blanditiis praesentium voluptatum deleniti atque corrupti quos
-              dolores et quas molestias excepturi sint occaecati.
+            <p className="text-base sm:text-2xl text-black mb-4 md:mb-8">
+              We offer different membership tiers tailored to your business’
+              growth phase. Whether you’re a student, just starting out, or a
+              seasoned entrepreneur, we’ve got you covered.
             </p>
 
             <Link href="/LearningHub">
@@ -193,7 +195,7 @@ export default function CompellingProducts() {
             Founder of Lumination Global Network{" "}
           </p>
 
-          <p className="text-md sm:text-xl text-black text-start mb-4 md:mb-8 w-full">
+          <p className="text-base sm:text-2xl text-black text-start mb-4 md:mb-8 w-full">
             Being a platinum member of Under 40 CEOs has opened doors to
             unparalleled opportunities for me. The high-level insights and
             connections have been key to my professional growth.
@@ -211,7 +213,7 @@ export default function CompellingProducts() {
             Group CEO of RED | For Africa{" "}
           </p>
 
-          <p className="text-md sm:text-xl text-black text-start mb-4 md:mb-8 w-full">
+          <p className="text-base sm:text-2xl text-black text-start mb-4 md:mb-8 w-full">
             As a CEO, Under 40 CEOs has been a game-changer. Its platinum
             membership&apos;s remarkable resources have greatly enhanced my
             leadership and business strategies.
@@ -229,7 +231,7 @@ export default function CompellingProducts() {
             Co-founder of SweepSouth{" "}
           </p>
 
-          <p className="text-md sm:text-xl text-black text-start mb-4 md:mb-8 w-full">
+          <p className="text-base sm:text-2xl text-black text-start mb-4 md:mb-8 w-full">
             Under 40 CEOs provided me with invaluable connections and insights.
             As a platinum member, I’ve leveraged these resources to expand my
             influence and achieve new milestones.

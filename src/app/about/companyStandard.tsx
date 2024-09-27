@@ -13,7 +13,7 @@ export default function CompanyStandard() {
           FOUNDER’S MESSAGE{" "}
         </h6>
 
-        <div className="flex flex-col lg:flex-row gap-5 h-screen">
+        <div className="flex flex-col lg:flex-row gap-5 h-svh">
           <div className="w-full h-full lg:w-1/2 mb-5 md:mb-0">
             <p className="w-full text-black text-sm sm:text-lg leading-5 mb-3">
               Did you know that a staggering 80% of businesses in Africa don’t

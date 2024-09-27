@@ -46,15 +46,15 @@ export default function Testimonials() {
 
   return (
     <div className="bg-black px-5 md:px-20 py-10 flex flex-col items-center">
-      <h1 className="text-white font-bold text-xl md:text-2xl mb-10">
-        TESTIMONIALS
+      <h1 className="text-white font-bold text-3xl md:text-4xl mb-16">
+        HEAR FROM OUR ELITE ENTREPRENEURS
       </h1>
 
       <div className="grid md:grid-cols-3 justify-center items-center">
         {testimonials.map((testimonial) => (
           <div
             key={testimonial.id}
-            className="flex flex-col mb-10 w-auto md:w-3/4"
+            className="flex flex-col mb-10 w-auto md:w-5/6"
           >
             <div className="flex flex-row gap-1 mb-2">
               {[...Array(testimonial.rating)].map((_, i) => (
@@ -62,16 +62,16 @@ export default function Testimonials() {
                   key={i}
                   src="/icons/star.svg"
                   alt=""
-                  width={10}
-                  height={10}
+                  width={20}
+                  height={20}
                 />
               ))}
             </div>
 
-            <p className="text-white text-base md:text-lg mb-4">
+            <p className="text-white text-base sm:text-2xl mb-4">
               &quot;{testimonial.content}&quot;
             </p>
-            <p className="text-base md:text-lg text-purple-600">
+            <p className="text-base sm:text-2xl font-bold text-purple-600">
               {testimonial.name}
             </p>
           </div>

@@ -15,7 +15,7 @@ export default function HeroSection() {
           <br /> Business Founders
         </h1>
 
-        <p className="text-sm sm:text-lg text-black mb-10">
+        <p className="text-base sm:text-2xl text-black mb-10">
           Under 40 CEOs gives you an{" "}
           <span className="text-pink-500 uppercase">
             unmatched
@@ -35,7 +35,7 @@ export default function HeroSection() {
         </Link>
 
         <div>
-          <p className="text-sm sm:text-xl text-black mb-5">
+          <p className="text-base sm:text-2xl text-black mb-5">
             Featured more than 500 African CEOs
           </p>
 

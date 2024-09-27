@@ -194,7 +194,7 @@ export default function IndividualStories() {
                 </span>
               </p>
 
-              <div className="bg-white p-3">
+              <div className="bg-white p-3 text-base sm:text-2xl">
                 <p>{story.goldenNuggets}</p>
               </div>
             </div>

@@ -11,7 +11,7 @@ export default function FreeCourses() {
         <br /> FOR BUSINESS SUCCESS
       </h1>
 
-      <p className="text-lg text-blue-500 mb-10">
+      <p className="text-base sm:text-2xl text-blue-500 mb-10">
         Empower your entrepreneurial journey through proven
         <br /> strategies and relatable case studies from our courses
       </p>

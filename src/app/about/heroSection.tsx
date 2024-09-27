@@ -5,7 +5,7 @@ export default function HeroSection() {
   return (
     <div className="flex flex-col-reverse md:flex-row px-4 md:px-20 py-10 md:py-20 items-center justify-between mb-20">
       <div className="flex flex-col items-center md:items-center justify-center text-center md:text-left mb-10 md:mb-0">
-        <h1 className="font-extrabold text-black text-center text-4xl lg:text-5xl md:mb-16 mb-10 uppercase leading-10">
+        <h1 className="font-extrabold text-black text-center text-4xl lg:text-5xl md:mb-5 mb-10 uppercase leading-10">
           We are a thriving community of young{" "}
           <span className="text-red-500 font-light">
             successful African business minds
@@ -14,7 +14,7 @@ export default function HeroSection() {
           </span>{" "}
         </h1>
 
-        <p className="text-black text-sm sm:text-lg mb-5">
+        <p className="text-black text-base sm:text-2xl mb-5">
           Active in over five African countries{" "}
         </p>
 

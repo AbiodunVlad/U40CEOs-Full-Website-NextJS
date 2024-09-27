@@ -25,7 +25,7 @@ export default function WhoWeAre() {
             UNDER 40 CEOs
           </h6>
 
-          <p className="text-sm sm:text-lg text-black  mb-5 md:text-left">
+          <p className="text-base sm:text-2xl text-black  mb-5 md:text-left">
             We are a game-changing platform designed to empower and inspire the
             next generation of business leaders across Africa. Our journey began
             with a simple yet profound conversation between two young CEOs in
@@ -35,7 +35,7 @@ export default function WhoWeAre() {
             hurdles.
           </p>
 
-          <p className="text-sm sm:text-lg text-black  mb-5 md:text-left">
+          <p className="text-base sm:text-2xl text-black  mb-5 md:text-left">
             From this crucial moment, Under 40 CEOs was born with a vision to
             create a space where young business minds could find guidance,
             support, and inspiration. Our mission is clear: to demystify the
@@ -43,14 +43,14 @@ export default function WhoWeAre() {
             youth-founded businesses in Africa.
           </p>
 
-          <p className="text-sm sm:text-lg text-black  mb-5 md:text-left">
+          <p className="text-base sm:text-2xl text-black  mb-5 md:text-left">
             In simple words, we believe in the power of young entrepreneurs to
             drive change and create a prosperous future. Whether you&apos;re
             just starting or looking to scale, we have the right resources to
             support your journey. {" "}
           </p>
 
-          <p className="text-sm sm:text-lg text-black  mb-5 md:text-left">
+          <p className="text-base sm:text-2xl text-black  mb-5 md:text-left">
             Through our television series, mentorship programs with experienced
             industry leaders, workshops, exclusive events, and networking
             opportunities, we offer real stories, actionable insights, and a

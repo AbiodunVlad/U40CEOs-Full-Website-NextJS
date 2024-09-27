@@ -76,18 +76,22 @@ export default function Blog() {
         {relatedArticles.map((blogs) => (
           <div
             key={blogs.id}
-            className="flex flex-row items-center w-full h-48 mb-10 shadow-2xl"
+            className="flex flex-row items-center w-full h-auto mb-10 shadow-2xl"
           >
-            <Link href={`/blog/${blogs.id}`} className="w-1/2 ">
-              <div className="w-full px-4">
+            <Link href={`/blog/${blogs.id}`} className="w-1/2 p-5">
+              <div className="w-full">
                 {/* <p className="self-start text-xs text-black py-1 px-2 bg-purple-400 mb-3 inline-block rounded-full">
                   {blogs.category || "Business"}
                 </p> */}
                 <p className="text-black text-sm sm:text-lg font-bold mb-5">
-                  {blogs.title}
+                  {blogs.title.length > 15
+                    ? `${blogs.title.slice(0, 15)}...`
+                    : blogs.title}
                 </p>
-                <p className="text-gray-500 text-base sm:text-xl">
-                  {blogs.body}
+                <p className="text-gray-500 text-base sm:text-2xl">
+                  {blogs.body.length > 150
+                    ? `${blogs.body.slice(0, 150)}...`
+                    : blogs.body}
                 </p>
               </div>
             </Link>
