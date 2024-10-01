@@ -75,7 +75,7 @@ export default function ReadBlog() {
     fetchRelatedArticles();
   }, [id]);
 
-  function formatDate(dateString) {
+  function formatDate(dateString: string) {
     const date = new Date(dateString);
 
     // Define options for the format

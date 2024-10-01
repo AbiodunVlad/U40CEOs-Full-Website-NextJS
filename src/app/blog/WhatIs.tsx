@@ -1,7 +1,13 @@
 import Image from "next/image";
 import React from "react";
 
-export default function WhatIs({ title, body, image }) {
+interface WhatIsProps {
+  title: string;
+  body: string;
+  image: string;
+}
+
+export default function WhatIs({ title, body, image }: WhatIsProps) {
   return (
     <div className="flex flex-row w-full mb-20 shadow-xl">
       <div className="w-1/2 p-5 md:p-20">

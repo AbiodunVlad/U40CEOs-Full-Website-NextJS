@@ -28,7 +28,7 @@ type Article = {
 export default function Blog() {
   const [articles, setArticles] = useState<Article[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [featuredArticle, setFeaturedArticle] = useState<Article[]>([]);
+  const [featuredArticle, setFeaturedArticle] = useState<Article | null>(null);
 
   // useEffect(() => {
   //   async function fetchArticles() {
@@ -60,7 +60,7 @@ export default function Blog() {
           console.log("Data is an array, setting blog state.");
           setArticles(res.data.content);
           const featuredBlogPost = res.data.content.find(
-            (article) => article.featuredBlog === true
+            (article: Article) => article.featuredBlog === true
           );
           console.log("This is featured blog post:", featuredBlogPost);
           setFeaturedArticle(featuredBlogPost);
@@ -91,11 +91,11 @@ export default function Blog() {
   const firstHalfItems = currentItems.slice(0, midIndex);
   const secondHalfItems = currentItems.slice(midIndex);
 
-  useEffect(() => {
-    // console.log("Here is featured blog post:", featuredBlogPost);
-    console.log("Here is articles:", articles);
-    console.log("Here is current items:", currentItems);
-  }, []);
+  // useEffect(() => {
+  //   console.log("Here is featured blog post:", featuredBlogPost);
+  //   console.log("Here is articles:", articles);
+  //   console.log("Here is current items:", currentItems);
+  // }, []);
   return (
     <div>
       <Navbar />
@@ -108,7 +108,7 @@ export default function Blog() {
 
         <div className="flex flex-col w-full">
           <div className="grid lg:grid-cols-3 pl-5 md:px-20 px-5 lg:w-full justify-between gap-3 md:gap-28 md:mb-20">
-            {firstHalfItems.map((article) => (
+            {firstHalfItems.map((article: Article) => (
               <div
                 key={article.id}
                 className="flex flex-col items-center h-full mb-10 shadow-2xl"
@@ -141,7 +141,7 @@ export default function Blog() {
             ))}
           </div>
 
-          {currentPage === 1 && (
+          {currentPage === 1 && featuredArticle && (
             <div className="flex flex-col items-center">
               <WhatIs
                 key={featuredArticle.id}
@@ -159,7 +159,7 @@ export default function Blog() {
           )}
 
           <div className="grid md:grid-cols-3 pl-5 md:px-20 px-5 md:w-full justify-between gap-3 md:gap-28 md:mb-20">
-            {secondHalfItems.map((article) => (
+            {secondHalfItems.map((article: Article) => (
               <div
                 key={article.id}
                 className="flex flex-col items-center h-full mb-10 shadow-2xl"
