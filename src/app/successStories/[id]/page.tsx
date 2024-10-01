@@ -198,16 +198,6 @@ export default function IndividualStories() {
                 <p>{story.goldenNuggets}</p>
               </div>
             </div>
-
-            {/* <div>
-              <p>Company: {story.company}</p>
-
-              <p>TouchPoint: {story.touchPoint}</p>
-
-              <p>Topic: {story.topic}</p>
-
-              <p>{story.body}</p>
-            </div> */}
           </div>
         ) : (
           <p>No story found!</p>
@@ -216,12 +206,12 @@ export default function IndividualStories() {
 
       <div className="bg-white px-0 md:px-20 py-10 md:py-20 flex flex-col">
         <div className="self-center flex items-center justify-center mb-5 md:mb-10">
-          <h2 className="text-black text-lg text-center font-bold">
+          <h2 className="text-black md:text-2xl text-xl text-center font-bold">
             MORE <span className="text-purple-600">SUCCESS STORIES</span>
           </h2>
         </div>
 
-        <div className="w-full flex lg:flex-col flex-row  gap-3 mb-3">
+        <div className="w-full flex lg:flex-col flex-row gap-3 mb-3">
           <div className="grid lg:grid-cols-3 px-5 xl:px-20 md:w-full justify-between gap-5 xl:gap-28">
             {moreStories.length > 0 ? (
               moreStories.slice(0, 3).map((story, index) => (
@@ -249,10 +239,88 @@ export default function IndividualStories() {
                 </Link>
               ))
             ) : (
-              <p className="text-black text-sm text-center self-center">
+              <p className="text-black text-sm sm:text-lg text-center self-center">
                 No related stories found.
               </p>
             )}
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-blue-200 flex flex-col items-center sm:px-20 px-5 py-10">
+        <h2 className="text-black md:text-2xl text-xl text-center font-bold uppercase mb-0 md:mb-10">
+          <span className="text-pink-500">Reserve Your Spot</span> at Our Next
+          Event
+        </h2>
+
+        <div className="px-5 py-10 md:px-20 flex flex-col md:flex-row justify-between gap-5">
+          <div className="flex flex-col items-center w-full md:w-1/2">
+            <Image
+              key="img1"
+              src="/images/resourceEvents.svg"
+              alt=""
+              width={350}
+              height={300}
+              className="w-full"
+            />
+          </div>
+
+          <div className="flex flex-col h-auto w-full md:w-1/2 mb-0 md:mb-0">
+            <div className="flex flex-row self-center sm:self-start gap-3 md:mb-20 mb-7">
+              <div className="flex flex-col text-center">
+                <p className="md:text-7xl text-4xl font-extrabold text-pink-600">
+                  31
+                </p>
+                <p className="text-sm sm:text-xl text-gray-600">Days</p>
+              </div>
+
+              <p className="text-3xl sm:text-7xl font-extrabold text-pink-600">
+                :
+              </p>
+
+              <div className="flex flex-col text-center">
+                <p className="md:text-7xl text-4xl font-extrabold text-pink-600">
+                  31
+                </p>
+                <p className="text-sm sm:text-xl text-gray-600">Hours</p>
+              </div>
+
+              <p className="text-3xl sm:text-7xl font-extrabold text-pink-600">
+                :
+              </p>
+
+              <div className="flex flex-col text-center">
+                <p className="md:text-7xl text-4xl font-extrabold text-pink-600">
+                  31
+                </p>
+                <p className="text-sm sm:text-xl text-gray-600">Mins</p>
+              </div>
+
+              <p className="text-3xl sm:text-7xl font-extrabold text-pink-600">
+                :
+              </p>
+
+              <div className="flex flex-col text-center">
+                <p className="md:text-7xl text-4xl font-extrabold text-pink-600">
+                  31
+                </p>
+                <p className="text-sm sm:text-xl text-gray-600">Seconds</p>
+              </div>
+            </div>
+
+            <p className="text-base sm:text-xl text-black mb-7">
+              Secure your place at our upcoming event to network, learn, and
+              engage with industry leaders and innovators.
+            </p>
+
+            <Link
+              href="/Events"
+              className="flex sm:self-start self-center mt-auto"
+            >
+              <button className="bg-pink-600 text-lg text-white text-center py-4 px-16 rounded-full">
+                BOOK NOW
+              </button>
+            </Link>
           </div>
         </div>
       </div>

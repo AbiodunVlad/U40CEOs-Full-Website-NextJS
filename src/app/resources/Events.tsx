@@ -123,9 +123,11 @@ export default function Events() {
             {currentItems.map((course, index) => (
               <div key={index} className="flex flex-col items-center">
                 <iframe src={course.videoUrl} className="w-full h-48 mb-5" />
+
                 <p className="text-black text-sm font-bold mb-5">
                   {course.title}
                 </p>
+
                 <button className="bg-purple-600 text-white text-xs py-2 px-5 w-full uppercase">
                   Watch for free
                 </button>
