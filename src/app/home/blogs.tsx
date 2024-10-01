@@ -77,14 +77,14 @@ export default function Blog() {
         {relatedArticles.map((blogs) => (
           <div
             key={blogs.id}
-            className="flex flex-row items-center w-full h-auto mb-10 shadow-2xl"
+            className="flex flex-row items-center w-full h-full mb-10 shadow-2xl"
           >
             <Link href={`/blog/${blogs.id}`} className="w-1/2 p-5">
               <div className="w-full">
                 {/* <p className="self-start text-xs text-black py-1 px-2 bg-purple-400 mb-3 inline-block rounded-full">
                   {blogs.category || "Business"}
                 </p> */}
-                <p className="text-black text-sm sm:text-lg font-bold mb-5">
+                <p className="text-black text-base sm:text-2xl font-bold mb-5">
                   {blogs.title.length > 15
                     ? `${blogs.title.slice(0, 15)}...`
                     : blogs.title}
@@ -96,7 +96,16 @@ export default function Blog() {
                 </p>
               </div>
             </Link>
-            <div className="w-1/2 h-full bg-blue-600"></div>
+            <div className="w-1/2 h-full bg-blue-600">
+              {" "}
+              <Image
+                src={blogs.featuredImage}
+                width={100}
+                height={100}
+                alt=""
+                className="flex items-center justify-center w-full h-full"
+              />
+            </div>
           </div>
         ))}
       </div>

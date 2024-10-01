@@ -15,7 +15,7 @@ import { getBlogPosts } from "../../../pages/api/auth";
 const ITEMS_PER_PAGE = 28;
 
 type Article = {
-  id: number;
+  id: string;
   category: string;
   title: string;
   body: string;
@@ -107,7 +107,7 @@ export default function Blog() {
         </h1>
 
         <div className="flex flex-col w-full">
-          <div className="grid lg:grid-cols-3 pl-5 md:px-20 px-5 lg:w-full justify-between gap-3 md:gap-28 md:mb-20">
+          <div className="grid lg:grid-cols-3 pl-5 md:px-20 px-5 lg:w-full justify-between gap-3 md:gap-10 md:mb-20 mb-10">
             {firstHalfItems.map((article: Article) => (
               <div
                 key={article.id}
@@ -119,17 +119,20 @@ export default function Blog() {
                     width={100}
                     height={100}
                     alt=""
-                    className="flex items-center justify-center w-full"
+                    className="flex items-center justify-center w-full h-full"
                   />
                 </div>
+
                 <Link href={`/blog/${article.id}`} className="w-full h-auto">
                   <div className="w-full h-full py-5 px-3">
                     <p className="self-start text-xxs text-black py-1 px-2 bg-purple-400 mb-3 inline-block rounded-full">
                       {article.category || "Business"}
                     </p>
+
                     <p className="text-black text-sm sm:text-lg font-bold mb-5">
                       {article.title}
                     </p>
+
                     <p className="text-gray-500 text-base sm:text-2xl">
                       {article.body.length > 200
                         ? `${article.body.slice(0, 200)}...`
@@ -145,9 +148,15 @@ export default function Blog() {
             <div className="flex flex-col items-center">
               <WhatIs
                 key={featuredArticle.id}
+                id={featuredArticle.id}
                 title={featuredArticle.title}
-                body={featuredArticle.body?.substring(0, 350)}
+                body={
+                  featuredArticle.body.length > 350
+                    ? `${featuredArticle.body.slice(0, 350)}...`
+                    : featuredArticle.body
+                }
                 image={featuredArticle.featuredImage}
+                createdAt={featuredArticle.createdAt}
               />
 
               <div className="w-full border border-gray-400 mx-10 mb-5"></div>
@@ -158,7 +167,7 @@ export default function Blog() {
             </div>
           )}
 
-          <div className="grid md:grid-cols-3 pl-5 md:px-20 px-5 md:w-full justify-between gap-3 md:gap-28 md:mb-20">
+          <div className="grid md:grid-cols-3 pl-5 md:px-20 px-5 md:w-full justify-between gap-3 md:gap-10 md:mb-20">
             {secondHalfItems.map((article: Article) => (
               <div
                 key={article.id}
@@ -170,7 +179,7 @@ export default function Blog() {
                     width={100}
                     height={100}
                     alt=""
-                    className="flex items-center justify-center w-full"
+                    className="flex items-center justify-center w-full h-full"
                   />
                 </div>
                 <Link href={`/blog/${article.id}`} className="w-full h-auto">

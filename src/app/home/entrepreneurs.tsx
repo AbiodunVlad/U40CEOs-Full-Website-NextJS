@@ -13,15 +13,17 @@ export default function Entrepreneurs() {
           height={70}
         />
 
-        <div className="flex flex-col items-start justify-start text-start mb-10">
-          <h6 className="font-bold text-xl lg:text-2xl text-start mb-2 text-black">
+        <div className="flex flex-col self-center mb-10">
+          <h6 className="flex font-bold text-xl lg:text-2xl text-center mb-2 text-black">
             NAME OF COURSE{" "}
           </h6>
 
-          <p className="text-black text-base font-bold">
+          <p className="text-black text-base text-center font-bold">
             <span className="font-thin text-sm">taught by</span> Dr. Ola Brown
           </p>
-          <p className="text-base text-pink-500">Founder of Flying Doctors</p>
+          <p className="text-base text-pink-500 text-center">
+            Founder of Flying Doctors
+          </p>
         </div>
 
         <p className="text-base sm:text-2xl text-black mb-10 text-start md:text-left flex-grow">
@@ -48,16 +50,18 @@ export default function Entrepreneurs() {
           height={70}
         />
 
-        <div className="flex flex-col items-start justify-start text-start mb-10">
+        <div className="flex flex-col self-center  mb-10">
           <h6 className="font-bold text-xl lg:text-2xl text-start mb-2 text-black">
             NAME OF COURSE{" "}
           </h6>
 
-          <p className="text-black text-base font-bold">
+          <p className="text-black text-base text-center font-bold">
             <span className="font-thin text-sm">taught by</span> Dr. Tayo
             Oyedeji
           </p>
-          <p className="text-base text-pink-500">CEO of Publicis Groupe</p>
+          <p className="text-base text-pink-500 text-center">
+            CEO of Publicis Groupe
+          </p>
         </div>
 
         <p className="text-base sm:text-2xl text-black mb-10 text-start md:text-left flex-grow">
@@ -83,15 +87,17 @@ export default function Entrepreneurs() {
           height={70}
         />
 
-        <div className="flex flex-col items-start justify-start text-start mb-10">
+        <div className="flex flex-col self-center mb-10">
           <h6 className="font-bold text-xl lg:text-2xl text-start mb-2 text-black">
             NAME OF COURSE{" "}
           </h6>
 
-          <p className="text-black text-base font-bold">
+          <p className="text-black text-base text-center font-bold">
             <span className="font-thin text-sm">taught by</span> Sam Oyemelukwe
           </p>
-          <p className="text-base text-pink-500">Senior VP at Trace</p>
+          <p className="text-base text-pink-500 text-center">
+            Senior VP at Trace
+          </p>
         </div>
 
         <p className="text-base sm:text-2xl text-black mb-10 text-start md:text-left flex-grow">

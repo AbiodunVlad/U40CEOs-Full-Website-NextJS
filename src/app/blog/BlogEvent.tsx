@@ -10,9 +10,9 @@ export default function BlogEvent() {
       </div>
 
       <div className="w-full md:w-2/3 flex flex-col justify-between">
-        <div className="flex flex-col flex-grow">
-          <p className="text-white text-lg md:text-2xl font-bold mb-2">EVENT</p>
-          <p className="text-sm sm:text-lg text-white leading-1 mb-auto md:w-full w-full">
+        <div className="flex flex-col flex-grow mb-5">
+          <p className="text-white text-xl md:text-3xl font-bold mb-2">EVENT</p>
+          <p className="text-base sm:text-2xl text-white leading-1 mb-auto md:w-full w-full">
             Duis aute irure dolor in reprehenderit in voluptate velit esse
             cillum dolore eu fugiat nulla pariatur. At vero eos et accusamus et
             iusto odio dignissimos ducimus qui blanditiis.
@@ -21,7 +21,7 @@ export default function BlogEvent() {
 
         <Link
           href="/pages/homePage"
-          className="text-white text-sm py-2 md:py-3 px-5 md:px-8 rounded-full bg-pink-600 mt-3 md:mt-auto inline-flex items-center"
+          className="text-white text-base py-2 md:py-3 px-5 md:px-8 rounded-full bg-pink-600 mt-3 md:mt-auto inline-flex items-center"
           style={{ width: "fit-content" }}
         >
           BOOK YOUR SEAT

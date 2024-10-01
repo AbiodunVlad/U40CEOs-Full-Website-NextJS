@@ -162,11 +162,6 @@ export default function ReadBlog() {
       <div className="flex flex-col px-5 md:px-20 items-center justify-center pt-10 md:pt-0 pb-20">
         {article ? (
           <>
-            {/* <h1>{article.title}</h1> */}
-            {/* <p>
-              Written by {article.writtenBy} on {formatDate(article.createdAt)}
-            </p> */}
-
             <div className="w-full">
               <Image
                 src="/images/omobolaMag.svg"
@@ -180,18 +175,18 @@ export default function ReadBlog() {
                 {article.title}
               </h2>
 
-              <p className="text-black font-bold mb-2">
+              <p className="text-black text-base sm:text-2xl font-bold mb-2">
                 Written by {article.writtenBy}{" "}
                 <span className="text-gray-500">
                   {formatDate(article.createdAt)}
                 </span>
               </p>
 
-              <p className="text-black text-sm">{article.body}</p>
+              <p className="text-black text-base sm:text-2xl">{article.body}</p>
             </div>
           </>
         ) : (
-          <p>No article found</p>
+          <p className="text-base sm:text-2xl">No article found</p>
         )}
       </div>
 
@@ -200,27 +195,41 @@ export default function ReadBlog() {
       </div>
 
       <div className="w-full mb-20 px-5 md:px-20">
-        <h2 className="text-xl text-black font-bold mb-5">Related Articles</h2>
+        <h2 className="md:text-2xl text-xl  text-black font-bold mb-5">
+          Related Articles
+        </h2>
+
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-5 w-full mb-20">
           {relatedArticles.map((article) => (
-            <div
+            <Link
+              href={`/blog/${article.id}`}
               key={article.id}
-              className="flex flex-col items-center h-60 mb-10 shadow-md"
+              className="xl:mb-20 mb-10 w-full h-full shadow-lg"
             >
-              <Link href={`/blog/${article.id}`}>
-                <div className="w-full h1/2 bg-blue-600"></div>
-
-                <div className="w-full  p-5 mb-10">
-                  <p className="self-start text-xxs text-black py-1 px-2 bg-purple-400 mb-3 inline-block rounded-full">
-                    {article.category || "Business"}
-                  </p>
-                  <p className="text-black text-sm font-bold mb-5">
-                    {article.title}
-                  </p>
-                  <p className="text-gray-500 text-sm">{article.body}</p>
-                </div>
-              </Link>
-            </div>
+              <div className="w-full h-1/3 bg-blue-600">
+                <Image
+                  src={article.featuredImage}
+                  width={100}
+                  height={100}
+                  alt=""
+                  className="flex items-center justify-center w-full h-full"
+                />
+              </div>
+              <div className="w-full h-2/3 p-5 mb-10">
+                <p className="self-start text-xxs text-black py-1 px-2 bg-purple-400 mb-3 inline-block rounded-full">
+                  {article.category || "Business"}
+                </p>
+                <p className="text-black text-base sm:text-2xl font-bold mb-5">
+                  {article.title}
+                </p>
+                <p className="text-gray-500 text-base sm:text-2xl">
+                  {article.body.length > 200
+                    ? `${article.body.slice(0, 200)}...`
+                    : article.body}
+                </p>
+              </div>
+              {/* </div> */}
+            </Link>
           ))}
         </div>
       </div>
