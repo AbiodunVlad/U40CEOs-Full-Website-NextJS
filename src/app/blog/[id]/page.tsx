@@ -17,8 +17,9 @@ type Article = {
   category: string;
   title: string;
   body: string;
-  author: string;
-  date: string;
+  writtenBy: string;
+  createdAt: string;
+  featuredImage: string;
 };
 
 export default function ReadBlog() {
@@ -73,6 +74,21 @@ export default function ReadBlog() {
     };
     fetchRelatedArticles();
   }, [id]);
+
+  function formatDate(dateString) {
+    const date = new Date(dateString);
+
+    // Define options for the format
+    const options: {} = {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    };
+
+    // Format the date
+    return date.toLocaleDateString("en-US", options);
+  }
 
   // useEffect(() => {
   //   const slug = "test-3";
@@ -146,12 +162,10 @@ export default function ReadBlog() {
       <div className="flex flex-col px-5 md:px-20 items-center justify-center pt-10 md:pt-0 pb-20">
         {article ? (
           <>
-            <h1>{article.title}</h1>
-            <p>
-              Written by {article.author} on {article.date}
-            </p>
-
-            <p>{article.body}</p>
+            {/* <h1>{article.title}</h1> */}
+            {/* <p>
+              Written by {article.writtenBy} on {formatDate(article.createdAt)}
+            </p> */}
 
             <div className="w-full">
               <Image
@@ -166,8 +180,11 @@ export default function ReadBlog() {
                 {article.title}
               </h2>
 
-              <p className="text-gray-500 mb-2">
-                Written by {article.author} <span>{article.date}</span>
+              <p className="text-black font-bold mb-2">
+                Written by {article.writtenBy}{" "}
+                <span className="text-gray-500">
+                  {formatDate(article.createdAt)}
+                </span>
               </p>
 
               <p className="text-black text-sm">{article.body}</p>

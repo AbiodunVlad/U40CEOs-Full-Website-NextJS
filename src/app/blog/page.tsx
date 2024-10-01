@@ -19,13 +19,16 @@ type Article = {
   category: string;
   title: string;
   body: string;
-  author: string;
-  date: string;
+  writtenBy: string;
+  createdAt: string;
+  featuredImage: string;
+  featuredBlog: boolean;
 };
 
 export default function Blog() {
   const [articles, setArticles] = useState<Article[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [featuredArticle, setFeaturedArticle] = useState<Article[]>([]);
 
   // useEffect(() => {
   //   async function fetchArticles() {
@@ -56,6 +59,11 @@ export default function Blog() {
         if (Array.isArray(res.data.content)) {
           console.log("Data is an array, setting blog state.");
           setArticles(res.data.content);
+          const featuredBlogPost = res.data.content.find(
+            (article) => article.featuredBlog === true
+          );
+          console.log("This is featured blog post:", featuredBlogPost);
+          setFeaturedArticle(featuredBlogPost);
           console.log("Setting blog state:", res);
         } else {
           console.log("Data is not an array, setting empty blog.");
@@ -83,6 +91,11 @@ export default function Blog() {
   const firstHalfItems = currentItems.slice(0, midIndex);
   const secondHalfItems = currentItems.slice(midIndex);
 
+  useEffect(() => {
+    // console.log("Here is featured blog post:", featuredBlogPost);
+    console.log("Here is articles:", articles);
+    console.log("Here is current items:", currentItems);
+  }, []);
   return (
     <div>
       <Navbar />
@@ -100,7 +113,15 @@ export default function Blog() {
                 key={article.id}
                 className="flex flex-col items-center h-full mb-10 shadow-2xl"
               >
-                <div className="w-full h-40 bg-blue-600"></div>
+                <div className="w-full h-40 bg-blue-600">
+                  <Image
+                    src={article.featuredImage}
+                    width={100}
+                    height={100}
+                    alt=""
+                    className="flex items-center justify-center w-full"
+                  />
+                </div>
                 <Link href={`/blog/${article.id}`} className="w-full h-auto">
                   <div className="w-full h-full py-5 px-3">
                     <p className="self-start text-xxs text-black py-1 px-2 bg-purple-400 mb-3 inline-block rounded-full">
@@ -122,7 +143,13 @@ export default function Blog() {
 
           {currentPage === 1 && (
             <div className="flex flex-col items-center">
-              <WhatIs />
+              <WhatIs
+                key={featuredArticle.id}
+                title={featuredArticle.title}
+                body={featuredArticle.body?.substring(0, 350)}
+                image={featuredArticle.featuredImage}
+              />
+
               <div className="w-full border border-gray-400 mx-10 mb-5"></div>
 
               <BlogEvent />
@@ -137,7 +164,15 @@ export default function Blog() {
                 key={article.id}
                 className="flex flex-col items-center h-full mb-10 shadow-2xl"
               >
-                <div className="w-full h-40 bg-blue-600"></div>
+                <div className="w-full h-40 bg-blue-600">
+                  <Image
+                    src={article.featuredImage}
+                    width={100}
+                    height={100}
+                    alt=""
+                    className="flex items-center justify-center w-full"
+                  />
+                </div>
                 <Link href={`/blog/${article.id}`} className="w-full h-auto">
                   <div className="w-full h-full py-5 px-3">
                     <p className="self-start text-xxs text-black py-1 px-2 bg-purple-400 mb-3 inline-block rounded-full">

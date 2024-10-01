@@ -1,5 +1,8 @@
-import { withNextVideo } from "next-video/process";
-/** @type {import('next').NextConfig} */
-const nextConfig = {};
+// /** @type {import('next').NextConfig} */
+// const nextConfig = {
+//   images: {
+//     domains: ["res.cloudinary.com"], // Add the domain here
+//   },
+// };
 
-export default withNextVideo(nextConfig);
+// module.exports = nextConfig;

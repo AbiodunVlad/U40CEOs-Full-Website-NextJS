@@ -10,8 +10,9 @@ type Article = {
   category: string;
   title: string;
   body: string;
-  author: string;
-  date: string;
+  writtenBy: string;
+  createdAt: string;
+  featuredImage: string;
 };
 
 export default function Blog() {
