@@ -4,7 +4,7 @@ import React from "react";
 export default function CourseFormat() {
   return (
     <div className="bg-white pt-10 pb-20 md:px-20 px-5 flex flex-col">
-      <p className="text-2xl text-black text-center font-bold uppercase mb-10">
+      <p className="text-3xl lg:text-4xl text-black text-center font-bold uppercase mb-10">
         Course <span className="text-blue-500">Format</span> and{" "}
         <span className="text-purple-500">Features</span>
       </p>
@@ -44,12 +44,12 @@ export default function CourseFormat() {
         </div>
       </div>
 
-      <p className="text-center text-black text-2xl font-bold mb-10 uppercase">
+      <p className="text-center text-black text-3xl lg:text-4xl font-bold mb-10 uppercase">
         <span className="text-pink-500">Pricing</span> and Enrollment
       </p>
 
-      <div className="border border-solid border-purple-600 flex flex-col mb-2 lg:w-1/3 w-full self-center">
-        <div className="bg-white flex flex-row py-2 px-3 gap-5">
+      <div className="border border-solid border-purple-600 flex sm:flex-row flex-col mb-10  w-full self-center">
+        <div className="bg-white flex flex-row py-2 px-3 gap-5 ">
           <Image src="/icons/pricingIcon.svg" alt="" width={30} height={20} />
 
           <div className="flex flex-col">
@@ -85,7 +85,7 @@ export default function CourseFormat() {
         </div>
       </div>
 
-      <button className="bg-black self-center lg:w-1/3 w-full py-3 text-pink-500 uppercase font-bold">
+      <button className="bg-black self-center  w-full py-4 text-pink-500 uppercase font-bold rounded-full">
         Enroll now <span className="text-white lowercase">for just</span> $299
       </button>
     </div>

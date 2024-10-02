@@ -113,7 +113,7 @@ export default function Footer() {
                   </p>
 
                   <Link
-                    href="/resources"
+                    href="/FreebieCourses"
                     className="text-sm sm:text-lg text-white mb-2"
                   >
                     Courses

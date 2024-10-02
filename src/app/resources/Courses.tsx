@@ -2,6 +2,7 @@
 import React from "react";
 import Search from "@/components/Search";
 import CourseVideos from "@/components/CourseVideos";
+import Link from "next/link";
 
 export default function Courses() {
   return (
@@ -18,9 +19,12 @@ export default function Courses() {
             </p>
           </div>
           <div className="flex-grow mb-10"></div>
-          <button className="mt-auto inline-flex self-start bg-pink-500 text-white text-base font-bold py-4 px-10 rounded-full uppercase tracking-widest">
-            Start your journey
-          </button>
+
+          <Link href="/NoFreebieCourses">
+            <button className="mt-auto inline-flex self-start bg-pink-500 text-white text-base font-bold py-4 px-10 rounded-full uppercase tracking-widest">
+              Start your journey
+            </button>
+          </Link>
         </div>
 
         <div>

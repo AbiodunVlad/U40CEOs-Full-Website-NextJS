@@ -10,6 +10,8 @@ import FAQ from "../Courses/FAQ";
 import StartBusiness from "../Courses/StartBusiness";
 import BecomeAMember from "@/components/BecomeAMember";
 import Footer from "@/components/Footer";
+import EnrolNow from "@/components/EnrolNow";
+import LearningOutcomes from "../Courses/LearningOutcomes";
 
 export default function NoFreebieCourses() {
   return (
@@ -18,10 +20,11 @@ export default function NoFreebieCourses() {
       <HeroSection />
       <CourseOverview />
       <WhatYouLearn />
+      <LearningOutcomes />
       <MeetTheInstructors />
       <CourseFormat />
       <FAQ />
-      <StartBusiness />
+      <EnrolNow />
       <BecomeAMember />
       <Footer />
     </div>

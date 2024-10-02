@@ -12,6 +12,8 @@ import CourseFormat from "../Courses/CourseFormat";
 import FAQ from "../Courses/FAQ";
 import StartBusiness from "../Courses/StartBusiness";
 import BecomeAMember from "@/components/BecomeAMember";
+import EnrolNow from "@/components/EnrolNow";
+import Link from "next/link";
 
 export default function FreebieCourses() {
   return (
@@ -23,16 +25,18 @@ export default function FreebieCourses() {
             STARTING A BUSINESS IN AFRICA{" "}
           </h1>
 
-          <p className="text-black text-sm sm:text-lg text-center">
+          <p className="text-black text-base sm:text-2xl text-center">
             Your practical guide to launching an African success story
           </p>
         </div>
 
         <div className="text-center mb-5">
-          <p className="text-orange-500 text-lg font-bold mb-2 uppercase">
+          <p className="text-orange-500 text-3xl lg:text-4xl font-bold mb-2 uppercase">
             free training starts in
           </p>
-          <p className="text-black text-3xl font-extrabold">33:22:11:33</p>
+          <p className="text-black text-4xl lg:text-5xl font-extrabold">
+            33:22:11:33
+          </p>
         </div>
 
         <div className="flex flex-col w-full">
@@ -41,12 +45,17 @@ export default function FreebieCourses() {
             className="w-full sm:h-svh mb-10"
           />
           <div className="flex sm:flex-row flex-col items-center justify-between">
-            <button className="bg-pink-500 text-white rounded-full px-4 py-2 mb-5 sm:w-auto w-full">
-              ACCESS FREE TRAINING
-            </button>
-            <button className="bg-purple-500 text-white rounded-full px-4 py-2 sm:w-auto w-full">
-              FOR FULL ACCESS: $299
-            </button>
+            <Link href="">
+              <button className="bg-pink-500 text-white rounded-full px-10 py-4 mb-5 sm:w-auto w-full">
+                ACCESS FREE TRAINING
+              </button>
+            </Link>
+
+            <Link href="">
+              <button className="bg-purple-500 text-white rounded-full px-10 py-4 sm:w-auto w-full">
+                FOR FULL ACCESS: $299
+              </button>
+            </Link>
           </div>
         </div>
 
@@ -130,7 +139,9 @@ export default function FreebieCourses() {
 
       <FAQ />
 
-      <StartBusiness />
+      <EnrolNow />
+
+      {/* <StartBusiness /> */}
 
       <BecomeAMember />
 

@@ -9,8 +9,8 @@ export default function HeroSection() {
         <br /> AFRICA{" "}
       </h1>
 
-      <p className="text-black text-sm sm:text-lg text-center mb-20">
-        Your practical guide to launching an African success story
+      <p className="text-black text-base sm:text-2xl text-center mb-20">
+        Your Comprehensive Guide to Launching a Flourishing Venture{" "}
       </p>
 
       <div className="flex flex-col xl:px-20 px-5">
@@ -26,42 +26,44 @@ export default function HeroSection() {
           </div>
 
           <div className="lg:w-1/2 w-full">
-            <p className="text-black text-xl font-bold mb-3">
+            <p className="text-black text-xl sm:text-4xl font-bold mb-3">
               Course Objectives
             </p>
 
-            <p className="text-black text-sm sm:text-lg mb-10">
-              Are you ready to take control of your health and well-being? Our
-              comprehensive nutrition program is designed to help you achieve
-              optimal
+            <p className="text-black text-base sm:text-2xl mb-10">
+              Master the essential strategies for launching and scaling
+              businesses in Africa with practical insights from successful
+              entrepreneurs.
             </p>
 
-            <p className="text-black text-xl font-bold mb-3">
+            <p className="text-black text-xl sm:text-4xl font-bold mb-3">
               Unique Selling Points:
             </p>
 
-            <ul className="text-black text-sm mb-10">
-              <li className="flex mb-2 text-sm sm:text-lg gap-3">
+            <ul className="text-black text-base sm:text-2xl mb-10">
+              <li className="flex mb-2 text-base sm:text-2xl gap-3">
                 <Image
                   src="/icons/pinkCheck.svg"
                   alt=""
                   width={15}
                   height={10}
                 />{" "}
-                Expert instruction from successful African entrepreneurs.
+                Learn directly from a distinguished faculty of African business
+                leaders.{" "}
               </li>
 
-              <li className="flex mb-2 text-sm sm:text-lg gap-3">
+              <li className="flex mb-2 text-base sm:text-2xl gap-3">
                 <Image
                   src="/icons/pinkCheck.svg"
                   alt=""
                   width={15}
                   height={10}
                 />{" "}
-                Practical, hands-on approach with real-world examples.
+                Access a comprehensive array of premium resources, including
+                business templates, e-books, research reports, and case studies.{" "}
               </li>
 
-              <li className="flex mb-2 text-sm sm:text-lg gap-3">
+              <li className="flex mb-2 text-base sm:text-2xl gap-3">
                 <Image
                   src="/icons/pinkCheck.svg"
                   alt=""
@@ -71,27 +73,28 @@ export default function HeroSection() {
                 Access to a supportive community of fellow entrepreneurs.
               </li>
 
-              <li className="flex mb-2 text-sm sm:text-lg gap-3">
+              <li className="flex mb-2 text-base sm:text-2xl gap-3">
                 <Image
                   src="/icons/pinkCheck.svg"
                   alt=""
                   width={15}
                   height={10}
                 />{" "}
-                Comprehensive resources, templates, and guides.
+                Gain actionable knowledge and tools specifically tailored for
+                navigating the complexities of African markets.{" "}
               </li>
             </ul>
 
-            <p className="text-black text-sm sm:text-lg">
-              Whether you&apos;re a busy professional, an athlete, or simply
-              looking to improve your overall health, our program offers a
-              tailored solution to fit your unique needs and lifestyle.
+            <p className="text-black text-base sm:text-2xl">
+              Enrol now to gain exclusive access to expert-led courses and
+              invaluable resources designed to empower your journey in
+              establishing thriving businesses on the continent.
             </p>
           </div>
         </div>
 
-        <button className="lg:self-start self-stretch py-2 px-20 bg-pink-500 text-white text-lg font-bold rounded-full">
-          ENROL NOW
+        <button className="lg:self-start self-stretch py-4 px-10 bg-pink-500 text-white text-lg font-bold rounded-full">
+          START COURSE{" "}
         </button>
       </div>
     </div>

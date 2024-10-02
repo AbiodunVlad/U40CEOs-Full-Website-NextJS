@@ -4,92 +4,100 @@ import React from "react";
 export default function WhatYouLearn() {
   return (
     <div className="bg-white pt-20 pb-10 sm:px-10 px-5 flex flex-col">
-      <p className="text-black md:text-3xl text-lg text-center font-bold mb-3">
+      <p className="text-black text-3xl lg:text-4xl text-center font-bold mb-3">
         What You&apos;ll <span className="text-pink-600">Learn</span>
       </p>
 
       <div className="flex flex-col sm:px-5 px-0">
-        <p className="text-black text-xl font-bold mb-5">Module Breakdown:</p>
+        <p className="text-black text-xl sm:text-4xl font-bold mb-5">
+          Module Breakdown:
+        </p>
 
         <div className="flex sm:flex-row flex-col justify-center sm:gap-40 gap-28">
           <div className="flex flex-col text-black">
             <div className="mb-4">
-              <p className="text-sm sm:text-lg font-bold mb-3">
-                Module 1: Understanding the African Business Landscape
+              <p className="text-base sm:text-2xl font-bold mb-3">
+                Module 1: Understanding African Consumer Behavior{" "}
               </p>
 
-              <ul className="text-black text-sm mb-10">
-                <li className="flex text-sm sm:text-lg mb-2">
+              <ul className="text-black text-base sm:text-2xl mb-10">
+                <li className="flex text-base sm:text-2xl mb-3 gap-3">
                   <Image
                     src="/icons/pinkCheck.svg"
                     alt=""
-                    width={15}
-                    height={10}
+                    width={30}
+                    height={30}
                   />
-                  Overview of key markets and industries.
+                  Analyzing cultural influences on purchasing decisions{" "}
                 </li>
-                <li className="flex text-sm sm:text-lg mb-2">
+
+                <li className="flex text-base sm:text-2xl mb-3 gap-3">
                   <Image
                     src="/icons/pinkCheck.svg"
                     alt=""
-                    width={15}
-                    height={10}
+                    width={30}
+                    height={30}
                   />
-                  Analysis of economic trends and opportunities.
+                  Strategies for tailoring marketing campaigns to local
+                  preferences{" "}
                 </li>
               </ul>
             </div>
 
             <div className="mb-4">
-              <p className="text-sm sm:text-lg font-bold mb-3">
-                Module 2: Developing Your Business Idea
+              <p className="text-base sm:text-2xl font-bold mb-3">
+                Module 2: Effective Customer Acquisition Strategies{" "}
               </p>
 
-              <ul className="text-black text-sm mb-10">
-                <li className="flex text-sm sm:text-lg mb-2">
+              <ul className="text-black text-base sm:text-2xl mb-10">
+                <li className="flex text-base sm:text-2xl mb-3 gap-3">
                   <Image
                     src="/icons/pinkCheck.svg"
                     alt=""
-                    width={15}
-                    height={10}
+                    width={30}
+                    height={30}
                   />
-                  Identifying viable business opportunities.
+                  Leveraging digital channels for lead generation{" "}
                 </li>
-                <li className="flex text-sm sm:text-lg mb-2">
+
+                <li className="flex text-base sm:text-2xl mb-3 gap-3">
                   <Image
                     src="/icons/pinkCheck.svg"
                     alt=""
-                    width={15}
-                    height={10}
+                    width={30}
+                    height={30}
                   />
-                  Conducting market research.
+                  Implementing targeted marketing tactics to attract diverse
+                  customer segments{" "}
                 </li>
               </ul>
             </div>
 
             <div className="mb-0">
-              <p className="text-sm sm:text-lg font-bold mb-3">
-                Module 3: Creating a Business Plan
+              <p className="text-base sm:text-2xl font-bold mb-3">
+                Module 3: Building a Strong Brand Presence in Africa{" "}
               </p>
 
-              <ul className="text-black text-sm mb-0">
-                <li className="flex text-sm sm:text-lg mb-2">
+              <ul className="text-black text-base sm:text-2xl mb-0">
+                <li className="flex text-base sm:text-2xl mb-3 gap-3">
                   <Image
                     src="/icons/pinkCheck.svg"
                     alt=""
-                    width={15}
-                    height={10}
+                    width={30}
+                    height={30}
                   />
-                  Crafting a compelling business plan.
+                  Developing a compelling brand identity that resonates locally{" "}
                 </li>
-                <li className="flex text-sm sm:text-lg mb-2">
+
+                <li className="flex text-base sm:text-2xl mb-3 gap-3">
                   <Image
                     src="/icons/pinkCheck.svg"
                     alt=""
-                    width={15}
-                    height={10}
+                    width={30}
+                    height={30}
                   />
-                  Financial planning and forecasting.
+                  Using storytelling and content marketing to enhance brand
+                  visibility{" "}
                 </li>
               </ul>
             </div>
@@ -97,82 +105,88 @@ export default function WhatYouLearn() {
 
           <div className="flex flex-col text-black">
             <div className="mb-4">
-              <p className="text-sm sm:text-lg font-bold mb-3">
-                Module 1: Understanding the African Business Landscape
+              <p className="text-base sm:text-2xl font-bold mb-3">
+                Module 4: Strategic Pricing and Market Positioning{" "}
               </p>
 
-              <ul className="text-black text-sm mb-10">
-                <li className="flex text-sm sm:text-lg mb-2">
+              <ul className="text-black text-base sm:text-2xl mb-10">
+                <li className="flex text-base sm:text-2xl mb-3 gap-3">
                   <Image
                     src="/icons/pinkCheck.svg"
                     alt=""
-                    width={15}
-                    height={10}
+                    width={30}
+                    height={30}
                   />
-                  Overview of key markets and industries.
+                  Pricing strategies that maximize profitability while remaining
+                  competitive{" "}
                 </li>
-                <li className="flex text-sm sm:text-lg mb-2">
+
+                <li className="flex text-base sm:text-2xl mb-3 gap-3">
                   <Image
                     src="/icons/pinkCheck.svg"
                     alt=""
-                    width={15}
-                    height={10}
+                    width={30}
+                    height={30}
                   />
-                  Analysis of economic trends and opportunities.
+                  Positioning your product or service effectively in the African
+                  market landscape{" "}
                 </li>
               </ul>
             </div>
 
             <div className="mb-4">
-              <p className="text-sm sm:text-lg font-bold mb-3">
-                Module 2: Developing Your Business Idea
+              <p className="text-base sm:text-2xl font-bold mb-3">
+                Module 5: Expanding Market Reach Across Africa{" "}
               </p>
 
               <ul className="text-black text-sm mb-10">
-                <li className="flex text-sm sm:text-lg mb-2">
+                <li className="flex text-base sm:text-2xl mb-3 gap-3">
                   <Image
                     src="/icons/pinkCheck.svg"
                     alt=""
-                    width={15}
-                    height={10}
+                    width={30}
+                    height={30}
                   />
-                  Identifying viable business opportunities.
+                  Understanding regional market dynamics and entry strategies{" "}
                 </li>
-                <li className="flex text-sm sm:text-lg mb-2">
+
+                <li className="flex text-base sm:text-2xl mb-3 gap-3">
                   <Image
                     src="/icons/pinkCheck.svg"
                     alt=""
-                    width={15}
-                    height={10}
+                    width={30}
+                    height={30}
                   />
-                  Conducting market research.
+                  Scaling your business operations while maintaining market
+                  relevance{" "}
                 </li>
               </ul>
             </div>
 
             <div className="mb-4">
-              <p className="text-sm sm:text-lg font-bold mb-3">
-                Module 3: Creating a Business Plan
+              <p className="text-base sm:text-2xl font-bold mb-3">
+                Module 6: Measuring and Optimizing Marketing ROI{" "}
               </p>
 
-              <ul className="text-black text-sm mb-10">
-                <li className="flex text-sm sm:text-lg mb-2">
+              <ul className="text-black text-base sm:text-2xl mb-10">
+                <li className="flex text-base sm:text-2xl mb-3 gap-3">
                   <Image
                     src="/icons/pinkCheck.svg"
                     alt=""
-                    width={15}
-                    height={10}
+                    width={30}
+                    height={30}
                   />
-                  Crafting a compelling business plan.
+                  Implementing metrics to track campaign performance{" "}
                 </li>
-                <li className="flex text-sm sm:text-lg mb-2">
+
+                <li className="flex text-base sm:text-2xl mb-3 gap-3">
                   <Image
                     src="/icons/pinkCheck.svg"
                     alt=""
-                    width={15}
-                    height={10}
+                    width={30}
+                    height={30}
                   />
-                  Financial planning and forecasting.
+                  Techniques for continuous improvement and ROI optimization{" "}
                 </li>
               </ul>
             </div>

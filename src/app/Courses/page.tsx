@@ -13,13 +13,14 @@ import CourseFormat from "./CourseFormat";
 import FAQ from "./FAQ";
 import StartBusiness from "./StartBusiness";
 import BecomeAMember from "@/components/BecomeAMember";
+import EnrolNow from "@/components/EnrolNow";
 
 export default function CourseObjective() {
   return (
     <div className="bg-pink-100">
       <CoursesNavbar />
       <HeroSection />
-      <CEOsSay />
+      {/* <CEOsSay /> */}
       <CourseOverview />
       <WhatYouLearn />
       <LearningOutcomes />
@@ -27,7 +28,8 @@ export default function CourseObjective() {
       <MeetTheInstructors />
       <CourseFormat />
       <FAQ />
-      <StartBusiness />
+      <EnrolNow />
+      {/* <StartBusiness /> */}
       <BecomeAMember />
       <Footer />
     </div>
