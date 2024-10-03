@@ -31,10 +31,10 @@ export default function StoreNavbar() {
           <div className="flex flex-row items-center justify-center">
             <Link href="/home">
               {" "}
-              <Image src="/images/logo.svg" alt="logo" width={50} height={50} />
+              <Image src="/images/logo.svg" alt="logo" width={80} height={80} />
             </Link>
 
-            <p className="text-white text-xxs">
+            <p className="text-white text-sm">
               THE OFFICIAL
               <br /> ONLINE STORE
             </p>
@@ -58,7 +58,7 @@ export default function StoreNavbar() {
             <Link href="/">
               {" "}
               <li
-                className={`text-sm font-bold mb-4 md:mb-0 md:mr-10 ${isActive(
+                className={`text-base sm:text-xl font-bold mb-4 md:mb-0 md:mr-10 ${isActive(
                   "/home"
                 )}`}
               >
@@ -69,7 +69,7 @@ export default function StoreNavbar() {
             <Link href="/">
               {" "}
               <li
-                className={`text-sm font-bold mb-4 md:mb-0 md:mr-10 uppercase ${isActive(
+                className={`text-base sm:text-xl font-bold mb-4 md:mb-0 md:mr-10 uppercase ${isActive(
                   "/home"
                 )}`}
               >
@@ -80,7 +80,7 @@ export default function StoreNavbar() {
             <Link href="/">
               {" "}
               <li
-                className={`text-sm font-bold mb-4 md:mb-0 md:mr-10 ${isActive(
+                className={`text-base sm:text-xl font-bold mb-4 md:mb-0 md:mr-10 ${isActive(
                   "/home"
                 )}`}
               >
@@ -89,14 +89,13 @@ export default function StoreNavbar() {
             </Link>
           </ul>
 
-          <button className="font-medium text-xs text-center px-5 py-1 mb-4 md:mb-0 md:mr-5 bg-black rounded-full text-white">
+          <button className="font-medium text-xs text-center px-10 py-4 mb-4 md:mb-0 md:mr-5 bg-black rounded-full text-white">
             SIGN IN
           </button>
         </div>
       </div>
-      <p className="test-white text-base text-center">
-        <span className="font-bold">SUPPORT YOUNG AFRICAN ENTREPRENEURS</span> -
-        BUY BRANDED KITS AND MORE!
+      <p className="text-white text-base sm:text-2xl text-center font-bold">
+        Shop Our Exclusive Branded Items To Support Young African Entrepreneurs
       </p>
     </div>
   );

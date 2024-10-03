@@ -37,11 +37,19 @@ export default function Testimonials() {
   }, []);
 
   if (loading) {
-    return <div className="text-red-500 text-center">Loading...</div>;
+    return (
+      <div className="text-red-500 text-center text-2xl sm:text-5xl mb-20">
+        Loading Testimonials...
+      </div>
+    );
   }
 
   if (error) {
-    return <div className="text-red-500 text-center">{error}</div>;
+    return (
+      <div className="text-red-500 text-center text-base sm:text-2xl">
+        {error}
+      </div>
+    );
   }
 
   return (

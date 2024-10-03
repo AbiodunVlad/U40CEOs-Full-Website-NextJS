@@ -33,8 +33,25 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["res.cloudinary.com"], // Add the domain here
+    remotePatterns: [
+      {
+        //domains: ["res.cloudinary.com"], // Add the domain here
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+        //port: "",
+        pathname: "/**",
+      },
+    ],
   },
 };
 
 module.exports = nextConfig;
+
+///**  @type {import('next').NextConfig} */
+// const nextConfig = {
+//   images: {
+//     domains: ["res.cloudinary.com"], // Add the domain here
+//   },
+// };
+
+// module.exports = nextConfig;

@@ -82,7 +82,11 @@ export default function BuyKits() {
   };
 
   if (!kit) {
-    return <div>Loading...</div>;
+    return (
+      <div className="flex items-center justify-center text-black text-base sm:text-2xl">
+        Loading...
+      </div>
+    );
   }
 
   return (
@@ -103,22 +107,24 @@ export default function BuyKits() {
               <div className="border border-black py-10 flex flex-col px-5">
                 <div className="flex flex-col mb-auto">
                   <div className="flex flex-row justify-between">
-                    <h2 className="text-black sm:text-xl text-base font-bold mb-4">
+                    <h2 className="text-black sm:text-3xl text-xl font-bold mb-4">
                       {kit.kitName}
                     </h2>
 
-                    <p className="text-pink-500 sm:text-xl text-base mb-2">
+                    <p className="text-pink-500 sm:text-3xl text-xl mb-2">
                       $ {kit.price}
                     </p>
                   </div>
 
-                  <p className="text-black text-sm ">{kit.description}</p>
+                  <p className="text-black text-base sm:text-2xl">
+                    {kit.description}
+                  </p>
                 </div>
 
                 <div className="flex flex-row justify-center gap-5">
                   <button
                     onClick={handleDecrement}
-                    className="bg-gray-300 text-black px-3 py-1 rounded"
+                    className="bg-gray-300 text-black px-10 py-4 rounded"
                   >
                     -
                   </button>
@@ -133,11 +139,11 @@ export default function BuyKits() {
                   />
                   <button
                     onClick={handleIncrement}
-                    className="bg-gray-300 text-black px-3 py-1 rounded"
+                    className="bg-gray-300 text-black px-10 py-4 rounded"
                   >
                     +
                   </button>
-                  <button className="bg-purple-500 text-white sm:text-base text-sm py-1 px-4">
+                  <button className="bg-purple-500 text-white text-base sm:text-2xl py-4 px-10">
                     ADD TO CART
                   </button>
                 </div>
@@ -147,7 +153,7 @@ export default function BuyKits() {
         )}
 
         <div>
-          <h2 className="text-xl text-black font-bold mb-5">
+          <h2 className="sm:text-3xl text-xl text-black font-bold mb-5">
             You May Also Like
           </h2>
 

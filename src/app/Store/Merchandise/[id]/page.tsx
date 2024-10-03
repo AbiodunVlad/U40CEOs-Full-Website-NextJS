@@ -109,16 +109,16 @@ export default function BuyMerchandise() {
               <div className="border border-black py-10 flex flex-col px-5">
                 <div className="flex flex-col mb-auto">
                   <div className="flex flex-row justify-between">
-                    <h2 className="text-black sm:text-xl text-base font-bold mb-4">
+                    <h2 className="text-black sm:text-3xl text-xl font-bold mb-4">
                       {merchandise.merchandiseName}
                     </h2>
 
-                    <p className="text-pink-500 sm:text-xl text-base mb-2">
+                    <p className="text-pink-500 sm:text-3xl text-xl mb-2">
                       $ {merchandise.price}
                     </p>
                   </div>
 
-                  <p className="text-black text-sm mb-10">
+                  <p className="text-black text-base sm:text-2xl mb-10">
                     {merchandise.description}
                   </p>
                 </div>
@@ -126,7 +126,7 @@ export default function BuyMerchandise() {
                 <div className="flex flex-row justify-center gap-5">
                   <button
                     onClick={handleDecrement}
-                    className="bg-gray-300 text-black px-3 py-1 rounded"
+                    className="bg-gray-300 text-black px-10 py-4 rounded"
                   >
                     -
                   </button>
@@ -136,16 +136,18 @@ export default function BuyMerchandise() {
                     // type="number"
                     value={quantity}
                     onChange={handleChange}
-                    className="w-16 text-black text-center border border-gray-300 rounded px-2 py-1"
+                    className="w-16 text-black text-center border border-gray-300 rounded px-10 py-4"
                     min="1"
                   />
+
                   <button
                     onClick={handleIncrement}
-                    className="bg-gray-300 text-black px-3 py-1 rounded"
+                    className="bg-gray-300 text-black px-10 py-4 rounded"
                   >
                     +
                   </button>
-                  <button className="bg-purple-500 text-white sm:text-base text-sm py-1 px-4">
+
+                  <button className="bg-purple-500 text-white sm:text-base text-sm py-4 px-10">
                     ADD TO CART
                   </button>
                 </div>
@@ -155,7 +157,7 @@ export default function BuyMerchandise() {
         )}
 
         <div>
-          <h2 className="text-xl text-black font-bold mb-5">
+          <h2 className="sm:text-3xl text-xl text-black font-bold mb-5">
             You May Also Like
           </h2>
 

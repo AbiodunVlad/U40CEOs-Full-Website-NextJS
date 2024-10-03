@@ -60,64 +60,68 @@ export default function FreebieCourses() {
         </div>
 
         <div className="">
-          <p className="text-black text-xl font-bold mb-5">Course Objectives</p>
-          <p className="text-black text-sm sm:text-lg font-normal mb-6">
-            Are you ready to take control of your health and well-being? Our
-            comprehensive nutrition program is designed to help you achieve
-            optimal{" "}
+          <p className="text-black text-xl sm:text-4xl font-bold mb-5">
+            Course Objectives
+          </p>
+          <p className="text-black text-base sm:text-2xl font-normal mb-6">
+            Master the essential strategies for launching and scaling businesses
+            in Africa with practical insights from successful entrepreneurs.
           </p>
 
-          <p className="text-black text-sm sm:text-lg font-bold mb-5">
+          <p className="text-black text-base sm:text-2xl font-bold mb-5">
             Unique Selling Points:
           </p>
 
-          <div className="flex sm:flex-row flex-col justify-between">
-            <ul className="text-black text-sm mb-10">
-              <li className="flex mb-2 text-sm sm:text-lg">
+          <div className="flex sm:flex-row flex-col justify-between gap-10">
+            <ul className="text-black text-base sm:text-2xl mb-10">
+              <li className="flex mb-2 text-base sm:text-2xl">
                 <Image
                   src="/icons/pinkCheck.svg"
                   alt=""
-                  width={15}
-                  height={10}
+                  width={30}
+                  height={30}
                 />{" "}
                 Expert instruction from successful African entrepreneurs.
               </li>
 
-              <li className="flex mb-2 text-sm sm:text-lg">
+              <li className="flex mb-2 text-base sm:text-2xl">
                 <Image
                   src="/icons/pinkCheck.svg"
                   alt=""
-                  width={15}
-                  height={10}
+                  width={30}
+                  height={30}
+                  className="text-base sm:text-2xl"
                 />{" "}
                 Practical, hands-on approach with real-world examples.
               </li>
             </ul>
 
-            <ul className="text-black text-sm mb-10">
-              <li className="flex mb-2 text-sm sm:text-lg">
+            <ul className="text-black text-base sm:text-2xl mb-10">
+              <li className="flex mb-2 text-base sm:text-2xl">
                 <Image
                   src="/icons/pinkCheck.svg"
                   alt=""
-                  width={15}
-                  height={10}
+                  width={30}
+                  height={30}
+                  className="text-base sm:text-2xl"
                 />{" "}
                 Access to a supportive community of fellow entrepreneurs.
               </li>
 
-              <li className="flex mb-2 text-sm sm:text-lg">
+              <li className="flex mb-2 text-base sm:text-2xl">
                 <Image
                   src="/icons/pinkCheck.svg"
                   alt=""
-                  width={15}
-                  height={10}
+                  width={30}
+                  height={30}
+                  className="text-base sm:text-2xl"
                 />{" "}
                 Comprehensive resources, templates, and guides.
               </li>
             </ul>
           </div>
 
-          <p className="text-black text-sm sm:text-lg font-normal">
+          <p className="text-black text-base sm:text-2xl font-normal">
             Whether you&apos;re a busy professional, an athlete, or simply
             looking to improve your overall health, our program offers a
             tailored solution to fit your unique needs and lifestyle.

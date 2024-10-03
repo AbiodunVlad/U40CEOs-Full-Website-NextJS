@@ -19,6 +19,9 @@ export default function Blog() {
   const [blogs, setBlogs] = useState<Article | null>(null);
   const [relatedArticles, setRelatedArticles] = useState<Article[]>([]);
 
+  // const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState<string | null>(null);
+
   const params = useParams();
   const id = params?.id as string;
 
@@ -65,11 +68,27 @@ export default function Blog() {
     fetchBlog();
   }, []);
 
+  // if (loading) {
+  //   return (
+  //     <div className="text-red-500 text-center text-2xl sm:text-5xl">
+  //       Loading Blogs...
+  //     </div>
+  //   );
+  // }
+
+  // if (error) {
+  //   return (
+  //     <div className="text-red-500 text-center text-base sm:text-2xl">
+  //       {error}
+  //     </div>
+  //   );
+  // }
+
   return (
     <div className="flex flex-col items-center justify-center py-20 px-5 md:px-20 bg-slate-100">
       <p className="text-pink-400 text-sm font-semibold mb-5">FROM OUR BLOG</p>
 
-      <h1 className="text-black font-extrabold text-2xl md:text-3xl mb-5">
+      <h1 className="text-black font-extrabold text-2xl md:text-3xl mb-16">
         LATEST NEWS & ARTICLES
       </h1>
 
