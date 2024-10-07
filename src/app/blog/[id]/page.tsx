@@ -10,6 +10,7 @@ import BecomeAMember from "@/components/BecomeAMember";
 import Event from "@/components/cards/Event";
 import BlogEvent from "../BlogEvent";
 import { getBlogPostBySlug, getBlogPosts } from "../../../../pages/api/auth";
+import Comment from "../Comment";
 // import { useRouter } from "next/router";
 
 type Article = {
@@ -194,6 +195,10 @@ export default function ReadBlog() {
         <BlogEvent />
       </div>
 
+      <div>
+        <Comment blogId={id} />
+      </div>
+
       <div className="w-full mb-20 px-5 md:px-20">
         <h2 className="md:text-2xl text-xl  text-black font-bold mb-5">
           Related Articles
@@ -228,7 +233,6 @@ export default function ReadBlog() {
                     : article.body}
                 </p>
               </div>
-              {/* </div> */}
             </Link>
           ))}
         </div>

@@ -49,7 +49,7 @@ export default function CourseFormat() {
       </p>
 
       <div className="border border-solid border-purple-600 flex sm:flex-row flex-col mb-10  w-full self-center">
-        <div className="bg-white flex flex-row py-2 px-3 gap-5 ">
+        <div className="bg-white flex flex-row py-2 px-3 gap-5 sm:w-1/2 w-full">
           <Image src="/icons/pricingIcon.svg" alt="" width={30} height={20} />
 
           <div className="flex flex-col">
@@ -66,7 +66,7 @@ export default function CourseFormat() {
           </div>
         </div>
 
-        <div className="bg-purple-300 flex flex-row py-2 px-3 gap-5 ">
+        <div className="bg-purple-300 flex flex-row py-2 px-3 gap-5 sm:w-1/2 w-full">
           <Image src="/icons/pricingIcon.svg" alt="" width={30} height={20} />
 
           <div className="flex flex-col">

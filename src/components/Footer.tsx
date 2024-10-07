@@ -320,27 +320,27 @@ export default function Footer() {
         </div>
       </div>
       <div className="flex flex-row items-center justify-center pb-5 gap-10">
-        <Link href="http://linkedin.com/company/under40ceos">
+        <Link href="http://linkedin.com/company/under40ceos" target="blank">
           <Image src="/icons/linkedin.svg" alt="" width={60} height={50} />
         </Link>
 
-        <Link href="https://web.facebook.com/under40ceosafrica/">
+        <Link href="https://web.facebook.com/under40ceosafrica/" target="blank">
           {" "}
           <Image src="/icons/facebook.svg" alt="" width={40} height={50} />
         </Link>
 
-        <Link href="https://x.com/under40ceosng">
+        <Link href="https://x.com/under40ceosng" target="blank">
           <Image src="/icons/x.svg" alt="" width={40} height={50} />
         </Link>
 
         {/* <Link href="">
           <Image src="/icons/pinterest.svg" alt="" width={30} height={50} />
         </Link> */}
-        <Link href="https://www.instagram.com/under40ceos/">
+        <Link href="https://www.instagram.com/under40ceos/" target="blank">
           <Image src="/icons/instagram.svg" alt="" width={40} height={50} />
         </Link>
 
-        <Link href="https://www.youtube.com/@Under40CEOs">
+        <Link href="https://www.youtube.com/@Under40CEOs" target="blank">
           <Image src="/icons/youtube.svg" alt="" width={60} height={50} />
         </Link>
       </div>

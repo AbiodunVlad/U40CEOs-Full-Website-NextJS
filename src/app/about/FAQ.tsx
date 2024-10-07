@@ -27,7 +27,7 @@ export default function FAQ() {
 
           <div>
             <li className="text-base sm:text-2xl text-purple-500 mb-3">
-              TESTIMONIALS
+              EVENTS
             </li>
             <li className="text-base sm:text-2xl text-purple-500">PRICING</li>
           </div>
