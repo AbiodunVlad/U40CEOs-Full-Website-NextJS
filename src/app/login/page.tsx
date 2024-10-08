@@ -47,10 +47,13 @@ export default function Login() {
 
       localStorage.setItem("isAuthenticated", "true");
 
+      const previousPage = localStorage.getItem("previousPage") || "/home";
+
       setRedirecting(true);
 
       setTimeout(() => {
-        router.push("/home");
+        router.push(previousPage);
+        localStorage.removeItem("previousPage");
       }, 1000);
     } catch (error) {
       if (error instanceof Error) {

@@ -1,8 +1,38 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleQuestion } from "@fortawesome/free-solid-svg-icons";
+import GeneralFAQ from "./generalFAQ";
+import MembershipFAQ from "./membershipFAQ";
+import MediaFeatureFAQ from "./mediaFeatureFAQ";
+import EventsFAQ from "./eventsFAQ";
+import PricingFAQ from "./pricingFAQ";
 
 export default function FAQ() {
+  const [activeFAQ, setActiveFAQ] = useState("GENERAL");
+  const headers = [
+    "GENERAL",
+    "MEMBERSHIP",
+    "MEDIA FEATURE",
+    "EVENTS",
+    "PRICING",
+  ];
+
+  const renderFAQ = () => {
+    switch (activeFAQ) {
+      case "GENERAL":
+        return <GeneralFAQ />;
+      case "MEMBERSHIP":
+        return <MembershipFAQ />;
+      case "MEDIA FEATURE":
+        return <MediaFeatureFAQ />;
+      case "EVENTS":
+        return <EventsFAQ />;
+      case "PRICING":
+        return <PricingFAQ />;
+    }
+  };
+
   return (
     <div className="flex flex-col md:flex-row py-10 sm:py-16 md:py-20 px-4 sm:px-8 md:px-20 gap-10">
       <div className="flex flex-col md:w-1/3 w-full">
@@ -12,25 +42,18 @@ export default function FAQ() {
           <br /> Questions
         </h2>
 
-        <ul className="mb-10 flex flex-row md:flex-col md:justify-center justify-around">
-          <div>
-            <li className="text-base sm:text-2xl text-purple-500 mb-3">
-              GENERAL
+        <ul className="mb-10 flex flex-col md:justify-center justify-around">
+          {headers.map((header) => (
+            <li
+              key={header}
+              onClick={() => setActiveFAQ(header)}
+              className={`text-black md:text-2xl text-lg mb-2 cursor-pointer ${
+                activeFAQ === header ? "font-bold text-purple-500" : ""
+              }`}
+            >
+              {header}
             </li>
-            <li className="text-base sm:text-2xl text-purple-500 mb-3">
-              MEMBERSHIP
-            </li>
-            <li className="text-base sm:text-2xl text-purple-500 mb-3">
-              MEDIA FEATURE
-            </li>
-          </div>
-
-          <div>
-            <li className="text-base sm:text-2xl text-purple-500 mb-3">
-              EVENTS
-            </li>
-            <li className="text-base sm:text-2xl text-purple-500">PRICING</li>
-          </div>
+          ))}
         </ul>
 
         <p className="text-black text-base sm:text-2xl text-center md:text-start font-medium">
@@ -43,55 +66,7 @@ export default function FAQ() {
         </p>
       </div>
 
-      <div className="md:w-2/3 w-full">
-        <p className="text-purple-600 text-lg sm:text-3xl mb-10 md:flex hidden">
-          GENERAL
-        </p>
-
-        <div className="flex flex-row gap-3 items-center md:mb-10 mb-2">
-          <FontAwesomeIcon icon={faCircleQuestion} className="text-sm" />
-          <p className="text-base sm:text-2xl text-black">
-            Who can join the Under 40 CEOs platform?{" "}
-          </p>
-        </div>
-
-        <div className="flex flex-col md:mb-10 mb-2">
-          <div className="flex flex-row gap-3 items-center mb-2">
-            <FontAwesomeIcon icon={faCircleQuestion} className="text-sm" />
-            <p className="text-base sm:text-2xl text-black">
-              What types of resources does Under 40 CEOs provide?{" "}
-            </p>
-          </div>
-
-          <p className="text-base sm:text-2xl text-purple-500 leading-3">
-            Under 40 CEOs offers a wide range of resources, including mentorship
-            programs, networking opportunities, live events, television series,
-            summits, and educational courses through our learning hub. These
-            resources are designed to enhance business success.
-          </p>
-        </div>
-
-        <div className="flex flex-row gap-3 items-center md:mb-10 mb-2">
-          <FontAwesomeIcon icon={faCircleQuestion} className="text-sm" />
-          <p className="text-base sm:text-2xl text-black">
-            What types of events does Under 40 CEOs host?{" "}
-          </p>
-        </div>
-
-        <div className="flex flex-row gap-3 items-center md:mb-10 mb-2">
-          <FontAwesomeIcon icon={faCircleQuestion} className="text-sm" />
-          <p className="text-base sm:text-2xl text-black">
-            How can I access the learning resources provided by Under 40 CEOs?{" "}
-          </p>
-        </div>
-
-        <div className="flex flex-row gap-3 items-center md:mb-10 mb-2">
-          <FontAwesomeIcon icon={faCircleQuestion} className="text-sm" />
-          <p className="text-base sm:text-2xl text-black">
-            Can I collaborate with Under 40 CEOs for a business initiative?{" "}
-          </p>
-        </div>
-      </div>
+      <div className="md:w-2/3 w-full">{renderFAQ()}</div>
     </div>
   );
 }

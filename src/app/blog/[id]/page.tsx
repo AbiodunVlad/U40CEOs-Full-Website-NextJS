@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import React, { useEffect, useState } from "react";
 import BlogSearch from "../BlogSearch";
 import Image from "next/image";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import BecomeAMember from "@/components/BecomeAMember";
 import Event from "@/components/cards/Event";
@@ -26,6 +26,8 @@ type Article = {
 export default function ReadBlog() {
   const [article, setArticle] = useState<Article | null>(null);
   const [relatedArticles, setRelatedArticles] = useState<Article[]>([]);
+  // const [isAuthenticated, setIsAuthenticated] = useState(false);
+
   // const router = useRouter();
   // const { id } = router.query;
 
@@ -57,6 +59,8 @@ export default function ReadBlog() {
     };
     fetchArticle();
   }, [id]);
+
+  
 
   useEffect(() => {
     const fetchRelatedArticles = async () => {
@@ -195,7 +199,7 @@ export default function ReadBlog() {
         <BlogEvent />
       </div>
 
-      <div>
+      <div className="mb-20">
         <Comment blogId={id} />
       </div>
 
