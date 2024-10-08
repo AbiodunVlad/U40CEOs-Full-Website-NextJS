@@ -58,7 +58,7 @@ export default function ScheduleACall() {
 
         <div className="flex sm:flex-row flex-col text-black items-center text-base sm:text-2xl justify-center  mb-10">
           {" "}
-          <Calendly url="https://calendly.com/omonijoabiodun/30min" />
+          <Calendly url="https://calendly.com/under40ceos/one-on-one-meeting" />
         </div>
 
         {/* <div className="flex sm:flex-row flex-col text-black items-center text-base sm:text-2xl justify-center  mb-10">

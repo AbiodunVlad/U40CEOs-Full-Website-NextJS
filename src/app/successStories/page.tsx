@@ -29,6 +29,7 @@ type Stories = {
 export default function SuccessStories() {
   const [stories, setStories] = useState<Stories[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [showOverlay, setShowOverlay] = useState(false);
 
   useEffect(() => {
     async function fetchStories() {
@@ -404,9 +405,114 @@ export default function SuccessStories() {
           impact others with your story? we’d love to hear from you
         </p>
 
-        <button className="text-white text-sm font-bold bg-blue-600 rounded-full py-4 px-10 uppercase">
+        <button
+          className="text-white text-sm font-bold bg-blue-600 rounded-full py-4 px-10 uppercase"
+          onClick={() => setShowOverlay(true)}
+        >
           Tell Your Story
         </button>
+
+        <div>
+          {showOverlay && (
+            <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+              <div className="bg-white rounded-lg p-8 w-96">
+                {" "}
+                <h2 className="text-2xl font-bold mb-4">
+                  Share Your Success Story
+                </h2>
+                <form>
+                  <div className="mb-4">
+                    <label className="block text-gray-700 text-sm font-bold mb-2">
+                      First Name
+                    </label>
+                    <input
+                      type="text"
+                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    />
+                  </div>
+
+                  <div className="mb-4">
+                    <label className="block text-gray-700 text-sm font-bold mb-2">
+                      Last Name
+                    </label>
+                    <input
+                      type="text"
+                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    />
+                  </div>
+
+                  <div className="mb-4">
+                    <label className="block text-gray-700 text-sm font-bold mb-2">
+                      Role
+                    </label>
+                    <input
+                      type="text"
+                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    />
+                  </div>
+
+                  <div className="mb-4">
+                    <label className="block text-gray-700 text-sm font-bold mb-2">
+                      Company
+                    </label>
+                    <input
+                      type="text"
+                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    />
+                  </div>
+
+                  <div className="mb-4">
+                    <label className="block text-gray-700 text-sm font-bold mb-2">
+                      Touchpoint
+                    </label>
+                    <input
+                      type="text"
+                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    />
+                  </div>
+
+                  <div className="mb-4">
+                    <label className="block text-gray-700 text-sm font-bold mb-2">
+                      Topic
+                    </label>
+                    <input
+                      type="text"
+                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    />
+                  </div>
+
+                  <div className="mb-6">
+                    <label className="block text-gray-700 text-sm font-bold mb-2">
+                      Story
+                    </label>
+                    <textarea
+                      className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      rows={4}
+                    ></textarea>
+                  </div>
+
+                  {/* Submit Button */}
+                  <div className="flex items-center justify-between">
+                    <button
+                      type="submit"
+                      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    >
+                      Submit
+                    </button>
+
+                    <button
+                      type="button"
+                      className="text-red-500 hover:text-red-700"
+                      onClick={() => setShowOverlay(false)}
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
       <TVseries />
       <Footer />

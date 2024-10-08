@@ -14,11 +14,13 @@ export default function OurWorks() {
           <h6 className="text-base sm:text-2xl text-black font-bold mb-3">
             Drive Your Ambition
           </h6>
+
           <div className="flex flex-row gap-3 mb-3">
             <p className="text-xs text-black">with</p>
             <Image src="/icons/tinyMitsu.svg" alt="" width={20} height={20} />
             <Image src="/icons/tinySam.svg" alt="" width={40} height={20} />
           </div>
+
           <p className="text-base sm:text-2xl text-black leading-5">
             This entertaining series showcases members of Under 40 CEOs having a
             ride with influential industry leaders, while gaining invaluable
@@ -31,7 +33,7 @@ export default function OurWorks() {
 
         <div className="w-full h-full md:w-3/5">
           <iframe
-            src="https://www.youtube.com/embed/6VSyCoBCzXY?si=Atwhzufq9IBnufba"
+            src="https://www.youtube.com/embed/videoseries?si=k5SDeMUYiQtT2AZo&amp;list=PLAF_Yddv4xV1chWYPVFb5jToM5-TLJLV1"
             className="w-full h-full"
             style={{ minHeight: "100%" }}
           />
@@ -41,7 +43,7 @@ export default function OurWorks() {
       <div className="flex flex-col md:flex-row gap-10 items-center justify-center mb-10 sm:mb-16 md:mb-20 h-96">
         <div className="w-full md:w-3/5 h-full">
           <iframe
-            src="https://www.youtube.com/embed/6VSyCoBCzXY?si=Atwhzufq9IBnufba"
+            src="https://www.youtube.com/embed/videoseries?si=ctHcZ0ORyXkld58D&amp;list=PLAF_Yddv4xV2RL8zXWhpIQIiOdouz_ku2"
             className="w-full h-full"
           />
         </div>
@@ -90,7 +92,7 @@ export default function OurWorks() {
 
         <div className="w-full md:w-3/5 h-full">
           <iframe
-            src="https://www.youtube.com/embed/6VSyCoBCzXY?si=Atwhzufq9IBnufba"
+            src="https://www.youtube.com/embed/videoseries?si=WqKYM7tTZdrT91d0&amp;list=PLAF_Yddv4xV2ncigjb9VODlmWn8u5FHe2"
             className="w-full h-full"
           />
         </div>
