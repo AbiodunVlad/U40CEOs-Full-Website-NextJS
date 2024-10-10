@@ -353,7 +353,10 @@ export default function SingleEvent() {
       {/* {isOverlayVisible && <RegisterOverlay onClose={closeOverlay} />} */}
 
       {overlayType === "register" && (
-        <RegisterOverlay onClose={closeOverlay} onRegister={handleRegister} />
+        <RegisterOverlay
+          onClose={closeOverlay}
+          // onRegister={handleRegister}
+        />
       )}
       {overlayType === "pay" && <PayOverlay onClose={closeOverlay} />}
       <Footer />
