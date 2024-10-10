@@ -1,9 +1,28 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import RegisterOverlay from "@/components/RegisterOverlay";
+import { useRouter } from "next/navigation";
 
 export default function FreeCourses() {
+  const [showRegisterOverlay, setShowRegisterOverlay] = useState(false);
+  const router = useRouter();
+
+  const handleEnrollment = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    setShowRegisterOverlay(true);
+  };
+
+  const handleOverlayClose = () => {
+    setShowRegisterOverlay(false);
+  };
+
+  const handleRegister = () => {
+    // router.push("/resources");
+  };
+
   return (
     <div className="flex flex-col items-center justify-center bg-slate-100 text-center pb-20 px-5 overflow-hidden">
       <div className="flex flex-row">
@@ -24,10 +43,11 @@ export default function FreeCourses() {
         <br /> strategies and relatable case studies from our courses
       </p>
 
-      <Link href="/resources">
+      <Link href="/RegisterOverlay">
         <button
           className="flex sm:self-center self-stretch py-4 px-7 rounded-full text-white text-xs font-bold"
           style={{ backgroundColor: "#9B05E2" }}
+          onClick={handleEnrollment}
         >
           ENROLL NOW
         </button>
@@ -40,6 +60,13 @@ export default function FreeCourses() {
         <Image src="/icons/growImg10.svg" alt="" width={150} height={150} />
         <Image src="/icons/growImg11.svg" alt="" width={150} height={150} />
       </div>
+
+      {showRegisterOverlay && (
+        <RegisterOverlay
+          onClose={handleOverlayClose}
+          // onRegister={handleRegister}
+        />
+      )}
     </div>
   );
 }

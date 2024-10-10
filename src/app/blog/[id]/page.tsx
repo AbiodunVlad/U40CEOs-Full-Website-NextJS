@@ -60,8 +60,6 @@ export default function ReadBlog() {
     fetchArticle();
   }, [id]);
 
-  
-
   useEffect(() => {
     const fetchRelatedArticles = async () => {
       if (id) {
@@ -70,7 +68,10 @@ export default function ReadBlog() {
           console.log("More blog posts here.", res.data.content);
 
           if (Array.isArray(res.data.content)) {
-            setRelatedArticles(res.data.content.slice(0, 4));
+            const filteredArticles = res.data.content.filter(
+              (article: Article) => article.id !== id
+            );
+            setRelatedArticles(filteredArticles.slice(0, 4));
           }
         } catch (error) {
           console.error("Failed to fetch related articles:", error);

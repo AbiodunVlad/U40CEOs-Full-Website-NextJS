@@ -5,8 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import RegisterOverlay from "../RegisterOverlay";
-import PayOverlay from "../PayOverlay";
+import RegisterOverlay from "../../../../components/RegisterOverlay";
+import PayOverlay from "../../../../components/PayOverlay";
 
 type UpcomingEvents = {
   id: number;

@@ -5,8 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+
 import { getSuccessStories } from "../../../../pages/api/auth";
 import BecomeAMember from "@/components/BecomeAMember";
+import PayOverlay from "@/components/PayOverlay";
 
 type Stories = {
   id: string;
@@ -29,9 +32,12 @@ type Stories = {
 export default function IndividualStories() {
   const [story, setStory] = useState<Stories | null>(null);
   const [moreStories, setMoreStories] = useState<Stories[]>([]);
+  const [showPayOverlay, setShowPayOverlay] = useState(false);
 
   const params = useParams();
   const id = params?.id as string;
+
+  const router = useRouter();
 
   useEffect(() => {
     const fetchStory = async () => {
@@ -114,6 +120,24 @@ export default function IndividualStories() {
   //   };
   //   fetchMoreStories();
   // }, [id]);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const authStatus = localStorage.getItem("isAuthenticated");
+
+    if (authStatus !== "true") {
+      localStorage.setItem("previousPage", window.location.pathname);
+      router.push("/login");
+      return;
+    }
+
+    setShowPayOverlay(true);
+  };
+
+  const handleOverlayClose = () => {
+    setShowPayOverlay(false);
+  };
 
   return (
     <div className="overflow-hidden">
@@ -214,10 +238,10 @@ export default function IndividualStories() {
         <div className="w-full flex lg:flex-col flex-row gap-3 mb-3">
           <div className="grid lg:grid-cols-3 px-5 xl:px-20 md:w-full justify-between gap-5 xl:gap-28">
             {moreStories.length > 0 ? (
-              moreStories.slice(0, 3).map((story, index) => (
+              moreStories.map((story) => (
                 <Link
-                  key={index}
-                  href={`/successStories/${index}`}
+                  key={story.id}
+                  href={`/successStories/${story.id}`}
                   className="xl:mb-20 mb-10 w-full h-full shadow-lg"
                 >
                   <div className="w-full h-1/3 bg-gradient-to-r from-pink-600 to-purple-600"></div>
@@ -317,13 +341,19 @@ export default function IndividualStories() {
               href="/Events"
               className="flex sm:self-start self-center mt-auto"
             >
-              <button className="bg-pink-600 text-lg text-white text-center py-4 px-16 rounded-full">
+              <button
+                type="submit"
+                onClick={handleSubmit}
+                className="bg-pink-600 text-lg text-white text-center py-4 px-16 rounded-full"
+              >
                 BOOK NOW
               </button>
             </Link>
           </div>
         </div>
       </div>
+
+      {showPayOverlay && <PayOverlay onClose={handleOverlayClose} />}
       <Footer />
     </div>
   );

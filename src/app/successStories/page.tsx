@@ -37,6 +37,10 @@ export default function SuccessStories() {
         // const res = await fetch("/api/successStories");
         const res = await getSuccessStories();
 
+        if (!res || !res.data || !Array.isArray(res.data.content)) {
+          throw new Error("Unexpected response format");
+        }
+
         // if (!res.ok) {
         //   throw new Error("Network response was bad!");
         // }
@@ -63,6 +67,25 @@ export default function SuccessStories() {
         }
       }
     }
+
+    // async function fetchStories() {
+    //   try {
+    //     const res = await getSuccessStories();
+
+    //     if (!res || !res.data || !Array.isArray(res.data.content)) {
+    //       throw new Error("Unexpected response format");
+    //     }
+
+    //     setStories(res.data.content);
+    //   } catch (error) {
+    //     if (error instanceof Error) {
+    //       console.error("Failed to fetch stories:", error.message);
+    //     } else {
+    //       console.error("An unknown error occurred");
+    //     }
+    //     setStories([]); // Ensure stories are reset if an error occurs
+    //   }
+    // }
     fetchStories();
   }, []);
 
@@ -192,16 +215,14 @@ export default function SuccessStories() {
       </div>
 
       <div className="grid lg:grid-cols-3 sm:px-20 px-5 w-full justify-center items-center gap-10 lg:gap-28 md:mb-20">
-        {firstHalfItems.map((story, index) => (
-          <div
-            key={index}
+        {firstHalfItems.map((story) => (
+          <Link
+            href={`/successStories/${story.id}`}
+            key={story.id}
             className="flex flex-col w-full border items-center h-full mb-10 shadow-2xl"
           >
             <div className="w-full h-40 bg-gradient-to-r from-pink-600 to-purple-600"></div>
-            <Link
-              href={`/successStories/${story.id}`}
-              className="w-full h-auto"
-            >
+            <div className="w-full h-auto">
               <div className="w-full h-full py-5 px-3">
                 <p className="text-black text-lg md:text-2xl font-bold mb-0">
                   {story.firstName} {story.lastName}
@@ -223,8 +244,8 @@ export default function SuccessStories() {
                   {story.body}
                 </p>
               </div>
-            </Link>
-          </div>
+            </div>
+          </Link>
         ))}
       </div>
 
@@ -251,16 +272,14 @@ export default function SuccessStories() {
       )}
 
       <div className="grid lg:grid-cols-3 sm:px-20 px-5 w-full justify-center items-center gap-10 lg:gap-28 md:mb-20">
-        {secondHalfItems.map((story, index) => (
-          <div
-            key={index}
+        {secondHalfItems.map((story) => (
+          <Link
+            href={`/successStories/${story.id}`}
+            key={story.id}
             className="flex flex-col w-full border items-center h-full mb-10 shadow-2xl"
           >
             <div className="w-full h-40 bg-gradient-to-r from-pink-600 to-purple-600"></div>
-            <Link
-              href={`/successStories/${story.id}`}
-              className="w-full h-auto"
-            >
+            <div className="w-full h-auto">
               <div className="w-full h-full px-3 py-5">
                 <p className="text-black text-lg md:text-2xl font-bold mb-">
                   {story.firstName} {story.lastName}
@@ -282,8 +301,8 @@ export default function SuccessStories() {
                   {story.body}
                 </p>
               </div>
-            </Link>
-          </div>
+            </div>
+          </Link>
         ))}
       </div>
 
