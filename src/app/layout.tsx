@@ -3,6 +3,10 @@ import { Inter, Figtree, Squada_One } from "next/font/google";
 import "./globals.css";
 import { ChakraProvider } from "@chakra-ui/react";
 
+import { store } from "@/store";
+import { Provider } from "react-redux";
+import ReduxProvider from "./ReduxProvider";
+
 // const inter = Inter({ subsets: ["latin"] });
 
 const figtree = Figtree({
@@ -26,7 +30,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={figtree.className}>
-        <ChakraProvider>{children}</ChakraProvider>
+        <ReduxProvider>
+          <ChakraProvider>{children}</ChakraProvider>
+        </ReduxProvider>
       </body>
     </html>
   );
