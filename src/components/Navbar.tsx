@@ -8,22 +8,27 @@ import {
   faBars,
   faTimes,
   faBagShopping,
+  faUser,
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
 
   useEffect(() => {
-    // To check if user is signed in when component mounts
     const authStatus = localStorage.getItem("isAuthenticated");
-    setIsAuthenticated(!!authStatus); //set to true if authStatus exists
+    setIsAuthenticated(!!authStatus);
   }, []);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const toggleDropdown = () => {
+    setDropdownOpen(!dropdownOpen);
   };
 
   const isActive = (path: any) => (pathname === path ? "text-purple-500" : "");
@@ -32,6 +37,7 @@ export default function Navbar() {
     try {
       localStorage.removeItem("isAuthenticated");
       setIsAuthenticated(false);
+      setDropdownOpen(false);
       // sessionStorage.removeItem("authToken");
       // router.push("/login");
     } catch (error) {
@@ -40,7 +46,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="bg-white flex flex-col lg:flex-row items-center justify-between px-4 py-2 lg:px-20 lg:py-4 shadow-lg overflow-hidden">
+    <div className="bg-white flex flex-col lg:flex-row items-center justify-between px-4 py-2 lg:px-20 lg:py-4 shadow-lg ">
       <div className="flex justify-between w-full lg:w-auto">
         <Link href="/home">
           {" "}
@@ -136,12 +142,33 @@ export default function Navbar() {
         </Link>
 
         {isAuthenticated ? (
-          <button
-            onClick={logout}
-            className="font-medium text-xxs text-center px-6 py-3 border border-pink-400 rounded-full text-pink-400"
-          >
-            Signout
-          </button>
+          <div className="relative">
+            <button
+              onClick={toggleDropdown}
+              className="flex items-center gap-2 font-medium text-xxs text-center px-6 py-3 border border-pink-400 rounded-full text-pink-400"
+            >
+              <FontAwesomeIcon icon={faUser} size="lg" />
+            </button>
+
+            {dropdownOpen && (
+              <div
+                className="absolute z-50 right-0 mt-2 w-48 bg-white border border-gray-300 rounded shadow-lg"
+                style={{ top: "100%" }}
+              >
+                <Link href="/profile">
+                  <div className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                    Profile
+                  </div>
+                </Link>
+                <div
+                  onClick={logout}
+                  className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+                >
+                  Signout
+                </div>
+              </div>
+            )}
+          </div>
         ) : (
           <Link href="/login">
             <button className="font-medium text-xxs text-center px-6 py-3 border border-pink-400 rounded-full text-pink-400">
