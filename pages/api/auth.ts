@@ -233,3 +233,21 @@ export const getTestimonials = async (): Promise<any> => {
     throw error;
   }
 };
+
+// FOR SAVING USER PROFILE TO THE BACKEND
+// const handleSave = async () => {
+//   try {
+//     const response = await fetch('/api/user/update', {
+//       method: 'POST',
+//       headers: {
+//         'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify(formData),
+//     });
+//     if (response.ok) {
+//       alert("Profile updated successfully!");
+//     }
+//   } catch (error) {
+//     console.error("Error updating profile:", error);
+//   }
+// };

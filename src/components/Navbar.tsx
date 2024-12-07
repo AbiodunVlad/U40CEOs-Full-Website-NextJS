@@ -45,6 +45,10 @@ export default function Navbar() {
     }
   };
 
+  const profile = () => {
+    router.push("/userProfile");
+  };
+
   return (
     <div className="bg-white flex flex-col lg:flex-row items-center justify-between px-4 py-2 lg:px-20 lg:py-4 shadow-lg ">
       <div className="flex justify-between w-full lg:w-auto">
@@ -155,7 +159,7 @@ export default function Navbar() {
                 className="absolute z-50 right-0 mt-2 w-48 bg-white border border-gray-300 rounded shadow-lg"
                 style={{ top: "100%" }}
               >
-                <Link href="/profile">
+                <Link href="/userProfile">
                   <div className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
                     Profile
                   </div>

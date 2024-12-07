@@ -107,7 +107,7 @@ export default function Login() {
           <label
             htmlFor="email"
             className={`absolute left-2 top-4 text-gray-500 pointer-events-none transition-all transform origin-left ${
-              email ? "-translate-y-7 scale-75" : ""
+              email ? "-translate-y-9 scale-75" : ""
             }`}
           >
             Email
@@ -124,7 +124,7 @@ export default function Login() {
           <label
             htmlFor="password"
             className={`absolute left-2 top-4 text-gray-500 pointer-events-none transition-all transform origin-left
-      ${password ? "-translate-y-7 scale-75" : ""}`}
+      ${password ? "-translate-y-9 scale-75" : ""}`}
           >
             Password
           </label>
