@@ -9,6 +9,7 @@ interface UserState {
   contactNumber?: string;
   city?: string;
   state?: string;
+  profileImage?: string;
 }
 
 const initialState: UserState = {
@@ -31,6 +32,8 @@ const userSlice = createSlice({
         state.contactNumber = action.payload.contactNumber;
       if (action.payload.city) state.city = action.payload.city;
       if (action.payload.state) state.state = action.payload.state;
+      if (action.payload.profileImage)
+        state.profileImage = action.payload.profileImage;
     },
     clearUser: () => initialState,
     updateUser: (state, action: PayloadAction<Partial<UserState>>) => {
@@ -43,6 +46,8 @@ const userSlice = createSlice({
         state.contactNumber = updates.contactNumber;
       if (updates.city !== undefined) state.city = updates.city;
       if (updates.state !== undefined) state.state = updates.state;
+      if (updates.profileImage !== undefined)
+        state.profileImage = updates.profileImage;
     },
   },
 });

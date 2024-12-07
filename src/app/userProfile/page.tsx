@@ -18,11 +18,23 @@ export default function UserProfile() {
     city: "",
     state: "",
     password: "",
+    profileImage: user.profileImage || "",
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+  };
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setFormData({ ...formData, profileImage: reader.result as string });
+      };
+      reader.readAsDataURL(file);
+    }
   };
 
   const handleSave = () => {
@@ -39,6 +51,7 @@ export default function UserProfile() {
         contactNumber: formData.contactNumber,
         city: formData.city,
         state: formData.state,
+        profileImage: formData.profileImage,
       })
     );
     alert("Profile updated successfully");
@@ -48,8 +61,21 @@ export default function UserProfile() {
     <div className="flex flex-col justify-start">
       <div className="flex flex-row items-center justify-between mb-20">
         <h1 className="text-4xl lg:text-5xl font-bold">Edit Profile</h1>
-        <Image src="images/vlad.svg" alt="" width={70} height={70} />
+
+        <Image
+          src={formData.profileImage || "/images/defaultImg.svg"}
+          alt="profileImg"
+          width={70}
+          height={70}
+          className="object-cover"
+        />
       </div>
+      <input
+        type="file"
+        accept="image/*"
+        onChange={handleImageChange}
+        className="object-cover"
+      />
 
       <div className="flex flex-col mb-16">
         <div className="flex flex-col mb-5">
