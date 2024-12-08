@@ -105,7 +105,7 @@ export default function Signup() {
           <label
             htmlFor="fullName"
             className={`absolute left-2 top-4 text-gray-500 pointer-events-none transition-all transform origin-left ${
-              fullName ? "-translate-y-7 scale-75" : ""
+              fullName ? "-translate-y-9 scale-75" : ""
             }`}
           >
             Full Name
@@ -125,7 +125,7 @@ export default function Signup() {
           <label
             htmlFor="email"
             className={`absolute left-2 top-4 text-gray-500 pointer-events-none transition-all transform origin-left ${
-              email ? "-translate-y-7 scale-75" : ""
+              email ? "-translate-y-9 scale-75" : ""
             }`}
           >
             Email
@@ -150,7 +150,7 @@ export default function Signup() {
           <label
             htmlFor="password"
             className={`absolute left-2 top-4 text-gray-500 pointer-events-none transition-all transform origin-left ${
-              password ? "-translate-y-7 scale-75" : ""
+              password ? "-translate-y-9 scale-75" : ""
             }`}
           >
             Password
@@ -175,7 +175,7 @@ export default function Signup() {
           <label
             htmlFor="confirmPassword"
             className={`absolute left-2 top-4 text-gray-500 pointer-events-none transition-all transform origin-left ${
-              confirmPassword ? "-translate-y-7 scale-75" : ""
+              confirmPassword ? "-translate-y-9 scale-75" : ""
             }`}
           >
             Confirm Password
