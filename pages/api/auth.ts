@@ -264,29 +264,29 @@ export const updateUserProfile = () => {
       `Bearer ${store.getState().auth?.accessToken}`
     );
 
-    const raw = JSON.stringify({
-      firstName: "Inno",
-      lastName: "Doe",
-      address: "456 Alagbole Main St",
-      contactNumber: "123-456-7890",
-      city: "Anytown",
-      state: "CA",
-    });
+    // const raw = JSON.stringify({
+    //   firstName: "Inno",
+    //   lastName: "Doe",
+    //   address: "456 Alagbole Main St",
+    //   contactNumber: "123-456-7890",
+    //   city: "Anytown",
+    //   state: "CA",
+    // });
 
-    const requestOptions: RequestInit = {
-      method: "PATCH",
-      headers: myHeaders,
-      body: raw,
-      redirect: "follow",
-    };
+    // const requestOptions: RequestInit = {
+    //   method: "PATCH",
+    //   headers: myHeaders,
+    //   body: raw,
+    //   redirect: "follow",
+    // };
 
-    fetch(
-      "http://93.115.23.43:8339/api/users/update-user-details",
-      requestOptions
-    )
-      .then((response) => response.text())
-      .then((result) => console.log(result))
-      .catch((error) => console.error(error));
+    // fetch(
+    //   "http://93.115.23.43:8339/api/users/update-user-details",
+    //   requestOptions
+    // )
+    //   .then((response) => response.text())
+    //   .then((result) => console.log(result))
+    //   .catch((error) => console.error(error));
   } catch (error) {
     console.log("error", error);
   }
