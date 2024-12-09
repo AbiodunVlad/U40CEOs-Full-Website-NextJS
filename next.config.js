@@ -43,6 +43,14 @@ const nextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: 'http://93.115.23.43:8339/api/:path*', // Proxy to the backend
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

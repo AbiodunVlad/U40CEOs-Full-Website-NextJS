@@ -4,12 +4,14 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import SideImage from "@/components/SideImage";
-import { loginUser } from "../../../pages/api/auth";
+import { getUserProfile, loginUser } from "../../../pages/api/auth";
 import dynamic from "next/dynamic";
 import Loading from "@/components/Loading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEyeLowVision, faEye } from "@fortawesome/free-solid-svg-icons";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
+import { setAccessToken } from "@/store/authSlice";
+import { useDispatch } from "react-redux";
 
 const LazyHomePage = dynamic(() => import("../home/page"), {
   loading: () => <Loading />,
@@ -25,6 +27,8 @@ export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
 
   const router = useRouter();
+  
+  const dispatch = useDispatch();
 
   const [user, setUser] = useState({
     keepSignedIn: false,
@@ -44,6 +48,14 @@ export default function Login() {
         email,
         password,
       });
+      
+      console.log('login response', loginResponse);
+      dispatch(setAccessToken(loginResponse?.data?.accessToken));
+      
+      if (loginResponse?.status ===  true) {
+        const getProfileResponse = await getUserProfile();
+        console.log('get profile response', getProfileResponse?.data);
+      }
 
       localStorage.setItem("isAuthenticated", "true");
 

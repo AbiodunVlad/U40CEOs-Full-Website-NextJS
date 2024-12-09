@@ -5,6 +5,7 @@ import { RootState } from "@/store";
 import { updateUser, clearUser } from "@/store/userSlice";
 import Image from "next/image";
 import { useState } from "react";
+import { updateProfile, updateUserProfile } from "../../../pages/api/auth";
 
 export default function UserProfile() {
   const user = useSelector((state: RootState) => state.user);
@@ -37,24 +38,43 @@ export default function UserProfile() {
     }
   };
 
-  const handleSave = () => {
+  const handleSave = async () => {
     if (!formData.fullName || !formData.email) {
       alert("Full Name and Email are required");
       return;
     }
-    dispatch(
-      updateUser({
-        name: formData.fullName,
-        email: formData.email,
-        password: formData.password,
-        address: formData.address,
-        contactNumber: formData.contactNumber,
-        city: formData.city,
-        state: formData.state,
-        profileImage: formData.profileImage,
-      })
-    );
-    alert("Profile updated successfully");
+    const profileData = {
+      name: formData.fullName,
+      email: formData.email,
+      password: formData.password,
+      address: formData.address,
+      contactNumber: formData.contactNumber,
+      city: formData.city,
+      state: formData.state,
+      profileImage: formData.profileImage,
+    };
+    console.log('profileData', profileData);
+    
+  
+      try {
+        const updateProfileResponse = await updateProfile(profileData);
+        
+        console.log('updateProfileResponse here', updateProfileResponse);
+        // dispatch(setAccessToken(loginResponse?.data?.accessToken));
+        
+        if (updateProfileResponse?.status ===  true) {
+          // const getProfileResponse = await getUserProfile();
+          console.log('get profile response', updateProfileResponse?.data);
+          
+        }
+        
+      } catch (error) {
+        if (error instanceof Error) {
+          // setError(error.message);
+        }
+      } finally {
+        // setLoading(false);
+      }
   };
 
   return (
@@ -70,12 +90,12 @@ export default function UserProfile() {
           className="object-cover"
         />
       </div>
-      <input
+      {/* <input
         type="file"
         accept="image/*"
         onChange={handleImageChange}
         className="object-cover"
-      />
+      /> */}
 
       <div className="flex flex-col mb-16">
         <div className="flex flex-col mb-5">
@@ -146,7 +166,7 @@ export default function UserProfile() {
           </div>
         </div>
 
-        <div className="flex flex-col">
+        {/* <div className="flex flex-col">
           <strong>Password</strong>
           <input
             type="password"
@@ -155,7 +175,7 @@ export default function UserProfile() {
             onChange={handleInputChange}
             className="w-full border border-solid border-black px-3 py-4"
           />
-        </div>
+        </div> */}
       </div>
 
       <div className="flex flex-row items-center xl:justify-start justify-between xl:gap-10">

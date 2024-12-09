@@ -1,5 +1,7 @@
 // const BaseURL = "https://u4cbackendservices.onrender.com/api";
 const BaseURL = "http://93.115.23.43:8339/api";
+import { store } from "@/store";
+const token = store.getState().auth.accessToken;
 
 interface UserData {
   fullName?: string;
@@ -251,3 +253,86 @@ export const getTestimonials = async (): Promise<any> => {
 //     console.error("Error updating profile:", error);
 //   }
 // };
+
+export const updateUserProfile = () => {
+  try {
+    console.log('auth from store', store.getState().auth?.accessToken);
+    const myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Authorization", `Bearer ${store.getState().auth?.accessToken}`);
+
+    const raw = JSON.stringify({
+      "firstName": "Inno",
+      "lastName": "Doe",
+      "address": "456 Alagbole Main St",
+      "contactNumber": "123-456-7890",
+      "city": "Anytown",
+      "state": "CA"
+    });
+
+    const requestOptions = {
+      method: "PATCH",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow"
+    };
+
+    fetch("http://93.115.23.43:8339/api/users/update-user-details", requestOptions)
+      .then((response) => response.text())
+      .then((result) => console.log(result))
+      .catch((error) => console.error(error));
+    
+  } catch (error) {
+    console.log('error', error);
+    
+  }
+}
+
+export const getUserProfile = async (): Promise<any> => {
+
+  try {
+    const response = await fetch(`${BaseURL}/users`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${store.getState().auth?.accessToken}`,
+      },
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      // console.error("Testimonials Error:", errorData);
+      throw new Error(errorData.message || "Can't get profile.");
+    }
+
+    return await response.json();
+  } catch (error) {
+    // console.error("No Testimonias.", error);
+    throw error;
+  }
+};
+
+
+
+export const updateProfile = async (profileData: any): Promise<any> => {
+  try {
+    const response = await fetch(`${BaseURL}/users/update-user-details`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${store.getState().auth?.accessToken}`,
+      },
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      // console.error("Creating Testimonials Error:", errorData);
+      throw new Error(errorData.message || "Can't post Testimonials.");
+    }
+
+    return await response.json();
+  } catch (error) {
+    // console.error("Could Not Create Testimonials.", error);
+    throw error;
+  }
+};
