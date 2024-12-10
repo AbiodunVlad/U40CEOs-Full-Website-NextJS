@@ -7,8 +7,8 @@ import Link from "next/link";
 export default function Courses() {
   return (
     <div className="flex flex-col pt-10 md:pt-20">
-      <div className="bg-purple-500 px-10 lg:px-40 py-10 flex flex-col lg:flex-row justify-between">
-        <div className="flex flex-col justify-between lg:h-80 mb-5 lg:mb-0">
+      <div className="bg-purple-500 px-3 lg:px-40 py-10 flex flex-col lg:flex-row justify-between">
+        <div className="flex flex-col justify-between items-center lg:items-start text-center lg:text-start lg:h-80 mb-5 lg:mb-0">
           <div className="flex-grow">
             <h5 className="text-white text-4xl lg:text-5xl font-extrabold mb-3">
               Welcome to our
@@ -27,10 +27,10 @@ export default function Courses() {
           </Link>
         </div>
 
-        <div>
+        <div className="lg:w-1/2">
           <iframe
             src="https://www.youtube.com/embed/6VSyCoBCzXY?si=Atwhzufq9IBnufba"
-            className="w-full lg:w-96 h-80"
+            className="w-full lg:w-full h-80"
           />
         </div>
       </div>

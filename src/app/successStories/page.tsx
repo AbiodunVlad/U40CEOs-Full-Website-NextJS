@@ -49,14 +49,14 @@ export default function SuccessStories() {
         // const data = await res.json();
         // console.log("1. Here are your stories:", res);
         // console.log("2. Here are your stories:", res.data);
-        console.log("Here are your stories:", res.data.content);
+        // console.log("Here are your stories:", res.data.content);
 
         if (Array.isArray(res.data.content)) {
-          console.log("Data is an array, setting stories state.");
+          // console.log("Data is an array, setting stories state.");
           setStories(res.data.content);
-          console.log("Setting stories state:", res);
+          // console.log("Setting stories state:", res);
         } else {
-          console.log("Data is not an array, setting empty stories.");
+          // console.log("Data is not an array, setting empty stories.");
           setStories([]);
         }
       } catch (error) {

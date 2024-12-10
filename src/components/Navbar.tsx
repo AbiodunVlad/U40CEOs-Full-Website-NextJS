@@ -15,12 +15,18 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [profileImage, setProfileImage] = useState<string | null>(null);
   const pathname = usePathname();
   const router = useRouter();
 
   useEffect(() => {
     const authStatus = localStorage.getItem("isAuthenticated");
     setIsAuthenticated(!!authStatus);
+
+    const storedProfileImage = localStorage.getItem("profileImage");
+    if (storedProfileImage) {
+      setProfileImage(storedProfileImage);
+    }
   }, []);
 
   const toggleMenu = () => {
@@ -36,6 +42,7 @@ export default function Navbar() {
   const logout = async () => {
     try {
       localStorage.removeItem("isAuthenticated");
+      localStorage.removeItem("profileImage");
       setIsAuthenticated(false);
       setDropdownOpen(false);
       // sessionStorage.removeItem("authToken");
@@ -151,7 +158,20 @@ export default function Navbar() {
               onClick={toggleDropdown}
               className="flex items-center gap-2 font-medium text-xxs text-center px-6 py-3 border border-pink-400 rounded-full text-pink-400"
             >
-              <FontAwesomeIcon icon={faUser} size="lg" />
+              {profileImage ? (
+                <Image
+                  src={profileImage}
+                  alt="User Profile"
+                  layout="fill"
+                  objectFit="cover"
+                  objectPosition="center"
+                  // width={30}
+                  // height={30}
+                  className="rounded-full"
+                />
+              ) : (
+                <FontAwesomeIcon icon={faUser} size="lg" />
+              )}
             </button>
 
             {dropdownOpen && (

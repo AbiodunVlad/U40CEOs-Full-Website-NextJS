@@ -87,30 +87,30 @@ export const loginUser = async (userData: UserData): Promise<any> => {
   }
 };
 
-export const createSuccessStories = async (
-  successStories: SuccessStories
-): Promise<any> => {
-  try {
-    const response = await fetch(`${BaseURL}/success-stories`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(successStories),
-    });
+// export const createSuccessStories = async (
+//   successStories: SuccessStories
+// ): Promise<any> => {
+//   try {
+//     const response = await fetch(`${BaseURL}/success-stories`, {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify(successStories),
+//     });
 
-    if (!response.ok) {
-      const errorData = await response.json();
-      console.error("Creating Success Stories Error:", errorData);
-      throw new Error(errorData.message || "Can't post Success Stories.");
-    }
+//     if (!response.ok) {
+//       const errorData = await response.json();
+//       console.error("Creating Success Stories Error:", errorData);
+//       throw new Error(errorData.message || "Can't post Success Stories.");
+//     }
 
-    return await response.json();
-  } catch (error) {
-    console.error("Could Not Create Success Stories.", error);
-    throw error;
-  }
-};
+//     return await response.json();
+//   } catch (error) {
+//     console.error("Could Not Create Success Stories.", error);
+//     throw error;
+//   }
+// };
 
 export const getSuccessStories = async (): Promise<any> => {
   // const accessToken =
@@ -256,40 +256,43 @@ export const getTestimonials = async (): Promise<any> => {
 
 export const updateUserProfile = () => {
   try {
-    console.log('auth from store', store.getState().auth?.accessToken);
+    console.log("auth from store", store.getState().auth?.accessToken);
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
-    myHeaders.append("Authorization", `Bearer ${store.getState().auth?.accessToken}`);
+    myHeaders.append(
+      "Authorization",
+      `Bearer ${store.getState().auth?.accessToken}`
+    );
 
-    const raw = JSON.stringify({
-      "firstName": "Inno",
-      "lastName": "Doe",
-      "address": "456 Alagbole Main St",
-      "contactNumber": "123-456-7890",
-      "city": "Anytown",
-      "state": "CA"
-    });
+    // const raw = JSON.stringify({
+    //   firstName: "Inno",
+    //   lastName: "Doe",
+    //   address: "456 Alagbole Main St",
+    //   contactNumber: "123-456-7890",
+    //   city: "Anytown",
+    //   state: "CA",
+    // });
 
-    const requestOptions = {
-      method: "PATCH",
-      headers: myHeaders,
-      body: raw,
-      redirect: "follow"
-    };
+    // const requestOptions: RequestInit = {
+    //   method: "PATCH",
+    //   headers: myHeaders,
+    //   body: raw,
+    //   redirect: "follow",
+    // };
 
-    fetch("http://93.115.23.43:8339/api/users/update-user-details", requestOptions)
-      .then((response) => response.text())
-      .then((result) => console.log(result))
-      .catch((error) => console.error(error));
-    
+    // fetch(
+    //   "http://93.115.23.43:8339/api/users/update-user-details",
+    //   requestOptions
+    // )
+    //   .then((response) => response.text())
+    //   .then((result) => console.log(result))
+    //   .catch((error) => console.error(error));
   } catch (error) {
-    console.log('error', error);
-    
+    console.log("error", error);
   }
-}
+};
 
 export const getUserProfile = async (): Promise<any> => {
-
   try {
     const response = await fetch(`${BaseURL}/users`, {
       method: "GET",
@@ -311,8 +314,6 @@ export const getUserProfile = async (): Promise<any> => {
     throw error;
   }
 };
-
-
 
 export const updateProfile = async (profileData: any): Promise<any> => {
   try {
