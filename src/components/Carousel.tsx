@@ -35,7 +35,7 @@ export default function Carousel({
         }}
       >
         {slides.map((slide, index) => (
-          <div key={index} className="w-full flex-shrink-0">
+          <div key={index} className="w-full h-full flex-shrink-0">
             {slide}
           </div>
         ))}

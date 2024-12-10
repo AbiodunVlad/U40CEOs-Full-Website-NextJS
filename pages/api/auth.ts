@@ -87,30 +87,30 @@ export const loginUser = async (userData: UserData): Promise<any> => {
   }
 };
 
-export const createSuccessStories = async (
-  successStories: SuccessStories
-): Promise<any> => {
-  try {
-    const response = await fetch(`${BaseURL}/success-stories`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(successStories),
-    });
+// export const createSuccessStories = async (
+//   successStories: SuccessStories
+// ): Promise<any> => {
+//   try {
+//     const response = await fetch(`${BaseURL}/success-stories`, {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify(successStories),
+//     });
 
-    if (!response.ok) {
-      const errorData = await response.json();
-      console.error("Creating Success Stories Error:", errorData);
-      throw new Error(errorData.message || "Can't post Success Stories.");
-    }
+//     if (!response.ok) {
+//       const errorData = await response.json();
+//       console.error("Creating Success Stories Error:", errorData);
+//       throw new Error(errorData.message || "Can't post Success Stories.");
+//     }
 
-    return await response.json();
-  } catch (error) {
-    console.error("Could Not Create Success Stories.", error);
-    throw error;
-  }
-};
+//     return await response.json();
+//   } catch (error) {
+//     console.error("Could Not Create Success Stories.", error);
+//     throw error;
+//   }
+// };
 
 export const getSuccessStories = async (): Promise<any> => {
   // const accessToken =
