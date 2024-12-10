@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import BecomeAMember from "@/components/BecomeAMember";
 import Link from "next/link";
+import { WATCH_EPISODE_VIDEOS } from "../../../pages/api/courses";
 
 const ITEMS_PER_PAGE = 28;
 
@@ -39,7 +40,7 @@ export default function MediaFeatures() {
 
   const indexOfLastItem = currentPage * ITEMS_PER_PAGE;
   const indexOfFirstItem = indexOfLastItem - ITEMS_PER_PAGE;
-  const currentItems = courses.slice(indexOfFirstItem, indexOfLastItem);
+  const currentItems = WATCH_EPISODE_VIDEOS.slice(indexOfFirstItem, indexOfLastItem);
 
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
@@ -111,7 +112,7 @@ export default function MediaFeatures() {
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-5 w-full mb-7">
             {currentItems.map((course, index) => (
               <div key={index} className="flex flex-col items-center">
-                <iframe src={course.videoUrl} className="w-full h-48 mb-5" />
+                <iframe src={course.url} className="w-full h-48 mb-5" />
                 <p className="text-black text-sm font-bold mb-5">
                   {course.title}
                 </p>
