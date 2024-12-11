@@ -40,7 +40,10 @@ export default function MediaFeatures() {
 
   const indexOfLastItem = currentPage * ITEMS_PER_PAGE;
   const indexOfFirstItem = indexOfLastItem - ITEMS_PER_PAGE;
-  const currentItems = WATCH_EPISODE_VIDEOS.slice(indexOfFirstItem, indexOfLastItem);
+  const currentItems = WATCH_EPISODE_VIDEOS.slice(
+    indexOfFirstItem,
+    indexOfLastItem
+  );
 
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
