@@ -106,26 +106,32 @@ export default function UserProfile() {
         </div>
 
         <div className="flex flex-col mb-16">
-          <div className="flex flex-col mb-5">
-            <strong>Full Name</strong>
-            <input
+          <div className="flex flex-row mb-10">
+            <strong>Full Name: </strong>
+            <p className="text-black text-sm sm:text-lg font-bold">
+              {formData.fullName}
+            </p>
+            {/* <input
               type="text"
               name="fullName"
               value={formData.fullName}
               onChange={handleInputChange}
               className="w-full border border-solid border-black px-3 py-4 focus:outline-none"
-            />
+            /> */}
           </div>
 
-          <div className="flex flex-col mb-5">
-            <strong>Email</strong>{" "}
-            <input
+          <div className="flex flex-row mb-10">
+            <strong>Email: </strong>{" "}
+            <p className="text-black text-sm sm:text-lg font-bold">
+              {formData.email}
+            </p>
+            {/* <input
               type="email"
               name="email"
               value={formData.email}
               onChange={handleInputChange}
               className="w-full border border-solid border-black px-3 py-4 focus:outline-none"
-            />
+            /> */}
           </div>
 
           <div className="flex flex-col mb-5">
