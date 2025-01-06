@@ -1,5 +1,6 @@
 // const BaseURL = "https://u4cbackendservices.onrender.com/api";
-const BaseURL = "http://93.115.23.43:8339/api";
+// const BaseURL = "http://93.115.23.43:8339/api";
+const BaseURL = "https://u4c.circonspect.com";
 import { store } from "@/store";
 const token = store.getState().auth.accessToken;
 
@@ -91,7 +92,7 @@ export const loginUser = async (userData: UserData): Promise<any> => {
 //   successStories: SuccessStories
 // ): Promise<any> => {
 //   try {
-//     const response = await fetch(`${BaseURL}/success-stories`, {
+//     const response = await fetch(`${BaseURL}/api/success-stories`, {
 //       method: "POST",
 //       headers: {
 //         "Content-Type": "application/json",
@@ -117,7 +118,7 @@ export const getSuccessStories = async (): Promise<any> => {
   //   "eyJhbGciOiJIUzM4NCJ9.eyJpZCI6ImRjMzRhYWMzLWEyNTItNDJhMy1hOGI0LWE4ZTY2NjU3M2JiYiIsImVtYWlsIjoib3llYm9kZWlubm9jZW50QGdtYWlsLmNvbSIsInJvbGUiOiJVU0VSIiwic3ViIjoib3llYm9kZWlubm9jZW50QGdtYWlsLmNvbSIsImlhdCI6MTcyNjQ4MTQwMywiZXhwIjoxNzI2NzQwNjAzfQ.SLNkPCwOGRRhnCBlk9HviRr4jZ7AME5bSskVy1kzcIXpij9oFlgsVL-RezQTigVQ";
 
   try {
-    const response = await fetch(`${BaseURL}/success-stories`, {
+    const response = await fetch(`${BaseURL}/api/success-stories`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -143,7 +144,7 @@ export const getBlogPosts = async () => {
   // "eyJhbGciOiJIUzM4NCJ9.eyJpZCI6ImRjMzRhYWMzLWEyNTItNDJhMy1hOGI0LWE4ZTY2NjU3M2JiYiIsImVtYWlsIjoib3llYm9kZWlubm9jZW50QGdtYWlsLmNvbSIsInJvbGUiOiJVU0VSIiwic3ViIjoib3llYm9kZWlubm9jZW50QGdtYWlsLmNvbSIsImlhdCI6MTcyNjQ4MTQwMywiZXhwIjoxNzI2NzQwNjAzfQ.SLNkPCwOGRRhnCBlk9HviRr4jZ7AME5bSskVy1kzcIXpij9oFlgsVL-RezQTigVQ";
 
   try {
-    const response = await fetch(`${BaseURL}/blogposts`, {
+    const response = await fetch(`${BaseURL}/api/blogposts`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -169,7 +170,7 @@ export const getBlogPostBySlug = async (slug: string) => {
     "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6ImMxNDgxZGE2LWYyMjktNDM4OS04NjVlLWFkNGY1NWZhMDEwYiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwicm9sZSI6IkFETUlOIiwic3ViIjoiYWRtaW5AZW1haWwuY29tIiwiaWF0IjoxNzIzMjg0MjkzLCJleHAiOjE3MjM1NDM0OTN9.g9P5TNXllJusqfWQxs6BYwijAqZbvOxajiVQBXbRHPw";
 
   try {
-    const response = await fetch(`${BaseURL}/blogposts/${slug}`, {
+    const response = await fetch(`${BaseURL}/api/blogposts/${slug}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -190,7 +191,7 @@ export const getBlogPostBySlug = async (slug: string) => {
 
 export const postTestimonials = async (): Promise<any> => {
   try {
-    const response = await fetch(`${BaseURL}/testimonials`, {
+    const response = await fetch(`${BaseURL}/api/testimonials`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -215,7 +216,7 @@ export const getTestimonials = async (): Promise<any> => {
   // "eyJhbGciOiJIUzM4NCJ9.eyJpZCI6ImRjMzRhYWMzLWEyNTItNDJhMy1hOGI0LWE4ZTY2NjU3M2JiYiIsImVtYWlsIjoib3llYm9kZWlubm9jZW50QGdtYWlsLmNvbSIsInJvbGUiOiJVU0VSIiwic3ViIjoib3llYm9kZWlubm9jZW50QGdtYWlsLmNvbSIsImlhdCI6MTcyNjQ4MTQwMywiZXhwIjoxNzI2NzQwNjAzfQ.SLNkPCwOGRRhnCBlk9HviRr4jZ7AME5bSskVy1kzcIXpij9oFlgsVL-RezQTigVQ";
 
   try {
-    const response = await fetch(`${BaseURL}/testimonials?page=1&size=10`, {
+    const response = await fetch(`${BaseURL}/api/testimonials?page=1&size=10`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
