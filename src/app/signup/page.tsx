@@ -4,19 +4,22 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import SideImage from "@/components/SideImage";
-import { signupUser } from "../../../pages/api/auth";
+import { signupUser, verifySignUpOtp } from "../../../pages/api/auth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { faEyeLowVision, faEye } from "@fortawesome/free-solid-svg-icons";
+import OTP from "@/components/OTP";
 
 export default function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [fullName, setFullName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [showOTPPopup, setShowOTPPopup] = useState(false);
 
   const router = useRouter();
 
@@ -45,13 +48,58 @@ export default function Signup() {
     }
 
     try {
-      await signupUser({
-        fullName,
+      const response = await signupUser({
+        firstName,
+        lastName,
         email,
         password,
         confirmPassword,
       });
-      router.push("/login");
+      console.log("This is the response:", response);
+
+      if (response.status === true) {
+        console.log("Popup on the way.");
+        setShowOTPPopup(true);
+      } else {
+        console.log("Response not okay");
+
+        // const errorData = await response.json();
+        setError("Signup failed. Please try again.");
+        console.log("This is the errorData");
+      }
+    } catch (error) {
+      if (error instanceof Error) {
+        setError(error.message);
+      } else {
+        setError("Something went wrong!!!");
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleOTPVerify = async (otp: string) => {
+    console.log("OTP Verified:", otp);
+
+    try {
+      const response = await verifySignUpOtp(otp, email);
+      console.log("This is the response:", response);
+
+      if (response.status === true) {
+        setShowOTPPopup(false);
+        router.push("/login");
+
+        // Toast message required here
+
+        console.log("Popup on the way.");
+        setShowOTPPopup(true);
+      } else {
+        console.log("Response not okay");
+
+        // const errorData = await response.json();
+        setError("Signup failed. Please try again.");
+        console.log("This is the errorData");
+      }
     } catch (error) {
       if (error instanceof Error) {
         setError(error.message);
@@ -96,19 +144,39 @@ export default function Signup() {
           <input
             className="text-black w-full py-4 px-2 border border-red-300 rounded-lg focus:outline-none"
             placeholder=""
-            id="fullName"
+            id="firstName"
             type="text"
-            value={fullName}
-            onChange={(e) => setFullName(e.target.value)}
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
           />
 
           <label
-            htmlFor="fullName"
+            htmlFor="firstName"
             className={`absolute left-2 top-4 text-gray-500 pointer-events-none transition-all transform origin-left ${
-              fullName ? "-translate-y-9 scale-75" : ""
+              firstName ? "-translate-y-9 scale-75" : ""
             }`}
           >
-            Full Name
+            First Name
+          </label>
+        </div>
+
+        <div className="relative mb-5 w-full">
+          <input
+            className="text-black w-full py-4 px-2 border border-red-300 rounded-lg focus:outline-none"
+            placeholder=""
+            id="lastName"
+            type="text"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+          />
+
+          <label
+            htmlFor="lastName"
+            className={`absolute left-2 top-4 text-gray-500 pointer-events-none transition-all transform origin-left ${
+              lastName ? "-translate-y-9 scale-75" : ""
+            }`}
+          >
+            Last Name
           </label>
         </div>
 
@@ -231,6 +299,13 @@ export default function Signup() {
       >
         <SideImage />
       </div>
+
+      {showOTPPopup && (
+        <OTP
+          onVerify={handleOTPVerify}
+          onClose={() => setShowOTPPopup(false)}
+        />
+      )}
     </div>
   );
 }

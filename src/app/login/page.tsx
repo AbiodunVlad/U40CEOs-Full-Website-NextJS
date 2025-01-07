@@ -27,7 +27,7 @@ export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
 
   const router = useRouter();
-  
+
   const dispatch = useDispatch();
 
   const [user, setUser] = useState({
@@ -42,19 +42,21 @@ export default function Login() {
     setLoading(true);
     setError("");
 
+    // mitevo9094@myweblaw.com
+    // qwertyui
+
     try {
       const loginResponse = await loginUser({
-        fullName,
         email,
         password,
       });
-      
-      console.log('login response', loginResponse);
+
+      console.log("login response", loginResponse);
       dispatch(setAccessToken(loginResponse?.data?.accessToken));
-      
-      if (loginResponse?.status ===  true) {
+
+      if (loginResponse?.status === true) {
         const getProfileResponse = await getUserProfile();
-        console.log('get profile response', getProfileResponse?.data);
+        console.log("get profile response", getProfileResponse?.data);
       }
 
       localStorage.setItem("isAuthenticated", "true");

@@ -1,11 +1,12 @@
 // const BaseURL = "https://u4cbackendservices.onrender.com/api";
 // const BaseURL = "http://93.115.23.43:8339/api";
-const BaseURL = "https://u4c.circonspect.com";
+const BaseURL = "https://u4c.circonspect.com/api";
 import { store } from "@/store";
 const token = store.getState().auth.accessToken;
 
 interface UserData {
-  fullName?: string;
+  firstName?: string;
+  lastName?: string;
   email: string;
   password: string;
   confirmPassword?: string;
@@ -42,6 +43,32 @@ interface BlogPosts {
   body: string;
 }
 
+export const verifySignUpOtp = async (
+  otp: string,
+  email: string
+): Promise<any> => {
+  try {
+    const response = await fetch(`${BaseURL}/auth/verify-otp?email=${email}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ otp: otp }),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error("Invalid OTP:", errorData.data.message);
+      throw new Error(errorData.data.message || "Could not verify OTP.");
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error("Error verifying OTP, check your network:", error);
+    throw error;
+  }
+};
+
 export const signupUser = async (userData: UserData): Promise<any> => {
   try {
     const response = await fetch(`${BaseURL}/auth/sign-up`, {
@@ -54,8 +81,8 @@ export const signupUser = async (userData: UserData): Promise<any> => {
 
     if (!response.ok) {
       const errorData = await response.json();
-      console.error("Signup Error Response:", errorData);
-      throw new Error(errorData.message || "Could not sign you up.");
+      console.error("Signup Error Response:", errorData.data.message);
+      throw new Error(errorData.data.message || "Could not sign you up.");
     }
 
     return await response.json();
