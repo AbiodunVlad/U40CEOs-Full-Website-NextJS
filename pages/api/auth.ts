@@ -343,6 +343,40 @@ export const getUserProfile = async (): Promise<any> => {
   }
 };
 
+export const updateUserDetails = async (profileData: {
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+  address: string;
+  contactNumber: string;
+  city: string;
+  state: string;
+  profileImage: string;
+}): Promise<any> => {
+  try {
+    const response = await fetch(`${BaseURL}/users/update-user-details`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${store.getState().auth?.accessToken}`,
+      },
+      body: JSON.stringify(profileData),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      // console.error("Testimonials Error:", errorData);
+      throw new Error(errorData.message || "Can't update user profile.");
+    }
+
+    return await response.json();
+  } catch (error) {
+    // console.error("No Testimonias.", error);
+    throw error;
+  }
+};
+
 export const updateProfile = async (profileData: any): Promise<any> => {
   try {
     const response = await fetch(`${BaseURL}/users/update-user-details`, {
