@@ -354,6 +354,15 @@ export const updateUserDetails = async (profileData: {
   state: string;
   profileImage: string;
 }): Promise<any> => {
+  const token = store.getState().auth?.accessToken;
+  console.log("Token", token);
+
+  if (!token) {
+    alert("Authorization token is missing.");
+    return;
+  }
+
+  console.log("Sending data to API");
   try {
     const response = await fetch(`${BaseURL}/users/update-user-details`, {
       method: "PUT",

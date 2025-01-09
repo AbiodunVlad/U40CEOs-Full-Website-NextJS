@@ -17,6 +17,8 @@ export default function UserProfile() {
   const user = useSelector((state: RootState) => state.user);
   const dispatch = useDispatch();
 
+  const [isEditing, setIsEditing] = useState(true);
+
   const [formData, setFormData] = useState({
     firstName: user.firstName || "",
     lastName: user.lastName || "",
@@ -47,9 +49,11 @@ export default function UserProfile() {
 
   const handleSave = async () => {
     if (!formData.firstName || !formData.lastName || !formData.email) {
-      alert("Full Name and Email are required");
+      alert("First Name, Last Name, and Email are required");
       return;
     }
+
+    console.log("Handle Save Triggered");
 
     const profileData = {
       firstName: formData.firstName,
@@ -66,17 +70,27 @@ export default function UserProfile() {
 
     try {
       const updateProfileResponse = await updateUserDetails(profileData);
+      setIsEditing(false);
 
-      console.log("updateProfileResponse here", updateProfileResponse);
+      console.log("API Response", updateProfileResponse);
       // dispatch(setAccessToken(loginResponse?.data?.accessToken));
 
       if (updateProfileResponse?.status === true) {
+        dispatch(updateUser(updateProfileResponse.data));
+        // dispatch(updateUser(updateProfileResponse));
+
+        localStorage.setItem(
+          "user",
+          JSON.stringify(updateProfileResponse.data)
+        );
+        setIsEditing(false);
         // const getProfileResponse = await getUserProfile();
         console.log("get profile response", updateProfileResponse?.data);
       }
     } catch (error) {
       if (error instanceof Error) {
-        // setError(error.message);
+        console.error("Error updating profile:", error.message);
+        alert(error.message);
       }
     } finally {
       // setLoading(false);
@@ -112,85 +126,96 @@ export default function UserProfile() {
         </div>
 
         <div className="flex flex-col mb-16">
-          <div className="flex flex-row mb-10">
-            <strong>First Name: </strong>
-            <p className="text-black text-sm sm:text-lg font-bold">
+          <div className="flex flex-row items-center mb-10">
+            {" "}
+            <strong className="mr-2">First Name:</strong>{" "}
+            <p className="text-black text-sm sm:text-lg font-normal">
               {" "}
               {formData.firstName}
             </p>
-            {/* <input
-              type="text"
-              name="fullName"
-              value={formData.fullName}
-              onChange={handleInputChange}
-              className="w-full border border-solid border-black px-3 py-4 focus:outline-none"
-            /> */}
           </div>
 
-          <div className="flex flex-row mb-10">
-            <strong>Last Name: </strong>
-            <p className="text-black text-sm sm:text-lg font-bold">
+          <div className="flex flex-row items-center mb-10">
+            <strong className="mr-2">Last Name: </strong>
+            <p className="text-black text-sm sm:text-lg font-normal">
               {formData.lastName}
             </p>
           </div>
 
-          <div className="flex flex-row mb-10">
-            <strong>Email: </strong>{" "}
-            <p className="text-black text-sm sm:text-lg font-bold">
+          <div className="flex flex-row items-center mb-10">
+            <strong className="mr-2">Email:</strong>{" "}
+            <p className="text-black text-sm sm:text-lg font-normal">
               {formData.email}
             </p>
-            {/* <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-              className="w-full border border-solid border-black px-3 py-4 focus:outline-none"
-            /> */}
           </div>
 
           <div className="flex flex-col mb-5">
-            <strong>Address</strong>
-            <input
-              type="text"
-              name="address"
-              value={formData.address}
-              onChange={handleInputChange}
-              className="w-full border border-solid border-black px-3 py-4 focus:outline-none"
-            />
+            <strong>Address:</strong>
+            {isEditing ? (
+              <input
+                type="text"
+                name="address"
+                value={formData.address}
+                onChange={handleInputChange}
+                className="w-full border border-solid border-black px-3 py-4 focus:outline-none"
+              />
+            ) : (
+              <p className="text-black text-sm sm:text-lg font-normal">
+                {formData.address || "Not Provided"}
+              </p>
+            )}
           </div>
 
           <div className="flex flex-col mb-5">
-            <strong>Contact Number</strong>
-            <input
-              type="text"
-              name="contactNumber"
-              value={formData.contactNumber}
-              onChange={handleInputChange}
-              className="w-full border border-solid border-black px-3 py-4 focus:outline-none"
-            />
+            <strong>Contact Number:</strong>
+            {isEditing ? (
+              <input
+                type="text"
+                name="contactNumber"
+                value={formData.contactNumber}
+                onChange={handleInputChange}
+                className="w-full border border-solid border-black px-3 py-4 focus:outline-none"
+              />
+            ) : (
+              <p className="text-black text-sm sm:text-lg font-normal">
+                {formData.contactNumber || "Not Provided"}
+              </p>
+            )}
           </div>
 
           <div className="flex flex-row justify-center mb-5 gap-3">
             <div className="flex flex-col w-1/2">
-              <strong>City</strong>
-              <input
-                type="text"
-                name="city"
-                value={formData.city}
-                onChange={handleInputChange}
-                className="w-full border border-solid border-black px-3 py-4 focus:outline-none"
-              />
+              <strong>City:</strong>
+              {isEditing ? (
+                <input
+                  type="text"
+                  name="city"
+                  value={formData.city}
+                  onChange={handleInputChange}
+                  className="w-full border border-solid border-black px-3 py-4 focus:outline-none"
+                />
+              ) : (
+                <p className="text-black text-sm sm:text-lg font-normal">
+                  {formData.city || "Not Provided"}
+                </p>
+              )}
             </div>
 
             <div className="flex flex-col w-1/2">
-              <strong>State/Province</strong>
-              <input
-                type="text"
-                name="state"
-                value={formData.state}
-                onChange={handleInputChange}
-                className="w-full border border-solid border-black px-3 py-4 focus:outline-none"
-              />
+              <strong>State/Province:</strong>
+              {isEditing ? (
+                <input
+                  type="text"
+                  name="state"
+                  value={formData.state}
+                  onChange={handleInputChange}
+                  className="w-full border border-solid border-black px-3 py-4 focus:outline-none"
+                />
+              ) : (
+                <p className="text-black text-sm sm:text-lg font-normal">
+                  {formData.state || "Not Provided"}
+                </p>
+              )}
             </div>
           </div>
 
@@ -207,19 +232,30 @@ export default function UserProfile() {
         </div>
 
         <div className="flex flex-row items-center xl:justify-start justify-between gap-3 xl:self-start">
-          <button
-            className="text-orange-500 border border-orange-500 border-solid py-3 px-10 bg-white rounded-md  w-1/2"
-            onClick={() => dispatch(clearUser())}
-          >
-            Cancel
-          </button>
+          {isEditing ? (
+            <>
+              <button
+                className="text-orange-500 border border-orange-500 border-solid py-3 px-10 bg-white rounded-md  w-1/2"
+                onClick={() => dispatch(clearUser())}
+              >
+                Cancel
+              </button>
 
-          <button
-            className="text-white border-none py-3 px-12 bg-orange-500 rounded-md  w-1/2"
-            onClick={handleSave}
-          >
-            Save
-          </button>
+              <button
+                className="text-white border-none py-3 px-12 bg-orange-500 rounded-md  w-1/2"
+                onClick={handleSave}
+              >
+                Save
+              </button>
+            </>
+          ) : (
+            <button
+              className="text-white border-none py-3 px-12 bg-orange-500 rounded-md w-1/2"
+              onClick={() => setIsEditing(true)}
+            >
+              Edit
+            </button>
+          )}
         </div>
       </div>
       <Footer />
