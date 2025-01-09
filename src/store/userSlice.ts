@@ -22,11 +22,11 @@ const initialState: UserState = {
 
 const savedUser =
   typeof window !== "undefined" ? localStorage.getItem("user") : null;
-const persitedState = savedUser ? JSON.parse(savedUser) : initialState;
+const persistedState = savedUser ? JSON.parse(savedUser) : initialState;
 
 const userSlice = createSlice({
   name: "user",
-  initialState,
+  initialState: persistedState,
   reducers: {
     setUser: (state, action: PayloadAction<UserState>) => {
       Object.assign(state, action.payload);
@@ -44,14 +44,13 @@ const userSlice = createSlice({
       // if (action.payload.profileImage)
       //   state.profileImage = action.payload.profileImage;
     },
-    clearUser: () => {
-      localStorage.removeItem("user");
-      return initialState;
-    },
 
-    updateUser: (state, action: PayloadAction<Partial<UserState>>) => {
-      Object.assign(state, action.payload);
-      localStorage.setItem("user", JSON.stringify(state));
+    updateUser: (state, action: PayloadAction<UserState>) => {
+      // Object.assign(state, action.payload);
+      // localStorage.setItem("user", JSON.stringify(state));
+
+      return { ...state, ...action.payload };
+
       // const updates = action.payload;
       // if (updates.firstName !== undefined) state.firstName = updates.firstName;
       // if (updates.lastName !== undefined) state.lastName = updates.lastName;
@@ -64,6 +63,11 @@ const userSlice = createSlice({
       // if (updates.state !== undefined) state.state = updates.state;
       // if (updates.profileImage !== undefined)
       //   state.profileImage = updates.profileImage;
+    },
+
+    clearUser: () => {
+      localStorage.removeItem("user");
+      return initialState;
     },
   },
 });
