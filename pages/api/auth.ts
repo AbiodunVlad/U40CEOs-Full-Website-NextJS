@@ -171,7 +171,7 @@ export const getBlogPosts = async () => {
   // "eyJhbGciOiJIUzM4NCJ9.eyJpZCI6ImRjMzRhYWMzLWEyNTItNDJhMy1hOGI0LWE4ZTY2NjU3M2JiYiIsImVtYWlsIjoib3llYm9kZWlubm9jZW50QGdtYWlsLmNvbSIsInJvbGUiOiJVU0VSIiwic3ViIjoib3llYm9kZWlubm9jZW50QGdtYWlsLmNvbSIsImlhdCI6MTcyNjQ4MTQwMywiZXhwIjoxNzI2NzQwNjAzfQ.SLNkPCwOGRRhnCBlk9HviRr4jZ7AME5bSskVy1kzcIXpij9oFlgsVL-RezQTigVQ";
 
   try {
-    const response = await fetch(`${BaseURL}/api/blogposts`, {
+    const response = await fetch(`${BaseURL}/blogposts`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -197,7 +197,7 @@ export const getBlogPostBySlug = async (slug: string) => {
     "eyJhbGciOiJIUzI1NiJ9.eyJpZCI6ImMxNDgxZGE2LWYyMjktNDM4OS04NjVlLWFkNGY1NWZhMDEwYiIsImVtYWlsIjoiYWRtaW5AZW1haWwuY29tIiwicm9sZSI6IkFETUlOIiwic3ViIjoiYWRtaW5AZW1haWwuY29tIiwiaWF0IjoxNzIzMjg0MjkzLCJleHAiOjE3MjM1NDM0OTN9.g9P5TNXllJusqfWQxs6BYwijAqZbvOxajiVQBXbRHPw";
 
   try {
-    const response = await fetch(`${BaseURL}/api/blogposts/${slug}`, {
+    const response = await fetch(`${BaseURL}/blogposts/${slug}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -218,7 +218,7 @@ export const getBlogPostBySlug = async (slug: string) => {
 
 export const postTestimonials = async (): Promise<any> => {
   try {
-    const response = await fetch(`${BaseURL}/api/testimonials`, {
+    const response = await fetch(`${BaseURL}/testimonials`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -243,7 +243,7 @@ export const getTestimonials = async (): Promise<any> => {
   // "eyJhbGciOiJIUzM4NCJ9.eyJpZCI6ImRjMzRhYWMzLWEyNTItNDJhMy1hOGI0LWE4ZTY2NjU3M2JiYiIsImVtYWlsIjoib3llYm9kZWlubm9jZW50QGdtYWlsLmNvbSIsInJvbGUiOiJVU0VSIiwic3ViIjoib3llYm9kZWlubm9jZW50QGdtYWlsLmNvbSIsImlhdCI6MTcyNjQ4MTQwMywiZXhwIjoxNzI2NzQwNjAzfQ.SLNkPCwOGRRhnCBlk9HviRr4jZ7AME5bSskVy1kzcIXpij9oFlgsVL-RezQTigVQ";
 
   try {
-    const response = await fetch(`${BaseURL}/api/testimonials?page=1&size=10`, {
+    const response = await fetch(`${BaseURL}/testimonials?page=1&size=10`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -346,13 +346,13 @@ export const getUserProfile = async (): Promise<any> => {
 export const updateUserDetails = async (profileData: {
   firstName: string;
   lastName: string;
-  email: string;
-  password: string;
+  email?: string;
+  password?: string;
   address: string;
   contactNumber: string;
   city: string;
   state: string;
-  profileImage: string;
+  profileImage?: string;
 }): Promise<any> => {
   const token = store.getState().auth?.accessToken;
   console.log("Token", token);

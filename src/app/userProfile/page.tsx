@@ -23,10 +23,10 @@ export default function UserProfile() {
     firstName: user.firstName || "",
     lastName: user.lastName || "",
     email: user.email || "",
-    address: "",
-    contactNumber: "",
-    city: "",
-    state: "",
+    address: user?.address || "",
+    contactNumber: user?.contactNumber || "",
+    city: user?.city || "",
+    state: user?.state || "",
     password: "",
     profileImage: user.profileImage || "/images/defaultImg.jpg",
   });
@@ -48,8 +48,8 @@ export default function UserProfile() {
   };
 
   const handleSave = async () => {
-    if (!formData.firstName || !formData.lastName || !formData.email) {
-      alert("First Name, Last Name, and Email are required");
+    if (!formData.address || !formData.contactNumber || !formData.state) {
+      alert("Please provide all required fields");
       return;
     }
 
@@ -58,13 +58,10 @@ export default function UserProfile() {
     const profileData = {
       firstName: formData.firstName,
       lastName: formData.lastName,
-      email: formData.email,
-      password: formData.password,
       address: formData.address,
       contactNumber: formData.contactNumber,
       city: formData.city,
       state: formData.state,
-      profileImage: formData.profileImage,
     };
     console.log("profileData", profileData);
 
