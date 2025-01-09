@@ -5,7 +5,11 @@ import { RootState } from "@/store";
 import { updateUser, clearUser } from "@/store/userSlice";
 import Image from "next/image";
 import { useState } from "react";
-import { updateProfile, updateUserProfile } from "../../../pages/api/auth";
+import {
+  updateProfile,
+  updateUserProfile,
+  updateUserDetails,
+} from "../../../pages/api/auth";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -14,7 +18,8 @@ export default function UserProfile() {
   const dispatch = useDispatch();
 
   const [formData, setFormData] = useState({
-    fullName: user.name || "",
+    firstName: user.firstName || "",
+    lastName: user.lastName || "",
     email: user.email || "",
     address: "",
     contactNumber: "",
@@ -41,13 +46,14 @@ export default function UserProfile() {
   };
 
   const handleSave = async () => {
-    if (!formData.fullName || !formData.email) {
+    if (!formData.firstName || !formData.lastName || !formData.email) {
       alert("Full Name and Email are required");
       return;
     }
 
     const profileData = {
-      name: formData.fullName,
+      firstName: formData.firstName,
+      lastName: formData.lastName,
       email: formData.email,
       password: formData.password,
       address: formData.address,
@@ -59,7 +65,7 @@ export default function UserProfile() {
     console.log("profileData", profileData);
 
     try {
-      const updateProfileResponse = await updateProfile(profileData);
+      const updateProfileResponse = await updateUserDetails(profileData);
 
       console.log("updateProfileResponse here", updateProfileResponse);
       // dispatch(setAccessToken(loginResponse?.data?.accessToken));
@@ -107,9 +113,10 @@ export default function UserProfile() {
 
         <div className="flex flex-col mb-16">
           <div className="flex flex-row mb-10">
-            <strong>Full Name: </strong>
+            <strong>First Name: </strong>
             <p className="text-black text-sm sm:text-lg font-bold">
-              {formData.fullName}
+              {" "}
+              {formData.firstName}
             </p>
             {/* <input
               type="text"
@@ -118,6 +125,13 @@ export default function UserProfile() {
               onChange={handleInputChange}
               className="w-full border border-solid border-black px-3 py-4 focus:outline-none"
             /> */}
+          </div>
+
+          <div className="flex flex-row mb-10">
+            <strong>Last Name: </strong>
+            <p className="text-black text-sm sm:text-lg font-bold">
+              {formData.lastName}
+            </p>
           </div>
 
           <div className="flex flex-row mb-10">

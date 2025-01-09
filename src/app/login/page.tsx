@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEyeLowVision, faEye } from "@fortawesome/free-solid-svg-icons";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { setAccessToken } from "@/store/authSlice";
+import { setUser as setUserDetails } from "@/store/userSlice";
 import { useDispatch } from "react-redux";
 
 const LazyHomePage = dynamic(() => import("../home/page"), {
@@ -27,7 +28,7 @@ export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
 
   const router = useRouter();
-  
+
   const dispatch = useDispatch();
 
   const [user, setUser] = useState({
@@ -42,19 +43,22 @@ export default function Login() {
     setLoading(true);
     setError("");
 
+    // mitevo9094@myweblaw.com
+    // qwertyui
+
     try {
       const loginResponse = await loginUser({
-        fullName,
         email,
         password,
       });
-      
-      console.log('login response', loginResponse);
+
+      console.log("login response", loginResponse);
       dispatch(setAccessToken(loginResponse?.data?.accessToken));
-      
-      if (loginResponse?.status ===  true) {
+
+      if (loginResponse?.status === true) {
         const getProfileResponse = await getUserProfile();
-        console.log('get profile response', getProfileResponse?.data);
+        console.log("get profile response", getProfileResponse?.data);
+        dispatch(setUserDetails(getProfileResponse?.data));
       }
 
       localStorage.setItem("isAuthenticated", "true");
@@ -156,25 +160,28 @@ export default function Login() {
         </button>
 
         <div className="flex lg:flex-row flex-col justify-between items-center w-full mb-7">
-          <div className="flex lg:justify-start justify-center items-center lg:mb-0 lg:w-1/2 w-full mb-5">
+          {/* <div className="flex lg:justify-start justify-center items-center lg:mb-0 lg:w-1/2 w-full mb-5">
             <input
               id="keep-signed-in"
               type="checkbox"
               className="mr-2 "
               checked={user.keepSignedIn}
               onChange={(e) =>
-                setUser({ ...user, keepSignedIn: e.target.checked })
+                setUser({ 
+                  ...user, keepSignedIn: e.target.checked 
+                })
               }
             />
+
             <label
               htmlFor="keep-signed-in"
               className="text-black text-md sm:text-xl"
             >
               Keep me signed in
             </label>
-          </div>
+          </div> */}
 
-          <div className="w-1/2 lg:w-1/3 relative flex flex-row items-center justify-center bg-white border rounded-xl p-1">
+          {/* <div className="w-1/2 lg:w-1/3 relative flex flex-row items-center justify-center bg-white border rounded-xl p-1">
             <button
               onClick={loginWithGoogle}
               className="text-black text-start text-xs lg:text-xs w-full sm:w-full p-2  mb-0"
@@ -187,7 +194,7 @@ export default function Login() {
               className="text-red-400 absolute top-3 lg:top-3 right-2 sm:right-3"
               size="sm"
             />
-          </div>
+          </div> */}
         </div>
 
         <div className="flex flex-row items-center mb-10">

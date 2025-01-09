@@ -5,7 +5,8 @@ import { store } from "@/store";
 const token = store.getState().auth.accessToken;
 
 interface UserData {
-  fullName?: string;
+  firstName?: string;
+  lastName?: string;
   email: string;
   password: string;
   confirmPassword?: string;
@@ -42,6 +43,32 @@ interface BlogPosts {
   body: string;
 }
 
+export const verifySignUpOtp = async (
+  otp: string,
+  email: string
+): Promise<any> => {
+  try {
+    const response = await fetch(`${BaseURL}/auth/verify-otp?email=${email}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ otp: otp }),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error("Invalid OTP:", errorData.data.message);
+      throw new Error(errorData.data.message || "Could not verify OTP.");
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error("Error verifying OTP, check your network:", error);
+    throw error;
+  }
+};
+
 export const signupUser = async (userData: UserData): Promise<any> => {
   try {
     const response = await fetch(`${BaseURL}/auth/sign-up`, {
@@ -54,8 +81,8 @@ export const signupUser = async (userData: UserData): Promise<any> => {
 
     if (!response.ok) {
       const errorData = await response.json();
-      console.error("Signup Error Response:", errorData);
-      throw new Error(errorData.message || "Could not sign you up.");
+      console.error("Signup Error Response:", errorData.data.message);
+      throw new Error(errorData.data.message || "Could not sign you up.");
     }
 
     return await response.json();
@@ -307,6 +334,40 @@ export const getUserProfile = async (): Promise<any> => {
       const errorData = await response.json();
       // console.error("Testimonials Error:", errorData);
       throw new Error(errorData.message || "Can't get profile.");
+    }
+
+    return await response.json();
+  } catch (error) {
+    // console.error("No Testimonias.", error);
+    throw error;
+  }
+};
+
+export const updateUserDetails = async (profileData: {
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+  address: string;
+  contactNumber: string;
+  city: string;
+  state: string;
+  profileImage: string;
+}): Promise<any> => {
+  try {
+    const response = await fetch(`${BaseURL}/users/update-user-details`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${store.getState().auth?.accessToken}`,
+      },
+      body: JSON.stringify(profileData),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      // console.error("Testimonials Error:", errorData);
+      throw new Error(errorData.message || "Can't update user profile.");
     }
 
     return await response.json();
