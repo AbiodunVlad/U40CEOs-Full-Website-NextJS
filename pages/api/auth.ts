@@ -1,6 +1,6 @@
 // const BaseURL = "https://u4cbackendservices.onrender.com/api";
 // const BaseURL = "http://93.115.23.43:8339/api";
-const BaseURL = "https://u4c.circonspect.com";
+const BaseURL = "https://u4c.circonspect.com/api";
 import { store } from "@/store";
 const token = store.getState().auth.accessToken;
 
