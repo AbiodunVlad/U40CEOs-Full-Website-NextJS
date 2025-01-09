@@ -53,24 +53,29 @@ export default function Login() {
       });
 
       console.log("login response", loginResponse);
-      dispatch(setAccessToken(loginResponse?.data?.accessToken));
 
       if (loginResponse?.status === true) {
+        dispatch(setAccessToken(loginResponse?.data?.accessToken));
+        
         const getProfileResponse = await getUserProfile();
         console.log("get profile response", getProfileResponse?.data);
         dispatch(setUserDetails(getProfileResponse?.data));
-      }
+        
+        localStorage.setItem("isAuthenticated", "true");
 
-      localStorage.setItem("isAuthenticated", "true");
+        const previousPage = localStorage.getItem("previousPage") || "/home";
+  
+        setRedirecting(true);
+  
+        setTimeout(() => {
+          router.push(previousPage);
+          localStorage.removeItem("previousPage");
+        }, 1000);
+      } else {
+        console.log("password is wrong");
+        setError(loginResponse?.message);
+      };
 
-      const previousPage = localStorage.getItem("previousPage") || "/home";
-
-      setRedirecting(true);
-
-      setTimeout(() => {
-        router.push(previousPage);
-        localStorage.removeItem("previousPage");
-      }, 1000);
     } catch (error) {
       if (error instanceof Error) {
         setError(error.message);
