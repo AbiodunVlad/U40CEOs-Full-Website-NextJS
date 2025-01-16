@@ -322,7 +322,7 @@ export const updateUserProfile = () => {
 
 export const getUserProfile = async (): Promise<any> => {
   try {
-    const response = await fetch(`${BaseURL}/users`, {
+    const response = await fetch(`${BaseURL}/users/profile`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -357,10 +357,10 @@ export const updateUserDetails = async (profileData: {
   const token = store.getState().auth?.accessToken;
   console.log("Token", token);
 
-  if (!token) {
-    alert("Authorization token is missing.");
-    return;
-  }
+  // if (!token) {
+  //   alert("Authorization token is missing.");
+  //   return;
+  // }
 
   console.log("Sending data to API");
   try {
