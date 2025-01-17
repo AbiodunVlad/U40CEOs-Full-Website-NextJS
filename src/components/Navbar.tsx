@@ -131,7 +131,7 @@ export default function Navbar() {
           </li>
         </Link>
 
-        <Link href="/community">
+        <Link href="/membership">
           <button className="font-medium text-xxs text-center px-5 py-1 mb-4 lg:mb-0 lg:mr-5 bg-black rounded-full text-white">
             JOIN OUR <br /> COMMUNITY
           </button>
