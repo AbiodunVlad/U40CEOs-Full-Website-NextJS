@@ -26,8 +26,8 @@ export default function Membership() {
     <div className="flex flex-col text-black overflow-hidden">
       <Navbar />
 
-      <div className="flex flex-row py-5 md:py-10 px-5 md:px-20 bg-gradient-to-t from-gray-500 to-slate-200 mt-28 mb-20 w-1/2 self-center rounded-3xl">
-        <div className="flex flex-row w-1/2 items-center gap-5">
+      <div className="flex sm:flex-row flex-col  items-center gap-3 sm:gap-0 py-5 md:py-10 px-2 md:px-20 bg-gradient-to-t from-gray-500 to-slate-200 sm:mt-28 md:mt-10 mt-10 mb-10 sm:mb-20 w-5/6 sm:w-1/2 md:w-5/6 self-center rounded-3xl">
+        <div className="flex flex-row w-5/6 sm:w-1/2 md:w-5/6 justify-center sm:justify-normal items-center gap-1 sm:gap-5">
           {" "}
           <Image
             src="/icons/platnum.svg"
@@ -36,12 +36,12 @@ export default function Membership() {
             width={30}
             height={10}
           />
-          <p className="text-black text-xl lg:text-2xl font-extrabold">
+          <p className="text-black text-base lg:text-2xl font-extrabold">
             Membership Fee
           </p>
         </div>
 
-        <div className="flex flex-col items-start w-1/2">
+        <div className="flex flex-col sm:items-start items-center justify-center sm:justify-normal sm:w-1/2 w-full">
           <p className="text-black text-lg lg:text-xl">A flat rate of</p>
           <p className="text-black text-2xl lg:text-3xl font-extrabold">
             ₦150,000/annum
@@ -49,12 +49,12 @@ export default function Membership() {
         </div>
       </div>
 
-      <div className="flex flex-col w-full self-center items-center px-52">
+      <div className="flex flex-col w-full self-center items-center px-5 md:px-16 sm:px-52">
         <div className="flex flex-col items-center mb-10">
           <p className="text-black text-4xl lg:text-5xl text-center font-extrabold mb-4">
             TAKE THAT AUDACIOUS STEP{" "}
           </p>
-          <p className="text-gray-500 text-center text-base sm:text-2xl w-3/5">
+          <p className="text-gray-500 text-center text-base sm:text-2xl w-3/4 md:w-5/6 sm:w-3/5">
             The form below helps us to know more about your business and to
             suggest the best membership category that will suite you.
           </p>

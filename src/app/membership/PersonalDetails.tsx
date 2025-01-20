@@ -74,7 +74,7 @@ export default function PersonalDetails() {
 
   return (
     <div className="flex flex-col w-full">
-      <form className="mb-10">
+      <form className="sm:mb-10 mb-5">
         <div className="flex flex-row justify-between w-full gap-5 mb-5">
           <div className="flex flex-col items-start 300 w-1/2">
             <label className="text-gray-500 text-center text-base sm:text-lg">
@@ -238,7 +238,7 @@ export default function PersonalDetails() {
           />
         </div>
 
-        <p className="text-gray-500 text-start text-base sm:text-lg mb-10">
+        <p className="text-gray-500 sm:text-start text-center text-base sm:text-lg mb-10">
           Please confirm your details before proceeding to the next page
         </p>
 
@@ -250,7 +250,7 @@ export default function PersonalDetails() {
       </form>
 
       <div className="px-10 sm:px-0 pt-20 pb-10 w-full flex lg:flex-row flex-col justify-center items-center gap-10">
-        <div className="flex flex-col justify-center items-start md:w-1/3">
+        <div className="flex flex-col justify-center lg:items-start items-center lg:w-1/3">
           <Image
             src="/images/adaora.svg"
             alt=""
@@ -274,7 +274,7 @@ export default function PersonalDetails() {
           </p>
         </div>
 
-        <div className="flex flex-col justify-center items-start md:w-1/3">
+        <div className="flex flex-col justify-center lg:items-start items-center lg:w-1/3">
           <Image
             src="/images/omobola.svg"
             alt=""
@@ -298,7 +298,7 @@ export default function PersonalDetails() {
           </p>
         </div>
 
-        <div className="flex flex-col justify-center items-start md:w-1/3">
+        <div className="flex flex-col justify-center lg:items-start items-center lg:w-1/3">
           <Image
             src="/images/aisha.svg"
             alt=""
@@ -324,7 +324,7 @@ export default function PersonalDetails() {
       </div>
 
       <div className="bg-gray-700 px-5 md:px-20 py-10 flex flex-col items-center">
-        <h1 className="text-white font-bold text-3xl md:text-4xl mb-16">
+        <h1 className="text-white lg:text-start text-center font-bold text-3xl md:text-4xl mb-16">
           HEAR FROM OUR ELITE ENTREPRENEURS
         </h1>
 
