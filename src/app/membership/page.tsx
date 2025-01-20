@@ -17,6 +17,8 @@ interface Testimonials {
   updatedAt: string;
 }
 
+type Category = "Bronze" | "Gold" | "Platinum";
+
 export default function Membership() {
   const [activeHeader, setActiveHeader] = useState("Personal Details");
 
@@ -25,7 +27,6 @@ export default function Membership() {
   const [error, setError] = useState<string | null>(null);
 
   const [user, setUser] = useState(null);
-  const [step, setStep] = useState("PersonalDetails");
   const [category, setCategory] = useState("");
 
   const membershipHeaders = [
@@ -34,22 +35,69 @@ export default function Membership() {
     "Membership Result",
   ];
 
+  const determineCategory = (formData: { size: string }): Category => {
+    if (formData.size === "small") return "Bronze";
+    if (formData.size === "medium") return "Gold";
+    return "Platinum";
+  };
+
+  const handleFormSubmission = (formData: { size: string }) => {
+    const assignedCategory = determineCategory(formData);
+    setCategory(assignedCategory);
+  };
+
+  // const renderHeader = () => {
+  //   switch (activeHeader) {
+  //     case "Personal Details":
+  //       return <PersonalDetails />;
+  //     case "Become Member":
+  //       return <BecomeAMember />;
+  //     case "Membership Result":
+  //       return <MembershipResult />;
+  //     default:
+  //       return null;
+  //   }
+  // };
+
   const renderHeader = () => {
     switch (activeHeader) {
       case "Personal Details":
-        return <PersonalDetails />;
-      case "Become Member":
-        return <BecomeAMember />;
-      case "Membership Result":
-        return <MembershipResult />;
+        if (user) {
+          setActiveHeader("BecomeAMember");
+        } else {
+          return (
+            <PersonalDetails
+              onSubmit={(data) => {
+                getUserProfile(data);
+                setActiveHeader("BecomeAMember");
+                setUser(data);
+              }}
+            />
+          );
+        }
+        break;
+      case "BecomeAMember":
+        return (
+          <BecomeAMember
+            onSubmit={(data) => {
+              handleFormSubmission(data);
+            }}
+          />
+        );
       default:
         return null;
     }
   };
 
+  const renderResult = () =>
+    category && <MembershipResult category={category} />;
+
   useEffect(() => {
-    const loggedInUser = getUserProfile();
-    setUser(loggedInUser);
+    const fetchUserProfile = async () => {
+      const loggedInUser = await getUserProfile();
+      setUser(loggedInUser);
+    };
+    fetchUserProfile();
   }, []);
 
   useEffect(() => {
@@ -133,6 +181,7 @@ export default function Membership() {
             </div>
           ))}
         </div>
+        <div className="w-full">{renderResult()}</div>
         <div className="w-full">{renderHeader()}</div>
       </div>
 
