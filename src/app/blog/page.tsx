@@ -103,7 +103,7 @@ export default function Blog() {
 
       <div className="flex flex-col px-5 md:px-20 items-center justify-center pt-10 md:pt-20 pb-20">
         <h1 className="w-full font-extrabold text-black text-center text-4xl lg:text-5xl mb-20 uppercase">
-          insights articles
+          THE TRENDING NEWS & ARTICLES
         </h1>
 
         <div className="flex flex-col w-full">
