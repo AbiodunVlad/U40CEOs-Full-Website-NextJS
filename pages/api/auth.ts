@@ -243,7 +243,7 @@ export const getTestimonials = async (): Promise<any> => {
   // "eyJhbGciOiJIUzM4NCJ9.eyJpZCI6ImRjMzRhYWMzLWEyNTItNDJhMy1hOGI0LWE4ZTY2NjU3M2JiYiIsImVtYWlsIjoib3llYm9kZWlubm9jZW50QGdtYWlsLmNvbSIsInJvbGUiOiJVU0VSIiwic3ViIjoib3llYm9kZWlubm9jZW50QGdtYWlsLmNvbSIsImlhdCI6MTcyNjQ4MTQwMywiZXhwIjoxNzI2NzQwNjAzfQ.SLNkPCwOGRRhnCBlk9HviRr4jZ7AME5bSskVy1kzcIXpij9oFlgsVL-RezQTigVQ";
 
   try {
-    const response = await fetch(`${BaseURL}/testimonials?page=1&size=10`, {
+    const response = await fetch(`${BaseURL}/testimonials/all?page=1&size=10`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
