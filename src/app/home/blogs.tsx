@@ -100,13 +100,14 @@ export default function Blog() {
           >
             <Link href={`/blog/${blogs.id}`} className="w-1/2 p-5">
               <div className="w-full">
-                {/* <p className="self-start text-xs text-black py-1 px-2 bg-purple-400 mb-3 inline-block rounded-full">
+                <p className="self-start text-xs text-black py-1 px-2 bg-purple-400 mb-3 inline-block rounded-full">
                   {blogs.category || "Business"}
-                </p> */}
-                <p className="text-black text-base sm:text-2xl font-bold mb-5">
-                  {blogs.title.length > 15
+                </p>
+                <p className="text-black-700 text-base sm:text-2xl font-bold mb-5">
+                  {/* {blogs.title.length > 15
                     ? `${blogs.title.slice(0, 15)}...`
-                    : blogs.title}
+                    : blogs.title} */}
+                    {blogs.title}
                 </p>
                 <p className="text-gray-500 text-base sm:text-2xl">
                   {blogs.body.length > 150
@@ -115,7 +116,7 @@ export default function Blog() {
                 </p>
               </div>
             </Link>
-            <div className="w-1/2 h-full bg-blue-600">
+            {/* <div className="w-1/2 h-full bg-blue-600">
               {" "}
               <Image
                 src={blogs.featuredImage}
@@ -124,7 +125,7 @@ export default function Blog() {
                 alt=""
                 className="flex items-center justify-center w-full h-full"
               />
-            </div>
+            </div> */}
           </div>
         ))}
       </div>

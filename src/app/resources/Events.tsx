@@ -6,6 +6,7 @@ import ImgCarousel from "./ImgCarousel";
 import Search from "@/components/Search";
 import BecomeAMember from "@/components/BecomeAMember";
 import Link from "next/link";
+import { EVENT_VIDEOS } from "../../../pages/api/courses";
 
 const slideImg = [
   <Image
@@ -71,7 +72,7 @@ export default function Events() {
 
   const indexOfLastItem = currentPage * ITEMS_PER_PAGE;
   const indexOfFirstItem = indexOfLastItem - ITEMS_PER_PAGE;
-  const currentItems = courses.slice(indexOfFirstItem, indexOfLastItem);
+  const currentItems = EVENT_VIDEOS.slice(indexOfFirstItem, indexOfLastItem);
 
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
@@ -122,7 +123,7 @@ export default function Events() {
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-5 w-full mb-7">
             {currentItems.map((course, index) => (
               <div key={index} className="flex flex-col items-center">
-                <iframe src={course.videoUrl} className="w-full h-48 mb-5" />
+                <iframe src={course.url} className="w-full h-48 mb-5" />
 
                 <p className="text-black text-sm font-bold mb-5">
                   {course.title}
@@ -137,7 +138,7 @@ export default function Events() {
 
           <div className="flex justify-center mt-10">
             {Array.from(
-              { length: Math.ceil(courses.length / ITEMS_PER_PAGE) },
+              { length: Math.ceil(EVENT_VIDEOS.length / ITEMS_PER_PAGE) },
               (_, i) => (
                 <button
                   key={i}

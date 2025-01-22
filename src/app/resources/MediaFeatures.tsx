@@ -128,7 +128,7 @@ export default function MediaFeatures() {
 
           <div className="flex justify-center mt-10">
             {Array.from(
-              { length: Math.ceil(courses.length / ITEMS_PER_PAGE) },
+              { length: Math.ceil(WATCH_EPISODE_VIDEOS.length / ITEMS_PER_PAGE) },
               (_, i) => (
                 <button
                   key={i}

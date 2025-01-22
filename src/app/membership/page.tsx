@@ -28,11 +28,13 @@ export default function Membership() {
 
   const [user, setUser] = useState(null);
   const [category, setCategory] = useState("");
+  
+  const [showMemberResult, setShowMemberResult] = useState(false);
 
   const membershipHeaders = [
     "Personal Details",
     "Become Member",
-    "Membership Result",
+    // "Membership Result",
   ];
 
   const determineCategory = (formData: { size: string }): Category => {
@@ -42,6 +44,8 @@ export default function Membership() {
   };
 
   const handleFormSubmission = (formData: { size: string }) => {
+    console.log('on submit pressed')
+    setShowMemberResult(true);
     const assignedCategory = determineCategory(formData);
     setCategory(assignedCategory);
   };
@@ -142,7 +146,7 @@ export default function Membership() {
         <div className="flex flex-col sm:items-start items-center justify-center sm:justify-normal sm:w-1/2 w-full">
           <p className="text-black text-lg lg:text-xl">A flat rate of</p>
           <p className="text-black text-2xl lg:text-3xl font-extrabold">
-            ₦150,000/annum
+            $150/annum
           </p>
         </div>
       </div>
@@ -183,6 +187,16 @@ export default function Membership() {
         </div>
         <div className="w-full">{renderResult()}</div>
         <div className="w-full">{renderHeader()}</div>
+     
+        {/* {
+          showMemberResult ? (
+            <div className="w-full">{renderResult()}</div>
+          ) : (
+            <div className="w-full">{renderHeader()}</div>
+          )
+        } */}
+        
+       
       </div>
 {
   showMemberResult ? ()

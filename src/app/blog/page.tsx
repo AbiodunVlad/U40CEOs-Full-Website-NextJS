@@ -113,7 +113,7 @@ export default function Blog() {
                 key={article.id}
                 className="flex flex-col items-center h-full mb-10 shadow-2xl"
               >
-                <div className="w-full h-40 bg-blue-600">
+                {/* <div className="w-full h-40 bg-blue-600">
                   <Image
                     src={article.featuredImage}
                     width={100}
@@ -121,7 +121,7 @@ export default function Blog() {
                     alt=""
                     className="flex items-center justify-center w-full h-full"
                   />
-                </div>
+                </div> */}
 
                 <Link href={`/blog/${article.id}`} className="w-full h-auto">
                   <div className="w-full h-full py-5 px-3">
@@ -173,7 +173,7 @@ export default function Blog() {
                 key={article.id}
                 className="flex flex-col items-center h-full mb-10 shadow-2xl"
               >
-                <div className="w-full h-40 bg-blue-600">
+                {/* <div className="w-full h-40 bg-blue-600">
                   <Image
                     src={article.featuredImage}
                     width={100}
@@ -181,7 +181,7 @@ export default function Blog() {
                     alt=""
                     className="flex items-center justify-center w-full h-full"
                   />
-                </div>
+                </div> */}
                 <Link href={`/blog/${article.id}`} className="w-full h-auto">
                   <div className="w-full h-full py-5 px-3">
                     <p className="self-start text-xxs text-black py-1 px-2 bg-purple-400 mb-3 inline-block rounded-full">

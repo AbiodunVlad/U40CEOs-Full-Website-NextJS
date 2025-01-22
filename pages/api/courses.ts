@@ -480,5 +480,36 @@ export const WATCH_EPISODE_VIDEOS = [
   }
 ]
 
+export const EVENT_VIDEOS = [
+  {
+    "title": "Under 40 CEOs Live - Tonye Cole",
+    "url": "https://www.youtube.com/embed/NW1LUEULeeo"
+  },
+  {
+    "title": "Under 40 CEOs Forum - Not Business As Usual",
+    "url": "https://www.youtube.com/embed/OPRc_uR2gXo"
+  },
+  {
+    "title": "Mr Fab drives Angel George - Drive Your Ambition",
+    "url": "https://www.youtube.com/embed/lg78bews-CY"
+  },
+  {
+    "title": "Under 40 CEOs -Tolu Adeusi",
+    "url": "https://www.youtube.com/embed/9g0UBJF8jOg"
+  },
+  {
+    "title": "They Said I Couldn't - Ukinebo Dare - Brought To You By Sunlight",
+    "url": "https://www.youtube.com/embed/XgyqAseOGB0"
+  },
+  {
+    "title": "Under 40 CEOs Forum 2020 - Vusi Thembekwayo Keynote Address",
+    "url": "https://www.youtube.com/embed/2LJdhAqaZCY"
+  },
+  {
+    "title": "Under 40 CEOs Forum Nigeria - Akintunde Oyebode",
+    "url": "https://www.youtube.com/embed/siViPoil1Ls"
+  },
+]
+
 
 

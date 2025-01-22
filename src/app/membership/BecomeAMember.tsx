@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function BecomeAMember() {
+export default function BecomeAMember({onSubmit}) {
   return (
     <div className="flex flex-col w-full">
       <form className="sm:mb-10 mb-5">
@@ -117,7 +117,7 @@ export default function BecomeAMember() {
           <button className="w-1/2 py-3 text-purple-500 border border-purple-500 text-sm sm:text-lg bg-white rounded-full text-center">
             BACK
           </button>
-          <button className="w-1/2 py-3 text-white text-sm sm:text-lg bg-purple-500 rounded-full text-center">
+          <button onClick={onSubmit} className="w-1/2 py-3 text-white text-sm sm:text-lg bg-purple-500 rounded-full text-center">
             GENERATE RESULT
           </button>
         </div>
