@@ -142,7 +142,7 @@ export default function Membership() {
         <div className="flex flex-col sm:items-start items-center justify-center sm:justify-normal sm:w-1/2 w-full">
           <p className="text-black text-lg lg:text-xl">A flat rate of</p>
           <p className="text-black text-2xl lg:text-3xl font-extrabold">
-            ₦150,000/annum
+            $150/annum
           </p>
         </div>
       </div>
