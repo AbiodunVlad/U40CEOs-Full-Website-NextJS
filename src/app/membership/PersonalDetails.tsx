@@ -1,27 +1,36 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import { states, cities } from "./state";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeLowVision } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import { getTestimonials } from "../../../pages/api/auth";
+// import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
-export default function PersonalDetails({ onSubmit }) {
+interface PersonalDetailsProps {
+  setActiveHeader: (header: string) => void;
+}
+
+export default function PersonalDetails({
+  setActiveHeader,
+}: PersonalDetailsProps) {
   const [selectedState, setSelectedState] = useState("");
   const [selectedCity, setSelectedCity] = useState("");
   const [showMemberPassword, setShowMemberPassword] = useState(false);
 
-  const togglePasswordVisibility = () => {
-    setShowMemberPassword(!showMemberPassword);
-  };
+  // const togglePasswordVisibility = () => {
+  //   setShowMemberPassword(!showMemberPassword);
+  // };
 
-  const handleStateChange = (event: any) => {
-    setSelectedState(event.target.value);
-    setSelectedCity("");
-  };
+  // const handleStateChange = (event: any) => {
+  //   setSelectedState(event.target.value);
+  //   setSelectedCity("");
+  // };
 
-  const handleCityChange = (event: any) => {
-    setSelectedCity(event.target.value);
-  };
+  // const handleCityChange = (event: any) => {
+  //   setSelectedCity(event.target.value);
+  // };
 
   // if (loading) {
   //   return (
@@ -39,9 +48,40 @@ export default function PersonalDetails({ onSubmit }) {
   //   );
   // }
 
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    contact: "",
+    state: "",
+    city: "",
+  });
+
+  const router = useRouter();
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleNext = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const { firstName, lastName, email, contact, state, city } = formData;
+    if (!firstName || !lastName || !email || !contact || !state || !city) {
+      alert("Please fill in all fields before proceeding.");
+      return;
+    }
+
+    setActiveHeader("Become Member");
+    // router.push("/BecomeAMember");
+  };
+
   return (
     <div className="flex flex-col w-full">
-      <form className="sm:mb-10 mb-5">
+      <form className="sm:mb-10 mb-5" onSubmit={handleNext}>
         <div className="flex flex-row justify-between w-full gap-5 mb-5">
           <div className="flex flex-col items-start 300 w-1/2">
             <label className="text-gray-500 text-center text-base sm:text-lg">
@@ -52,6 +92,8 @@ export default function PersonalDetails({ onSubmit }) {
               type="text"
               id="firstName"
               name="firstName"
+              value={formData.firstName}
+              onChange={handleInputChange}
               className="border border-purple-500 focus:outline-none px-4 py-2 rounded-md w-full"
               required
             />
@@ -64,6 +106,8 @@ export default function PersonalDetails({ onSubmit }) {
               type="text"
               id="lastName"
               name="lastName"
+              value={formData.lastName}
+              onChange={handleInputChange}
               className="border border-purple-500 focus:outline-none px-4 py-2 rounded-md w-full"
               required
             />
@@ -78,6 +122,8 @@ export default function PersonalDetails({ onSubmit }) {
             type="email"
             id="email"
             name="email"
+            value={formData.email}
+            onChange={handleInputChange}
             className="border border-purple-500 focus:outline-none px-4 py-2 rounded-md w-full"
             required
           />
@@ -96,7 +142,7 @@ export default function PersonalDetails({ onSubmit }) {
           />
         </div> */}
 
-        {/* <div className="flex flex-col items-start w-full mb-5">
+        <div className="flex flex-col items-start w-full mb-5">
           <label className="text-gray-500 text-center text-base sm:text-lg">
             Contact Number
           </label>
@@ -104,12 +150,14 @@ export default function PersonalDetails({ onSubmit }) {
             type="text"
             id="contact"
             name="contact"
+            value={formData.contact}
+            onChange={handleInputChange}
             className="border border-purple-500 focus:outline-none px-4 py-2 rounded-md w-full"
             required
           />
-        </div> */}
+        </div>
 
-        {/* <div className="flex flex-row justify-between w-full gap-5 mb-5">
+        <div className="flex flex-row justify-between w-full gap-5 mb-5">
           <div className="flex flex-col items-start 300 w-1/2">
             <label className="text-gray-500 text-center text-base sm:text-lg">
               State
@@ -117,8 +165,8 @@ export default function PersonalDetails({ onSubmit }) {
             <select
               id="state"
               name="state"
-              value={selectedState}
-              onChange={handleStateChange}
+              value={formData.state}
+              onChange={handleInputChange}
               className="border border-purple-500 focus:outline-none px-4 py-2 rounded-md w-full bg-transparent"
               required
             >
@@ -129,7 +177,6 @@ export default function PersonalDetails({ onSubmit }) {
                 </option>
               ))}
             </select>
-           
           </div>
           <div className="flex flex-col items-start w-1/2">
             <label className="text-gray-500 text-center text-base sm:text-lg">
@@ -138,24 +185,23 @@ export default function PersonalDetails({ onSubmit }) {
             <select
               id="city"
               name="city"
-              value={selectedCity}
-              onChange={handleCityChange}
+              value={formData.city}
+              onChange={handleInputChange}
               className="border border-purple-500 focus:outline-none px-4 py-2 rounded-md w-full bg-transparent"
               required
             >
               <option value="">Select City</option>
-              {selectedState &&
-                cities[selectedState].map((city) => (
+              {formData.state &&
+                cities[formData.state]?.map((city) => (
                   <option key={city} value={city}>
                     {city}
                   </option>
                 ))}
             </select>
-            
           </div>
-        </div> */}
+        </div>
 
-        <div className="flex flex-col items-start w-full mb-5 relative">
+        {/* <div className="flex flex-col items-start w-full mb-5 relative">
           <label className="text-gray-500 text-center text-base sm:text-lg">
             Password
           </label>
@@ -172,9 +218,9 @@ export default function PersonalDetails({ onSubmit }) {
             className="text-gray-400 absolute top-10 right-5"
             onClick={togglePasswordVisibility}
           />
-        </div>
+        </div> */}
 
-        <div className="flex flex-col items-start w-full mb-5 relative">
+        {/* <div className="flex flex-col items-start w-full mb-5 relative">
           <label className="text-gray-500 text-center text-base sm:text-lg">
             Confirm Password
           </label>
@@ -191,20 +237,26 @@ export default function PersonalDetails({ onSubmit }) {
             className="text-gray-400 absolute top-10 right-5"
             onClick={togglePasswordVisibility}
           />
-        </div>
+        </div> */}
 
         <p className="text-gray-500 sm:text-start text-center text-base sm:text-lg mb-10">
           Please confirm your details before proceeding to the next page
         </p>
 
-        <div>
+        {/* <div>
           <p>
             Or do you have an account already? <a href="/login">Login here</a>
           </p>
-        </div>
+        </div> */}
 
         <div className="w-full flex items-center justify-center">
-          <button className="w-1/2 py-3 text-white text-sm sm:text-lg bg-purple-500 rounded-full text-center">
+          <button
+            type="button"
+            onClick={handleNext}
+            // type="submit"
+            // onClick={() => setActiveHeader("Become Member")}
+            className="w-1/2 py-3 text-white text-sm sm:text-lg bg-purple-500 rounded-full text-center"
+          >
             NEXT
           </button>
         </div>

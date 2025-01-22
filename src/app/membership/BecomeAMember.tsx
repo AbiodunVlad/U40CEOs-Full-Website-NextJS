@@ -1,9 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 
-export default function BecomeAMember({onSubmit}) {
+export default function BecomeAMember({ onSubmit, setActiveHeader }: any) {
+  const [formData, setFormData] = useState({
+    industry: "",
+    market: "",
+    size: "",
+    stage: "",
+    address: "",
+    challenges: "",
+  });
+
+  const [error, setError] = useState("");
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+    setError("");
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const missingFields = Object.entries(formData).filter(
+      ([_, value]) => !value
+    );
+
+    if (missingFields.length > 0) {
+      setError("Please fill out all fields before proceeding.");
+      return;
+    }
+
+    onSubmit(formData);
+
+    // setActiveHeader(false);
+  };
+
   return (
     <div className="flex flex-col w-full">
-      <form className="sm:mb-10 mb-5">
+      <form className="sm:mb-10 mb-5" onSubmit={handleSubmit}>
         <div className="flex flex-col w-full mb-5">
           <label className="text-gray-500 text-start text-sm sm:text-lg">
             Can you tell us about your business?{" "}
@@ -18,6 +54,8 @@ export default function BecomeAMember({onSubmit}) {
               type="text"
               id="industry"
               name="industry"
+              value={formData.industry}
+              onChange={handleInputChange}
               className="border border-purple-500 focus:outline-none text-sm sm:text-lg px-2 sm:px-4 py-1 sm:py-2 rounded-md w-full"
               required
             />
@@ -26,6 +64,8 @@ export default function BecomeAMember({onSubmit}) {
               type="text"
               id="market"
               name="market"
+              value={formData.market}
+              onChange={handleInputChange}
               className="border border-purple-500 focus:outline-none text-sm sm:text-lg px-2 sm:px-4 py-1 sm:py-2 rounded-md w-full"
               required
             />
@@ -33,6 +73,8 @@ export default function BecomeAMember({onSubmit}) {
             <select
               id="size"
               name="size"
+              value={formData.size}
+              onChange={handleInputChange}
               className="bg-transparent border border-purple-500 focus:outline-none text-sm sm:text-lg px-2 sm:px-4 py-1 sm:py-2 rounded-md w-full"
               required
             >
@@ -57,6 +99,8 @@ export default function BecomeAMember({onSubmit}) {
           <select
             id="stage"
             name="stage"
+            value={formData.stage}
+            onChange={handleInputChange}
             className="bg-transparent border border-purple-500 focus:outline-none text-sm sm:text-lg px-2 sm:px-4 py-1 sm:py-2 rounded-md w-full"
             required
           >
@@ -80,6 +124,8 @@ export default function BecomeAMember({onSubmit}) {
             type="text"
             id="address"
             name="address"
+            value={formData.address}
+            onChange={handleInputChange}
             className="border border-purple-500 focus:outline-none text-sm sm:text-lg px-2 sm:px-4 py-1 sm:py-2 rounded-md w-full"
             required
           />
@@ -96,6 +142,8 @@ export default function BecomeAMember({onSubmit}) {
           <select
             id="challenges"
             name="challenges"
+            value={formData.challenges}
+            onChange={handleInputChange}
             className="bg-transparent border border-purple-500 focus:outline-none text-sm sm:text-lg px-2 sm:px-4 py-1 sm:py-2 rounded-md w-full"
             required
           >
@@ -109,15 +157,27 @@ export default function BecomeAMember({onSubmit}) {
           </select>
         </div>
 
+        {error && <p className="text-red-500 text-center">{error}</p>}
+
         <p className="text-gray-500 sm:text-start text-center text-sm sm:text-lg mb-10">
           Please confirm your details before proceeding to the next page
         </p>
 
         <div className="w-full flex flex-row items-center justify-center gap-10">
-          <button className="w-1/2 py-3 text-purple-500 border border-purple-500 text-sm sm:text-lg bg-white rounded-full text-center">
+          <button
+            type="button"
+            onClick={() => {
+              setActiveHeader("Personal Details");
+            }}
+            className="w-1/2 py-3 text-purple-500 border border-purple-500 text-sm sm:text-lg bg-white rounded-full text-center"
+          >
             BACK
           </button>
-          <button onClick={onSubmit} className="w-1/2 py-3 text-white text-sm sm:text-lg bg-purple-500 rounded-full text-center">
+          <button
+            type="submit"
+            // onClick={onSubmit}
+            className="w-1/2 py-3 text-white text-sm sm:text-lg bg-purple-500 rounded-full text-center"
+          >
             GENERATE RESULT
           </button>
         </div>

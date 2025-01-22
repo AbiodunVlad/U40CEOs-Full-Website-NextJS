@@ -26,9 +26,9 @@ export default function Membership() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const [user, setUser] = useState(null);
-  const [category, setCategory] = useState("");
-  
+  const [user, setUser] = useState<any>(null);
+  const [category, setCategory] = useState<Category | null>(null);
+
   const [showMemberResult, setShowMemberResult] = useState(false);
 
   const membershipHeaders = [
@@ -44,65 +44,65 @@ export default function Membership() {
   };
 
   const handleFormSubmission = (formData: { size: string }) => {
-    console.log('on submit pressed')
+    console.log("on submit pressed");
     setShowMemberResult(true);
     const assignedCategory = determineCategory(formData);
     setCategory(assignedCategory);
+  };
+
+  const renderHeader = () => {
+    switch (activeHeader) {
+      case "Personal Details":
+        return <PersonalDetails setActiveHeader={setActiveHeader} />;
+      case "Become Member":
+        return (
+          <BecomeAMember
+            setActiveHeader={setActiveHeader}
+            onSubmit={(data: { size: string }) => handleFormSubmission(data)}
+          />
+        );
+      // case "Membership Result":
+      //   return <MembershipResult />;
+      default:
+        return null;
+    }
   };
 
   // const renderHeader = () => {
   //   switch (activeHeader) {
   //     case "Personal Details":
   //       return <PersonalDetails />;
-  //     case "Become Member":
-  //       return <BecomeAMember />;
-  //     case "Membership Result":
-  //       return <MembershipResult />;
+
+  //     case "BecomeAMember":
+  //       return (
+  //         <BecomeAMember onSubmit={(data) => handleFormSubmission(data)} />
+  //       );
   //     default:
   //       return null;
   //   }
   // };
 
-  const renderHeader = () => {
-    switch (activeHeader) {
-      case "Personal Details":
-        if (user) {
-          setActiveHeader("BecomeAMember");
-        } else {
-          return (
-            <PersonalDetails
-              onSubmit={(data) => {
-                getUserProfile(data);
-                setActiveHeader("BecomeAMember");
-                setUser(data);
-              }}
-            />
-          );
-        }
-        break;
-      case "BecomeAMember":
-        return (
-          <BecomeAMember
-            onSubmit={(data) => {
-              handleFormSubmission(data);
-            }}
-          />
-        );
-      default:
-        return null;
-    }
-  };
+  // const renderResult = () => {
+  //   return category ? <MembershipResult setActiveHeader={setActiveHeader} category={category} /> : null;
+  // };
 
-  const renderResult = () =>
-    category && <MembershipResult category={category} />;
+  const renderResult = () => (
+    <MembershipResult
+      setActiveHeader={() => {
+        setActiveHeader("Become Member");
+        setShowMemberResult(false);
+      }}
+      category={category}
+    />
+  );
 
-  useEffect(() => {
-    const fetchUserProfile = async () => {
-      const loggedInUser = await getUserProfile();
-      setUser(loggedInUser);
-    };
-    fetchUserProfile();
-  }, []);
+  // useEffect(() => {
+  //   const fetchUserProfile = async () => {
+  //     const loggedInUser = await getUserProfile();
+  //     setUser(loggedInUser);
+  //   };
+  //   fetchUserProfile();
+  // }, []);
 
   useEffect(() => {
     const fetchTestimonials = async () => {
@@ -171,7 +171,10 @@ export default function Membership() {
                     ? "text-purple-500"
                     : "text-gray-500"
                 }`}
-                onClick={() => setActiveHeader(membershipHeader)}
+                onClick={() => {
+                  setActiveHeader(membershipHeader);
+                  setShowMemberResult(false);
+                }}
               >
                 {membershipHeader}
               </p>
@@ -185,26 +188,22 @@ export default function Membership() {
             </div>
           ))}
         </div>
-        <div className="w-full">{renderResult()}</div>
-        <div className="w-full">{renderHeader()}</div>
-     
-        {/* {
-          showMemberResult ? (
-            <div className="w-full">{renderResult()}</div>
-          ) : (
-            <div className="w-full">{renderHeader()}</div>
-          )
-        } */}
-        
-       
+        {/* <div className="w-full">{renderResult()}</div>
+        <div className="w-full">{renderHeader()}</div> */}
+
+        {/* {showMemberResult ? (
+          <div className="w-full">{renderResult()}</div>
+        ) : (
+          <div className="w-full">{renderHeader()}</div>
+        )} */}
+
+        {showMemberResult ? renderResult() : renderHeader()}
       </div>
-{
-  showMemberResult ? ()
-}
+
       <div className="px-10 sm:px-10 pt-20 pb-10 w-full flex lg:flex-row flex-col justify-center items-center gap-10">
         <div className="flex flex-col justify-center lg:items-start items-center lg:w-1/3">
           <Image
-            src="/images/adaora.svg"
+            src="/images/adaoraPurple.svg"
             alt=""
             width={200}
             height={200}
@@ -228,7 +227,7 @@ export default function Membership() {
 
         <div className="flex flex-col justify-center lg:items-start items-center lg:w-1/3">
           <Image
-            src="/images/omobola.svg"
+            src="/images/debolaPurple.svg"
             alt=""
             width={200}
             height={200}
@@ -252,7 +251,7 @@ export default function Membership() {
 
         <div className="flex flex-col justify-center lg:items-start items-center lg:w-1/3">
           <Image
-            src="/images/aisha.svg"
+            src="/images/aishaPurple.svg"
             alt=""
             width={200}
             height={200}

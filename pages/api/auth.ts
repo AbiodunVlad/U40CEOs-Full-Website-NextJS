@@ -333,7 +333,7 @@ export const getUserProfile = async (): Promise<any> => {
     if (!response.ok) {
       const errorData = await response.json();
       // console.error("Testimonials Error:", errorData);
-      throw new Error(errorData.message || "Can't get profile.");
+      // throw new Error(errorData.message || "Can't get profile.");
     }
 
     return await response.json();

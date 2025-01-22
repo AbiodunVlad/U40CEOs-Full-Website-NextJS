@@ -5,9 +5,13 @@ type Category = "Bronze" | "Gold" | "Platinum";
 
 interface MembershipResultProps {
   category: Category;
+  setActiveHeader: (header: string) => void;
 }
 
-export default function MembershipResult({ category }: MembershipResultProps) {
+export default function MembershipResult({
+  category,
+  setActiveHeader,
+}: MembershipResultProps) {
   const images: Record<Category, string> = {
     Bronze: "/images/bronzeCategory.svg",
     Gold: "/images/bronzeCategory.svg",
@@ -37,7 +41,8 @@ export default function MembershipResult({ category }: MembershipResultProps) {
 
       <button
         className="w-1/2 py-3 text-white text-sm sm:text-lg bg-purple-500 rounded-full text-center"
-        onClick={() => window.location.reload()}
+        // onClick={() => window.location.reload()}
+        onClick={() => setActiveHeader("Become Member")}
       >
         RE-EVALUATE
       </button>
