@@ -28,11 +28,13 @@ export default function Membership() {
 
   const [user, setUser] = useState(null);
   const [category, setCategory] = useState("");
+  
+  const [showMemberResult, setShowMemberResult] = useState(false);
 
   const membershipHeaders = [
     "Personal Details",
     "Become Member",
-    "Membership Result",
+    // "Membership Result",
   ];
 
   const determineCategory = (formData: { size: string }): Category => {
@@ -42,6 +44,8 @@ export default function Membership() {
   };
 
   const handleFormSubmission = (formData: { size: string }) => {
+    console.log('on submit pressed')
+    setShowMemberResult(true);
     const assignedCategory = determineCategory(formData);
     setCategory(assignedCategory);
   };
@@ -183,6 +187,16 @@ export default function Membership() {
         </div>
         <div className="w-full">{renderResult()}</div>
         <div className="w-full">{renderHeader()}</div>
+     
+        {/* {
+          showMemberResult ? (
+            <div className="w-full">{renderResult()}</div>
+          ) : (
+            <div className="w-full">{renderHeader()}</div>
+          )
+        } */}
+        
+       
       </div>
 
       <div className="px-10 sm:px-10 pt-20 pb-10 w-full flex lg:flex-row flex-col justify-center items-center gap-10">
