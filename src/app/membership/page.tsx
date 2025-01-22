@@ -184,7 +184,9 @@ export default function Membership() {
         <div className="w-full">{renderResult()}</div>
         <div className="w-full">{renderHeader()}</div>
       </div>
-
+{
+  showMemberResult ? ()
+}
       <div className="px-10 sm:px-10 pt-20 pb-10 w-full flex lg:flex-row flex-col justify-center items-center gap-10">
         <div className="flex flex-col justify-center lg:items-start items-center lg:w-1/3">
           <Image

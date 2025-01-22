@@ -5,7 +5,7 @@ import { faEye, faEyeLowVision } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import { getTestimonials } from "../../../pages/api/auth";
 
-export default function PersonalDetails() {
+export default function PersonalDetails({ onSubmit }) {
   const [selectedState, setSelectedState] = useState("");
   const [selectedCity, setSelectedCity] = useState("");
   const [showMemberPassword, setShowMemberPassword] = useState(false);
