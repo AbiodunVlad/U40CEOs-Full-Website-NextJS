@@ -217,13 +217,13 @@ export default function ReadBlog() {
               className="xl:mb-20 mb-10 w-full h-full shadow-lg"
             >
               <div className="w-full h-1/3 bg-blue-600">
-                <Image
+                {/* <Image
                   src={article.featuredImage}
                   width={100}
                   height={100}
                   alt=""
                   className="flex items-center justify-center w-full h-full"
-                />
+                /> */}
               </div>
               <div className="w-full h-2/3 p-5 mb-10">
                 <p className="self-start text-xxs text-black py-1 px-2 bg-purple-400 mb-3 inline-block rounded-full">

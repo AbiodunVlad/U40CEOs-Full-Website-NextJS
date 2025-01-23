@@ -38,6 +38,14 @@ export default function MembershipResult({
           {category.toUpperCase()} CATEGORY
         </h1>
       </div>
+      
+      <button
+        className="w-1/2 py-3 text-white text-sm sm:text-lg bg-purple-500 rounded-full text-center"
+        // onClick={() => window.location.reload()}
+        onClick={() => setActiveHeader("Become Member")}
+      >
+        RE-EVALUATE
+      </button>
 
       <button
         className="w-1/2 py-3 text-white text-sm sm:text-lg bg-purple-500 rounded-full text-center"

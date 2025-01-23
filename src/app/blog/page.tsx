@@ -133,11 +133,11 @@ export default function Blog() {
                       {article.title}
                     </p>
 
-                    <p className="text-gray-500 text-base sm:text-2xl">
+                    {/* <p className="text-gray-500 text-base sm:text-2xl">
                       {article.body.length > 200
                         ? `${article.body.slice(0, 200)}...`
                         : article.body}
-                    </p>
+                    </p> */}
                   </div>
                 </Link>
               </div>
@@ -155,7 +155,7 @@ export default function Blog() {
                     ? `${featuredArticle.body.slice(0, 350)}...`
                     : featuredArticle.body
                 }
-                image={featuredArticle.featuredImage}
+                // image={featuredArticle?.featuredImage}
                 createdAt={featuredArticle.createdAt}
               />
 
