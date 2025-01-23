@@ -34,6 +34,7 @@ export default function Membership() {
   const membershipHeaders = [
     "Personal Details",
     "Become Member",
+
     // "Membership Result",
   ];
 
@@ -128,7 +129,7 @@ export default function Membership() {
     <div className="flex flex-col text-black overflow-hidden">
       <Navbar />
 
-      <div className="flex sm:flex-row flex-col  items-center gap-3 sm:gap-0 py-5 md:py-10 px-2 md:px-20 bg-gradient-to-t from-gray-500 to-slate-200 sm:mt-28 md:mt-10 mt-10 mb-10 sm:mb-20 w-5/6 sm:w-1/2 md:w-5/6 self-center rounded-3xl">
+      <div className="flex sm:flex-row flex-col  items-center gap-3 sm:gap-0 py-5 md:py-10 px-2 md:px-20 bg-gradient-to-t from-gray-500 to-slate-200 sm:mt-28 md:mt-24 mt-10 mb-10 sm:mb-20 w-5/6 sm:w-1/2 md:w-5/6 self-center rounded-3xl">
         <div className="flex flex-row w-5/6 sm:w-1/2 md:w-5/6 justify-center sm:justify-normal items-center gap-1 sm:gap-5">
           {" "}
           <Image
@@ -170,14 +171,25 @@ export default function Membership() {
                   activeHeader === membershipHeader
                     ? "text-purple-500"
                     : "text-gray-500"
+                } ${
+                  membershipHeader === "Become Member" &&
+                  activeHeader !== "Become Member"
+                    ? "text-gray-400 cursor-not-allowed"
+                    : ""
                 }`}
                 onClick={() => {
+                  if (
+                    membershipHeader === "Become Member" &&
+                    activeHeader !== "Become Member"
+                  )
+                    return;
                   setActiveHeader(membershipHeader);
                   setShowMemberResult(false);
                 }}
               >
                 {membershipHeader}
               </p>
+
               <div
                 className={`border-b-4 w-full ${
                   activeHeader === membershipHeader

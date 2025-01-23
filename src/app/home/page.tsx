@@ -16,19 +16,21 @@ import TVseries from "./tvSeries";
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col ">
-      <BookSeat />
+    <div className="flex flex-col">
+      {/* <BookSeat /> */}
       <Navbar />
-      <HeroSection />
-      <Partners />
-      <CEOtips />
-      <Stats />
-      <BookSeatAgain />
-      <CompellingProducts />
-      <Testimonials />
-      <Blog />
-      <FreeCourses />
-      <TVseries />
+      <div className=" max-w-screen-2xl mx-auto">
+        <HeroSection />
+        <Partners />
+        <CEOtips />
+        <Stats />
+        <BookSeatAgain />
+        <CompellingProducts />
+        <Testimonials />
+        <Blog />
+        <FreeCourses />
+        <TVseries />
+      </div>
       <Footer />
     </div>
   );

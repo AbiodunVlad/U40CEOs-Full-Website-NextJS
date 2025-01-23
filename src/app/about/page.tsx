@@ -15,15 +15,17 @@ export default function About() {
   return (
     <div className="flex flex-col text-black overflow-hidden">
       <Navbar />
-      <HeroSection />
-      <CompanyStandard />
-      <ToolsForBusiness />
-      <History />
-      <Stats />
-      <PlatinumName />
-      <OurWorks />
-      <SuccessfulBusinesses />
-      <FAQ />
+      <div className=" max-w-screen-2xl mx-auto">
+        <HeroSection />
+        <CompanyStandard />
+        <ToolsForBusiness />
+        <History />
+        <Stats />
+        <PlatinumName />
+        <OurWorks />
+        <SuccessfulBusinesses />
+        <FAQ />
+      </div>
       <Footer />
     </div>
   );
