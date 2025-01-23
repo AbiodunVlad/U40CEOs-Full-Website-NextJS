@@ -14,23 +14,27 @@ import FAQ from "./FAQ";
 import StartBusiness from "./StartBusiness";
 import BecomeAMember from "@/components/BecomeAMember";
 import EnrolNow from "@/components/EnrolNow";
+import Navbar from "@/components/Navbar";
 
 export default function CourseObjective() {
   return (
     <div className="bg-pink-100">
-      <CoursesNavbar />
-      <HeroSection />
-      {/* <CEOsSay /> */}
-      <CourseOverview />
-      <WhatYouLearn />
-      <LearningOutcomes />
-      <WhatOthersSay />
-      <MeetTheInstructors />
-      <CourseFormat />
-      <FAQ />
-      <EnrolNow />
-      {/* <StartBusiness /> */}
-      <BecomeAMember />
+      <Navbar />
+      <div className=" max-w-screen-2xl mx-auto">
+        {/* <CoursesNavbar /> */}
+        <HeroSection />
+        {/* <CEOsSay /> */}
+        <CourseOverview />
+        <WhatYouLearn />
+        <LearningOutcomes />
+        <WhatOthersSay />
+        <MeetTheInstructors />
+        <CourseFormat />
+        <FAQ />
+        <EnrolNow />
+        {/* <StartBusiness /> */}
+        <BecomeAMember />
+      </div>
       <Footer />
     </div>
   );

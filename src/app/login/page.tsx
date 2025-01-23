@@ -56,17 +56,17 @@ export default function Login() {
 
       if (loginResponse?.status === true) {
         dispatch(setAccessToken(loginResponse?.data?.accessToken));
-        
+
         const getProfileResponse = await getUserProfile();
         console.log("get profile response", getProfileResponse?.data);
         dispatch(setUserDetails(getProfileResponse?.data));
-        
+
         localStorage.setItem("isAuthenticated", "true");
 
         const previousPage = localStorage.getItem("previousPage") || "/home";
-  
+
         setRedirecting(true);
-  
+
         setTimeout(() => {
           router.push(previousPage);
           localStorage.removeItem("previousPage");
@@ -74,8 +74,7 @@ export default function Login() {
       } else {
         console.log("password is wrong");
         setError(loginResponse?.message);
-      };
-
+      }
     } catch (error) {
       if (error instanceof Error) {
         setError(error.message);
@@ -90,7 +89,7 @@ export default function Login() {
   };
 
   return (
-    <div className="relative flex flex-col-reverse md:flex-row items-center justify-around min-h-screen">
+    <div className="relative flex flex-col-reverse md:flex-row items-center justify-around min-h-screen  max-w-screen-2xl mx-auto">
       {redirecting && <Loading />}
 
       <div className="bg-slate-100 w-full md:w-1/2 flex flex-col items-center justify-center min-h-screen py-2 px-10 lg:px-28">

@@ -116,7 +116,7 @@ export default function Signup() {
   };
 
   return (
-    <div className="flex flex-col-reverse md:flex-row items-center justify-around min-h-screen">
+    <div className="flex flex-col-reverse md:flex-row items-center justify-around min-h-screen  max-w-screen-2xl mx-auto">
       <div className="bg-slate-100 w-full md:w-1/2 flex flex-col items-center justify-center min-h-screen py-2 px-10 lg:px-28">
         <Link href="/home">
           <Image

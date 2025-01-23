@@ -17,12 +17,14 @@ export default function Resources() {
   return (
     <div>
       <Navbar />
-      <HeroSection />
-      <ResourceHeaders />
+      <div className="max-w-screen-2xl mx-auto">
+        <HeroSection />
+        <ResourceHeaders />
 
-      {/* <DetailsOverlay /> */}
-      {/* <MoreMagazines /> */}
-      {/* <MoreBooks /> */}
+        {/* <DetailsOverlay /> */}
+        {/* <MoreMagazines /> */}
+        {/* <MoreBooks /> */}
+      </div>
       <Footer />
     </div>
   );

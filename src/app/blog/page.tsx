@@ -99,132 +99,134 @@ export default function Blog() {
   return (
     <div>
       <Navbar />
-      <BlogSearch />
+      <div className=" max-w-screen-2xl mx-auto">
+        <BlogSearch />
 
-      <div className="flex flex-col px-5 md:px-20 items-center justify-center pt-10 md:pt-20 pb-20">
-        <h1 className="w-full font-extrabold text-black text-center text-4xl lg:text-5xl mb-20 uppercase">
-          THE TRENDING NEWS & ARTICLES
-        </h1>
+        <div className="flex flex-col px-5 md:px-20 items-center justify-center pt-10 md:pt-20 pb-20">
+          <h1 className="w-full font-extrabold text-black text-center text-4xl lg:text-5xl mb-20 uppercase">
+            THE TRENDING NEWS & ARTICLES
+          </h1>
 
-        <div className="flex flex-col w-full">
-          <div className="grid lg:grid-cols-3 pl-5 md:px-20 px-5 lg:w-full justify-between gap-3 md:gap-10 md:mb-20 mb-10">
-            {firstHalfItems.map((article: Article) => (
-              <div
-                key={article.id}
-                className="flex flex-col items-center h-full mb-10 shadow-2xl"
-              >
-                {/* <div className="w-full h-40 bg-blue-600">
-                  <Image
-                    src={article.featuredImage}
-                    width={100}
-                    height={100}
-                    alt=""
-                    className="flex items-center justify-center w-full h-full"
-                  />
-                </div> */}
-
-                <Link href={`/blog/${article.id}`} className="w-full h-auto">
-                  <div className="w-full h-full py-5 px-3">
-                    <p className="self-start text-xxs text-black py-1 px-2 bg-purple-400 mb-3 inline-block rounded-full">
-                      {article.category || "Business"}
-                    </p>
-
-                    <p className="text-black text-sm sm:text-lg font-bold mb-5">
-                      {article.title}
-                    </p>
-
-                    <p className="text-gray-500 text-base sm:text-2xl">
-                      {article.body.length > 200
-                        ? `${article.body.slice(0, 200)}...`
-                        : article.body}
-                    </p>
-                  </div>
-                </Link>
-              </div>
-            ))}
-          </div>
-
-          {currentPage === 1 && featuredArticle && (
-            <div className="flex flex-col items-center">
-              <WhatIs
-                key={featuredArticle.id}
-                id={featuredArticle.id}
-                title={featuredArticle.title}
-                body={
-                  featuredArticle.body.length > 350
-                    ? `${featuredArticle.body.slice(0, 350)}...`
-                    : featuredArticle.body
-                }
-                image={featuredArticle.featuredImage}
-                createdAt={featuredArticle.createdAt}
-              />
-
-              <div className="w-full border border-gray-400 mx-10 mb-5"></div>
-
-              <BlogEvent />
-
-              <div className=" w-full border border-gray-400 mx-10 mt-5 mb-20"></div>
-            </div>
-          )}
-
-          <div className="grid md:grid-cols-3 pl-5 md:px-20 px-5 md:w-full justify-between gap-3 md:gap-10 md:mb-20">
-            {secondHalfItems.map((article: Article) => (
-              <div
-                key={article.id}
-                className="flex flex-col items-center h-full mb-10 shadow-2xl"
-              >
-                {/* <div className="w-full h-40 bg-blue-600">
-                  <Image
-                    src={article.featuredImage}
-                    width={100}
-                    height={100}
-                    alt=""
-                    className="flex items-center justify-center w-full h-full"
-                  />
-                </div> */}
-                <Link href={`/blog/${article.id}`} className="w-full h-auto">
-                  <div className="w-full h-full py-5 px-3">
-                    <p className="self-start text-xxs text-black py-1 px-2 bg-purple-400 mb-3 inline-block rounded-full">
-                      {article.category || "Business"}
-                    </p>
-                    <p className="text-black text-sm sm:text-lg font-bold mb-5">
-                      {article.title}
-                    </p>
-                    <p className="text-gray-500 text-base sm:text-2xl">
-                      {article.body.length > 200
-                        ? `${article.body.slice(0, 200)}...`
-                        : article.body}
-                    </p>
-                  </div>
-                </Link>
-              </div>
-            ))}
-          </div>
-
-          <div className="flex justify-center mt-10">
-            {Array.from(
-              { length: Math.ceil(articles.length / ITEMS_PER_PAGE) },
-              (_, i) => (
-                <button
-                  key={i}
-                  onClick={() => paginate(i + 1)}
-                  className={`px-4 py-2 mx-1 rounded ${
-                    currentPage === i + 1
-                      ? "bg-pink-600 text-white"
-                      : "bg-white-200 text-black border border-black"
-                  }`}
+          <div className="flex flex-col w-full">
+            <div className="grid lg:grid-cols-3 pl-5 md:px-20 px-5 lg:w-full justify-between gap-3 md:gap-10 md:mb-20 mb-10">
+              {firstHalfItems.map((article: Article) => (
+                <div
+                  key={article.id}
+                  className="flex flex-col items-center h-full mb-10 shadow-2xl"
                 >
-                  {i + 1}
-                </button>
-              )
+                  {/* <div className="w-full h-40 bg-blue-600">
+                  <Image
+                    src={article.featuredImage}
+                    width={100}
+                    height={100}
+                    alt=""
+                    className="flex items-center justify-center w-full h-full"
+                  />
+                </div> */}
+
+                  <Link href={`/blog/${article.id}`} className="w-full h-auto">
+                    <div className="w-full h-full py-5 px-3">
+                      <p className="self-start text-xxs text-black py-1 px-2 bg-purple-400 mb-3 inline-block rounded-full">
+                        {article.category || "Business"}
+                      </p>
+
+                      <p className="text-black text-sm sm:text-lg font-bold mb-5">
+                        {article.title}
+                      </p>
+
+                      <p className="text-gray-500 text-base sm:text-2xl">
+                        {article.body.length > 200
+                          ? `${article.body.slice(0, 200)}...`
+                          : article.body}
+                      </p>
+                    </div>
+                  </Link>
+                </div>
+              ))}
+            </div>
+
+            {currentPage === 1 && featuredArticle && (
+              <div className="flex flex-col items-center">
+                <WhatIs
+                  key={featuredArticle.id}
+                  id={featuredArticle.id}
+                  title={featuredArticle.title}
+                  body={
+                    featuredArticle.body.length > 350
+                      ? `${featuredArticle.body.slice(0, 350)}...`
+                      : featuredArticle.body
+                  }
+                  image={featuredArticle.featuredImage}
+                  createdAt={featuredArticle.createdAt}
+                />
+
+                <div className="w-full border border-gray-400 mx-10 mb-5"></div>
+
+                <BlogEvent />
+
+                <div className=" w-full border border-gray-400 mx-10 mt-5 mb-20"></div>
+              </div>
             )}
+
+            <div className="grid md:grid-cols-3 pl-5 md:px-20 px-5 md:w-full justify-between gap-3 md:gap-10 md:mb-20">
+              {secondHalfItems.map((article: Article) => (
+                <div
+                  key={article.id}
+                  className="flex flex-col items-center h-full mb-10 shadow-2xl"
+                >
+                  {/* <div className="w-full h-40 bg-blue-600">
+                  <Image
+                    src={article.featuredImage}
+                    width={100}
+                    height={100}
+                    alt=""
+                    className="flex items-center justify-center w-full h-full"
+                  />
+                </div> */}
+                  <Link href={`/blog/${article.id}`} className="w-full h-auto">
+                    <div className="w-full h-full py-5 px-3">
+                      <p className="self-start text-xxs text-black py-1 px-2 bg-purple-400 mb-3 inline-block rounded-full">
+                        {article.category || "Business"}
+                      </p>
+                      <p className="text-black text-sm sm:text-lg font-bold mb-5">
+                        {article.title}
+                      </p>
+                      <p className="text-gray-500 text-base sm:text-2xl">
+                        {article.body.length > 200
+                          ? `${article.body.slice(0, 200)}...`
+                          : article.body}
+                      </p>
+                    </div>
+                  </Link>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex justify-center mt-10">
+              {Array.from(
+                { length: Math.ceil(articles.length / ITEMS_PER_PAGE) },
+                (_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => paginate(i + 1)}
+                    className={`px-4 py-2 mx-1 rounded ${
+                      currentPage === i + 1
+                        ? "bg-pink-600 text-white"
+                        : "bg-white-200 text-black border border-black"
+                    }`}
+                  >
+                    {i + 1}
+                  </button>
+                )
+              )}
+            </div>
           </div>
         </div>
+
+        <BecomeAMember />
+
+        <TVseries />
       </div>
-
-      <BecomeAMember />
-
-      <TVseries />
       <Footer />
     </div>
   );

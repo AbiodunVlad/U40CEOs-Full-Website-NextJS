@@ -24,7 +24,7 @@ export default function StoreHeaders() {
 
   return (
     <>
-      <div className="flex flex-row  justify-center sm:gap-40 gap-10 bg-white pt-5 pb-1">
+      <div className="flex flex-row  justify-center sm:gap-40 gap-10 bg-white pt-24 pb-1">
         {headers.map((header) => (
           <div key={header} className="flex flex-col items-center">
             <p

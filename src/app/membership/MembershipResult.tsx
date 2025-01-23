@@ -39,13 +39,19 @@ export default function MembershipResult({
         </h1>
       </div>
 
-      <button
-        className="w-1/2 py-3 text-white text-sm sm:text-lg bg-purple-500 rounded-full text-center"
-        // onClick={() => window.location.reload()}
-        onClick={() => setActiveHeader("Become Member")}
-      >
-        RE-EVALUATE
-      </button>
+      <div className="w-full flex flex-row items-center justify-center gap-10">
+        <button
+          // className="w-1/2 py-3 text-white text-sm sm:text-lg bg-purple-500 rounded-full text-center"
+          // onClick={() => window.location.reload()}
+          onClick={() => setActiveHeader("Become Member")}
+          className="w-1/2 py-3 text-purple-500 border border-purple-500 text-sm sm:text-lg bg-white rounded-full text-center"
+        >
+          RE-EVALUATE
+        </button>
+        <button className="w-1/2 py-3 text-white text-sm sm:text-lg bg-purple-500 rounded-full text-center">
+          MAKE PAYMENT
+        </button>
+      </div>
     </div>
   );
 }
