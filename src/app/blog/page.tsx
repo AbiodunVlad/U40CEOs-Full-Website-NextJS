@@ -99,7 +99,7 @@ export default function Blog() {
   return (
     <div>
       <Navbar />
-      <div className=" max-w-screen-2xl mx-auto">
+      <div className=" max-w-screen-2xl mx-auto py-20 md:py-28">
         <BlogSearch />
 
         <div className="flex flex-col px-5 md:px-20 items-center justify-center pt-10 md:pt-20 pb-20">
@@ -134,35 +134,39 @@ export default function Blog() {
                         {article.title}
                       </p>
 
-                    {/* <p className="text-gray-500 text-base sm:text-2xl">
+                      {/* <p className="text-gray-500 text-base sm:text-2xl">
                       {article.body.length > 200
                         ? `${article.body.slice(0, 200)}...`
                         : article.body}
                     </p> */}
-                    
-                    <div className="text-gray-500 text-base sm:text-xl" dangerouslySetInnerHTML={{ __html: article.body.slice(0, 200) }} />
-                  </div>
-                </Link>
-              </div>
-            ))}
-          </div>
 
-          {currentPage === 1 && featuredArticle && (
-            <div className="flex flex-col items-center">
-              <WhatIs
-                key={featuredArticle.id}
-                id={featuredArticle.id}
-                title={featuredArticle.title}
-                body={
-                  featuredArticle.body.length > 350
-                    ? `${featuredArticle.body.slice(0, 350)}...`
-                    : featuredArticle.body
-                }
-                // image={featuredArticle?.featuredImage}
-                image={featuredArticle?.featuredImage || '/images/logo1.svg'}
-                
-                createdAt={featuredArticle.createdAt}
-              />
+                      <div
+                        className="text-gray-500 text-base sm:text-xl"
+                        dangerouslySetInnerHTML={{
+                          __html: article.body.slice(0, 200),
+                        }}
+                      />
+                    </div>
+                  </Link>
+                </div>
+              ))}
+            </div>
+
+            {currentPage === 1 && featuredArticle && (
+              <div className="flex flex-col items-center">
+                <WhatIs
+                  key={featuredArticle.id}
+                  id={featuredArticle.id}
+                  title={featuredArticle.title}
+                  body={
+                    featuredArticle.body.length > 350
+                      ? `${featuredArticle.body.slice(0, 350)}...`
+                      : featuredArticle.body
+                  }
+                  // image={featuredArticle?.featuredImage}
+                  image={featuredArticle?.featuredImage || "/images/logo1.svg"}
+                  createdAt={featuredArticle.createdAt}
+                />
 
                 <div className="w-full border border-gray-400 mx-10 mb-5"></div>
 
@@ -200,17 +204,19 @@ export default function Blog() {
                           ? `${article.body.slice(0, 200)}...`
                           : article.body}
                       </p> */}
-                      {
-                        article?.body?.length > 200 ? (
-                      <div className="text-gray-500 text-base sm:text-xl" dangerouslySetInnerHTML={{ __html: article.body.slice(0, 200) + 
-                        "..."
-                       }} />
-                          
-                        ) : (
-                      <div className="text-gray-500 text-base sm:text-xl" dangerouslySetInnerHTML={{ __html: article.body }} />
-                          
-                        )
-                      }
+                      {article?.body?.length > 200 ? (
+                        <div
+                          className="text-gray-500 text-base sm:text-xl"
+                          dangerouslySetInnerHTML={{
+                            __html: article.body.slice(0, 200) + "...",
+                          }}
+                        />
+                      ) : (
+                        <div
+                          className="text-gray-500 text-base sm:text-xl"
+                          dangerouslySetInnerHTML={{ __html: article.body }}
+                        />
+                      )}
                     </div>
                   </Link>
                 </div>
