@@ -1,5 +1,7 @@
 import Image from "next/image";
 import React from "react";
+import PaystackPop from '@paystack/inline-js'
+import { initializeTransaction } from "../../../pages/api/pay";
 
 type Category = "Bronze" | "Gold" | "Platinum";
 
@@ -17,7 +19,46 @@ export default function MembershipResult({
     Gold: "/images/bronzeCategory.svg",
     Platinum: "/images/bronzeCategory.svg",
   };
-
+  
+  const popup = new PaystackPop();
+  // popup.resumeTransaction(access_code)
+  
+  const amount = '150';
+  
+  const [loading, setLoading] = React.useState(false);
+  const [error, setError] = React.useState("");
+  
+    const makePayment = async () => {
+      setLoading(true);
+      setError("");
+  
+      // mitevo9094@myweblaw.com
+      // qwertyui
+  
+      try {
+        const makePaymentResponse = await initializeTransaction(amount);
+  
+        console.log("login response", makePaymentResponse);
+  
+        if (makePaymentResponse?.status === true) {
+  
+          console.log("success", makePaymentResponse);
+  
+          
+        } else {
+          console.log("payment unsuccessful", makePaymentResponse);
+          setError(makePaymentResponse?.message);
+        }
+      } catch (error) {
+        if (error instanceof Error) {
+          setError(error.message);
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+    
+    
   return (
     <div className="flex flex-col items-center w-full px-3 sm:px-20">
       <p className="text-gray-500 text-center text-base sm:text-2xl w-full mb-5 sm:mb-10">
@@ -56,7 +97,7 @@ export default function MembershipResult({
         >
           RE-EVALUATE
         </button>
-        <button className="w-1/2 py-3 text-white text-sm sm:text-lg bg-purple-500 rounded-full text-center">
+        <button onClick={makePayment} className="w-1/2 py-3 text-white text-sm sm:text-lg bg-purple-500 rounded-full text-center">
           MAKE PAYMENT
         </button>
       </div>

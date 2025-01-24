@@ -37,11 +37,12 @@ export const initializeTransaction = async (amount: string): Promise<any> => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            Authorization: `Bearer ${store.getState().auth?.accessToken}`,
           },
           body: JSON.stringify({ amount: amount }),
         });
         
-        console.log('payment response here', response.json());
+        console.log('payment response here', response);
     
         if (!response.ok) {
           const errorData = await response.json();
