@@ -110,8 +110,8 @@ export default function SuccessStories() {
   return (
     <div className="flex flex-col text-black overflow-hidden">
       <Navbar />
-      <div className=" max-w-screen-2xl mx-auto">
-        <div className="flex flex-col py-10 md:py-20 px-5 md:px-20">
+      <div className=" md:max-w-screen-2xl md:mx-auto">
+        <div className="flex flex-col py-20 md:py-28 px-5 md:px-20">
           <h1 className="text-black text-center text-4xl lg:text-5xl font-extrabold mb-2 leading-7 md:leading-10 uppercase">
             Real Successes, Real
             <br /> Entrepreneurial Journeys
@@ -360,7 +360,7 @@ export default function SuccessStories() {
 
           <div className="flex flex-col justify-center items-start md:w-1/3">
             <Image
-              src="/images/omobola.svg"
+              src="/images/debola.svg"
               alt=""
               width={200}
               height={200}

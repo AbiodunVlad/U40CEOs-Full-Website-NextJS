@@ -1,12 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <div className="flex flex-col-reverse md:flex-row px-5 lg:px-20 py-10 md:py-20 items-center justify-between">
-      <div className="xl:w-3/5 w-full flex flex-col items-center md:items-start text-center md:text-left mb-10 md:mb-0">
+    <div className="flex flex-col-reverse xl:flex-row px-5 xl:px-20 py-20 xl:py-28 items-center justify-between w-full max-w-screen-2xl mx-auto">
+      <div className="xl:w-3/5 w-full flex flex-col items-center xl:items-start text-center xl:text-left mb-10 xl:mb-0">
         <h1 className="w-full font-extrabold text-black text-4xl lg:text-5xl mb-5 leading-10">
           Become One of Africa’s <br />
           <span className="bg-gradient-to-r from-red-500 to-violet-600 bg-clip-text text-transparent">
@@ -39,7 +39,7 @@ export default function HeroSection() {
             Featured more than 500 African CEOs
           </p>
 
-          <div className="flex flex-row">
+          <div className="flex flex-row flex-wrap justify-center">
             <Image
               src="/images/homeImg/presidentHome.svg"
               alt=""
@@ -93,7 +93,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <div className="md:w-1/5  hidden md:block md:-mt-36">
+      <div className="md:w-1/5 hidden md:block md:-mt-36">
         <Image
           src="/images/heroArrow.svg"
           alt="arrow"
@@ -102,7 +102,7 @@ export default function HeroSection() {
         />
       </div>
 
-      <div className="lg:w-2/5 w-full  md:mb-20">
+      <div className="xl:w-2/5 w-full md:mb-20 justify-center flex">
         <Image
           src="/images/heroImg.svg"
           alt="heroImg"

@@ -24,7 +24,7 @@ export default function FreeCourses() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center bg-slate-100 text-center pb-20 px-5 overflow-hidden">
+    <div className="flex flex-col items-center justify-center  text-center pb-20 px-5 overflow-hidden max-w-screen-2xl mx-auto">
       <div className="flex flex-row">
         <Image src="/icons/growImg1.svg" alt="" width={100} height={100} />
         <Image src="/icons/growImg12.svg" alt="" width={200} height={200} />

@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function CompellingProducts() {
   return (
-    <div className="flex flex-col justify-center px-2 pt-10 pb-10 md:pt-20 md:pb-20 bg-slate-100 relative">
+    <div className="flex flex-col justify-center px-2 pt-10 pb-10 md:pt-20 md:pb-20 bg-slate-100 relative max-w-screen-2xl mx-auto">
       <h1 className="text-center text-black font-extrabold text-3xl lg:text-4xl mb-10 md:mb-20">
         UNLOCK YOUR ADVANTAGE WITH
         <br /> OUR EXCLUSIVE RESOURCES
@@ -203,7 +203,7 @@ export default function CompellingProducts() {
         </div>
 
         <div className="w-full md:w-1/4 flex flex-col items-center mb-8 md:mb-0">
-          <Image src="/images/omobola.svg" alt="" width={200} height={150} />
+          <Image src="/images/debola.svg" alt="" width={200} height={150} />
 
           <h6 className="font-extrabold text-black text-lg md:text-xl mb-1 uppercase">
             Debola Wiiliams{" "}

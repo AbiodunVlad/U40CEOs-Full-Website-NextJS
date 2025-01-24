@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <div className="flex flex-col-reverse md:flex-row px-4 md:px-20 py-10 md:py-20 items-center justify-center mb-20">
+    <div className="flex flex-col-reverse md:flex-row px-4 md:px-20 py-20 md:py-20 items-center justify-center mb-20">
       <div className="flex flex-col items-center md:items-center justify-center text-center md:text-left mb-10 md:mb-0">
         <h1 className="font-extrabold text-black text-center text-4xl lg:text-5xl md:mb-5 mb-10 uppercase leading-10">
           We are a thriving community of young{" "}
@@ -57,48 +57,48 @@ export default function HeroSection() {
           />
         </div>
 
-        <div className="flex flex-row gap-5">
+        <div className="flex flex-row gap-2">
           <Image
             src="/images/homeImg/bankyHome.svg"
             alt=""
             width={70}
             height={70}
-            className="rounded-full transform sm:flex hidden"
+            className="rounded-full  transform sm:flex hidden"
           />
           <Image
             src="/images/homeImg/woman1Home.svg"
             alt=""
             width={70}
             height={70}
-            className="md:rounded-full rounded-none transform"
+            className="rounded-full  transform"
           />
           <Image
             src="/images/homeImg/man1Home.svg"
             alt=""
             width={70}
             height={70}
-            className="md:rounded-full rounded-none transform"
+            className="rounded-full  transform"
           />
           <Image
             src="/images/homeImg/presidentHome.svg"
             alt=""
             width={70}
             height={70}
-            className="md:rounded-full rounded-none transform"
+            className="rounded-full  transform"
           />
           <Image
             src="/images/homeImg/woman2Home.svg"
             alt=""
             width={70}
             height={70}
-            className="md:rounded-full rounded-none transform"
+            className="rounded-full  transform"
           />
           <Image
             src="/images/homeImg/man3Home.svg"
             alt=""
             width={70}
             height={70}
-            className="md:rounded-full rounded-none transform"
+            className="rounded-full  transform"
           />
           <Image
             src="/images/homeImg/man4Home.svg"

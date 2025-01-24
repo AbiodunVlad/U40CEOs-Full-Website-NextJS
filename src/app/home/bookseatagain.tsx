@@ -4,7 +4,7 @@ import React, { useState } from "react";
 
 export default function BookSeatAgain() {
   return (
-    <div className="flex flex-row items-center px-5 md:px-20 py-3 justify-between bg-gradient-to-r from-red-500 to-violet-600">
+    <div className="flex flex-row items-center px-5 md:px-20 py-3 justify-between bg-gradient-to-r from-red-500 to-violet-600 ">
       <div className="flex flex-col">
         <p className="text-black text-xl font-extrabold">
           U4C Fireside Chat

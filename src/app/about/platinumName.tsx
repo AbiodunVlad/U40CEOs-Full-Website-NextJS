@@ -29,7 +29,7 @@ export default function PlatinumName() {
 
       <div className="flex flex-col justify-center items-start md:w-1/3">
         <Image
-          src="/images/omobolaBlue.svg"
+          src="/images/debolaBlue.svg"
           alt=""
           width={150}
           height={150}

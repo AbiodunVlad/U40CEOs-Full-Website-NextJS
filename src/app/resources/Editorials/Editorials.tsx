@@ -8,7 +8,7 @@ import Books from "./Books";
 const slideImages = [
   <div key="img1" className="w-full flex justify-center items-center">
     <Image
-      src="/images/omobolaMag.svg"
+      src="/images/debolaMag.svg"
       alt="Editorial Image 1"
       width={1400}
       height={200}
@@ -17,7 +17,7 @@ const slideImages = [
   </div>,
   <div key="img2" className="w-full flex justify-center items-center">
     <Image
-      src="/images/omobolaMag.svg"
+      src="/images/debolaMag.svg"
       alt="Editorial Image 2"
       width={1400}
       height={200}
@@ -26,7 +26,7 @@ const slideImages = [
   </div>,
   <div key="img3" className="w-full flex justify-center items-center">
     <Image
-      src="/images/omobolaMag.svg"
+      src="/images/debolaMag.svg"
       alt="Editorial Image 3"
       width={1400}
       height={200}
@@ -35,7 +35,7 @@ const slideImages = [
   </div>,
   <div key="img4" className="w-full flex justify-center items-center">
     <Image
-      src="/images/omobolaMag.svg"
+      src="/images/debolaMag.svg"
       alt="Editorial Image 4"
       width={1400}
       height={200}

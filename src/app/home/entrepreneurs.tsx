@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Entrepreneurs() {
   return (
-    <div className="flex flex-col md:flex-row w-full h-fit md:w-5/6 justify-center items-stretch px-5 lg:px-20 mb-20 gap-5">
+    <div className="flex flex-col md:flex-row w-full h-fit md:w-full justify-center items-stretch px-5 xl:px-10 mb-20 gap-5">
       <div className="p-5 bg-white shadow-md flex flex-col flex-grow items-start justify-between w-full lg-w:1/3 h-full">
         <Image
           src="/images/olaBrown.svg"

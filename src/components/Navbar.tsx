@@ -58,7 +58,7 @@ export default function Navbar() {
 
   return (
     <div className="bg-white shadow-lg fixed w-full z-50">
-      <div className=" flex flex-col xl:flex-row items-center justify-between px-4 py-2 xl:px-20 lg:py-4 max-w-screen-2xl mx-auto">
+      <div className=" flex flex-col xl:flex-row items-center justify-between px-4 py-2 xl:px-20 lg:py-4  max-w-screen-2xl mx-auto">
         <div className="flex justify-between w-full xl:w-auto">
           <Link href="/home">
             {" "}

@@ -85,21 +85,21 @@ export default function Blog() {
   // }
 
   return (
-    <div className="flex flex-col items-center justify-center py-20 px-5 md:px-20 bg-slate-100">
+    <div className="flex flex-col items-center justify-center w-full py-20 px-5 lg:px-20  max-w-screen-2xl mx-auto">
       <p className="text-pink-400 text-sm font-semibold mb-5">FROM OUR BLOG</p>
 
       <h1 className="text-black font-extrabold text-2xl md:text-3xl mb-16">
         LATEST NEWS & ARTICLES
       </h1>
 
-      <div className="grid md:grid-cols-2 items-center justify-center gap-10 mb-5">
+      <div className="flex flex-col lg:grid lg:grid-cols-2 w-4/5 lg:w-full items-center justify-center gap-10 mb-5">
         {relatedArticles.map((blogs) => (
           <div
             key={blogs.id}
-            className="flex flex-row items-center w-full h-full mb-10 shadow-2xl"
+            className="flex flex-row items-center w-full h-full mb-10 shadow-2xl bg-red-500"
           >
-            <Link href={`/blog/${blogs.id}`} className="w-1/2 p-5">
-              <div className="w-full">
+            <Link href={`/blog/${blogs.id}`} className="w-full p-5 ">
+              <div className="w-full ">
                 <p className="self-start text-xs text-black py-1 px-2 bg-purple-400 mb-3 inline-block rounded-full">
                   {blogs.category || "Business"}
                 </p>
@@ -107,7 +107,7 @@ export default function Blog() {
                   {/* {blogs.title.length > 15
                     ? `${blogs.title.slice(0, 15)}...`
                     : blogs.title} */}
-                    {blogs.title}
+                  {blogs.title}
                 </p>
                 <p className="text-gray-500 text-base sm:text-2xl">
                   {blogs.body.length > 150
