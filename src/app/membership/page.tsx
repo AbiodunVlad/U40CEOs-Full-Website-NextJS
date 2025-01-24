@@ -93,7 +93,7 @@ export default function Membership() {
         setActiveHeader("Become Member");
         setShowMemberResult(false);
       }}
-      category={category}
+      category={category ?? "Bronze"} // Add a default value for category
     />
   );
 

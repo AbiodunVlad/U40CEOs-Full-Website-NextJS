@@ -187,8 +187,10 @@ export default function ReadBlog() {
                   {formatDate(article.createdAt)}
                 </span>
               </p>
+              
+              <div className="text-black text-base sm:text-xl" dangerouslySetInnerHTML={{ __html: article.body}} />
+              
 
-              <p className="text-black text-base sm:text-2xl">{article.body}</p>
             </div>
           </>
         ) : (
@@ -217,13 +219,13 @@ export default function ReadBlog() {
               className="xl:mb-20 mb-10 w-full h-full shadow-lg"
             >
               <div className="w-full h-1/3 bg-blue-600">
-                <Image
+                {/* <Image
                   src={article.featuredImage}
                   width={100}
                   height={100}
                   alt=""
                   className="flex items-center justify-center w-full h-full"
-                />
+                /> */}
               </div>
               <div className="w-full h-2/3 p-5 mb-10">
                 <p className="self-start text-xxs text-black py-1 px-2 bg-purple-400 mb-3 inline-block rounded-full">
@@ -232,11 +234,21 @@ export default function ReadBlog() {
                 <p className="text-black text-base sm:text-2xl font-bold mb-5">
                   {article.title}
                 </p>
-                <p className="text-gray-500 text-base sm:text-2xl">
+                {/* <p className="text-gray-500 text-base sm:text-2xl">
                   {article.body.length > 200
                     ? `${article.body.slice(0, 200)}...`
                     : article.body}
-                </p>
+                </p> */}
+                
+                {/* {
+                        article?.body?.length > 50 ? (
+                      <div className="text-gray-500 text-base sm:text-xl" dangerouslySetInnerHTML={{ __html: article.body.slice(0, 50) }} />
+                          
+                        ) : (
+                      <div className="text-gray-500 text-base sm:text-xl" dangerouslySetInnerHTML={{ __html: article.body }} />
+                          
+                        )
+                      } */}
               </div>
             </Link>
           ))}

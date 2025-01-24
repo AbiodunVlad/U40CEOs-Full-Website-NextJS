@@ -134,31 +134,35 @@ export default function Blog() {
                         {article.title}
                       </p>
 
-                      <p className="text-gray-500 text-base sm:text-2xl">
-                        {article.body.length > 200
-                          ? `${article.body.slice(0, 200)}...`
-                          : article.body}
-                      </p>
-                    </div>
-                  </Link>
-                </div>
-              ))}
-            </div>
+                    {/* <p className="text-gray-500 text-base sm:text-2xl">
+                      {article.body.length > 200
+                        ? `${article.body.slice(0, 200)}...`
+                        : article.body}
+                    </p> */}
+                    
+                    <div className="text-gray-500 text-base sm:text-xl" dangerouslySetInnerHTML={{ __html: article.body.slice(0, 200) }} />
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </div>
 
-            {currentPage === 1 && featuredArticle && (
-              <div className="flex flex-col items-center">
-                <WhatIs
-                  key={featuredArticle.id}
-                  id={featuredArticle.id}
-                  title={featuredArticle.title}
-                  body={
-                    featuredArticle.body.length > 350
-                      ? `${featuredArticle.body.slice(0, 350)}...`
-                      : featuredArticle.body
-                  }
-                  image={featuredArticle.featuredImage}
-                  createdAt={featuredArticle.createdAt}
-                />
+          {currentPage === 1 && featuredArticle && (
+            <div className="flex flex-col items-center">
+              <WhatIs
+                key={featuredArticle.id}
+                id={featuredArticle.id}
+                title={featuredArticle.title}
+                body={
+                  featuredArticle.body.length > 350
+                    ? `${featuredArticle.body.slice(0, 350)}...`
+                    : featuredArticle.body
+                }
+                // image={featuredArticle?.featuredImage}
+                image={featuredArticle?.featuredImage || '/images/logo1.svg'}
+                
+                createdAt={featuredArticle.createdAt}
+              />
 
                 <div className="w-full border border-gray-400 mx-10 mb-5"></div>
 
@@ -191,11 +195,22 @@ export default function Blog() {
                       <p className="text-black text-sm sm:text-lg font-bold mb-5">
                         {article.title}
                       </p>
-                      <p className="text-gray-500 text-base sm:text-2xl">
+                      {/* <p className="text-gray-500 text-base sm:text-2xl">
                         {article.body.length > 200
                           ? `${article.body.slice(0, 200)}...`
                           : article.body}
-                      </p>
+                      </p> */}
+                      {
+                        article?.body?.length > 200 ? (
+                      <div className="text-gray-500 text-base sm:text-xl" dangerouslySetInnerHTML={{ __html: article.body.slice(0, 200) + 
+                        "..."
+                       }} />
+                          
+                        ) : (
+                      <div className="text-gray-500 text-base sm:text-xl" dangerouslySetInnerHTML={{ __html: article.body }} />
+                          
+                        )
+                      }
                     </div>
                   </Link>
                 </div>
