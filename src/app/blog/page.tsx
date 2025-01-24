@@ -139,6 +139,8 @@ export default function Blog() {
                         ? `${article.body.slice(0, 200)}...`
                         : article.body}
                     </p> */}
+                    
+                    <div className="text-gray-500 text-base sm:text-xl" dangerouslySetInnerHTML={{ __html: article.body.slice(0, 200) }} />
                   </div>
                 </Link>
               </div>
@@ -157,6 +159,8 @@ export default function Blog() {
                     : featuredArticle.body
                 }
                 // image={featuredArticle?.featuredImage}
+                image={featuredArticle?.featuredImage || '/images/logo1.svg'}
+                
                 createdAt={featuredArticle.createdAt}
               />
 
@@ -191,11 +195,22 @@ export default function Blog() {
                       <p className="text-black text-sm sm:text-lg font-bold mb-5">
                         {article.title}
                       </p>
-                      <p className="text-gray-500 text-base sm:text-2xl">
+                      {/* <p className="text-gray-500 text-base sm:text-2xl">
                         {article.body.length > 200
                           ? `${article.body.slice(0, 200)}...`
                           : article.body}
-                      </p>
+                      </p> */}
+                      {
+                        article?.body?.length > 200 ? (
+                      <div className="text-gray-500 text-base sm:text-xl" dangerouslySetInnerHTML={{ __html: article.body.slice(0, 200) + 
+                        "..."
+                       }} />
+                          
+                        ) : (
+                      <div className="text-gray-500 text-base sm:text-xl" dangerouslySetInnerHTML={{ __html: article.body }} />
+                          
+                        )
+                      }
                     </div>
                   </Link>
                 </div>

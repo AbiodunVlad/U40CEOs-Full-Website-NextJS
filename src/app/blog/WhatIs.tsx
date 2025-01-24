@@ -38,7 +38,7 @@ export default function WhatIs({
         <h5 className="text-black text-2xl lg:text-3xl font-bold mb-5 md:mb-10">
           {title}
         </h5>
-        <p className="text-gray-500 text-base sm:text-2xl md:mb-32">{body}</p>
+        <div className="text-gray-500 text-base sm:text-xl" dangerouslySetInnerHTML={{ __html: body }} />
 
         <div className="flex flex-row justify-between">
           <p className="font-bold text-sm sm:text-lg">

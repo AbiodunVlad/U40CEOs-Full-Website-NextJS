@@ -187,8 +187,10 @@ export default function ReadBlog() {
                   {formatDate(article.createdAt)}
                 </span>
               </p>
+              
+              <div className="text-black text-base sm:text-xl" dangerouslySetInnerHTML={{ __html: article.body}} />
+              
 
-              <p className="text-black text-base sm:text-2xl">{article.body}</p>
             </div>
           </>
         ) : (
@@ -232,11 +234,21 @@ export default function ReadBlog() {
                 <p className="text-black text-base sm:text-2xl font-bold mb-5">
                   {article.title}
                 </p>
-                <p className="text-gray-500 text-base sm:text-2xl">
+                {/* <p className="text-gray-500 text-base sm:text-2xl">
                   {article.body.length > 200
                     ? `${article.body.slice(0, 200)}...`
                     : article.body}
-                </p>
+                </p> */}
+                
+                {/* {
+                        article?.body?.length > 50 ? (
+                      <div className="text-gray-500 text-base sm:text-xl" dangerouslySetInnerHTML={{ __html: article.body.slice(0, 50) }} />
+                          
+                        ) : (
+                      <div className="text-gray-500 text-base sm:text-xl" dangerouslySetInnerHTML={{ __html: article.body }} />
+                          
+                        )
+                      } */}
               </div>
             </Link>
           ))}
