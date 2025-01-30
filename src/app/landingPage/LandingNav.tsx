@@ -11,7 +11,7 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 
-export default function Navbar() {
+export default function LandingNav() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -58,8 +58,8 @@ export default function Navbar() {
 
   return (
     <div className="bg-white shadow-lg fixed w-full z-50">
-      <div className=" flex flex-col xl:flex-row items-center justify-between px-4 py-2 xl:px-20 lg:py-4  max-w-screen-2xl mx-auto">
-        <div className="flex justify-between w-full xl:w-auto">
+      <div className=" flex flex-col xl:flex-row items-center  px-4 py-2 xl:px-20 lg:py-4  max-w-screen-2xl mx-auto">
+        <div className="flex justify-between w-full xl:w-1/5">
           <Link href="/home">
             {" "}
             <Image src="/images/logo.svg" alt="logo" width={50} height={50} />
@@ -75,7 +75,7 @@ export default function Navbar() {
         </div>
 
         <ul
-          className={`text-black flex flex-col xl:flex-row items-center w-full xl:w-auto transition-all duration-300 ${
+          className={`text-black flex flex-col xl:flex-row items-center justify-between w-full xl:w-4/5 transition-all duration-300 ${
             menuOpen ? "block" : "hidden xl:flex"
           }`}
         >
@@ -90,24 +90,25 @@ export default function Navbar() {
             </li>
           </Link>
 
-          <Link href="/about">
+          <Link href="/home">
             {" "}
             <li
-              className={`font-bold text-xs text-center mb-4 xl:mb-0 xl:mr-10 ${isActive(
-                "/about"
+              className={`text-xs font-bold mb-4 xl:mb-0 xl:mr-10 ${isActive(
+                "/"
               )}`}
             >
-              About
+              Why Join Us
             </li>
           </Link>
 
-          <Link href="/resources">
+          <Link href="/home">
+            {" "}
             <li
-              className={`font-bold text-xs mb-4 xl:mb-0 xl:mr-10 ${isActive(
-                "/resources"
+              className={`text-xs font-bold mb-4 xl:mb-0 xl:mr-10 ${isActive(
+                "/"
               )}`}
             >
-              Resources
+              Who Is This For
             </li>
           </Link>
 
@@ -122,47 +123,13 @@ export default function Navbar() {
             </li>
           </Link>
 
-          <Link href="/blog">
-            <li
-              className={`font-bold text-xs mb-4 xl:mb-0 xl:mr-10 ${isActive(
-                "/blog"
-              )}`}
-            >
-              Blog
-            </li>
-          </Link>
-          <Link href="/landingPage">
-            <li
-              className={`font-bold text-xs mb-4 xl:mb-0 xl:mr-10 ${isActive(
-                "/landingPage"
-              )}`}
-            >
-              LandingPage
-            </li>
-          </Link>
-
           <Link href="/membership">
-            <button className="font-medium text-xxs text-center px-5 py-1 mb-4 xl:mb-0 xl:mr-5 bg-black rounded-full text-white">
-              JOIN OUR <br /> COMMUNITY
+            <button className="font-bold w-full text-xxs text-center px-5 py-3 mb-4 xl:mb-0 xl:mr-5 bg-purple-600 rounded-full text-white">
+              JOIN OUR COMMUNITY
             </button>
           </Link>
 
-          <Link href="/Courses">
-            <button
-              className="font-medium text-xxs text-center px-6 py-3 mb-4 xl:mb-0 xl:mr-5 rounded-full text-white"
-              style={{ backgroundColor: "#C54ED8" }}
-            >
-              COURSES
-            </button>
-          </Link>
-
-          <Link href="/Store">
-            <button className="flex gap-1 font-medium text-xxs text-center px-6 py-3 border border-pink-400 mb-4 xl:mb-0 xl:mr-5 rounded-full text-pink-400">
-              <FontAwesomeIcon icon={faBagShopping} size="lg" /> Shop
-            </button>
-          </Link>
-
-          {isAuthenticated ? (
+          {/* {isAuthenticated ? (
             <div className="relative">
               <button
                 onClick={toggleDropdown}
@@ -209,7 +176,7 @@ export default function Navbar() {
                 Login
               </button>
             </Link>
-          )}
+          )} */}
         </ul>
       </div>
     </div>
