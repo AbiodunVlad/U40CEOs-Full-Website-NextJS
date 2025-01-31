@@ -131,7 +131,7 @@ export default function Navbar() {
               Blog
             </li>
           </Link>
-          <Link href="/landingPage">
+          <Link href="/become-a-member">
             <li
               className={`font-bold text-xs mb-4 xl:mb-0 xl:mr-10 ${isActive(
                 "/landingPage"
