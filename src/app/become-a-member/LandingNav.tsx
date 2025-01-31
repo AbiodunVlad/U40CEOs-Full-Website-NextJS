@@ -79,7 +79,7 @@ export default function LandingNav() {
             menuOpen ? "block" : "hidden xl:flex"
           }`}
         >
-          <Link href="/home">
+          {/* <Link href="/home">
             {" "}
             <li
               className={`text-xs font-bold mb-4 xl:mb-0 xl:mr-10 ${isActive(
@@ -88,9 +88,9 @@ export default function LandingNav() {
             >
               Home
             </li>
-          </Link>
+          </Link> */}
 
-          <Link href="/home">
+          {/* <Link href="/home">
             {" "}
             <li
               className={`text-xs font-bold mb-4 xl:mb-0 xl:mr-10 ${isActive(
@@ -99,9 +99,9 @@ export default function LandingNav() {
             >
               Why Join Us
             </li>
-          </Link>
+          </Link> */}
 
-          <Link href="/home">
+          {/* <Link href="/home">
             {" "}
             <li
               className={`text-xs font-bold mb-4 xl:mb-0 xl:mr-10 ${isActive(
@@ -110,9 +110,9 @@ export default function LandingNav() {
             >
               Who Is This For
             </li>
-          </Link>
+          </Link> */}
 
-          <Link href="/successStories">
+          {/* <Link href="/successStories">
             {" "}
             <li
               className={`font-bold text-xs text-center mb-4 xl:mb-0 xl:mr-10 ${isActive(
@@ -121,7 +121,7 @@ export default function LandingNav() {
             >
               Success Stories
             </li>
-          </Link>
+          </Link> */}
 
           <Link href="/membership">
             <button className="font-bold w-full text-xxs text-center px-5 py-3 mb-4 xl:mb-0 xl:mr-5 bg-purple-600 rounded-full text-white">
