@@ -175,7 +175,7 @@ export default function BecomeAMember({ onSubmit, setActiveHeader }: any) {
           </button>
           <button
             type="submit"
-            // onClick={onSubmit}
+            onClick={onSubmit}
             className="w-1/2 py-3 text-white text-sm sm:text-lg bg-purple-500 rounded-full text-center"
           >
             GENERATE RESULT
