@@ -127,7 +127,7 @@ export default function InsideCommunity() {
         </div>
       </div>
 
-      <Link href="/" className="w-4/5">
+      <Link href="#register-section" className="w-4/5">
         <button
           className="text-sm sm:text-xl py-4 px-4 tracking-widest rounded-lg mb-0 w-full bg-gradient-to-r from-pink-500 to-purple-600 text-white font-bold uppercase"
           // style={{ backgroundColor: "#C54ED8" }}
