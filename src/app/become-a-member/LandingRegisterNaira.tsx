@@ -3,11 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { createUser } from "../../../pages/api/auth";
-import Paystack from '@paystack/inline-js'
-import { verifyOnboardingTransaction, verifyTransaction } from "../../../pages/api/pay";
+import Paystack from "@paystack/inline-js";
+import {
+  verifyOnboardingTransaction,
+  verifyTransaction,
+} from "../../../pages/api/pay";
 
 export default function LandingRegisterNaira() {
-  
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -15,52 +17,50 @@ export default function LandingRegisterNaira() {
   const [country, setCountry] = useState("");
   const paymentLink = false;
   const [transactionRef, setTransactionRef] = useState("");
-  
+
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
-  
+  const [error, setError] = useState("");
+
   const popup = new Paystack();
-  
+
   const verifyPayment = async () => {
     const verifyResult = await verifyOnboardingTransaction(transactionRef);
-    console.log('transactionResult', verifyResult );
-    
+    console.log("transactionResult", verifyResult);
+
     // Add logic to navigate to next screen here...
-  }
-  
+  };
+
   const makePayment = async () => {
     setLoading(true);
     setError("");
 
     try {
-      
       popup.newTransaction({
-        key: 'pk_test_f54e9851e556013c11a4f3b69d21e50d6730ef93',
+        key: "pk_test_f54e9851e556013c11a4f3b69d21e50d6730ef93",
         email: email,
         amount: 150000,
         onSuccess: (transaction) => {
-          console.log('transaction success', transaction);
+          console.log("transaction success", transaction);
           console.log(transaction);
           setTransactionRef(transaction.reference);
           verifyPayment();
         },
         onLoad: (response) => {
-          console.log('transaction loading');
-          
+          console.log("transaction loading");
+
           console.log("onLoad: ", response);
         },
         onCancel: () => {
-          console.log('transaction cancelled');
-          
+          console.log("transaction cancelled");
+
           console.log("onCancel");
         },
         onError: (error) => {
-          console.log('transaction error');
-          
-          console.log("Error: ", error.message);
-        }
-      })
+          console.log("transaction error");
 
+          console.log("Error: ", error.message);
+        },
+      });
     } catch (error) {
       if (error instanceof Error) {
         setError(error.message);
@@ -69,42 +69,41 @@ export default function LandingRegisterNaira() {
       setLoading(false);
     }
   };
-  
-  
+
   const signup = async () => {
-      setLoading(true);
-      setError("");
-  
-      try {
-        const response = await createUser({
-          firstName,
-          lastName,
-          email,
-          country,
-          phoneNumber,
-          paymentLink,
-        });
-        console.log("This is the response:", response);
-  
-        if (response.status === true) {
-          console.log("create user is successful");
-        } else {
-          console.log("create user was not successful");
-  
-          // const errorData = await response.json();
-          setError("Create User failed. Please try again.");
-          console.log("This is the errorData");
-        }
-      } catch (error) {
-        if (error instanceof Error) {
-          setError(error.message);
-        } else {
-          setError("Something went wrong!!!");
-        }
-      } finally {
-        setLoading(false);
+    setLoading(true);
+    setError("");
+
+    try {
+      const response = await createUser({
+        firstName,
+        lastName,
+        email,
+        country,
+        phoneNumber,
+        paymentLink,
+      });
+      console.log("This is the response:", response);
+
+      if (response.status === true) {
+        console.log("create user is successful");
+      } else {
+        console.log("create user was not successful");
+
+        // const errorData = await response.json();
+        setError("Create User failed. Please try again.");
+        console.log("This is the errorData");
       }
-    };
+    } catch (error) {
+      if (error instanceof Error) {
+        setError(error.message);
+      } else {
+        setError("Something went wrong!!!");
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="flex flex-col bg-slate-100 items-center py-5 mt-10 xl:mt-20 relative max-w-screen-2xl mx-auto w-4/5 border border-solid border-pink-500 rounded-md">
@@ -222,15 +221,16 @@ export default function LandingRegisterNaira() {
             </label>
           </div>
         </div>
-        <Link href="/" className="w-full">
-          <button
-            className="text-sm sm:text-xl py-4 px-4 tracking-widest rounded-lg mb-0 w-full text-white font-bold uppercase"
-            style={{ backgroundColor: "#C54ED8" }}
-            onClick={makePayment}
-          >
-            JOIN UNDER 40 CEOs NOW
-          </button>
-        </Link>
+
+        {/* <Link href="/" className="w-full"> */}
+        <button
+          className="text-sm sm:text-xl py-4 px-4 tracking-widest rounded-lg mb-0 w-full text-white font-bold uppercase"
+          style={{ backgroundColor: "#C54ED8" }}
+          onClick={makePayment}
+        >
+          JOIN UNDER 40 CEOs NOW
+        </button>
+        {/* </Link> */}
       </form>
     </div>
   );
