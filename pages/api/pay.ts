@@ -60,3 +60,30 @@ export const verifyTransaction = async (ref: string, plan: string, durationInDay
 };
 
 
+export const verifyOnboardingTransaction = async (ref: string): Promise<any> => {
+  try {
+    const token = store.getState().auth?.accessToken;
+    const response = await fetch(`${BaseURL}/payments/verify-transaction/${ref}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const responseData = await response.json();
+
+    if (response.ok) {
+      console.log("Verify onboarding transaction response fine:", responseData);
+      return responseData;
+    } else {
+      const errorMessage = responseData?.data?.message || responseData?.message || "Could not verify onboarding transaction.";
+      console.error("Error:", errorMessage);
+      throw new Error(errorMessage);
+    }
+  } catch (error) {
+    console.error("Error verifying onboarding transaction, check your network:", error);
+    throw error;
+  }
+};
+
+

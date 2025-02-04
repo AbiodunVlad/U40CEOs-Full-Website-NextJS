@@ -12,6 +12,16 @@ interface UserData {
   confirmPassword?: string;
 }
 
+
+interface CreateUserData {
+  firstName?: string;
+  lastName?: string;
+  email: string;
+  phoneNumber: string;
+  country?: string;
+  paymentLink?: boolean;
+}
+
 interface SuccessStories {
   id: string;
   nameTitle: string;
@@ -405,6 +415,33 @@ export const updateProfile = async (profileData: any): Promise<any> => {
     return await response.json();
   } catch (error) {
     // console.error("Could Not Create Testimonials.", error);
+    throw error;
+  }
+};
+
+
+
+/// These endpoints are used for onboarding users from the new landing pages.
+
+export const createUser = async (createUserData: CreateUserData): Promise<any> => {
+  try {
+    const response = await fetch(`${BaseURL}/auth/create-user`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(createUserData),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error("Create User Error Response:", errorData.data.message);
+      throw new Error(errorData.data.message || "Could create this user.");
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error("Error creating user up, check your network:", error);
     throw error;
   }
 };
