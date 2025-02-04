@@ -55,7 +55,7 @@ export default function Testimonials() {
   return (
     <div className="bg-black px-5 md:px-20 py-10 flex flex-col items-center">
       <div className="max-w-screen-2xl mx-auto">
-        <h1 className="text-white font-bold text-3xl md:text-4xl mb-16">
+        <h1 className="text-white text-center font-bold text-3xl md:text-4xl mb-16">
           HEAR FROM OUR ELITE ENTREPRENEURS
         </h1>
 

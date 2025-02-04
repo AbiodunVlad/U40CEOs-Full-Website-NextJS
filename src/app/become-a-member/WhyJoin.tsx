@@ -4,7 +4,7 @@ import React from "react";
 
 export default function WhyJoin() {
   return (
-    <div className="flex flex-col items-center py-20 relative max-w-screen-2xl mx-auto w-full">
+    <div className="flex flex-col items-center py-10 xl:py-20 relative max-w-screen-2xl mx-auto w-full">
       <h1 className="text-3xl lg:text-4xl text-center font-extrabold uppercase p-5">
         Why Join the <span className="text-purple-500">Under 40 CEOs</span>
         <br className="xl:flex hidden" /> Community?
@@ -91,7 +91,7 @@ export default function WhyJoin() {
         support you to grow sustainably and get recognised
       </p>
 
-      <Link href="/" className="w-4/5">
+      <Link href="#register-section" className="w-4/5">
         <button
           className="text-sm sm:text-xl py-4 px-4 tracking-widest rounded-lg mb-0 w-full bg-gradient-to-r from-pink-500 to-purple-600 text-white font-bold uppercase"
           // style={{ backgroundColor: "#C54ED8" }}
